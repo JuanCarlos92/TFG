@@ -24,10 +24,10 @@ DROP TABLE IF EXISTS `skill_base`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `skill_base` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT NULL,
-  `icon_color` varchar(100) DEFAULT NULL,
-  `secret` varchar(100) DEFAULT NULL,
-  `unlocks` varchar(100) DEFAULT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
+  `color_icono` varchar(100) DEFAULT NULL,
+  `secreto` varchar(100) DEFAULT NULL,
+  `desbloqueos` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-18 17:51:51
+-- Dump completed on 2024-12-19 18:28:40

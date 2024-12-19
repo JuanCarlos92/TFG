@@ -24,11 +24,11 @@ DROP TABLE IF EXISTS `monster_habitats`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `monster_habitats` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `base_name` varchar(100) DEFAULT NULL,
-  `map` varchar(100) DEFAULT NULL,
-  `start_area` int DEFAULT NULL,
-  `move_area` varchar(100) DEFAULT NULL,
-  `rest_area` varchar(100) DEFAULT NULL,
+  `nombre_base` varchar(100) DEFAULT NULL,
+  `mapa` varchar(100) DEFAULT NULL,
+  `area_inicial` int DEFAULT NULL,
+  `area_movimiento` varchar(100) DEFAULT NULL,
+  `area_descanso` varchar(100) DEFAULT NULL,
   `id_monster` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_monsterbase_habitats` (`id_monster`),
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-18 17:51:50
+-- Dump completed on 2024-12-19 18:28:41

@@ -24,11 +24,11 @@ DROP TABLE IF EXISTS `monster_breaks`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `monster_breaks` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `base_name` varchar(255) NOT NULL,
-  `part` varchar(255) NOT NULL,
-  `flinch` int DEFAULT NULL,
-  `wound` int DEFAULT NULL,
-  `sever` int DEFAULT NULL,
+  `nombre_base` varchar(100) DEFAULT NULL,
+  `parte` varchar(100) DEFAULT NULL,
+  `estremecimiento` int DEFAULT NULL,
+  `herida` int DEFAULT NULL,
+  `corte` int DEFAULT NULL,
   `id_monster` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_monsterbase_breaks` (`id_monster`),
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-18 17:51:51
+-- Dump completed on 2024-12-19 18:28:40

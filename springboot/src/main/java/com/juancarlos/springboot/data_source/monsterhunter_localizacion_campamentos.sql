@@ -16,32 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `location_camps`
+-- Table structure for table `localizacion_campamentos`
 --
 
-DROP TABLE IF EXISTS `location_camps`;
+DROP TABLE IF EXISTS `localizacion_campamentos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `location_camps` (
+CREATE TABLE `localizacion_campamentos` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `base_name` varchar(100) DEFAULT NULL,
-  `camp_name` varchar(100) DEFAULT NULL,
+  `nombre_base` varchar(100) DEFAULT NULL,
+  `nombre_campamento` varchar(100) DEFAULT NULL,
   `area` int DEFAULT NULL,
-  `id_location` int DEFAULT NULL,
+  `id_localizacion` int DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_locationbase_camps` (`id_location`),
-  CONSTRAINT `fk_locationbase_camps` FOREIGN KEY (`id_location`) REFERENCES `location_base` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `fk_locationbase_camps` (`id_localizacion`),
+  CONSTRAINT `fk_locationbase_camps` FOREIGN KEY (`id_localizacion`) REFERENCES `localizacion_base` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `location_camps`
+-- Dumping data for table `localizacion_campamentos`
 --
 
-LOCK TABLES `location_camps` WRITE;
-/*!40000 ALTER TABLE `location_camps` DISABLE KEYS */;
-INSERT INTO `location_camps` VALUES (1,'Ancient Forest','Southwest Camp',1,1),(2,'Ancient Forest','Northwest Camp',8,1),(3,'Ancient Forest','Northeast Camp',11,1),(4,'Ancient Forest','Ancient Forest Camp',17,1),(5,'Wildspire Waste','Southwest Camp',1,2),(6,'Wildspire Waste','Central Camp',6,2),(7,'Wildspire Waste','Northeast Camp',15,2),(8,'Wildspire Waste','Eastern Camp',11,2),(9,'Coral Highlands','Southern Camp',1,3),(10,'Coral Highlands','Northeast Camp',12,3),(11,'Rotten Vale','Southeast Camp',1,4),(12,'Rotten Vale','Central Camp',11,4),(13,'Elders Recess','Southern Camp',1,5),(14,'Elders Recess','Eastern Camp',8,5),(15,'Elders Recess','Northwest Camp',16,5);
-/*!40000 ALTER TABLE `location_camps` ENABLE KEYS */;
+LOCK TABLES `localizacion_campamentos` WRITE;
+/*!40000 ALTER TABLE `localizacion_campamentos` DISABLE KEYS */;
+INSERT INTO `localizacion_campamentos` VALUES (1,'Ancient Forest','Southwest Camp',1,1),(2,'Ancient Forest','Northwest Camp',8,1),(3,'Ancient Forest','Northeast Camp',11,1),(4,'Ancient Forest','Ancient Forest Camp',17,1),(5,'Wildspire Waste','Southwest Camp',1,2),(6,'Wildspire Waste','Central Camp',6,2),(7,'Wildspire Waste','Northeast Camp',15,2),(8,'Wildspire Waste','Eastern Camp',11,2),(9,'Coral Highlands','Southern Camp',1,3),(10,'Coral Highlands','Northeast Camp',12,3),(11,'Rotten Vale','Southeast Camp',1,4),(12,'Rotten Vale','Central Camp',11,4),(13,'Elders Recess','Southern Camp',1,5),(14,'Elders Recess','Eastern Camp',8,5),(15,'Elders Recess','Northwest Camp',16,5);
+/*!40000 ALTER TABLE `localizacion_campamentos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-18 17:51:51
+-- Dump completed on 2024-12-19 18:28:41

@@ -24,12 +24,12 @@ DROP TABLE IF EXISTS `monster_base`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `monster_base` (
   `id` int NOT NULL,
-  `name` varchar(100) DEFAULT NULL,
-  `ecology` varchar(100) DEFAULT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
+  `ecologia` varchar(100) DEFAULT NULL,
   `size` varchar(100) DEFAULT NULL,
-  `pitfall_trap` varchar(100) DEFAULT NULL,
-  `shock_trap` varchar(100) DEFAULT NULL,
-  `vine_trap` varchar(100) DEFAULT NULL,
+  `trampa_escollo` varchar(100) DEFAULT NULL,
+  `trampa_electrica` varchar(100) DEFAULT NULL,
+  `trampa_hiedra` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-18 17:51:52
+-- Dump completed on 2024-12-19 18:28:41

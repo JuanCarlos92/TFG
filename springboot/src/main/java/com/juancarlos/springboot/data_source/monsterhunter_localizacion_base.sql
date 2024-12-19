@@ -16,36 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `decoration_droprates`
+-- Table structure for table `localizacion_base`
 --
 
-DROP TABLE IF EXISTS `decoration_droprates`;
+DROP TABLE IF EXISTS `localizacion_base`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `decoration_droprates` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `feystone` varchar(100) DEFAULT NULL,
-  `five` int DEFAULT NULL,
-  `six` int DEFAULT NULL,
-  `seven` int DEFAULT NULL,
-  `eight` int DEFAULT NULL,
-  `nine` int DEFAULT NULL,
-  `ten` int DEFAULT NULL,
-  `eleven` int DEFAULT NULL,
-  `twelve` int DEFAULT NULL,
-  `thirteen` int DEFAULT NULL,
+CREATE TABLE `localizacion_base` (
+  `id` int NOT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `decoration_droprates`
+-- Dumping data for table `localizacion_base`
 --
 
-LOCK TABLES `decoration_droprates` WRITE;
-/*!40000 ALTER TABLE `decoration_droprates` DISABLE KEYS */;
-INSERT INTO `decoration_droprates` VALUES (1,'mysterious',85,15,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'glowing',65,34,1,NULL,NULL,NULL,NULL,NULL,NULL),(3,'worn',10,82,6,2,NULL,NULL,NULL,NULL,NULL),(4,'warped',NULL,7,18,5,NULL,NULL,NULL,NULL,NULL),(5,'ancient',NULL,53,NULL,NULL,NULL,33,NULL,NULL,NULL),(6,'carved',NULL,NULL,NULL,NULL,34,21,38,8,NULL),(7,'sealed',NULL,NULL,NULL,NULL,22,NULL,5,10,3);
-/*!40000 ALTER TABLE `decoration_droprates` ENABLE KEYS */;
+LOCK TABLES `localizacion_base` WRITE;
+/*!40000 ALTER TABLE `localizacion_base` DISABLE KEYS */;
+INSERT INTO `localizacion_base` VALUES (1,'Ancient Forest'),(2,'Wildspire Waste'),(3,'Coral Highlands'),(4,'Rotten Vale'),(5,'Elders Recess'),(6,'Everstream'),(7,'Great Ravine'),(8,'Arena'),(9,'Confluence of Fates'),(10,'Caverns of El Dorado'),(11,'Special Arena'),(12,'Hoarfrost Reach'),(13,'Origin Isle'),(14,'Guiding Lands'),(15,'Secluded Valley'),(16,'Seliana Supply Cache'),(17,'Castle Schrade');
+/*!40000 ALTER TABLE `localizacion_base` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-18 17:51:50
+-- Dump completed on 2024-12-19 18:28:40

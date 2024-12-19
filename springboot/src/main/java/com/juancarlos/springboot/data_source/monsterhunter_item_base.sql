@@ -24,18 +24,18 @@ DROP TABLE IF EXISTS `item_base`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `item_base` (
   `id` int NOT NULL,
-  `name` varchar(100) DEFAULT NULL,
-  `category` varchar(100) DEFAULT NULL,
-  `subcategory` varchar(100) DEFAULT NULL,
-  `rarity` int DEFAULT NULL,
-  `buy_price` int DEFAULT NULL,
-  `sell_price` int DEFAULT NULL,
-  `carry_limit` int DEFAULT NULL,
-  `points` int DEFAULT NULL,
-  `icon_name` varchar(100) DEFAULT NULL,
-  `icon_color` varchar(100) DEFAULT NULL,
-  `attribute_1` int DEFAULT NULL,
-  `attribute_2` int DEFAULT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
+  `categoria` varchar(100) DEFAULT NULL,
+  `subcategoria` varchar(100) DEFAULT NULL,
+  `rareza` int DEFAULT NULL,
+  `precio_compra` int DEFAULT NULL,
+  `precio_venta` int DEFAULT NULL,
+  `limite_carga` int DEFAULT NULL,
+  `puntos` int DEFAULT NULL,
+  `nombre_icono` varchar(100) DEFAULT NULL,
+  `nombre_color` varchar(100) DEFAULT NULL,
+  `atributo_1` int DEFAULT NULL,
+  `atributo_2` int DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-18 17:51:52
+-- Dump completed on 2024-12-19 18:28:41
