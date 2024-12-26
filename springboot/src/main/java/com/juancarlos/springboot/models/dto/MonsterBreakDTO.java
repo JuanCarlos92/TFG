@@ -12,10 +12,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class MonsterBreakDTO {
-    private String part;
-    private Integer flinch;
-    private Integer wound;
-    private Integer sever;
-    private String extract;
-
+    private String parte;
+    private Integer estrecimiento;
+    private Integer herida;
+    private Integer corte;
 }

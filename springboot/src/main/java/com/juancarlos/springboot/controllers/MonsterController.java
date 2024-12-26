@@ -1,10 +1,13 @@
 package com.juancarlos.springboot.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.data.domain.Page;
+import com.juancarlos.springboot.entity.MonsterEntity;
 import com.juancarlos.springboot.models.dto.MonsterDTO;
 import com.juancarlos.springboot.models.response.GetMonsterResponse;
 import com.juancarlos.springboot.services.MonsterService;
@@ -12,19 +15,23 @@ import com.juancarlos.springboot.services.MonsterService;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/api/monster")
+@RequestMapping("/api/monsters")
 @AllArgsConstructor
 public class MonsterController {
-    
+
+	@Autowired
 	private MonsterService monsterService;
 
-	/**
-	 * Controller getPrice (POST), puerta de entrada para la ejecución del servicio
-	 * getPrice, obtiene la tarifa en base a la fecha, productId y brandId
-	 */
-	@GetMapping("/getMonster/{id}")
-	public GetMonsterResponse getMonster(@PathVariable Long id) {
+	// Endpoint para obtener monstruos con paginación
+	@GetMapping
+	public Page<MonsterEntity> getMonsters(@RequestParam(defaultValue = "0") int page) { // Página por defecto: 0
+		int fixedSize = 10;
+		return monsterService.getMonstersWithPagination(page, fixedSize);
+	}
 
+	// Endpoint para obtener un monstruo por id
+	@GetMapping("/{id}")
+	public GetMonsterResponse getMonster(@PathVariable Long id) {
 		MonsterDTO monster = monsterService.getMonster(id);
 		GetMonsterResponse response = GetMonsterResponse.builder().monsterDTO(monster).build();
 
@@ -32,4 +39,5 @@ public class MonsterController {
 		return response;
 
 	}
+
 }

@@ -15,12 +15,12 @@ import lombok.Setter;
 @Builder
 public class MonsterDTO {
     private Long id;
-    private String name;
-    private String ecology;
+    private String nombre;
+    private String ecologia;
     private String size;
-    private Boolean pitfall;
-    private Boolean shock;
-    private Boolean vine;
+    private Boolean trampa_escollo;
+    private Boolean trampa_electrica;
+    private Boolean trampa_hiedra;
 
     private List<MonsterBreakDTO> monsterBreakDTO;
 

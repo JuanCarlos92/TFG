@@ -17,26 +17,29 @@ import lombok.NoArgsConstructor;
 public class MonsterEntity {
 
     @Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", unique = true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", unique = true, nullable = false)
     private Long id;
 
-    @Column(name = "name_en", unique = true, nullable = false)
-    private String name;
+    @Column(name = "nombre", unique = true, nullable = false)
+    private String nombre;
 
-    @Column(name = "ecology_en", nullable = true)
-    private String ecology;
+    @Column(name = "ecologia", nullable = true)
+    private String ecologia;
 
     @Column(name = "size", nullable = true)
     private String size;
 
-    @Column(name = "pitfall_trap", nullable = true)
-    private Boolean pitfallTrap;
+    @Column(name = "trampa_escollo", nullable = true)
+    private Boolean trampa_escollo;
 
-    @Column(name = "shock_trap", nullable = true)
-    private Boolean shockTrap;
+    @Column(name = "trampa_electrica", nullable = true)
+    private Boolean trampa_electrica;
 
-    @Column(name = "vine_trap", nullable = true)
-    private Boolean vineTrap;
+    @Column(name = "trampa_hiedra", nullable = true)
+    private Boolean trampa_hiedra;
+
+    @OneToMany(mappedBy = "monsterBase", fetch = FetchType.LAZY)
+    private List<MonsterBreakEntity> monsterBreaks;
 
 }

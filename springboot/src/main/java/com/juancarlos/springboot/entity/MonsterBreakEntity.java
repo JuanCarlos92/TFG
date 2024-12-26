@@ -6,31 +6,36 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-// @Entity
-// @Table(name = "monster_breaks")
+@Entity
+@Table(name = "monster_breaks")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class MonsterBreakEntity {
 
-	// @Column(name = "base_name_en", unique = false, nullable = false)
-    // private String base_name_en;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", unique = true, nullable = false)
+    private Long id;
 
-    // @Column(name = "part_en", unique = false, nullable = true)
-    private String part_en;
+    @Column(name = "nombre_base", unique = false, nullable = false)
+    private String nombre_base;
 
-    // // @Column(name = "flinch", nullable = true)
-    // private Integer flinch;
+    @Column(name = "parte", unique = false, nullable = true)
+    private String parte;
 
-    // // @Column(name = "wound", nullable = true)
-    // private Integer wound;
+    @Column(name = "estremecimiento", nullable = true)
+    private Integer estremecimiento;
 
-    // // @Column(name = "sever", nullable = true)
-    // private Integer sever;
+    @Column(name = "herida", nullable = true)
+    private Integer herida;
 
-    // // @Column(name = "extract", nullable = true)
-    // private String extract;
+    @Column(name = "corte", nullable = true)
+    private Integer corte;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_monster", referencedColumnName = "id")
+    private MonsterEntity monsterBase;
 
 }
