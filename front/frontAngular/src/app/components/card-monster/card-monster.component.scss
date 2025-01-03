@@ -1,0 +1,14 @@
+#monsterCss:hover {
+
+    cursor: pointer;
+}
+
+.zoom:hover {
+    transform: scale(1.2);
+    /* Aumenta el tamaño al 120% */
+}
+
+.zoom {
+    transition: transform 0.3s ease;
+    /* Transición suave */
+}
