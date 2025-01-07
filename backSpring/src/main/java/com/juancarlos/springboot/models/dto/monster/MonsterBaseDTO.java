@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.models.dto;
+package com.juancarlos.springboot.models.dto.monster;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class MonsterDTO {
+public class MonsterBaseDTO {
     private Long id;
     private String nombre;
     private String ecologia;

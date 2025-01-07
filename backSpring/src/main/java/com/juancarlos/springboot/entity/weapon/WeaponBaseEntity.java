@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.entity;
+package com.juancarlos.springboot.entity.weapon;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class WeaponListEntity {
+public class WeaponBaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -74,5 +74,5 @@ public class WeaponListEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_arma", referencedColumnName = "id")
     @JsonIgnore
-    private WeaponEntity WeaponBase;
+    private WeaponTipoEntity WeaponBase;
 }

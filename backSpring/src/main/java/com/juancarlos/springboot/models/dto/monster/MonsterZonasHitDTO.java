@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.models.dto;
+package com.juancarlos.springboot.models.dto.monster;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

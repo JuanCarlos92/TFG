@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.models.dto;
+package com.juancarlos.springboot.models.dto.weapon;
 
 import java.util.List;
 
@@ -13,10 +13,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class WeaponDTO {
+public class WeaponTipoDTO {
     private Long id;
     private String tipoArma;
 
-    private List<WeaponListDTO> weaponListDTO;
+    private List<WeaponBaseDTO> weaponListDTO;
 
 }

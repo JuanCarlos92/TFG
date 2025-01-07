@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.data.domain.Page;
-import com.juancarlos.springboot.models.dto.MonsterDTO;
+
+import com.juancarlos.springboot.models.dto.monster.MonsterBaseDTO;
 import com.juancarlos.springboot.models.response.GetMonsterResponse;
 import com.juancarlos.springboot.services.MonsterService;
 
@@ -23,7 +24,7 @@ public class MonsterController {
 
 	// Endpoint para obtener monstruos con paginación
 	@GetMapping
-	public Page<MonsterDTO> getMonsters(@RequestParam(defaultValue = "0") int page) { // Página por defecto: 0
+	public Page<MonsterBaseDTO> getMonsters(@RequestParam(defaultValue = "0") int page) { // Página por defecto: 0
 		int fixedSize = 10;
 		return monsterService.getMonstersWithPagination(page, fixedSize);
 	}
@@ -31,7 +32,7 @@ public class MonsterController {
 	// Endpoint para obtener un monstruo por id
 	@GetMapping("/{id}")
 	public GetMonsterResponse getMonster(@PathVariable Long id) {
-		MonsterDTO monster = monsterService.getMonster(id);
+		MonsterBaseDTO monster = monsterService.getMonster(id);
 		GetMonsterResponse response = GetMonsterResponse.builder().monsterDTO(monster).build();
 
 		response.setIsOk(true);

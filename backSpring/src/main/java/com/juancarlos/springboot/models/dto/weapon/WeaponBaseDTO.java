@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.models.dto;
+package com.juancarlos.springboot.models.dto.weapon;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class WeaponListDTO {
+public class WeaponBaseDTO {
 
     private String nombre;
     private String predecesor;

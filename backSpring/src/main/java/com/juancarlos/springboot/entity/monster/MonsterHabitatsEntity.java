@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.entity;
+package com.juancarlos.springboot.entity.monster;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -33,5 +33,5 @@ public class MonsterHabitatsEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_monster", referencedColumnName = "id")
     @JsonIgnore
-    private MonsterEntity monsterBase;
+    private MonsterBaseEntity monsterBase;
 }

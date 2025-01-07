@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.entity;
+package com.juancarlos.springboot.entity.monster;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class MonsterEntity {
+public class MonsterBaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

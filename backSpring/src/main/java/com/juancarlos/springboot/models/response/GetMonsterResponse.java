@@ -1,7 +1,7 @@
 package com.juancarlos.springboot.models.response;
 
 
-import com.juancarlos.springboot.models.dto.MonsterDTO;
+import com.juancarlos.springboot.models.dto.monster.MonsterBaseDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,6 +15,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class GetMonsterResponse extends Response {
-    private MonsterDTO monsterDTO;
+    private MonsterBaseDTO monsterDTO;
 
 }

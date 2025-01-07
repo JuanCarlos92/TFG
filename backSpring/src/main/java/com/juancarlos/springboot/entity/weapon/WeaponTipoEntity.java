@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.entity;
+package com.juancarlos.springboot.entity.weapon;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class WeaponEntity {
+public class WeaponTipoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,5 +25,5 @@ public class WeaponEntity {
 
     
     @OneToMany(mappedBy = "WeaponBase", fetch = FetchType.LAZY)
-    private List<WeaponListEntity> weaponList;
+    private List<WeaponBaseEntity> weaponList;
 }

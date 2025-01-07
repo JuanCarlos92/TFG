@@ -2,14 +2,14 @@ package com.juancarlos.springboot.services;
 
 import org.springframework.data.domain.Page;
 
-import com.juancarlos.springboot.models.dto.MonsterDTO;
+import com.juancarlos.springboot.models.dto.monster.MonsterBaseDTO;
 
 public interface MonsterService {
 
     // Obtener mostruo por id
-    public MonsterDTO getMonster(Long id);
+    public MonsterBaseDTO getMonster(Long id);
 
     // Método paginacion (buscar todo)
-    public Page<MonsterDTO> getMonstersWithPagination(int page, int size);
+    public Page<MonsterBaseDTO> getMonstersWithPagination(int page, int size);
 
 }

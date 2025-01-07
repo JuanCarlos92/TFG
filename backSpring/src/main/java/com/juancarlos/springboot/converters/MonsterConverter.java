@@ -3,75 +3,75 @@ package com.juancarlos.springboot.converters;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.juancarlos.springboot.entity.MonsterBreakEntity;
-import com.juancarlos.springboot.entity.MonsterDolenciasEntity;
-import com.juancarlos.springboot.entity.MonsterEntity;
-import com.juancarlos.springboot.entity.MonsterHabitatsEntity;
-import com.juancarlos.springboot.entity.MonsterRewardsEntity;
-import com.juancarlos.springboot.entity.MonsterWeaknessesEntity;
-import com.juancarlos.springboot.entity.MonsterZonasHitEntity;
-import com.juancarlos.springboot.models.dto.MonsterBreakDTO;
-import com.juancarlos.springboot.models.dto.MonsterDTO;
-import com.juancarlos.springboot.models.dto.MonsterDolenciasDTO;
-import com.juancarlos.springboot.models.dto.MonsterHabitatsDTO;
-import com.juancarlos.springboot.models.dto.MonsterRewardsDTO;
-import com.juancarlos.springboot.models.dto.MonsterWeaknessesDTO;
-import com.juancarlos.springboot.models.dto.MonsterZonasHitDTO;
+import com.juancarlos.springboot.entity.monster.MonsterBaseEntity;
+import com.juancarlos.springboot.entity.monster.MonsterBreakEntity;
+import com.juancarlos.springboot.entity.monster.MonsterDolenciasEntity;
+import com.juancarlos.springboot.entity.monster.MonsterHabitatsEntity;
+import com.juancarlos.springboot.entity.monster.MonsterRewardsEntity;
+import com.juancarlos.springboot.entity.monster.MonsterWeaknessesEntity;
+import com.juancarlos.springboot.entity.monster.MonsterZonasHitEntity;
+import com.juancarlos.springboot.models.dto.monster.MonsterBaseDTO;
+import com.juancarlos.springboot.models.dto.monster.MonsterBreakDTO;
+import com.juancarlos.springboot.models.dto.monster.MonsterDolenciasDTO;
+import com.juancarlos.springboot.models.dto.monster.MonsterHabitatsDTO;
+import com.juancarlos.springboot.models.dto.monster.MonsterRewardsDTO;
+import com.juancarlos.springboot.models.dto.monster.MonsterWeaknessesDTO;
+import com.juancarlos.springboot.models.dto.monster.MonsterZonasHitDTO;
 
 public class MonsterConverter {
 
     // Convierte una MonsterEntity a MonsterDTO
-    public static MonsterDTO monsterEntityToDTO(MonsterEntity monsterEntity, boolean flagWithRelations) {
-        if (monsterEntity == null) {
+    public static MonsterBaseDTO monsterEntityToDTO(MonsterBaseEntity monsterBaseEntity, boolean flagWithRelations) {
+        if (monsterBaseEntity == null) {
             return null;
         }
         // Si withRelations == true, convertimos las listas
         // Si withRelations == false, las dejamos en null o en una lista vacía
-        List<MonsterBreakDTO> listaMonsterBreaks = flagWithRelations ? monsterEntity.getMonsterBreaks()
+        List<MonsterBreakDTO> listaMonsterBreaks = flagWithRelations ? monsterBaseEntity.getMonsterBreaks()
                 .stream()
                 .map(MonsterConverter::convertBreakEntityToDto)
                 .collect(Collectors.toList())
                 : null;
 
-        List<MonsterDolenciasDTO> listaMonsterDolencias = flagWithRelations ? monsterEntity.getMonsterDolencias()
+        List<MonsterDolenciasDTO> listaMonsterDolencias = flagWithRelations ? monsterBaseEntity.getMonsterDolencias()
                 .stream()
                 .map(MonsterConverter::convertDolenciasEntityToDto)
                 .collect(Collectors.toList())
                 : null;
 
-        List<MonsterHabitatsDTO> listaMonsterHabitats = flagWithRelations ? monsterEntity.getMonsterHabitats()
+        List<MonsterHabitatsDTO> listaMonsterHabitats = flagWithRelations ? monsterBaseEntity.getMonsterHabitats()
                 .stream()
                 .map(MonsterConverter::convertHabitatsEntityToDto)
                 .collect(Collectors.toList())
                 : null;
 
-        List<MonsterRewardsDTO> listaMonsterRewards = flagWithRelations ? monsterEntity.getMonsterRewards()
+        List<MonsterRewardsDTO> listaMonsterRewards = flagWithRelations ? monsterBaseEntity.getMonsterRewards()
                 .stream()
                 .map(MonsterConverter::convertRewardsEntityToDto)
                 .collect(Collectors.toList())
                 : null;
         
-        List<MonsterWeaknessesDTO> listaMonsterWeaknesse = flagWithRelations ? monsterEntity.getMonsterWeaknesses()
+        List<MonsterWeaknessesDTO> listaMonsterWeaknesse = flagWithRelations ? monsterBaseEntity.getMonsterWeaknesses()
                 .stream()
                 .map(MonsterConverter::convertWeaknessesEntityToDto)
                 .collect(Collectors.toList())
                 : null;
        
-        List<MonsterZonasHitDTO> listaMonsterZonasHit = flagWithRelations ? monsterEntity.getMonsterZonasHit()
+        List<MonsterZonasHitDTO> listaMonsterZonasHit = flagWithRelations ? monsterBaseEntity.getMonsterZonasHit()
                 .stream()
                 .map(MonsterConverter::convertZonasHitEntityToDto)
                 .collect(Collectors.toList())
                 : null;
         
 
-        return MonsterDTO.builder()
-                .id(monsterEntity.getId())
-                .nombre(monsterEntity.getNombre())
-                .ecologia(monsterEntity.getEcologia())
-                .size(monsterEntity.getSize())
-                .trampa_escollo(monsterEntity.getTrampa_escollo())
-                .trampa_electrica(monsterEntity.getTrampa_electrica())
-                .trampa_hiedra(monsterEntity.getTrampa_hiedra())
+        return MonsterBaseDTO.builder()
+                .id(monsterBaseEntity.getId())
+                .nombre(monsterBaseEntity.getNombre())
+                .ecologia(monsterBaseEntity.getEcologia())
+                .size(monsterBaseEntity.getSize())
+                .trampa_escollo(monsterBaseEntity.getTrampa_escollo())
+                .trampa_electrica(monsterBaseEntity.getTrampa_electrica())
+                .trampa_hiedra(monsterBaseEntity.getTrampa_hiedra())
                 .monsterBreakDTO(listaMonsterBreaks)
                 .monsterDolenciasDTO(listaMonsterDolencias)
                 .monsterHabitatsDTO(listaMonsterHabitats)
@@ -81,7 +81,7 @@ public class MonsterConverter {
                 .build();
     }
 
-    public static MonsterDTO monsterEntityToDTO(MonsterEntity monsterEntity) {
+    public static MonsterBaseDTO monsterEntityToDTO(MonsterBaseEntity monsterEntity) {
         // Por defecto, llamamos a la versión flag = true
         return monsterEntityToDTO(monsterEntity, true);
     }
