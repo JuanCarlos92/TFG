@@ -1,0 +1,42 @@
+package com.juancarlos.springboot.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.juancarlos.springboot.converters.MonsterConverter;
+import com.juancarlos.springboot.entity.MonsterEntity;
+import com.juancarlos.springboot.models.dto.MonsterDTO;
+import com.juancarlos.springboot.repositories.MonsterRepository;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Service
+public class MonsterServiceImpl implements MonsterService {
+
+    @Autowired
+    private MonsterRepository monsterRepository;
+
+    // Método monstruos por id
+    @Override
+    public MonsterDTO getMonster(Long id) {
+        // El findById(Long) ya existe en JpaRepository
+        MonsterEntity monsterEntity = monsterRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("No hay monster con ese id: " + id));
+        // Con relaciones
+        return MonsterConverter.monsterEntityToDTO(monsterEntity, true);
+    }
+
+    // Método monstruos con paginación
+    @Override
+    public Page<MonsterDTO> getMonstersWithPagination(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<MonsterEntity> monsterEntities = monsterRepository.findAll(pageable);
+
+        // Convertimos cada MonsterEntity -> MonsterDTO sin relaciones
+        return monsterEntities.map(m -> MonsterConverter.monsterEntityToDTO(m, false));
+    }
+}
