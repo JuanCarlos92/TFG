@@ -1,13 +1,36 @@
 <ion-app>
-  <div class="d-block">
-    <ion-header [translucent]="true" class="mb-3">
-       <ion-button>Boton del menu</ion-button>
-      <ion-toolbar>
-        <ion-title>
-          Home
-        </ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-router-outlet></ion-router-outlet>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <table class="w-100 css-table">
+        <tbody>
+          <tr>
+            <!-- Botón de menú en la primera columna -->
+            <td class="menu-button-column text-start align-middle">
+              <ion-button fill="clear" (click)="toggleMenu()" class="btn-lg">
+                <ion-icon slot="icon-only" name="menu-outline" class="fs-1"></ion-icon>
+              </ion-button>
+            </td>
+            <!-- Texto "Monster Hunter" en la segunda columna -->
+            <td class="monster-title-column text-center align-middle">
+              <a [routerLink]="['/home']" class="title-link">Monster Hunter</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Menú desplegable -->
+  <div [class.show]="isMenuOpen" class="side-menu">
+    <ul>
+      <li>
+        <a [routerLink]="['/monsters']">Monster</a>
+      </li>
+    </ul>
   </div>
+
+  <ion-router-outlet></ion-router-outlet>
 </ion-app>
+
+
+

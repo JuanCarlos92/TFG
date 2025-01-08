@@ -7,10 +7,9 @@ import { RequestService, RequestServiceOptions } from './request.service';
   providedIn: 'root'
 })
 export class MonsterService {
+  constructor(private requestService: RequestService) {}
 
-  constructor(private requestService: RequestService) { }
-
-  // This method brings the brands which pass the filter
+  // Obtiene monstruos con paginación y filtro opcional
   public getMonsters(registerData: any = {}, isAdmin: boolean = false, loader: boolean = true): Observable<any> {
 
     const requestServiceOptions: RequestServiceOptions = {
@@ -24,3 +23,4 @@ export class MonsterService {
   }
 
 }
+

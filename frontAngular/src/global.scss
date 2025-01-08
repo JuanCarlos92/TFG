@@ -35,3 +35,9 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+
+// ----- ESTILOS MENÚ -----
+ion-router-outlet {
+  margin-top: var(--ion-toolbar-height, 65px); /* Ajusta el margen según la altura del menú */
+}

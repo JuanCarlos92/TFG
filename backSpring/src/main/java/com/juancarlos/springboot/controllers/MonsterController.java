@@ -25,7 +25,7 @@ public class MonsterController {
 	// Endpoint para obtener monstruos con paginación
 	@GetMapping
 	public Page<MonsterBaseDTO> getMonsters(@RequestParam(defaultValue = "0") int page) { // Página por defecto: 0
-		int fixedSize = 10;
+		int fixedSize = 12;
 		return monsterService.getMonstersWithPagination(page, fixedSize);
 	}
 
