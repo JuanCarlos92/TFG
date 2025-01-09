@@ -12,4 +12,7 @@ public interface MonsterService {
     // Método paginacion (buscar todo)
     public Page<MonsterBaseDTO> getMonstersWithPagination(int page, int size);
 
+    //Obtener monstruo por nombre
+    public MonsterBaseDTO getMonsterByName(String name);
+
 }

@@ -39,4 +39,13 @@ public class MonsterServiceImpl implements MonsterService {
         // Convertimos cada MonsterEntity -> MonsterDTO sin relaciones
         return monsterEntities.map(m -> MonsterConverter.monsterEntityToDTO(m, false));
     }
+
+    // Método monstruos por nombre
+    public MonsterBaseDTO getMonsterByName(String name) {
+        // El findById(Long) ya existe en JpaRepository
+        MonsterBaseEntity monsterEntity = monsterRepository.findByName(name)
+                .orElseThrow(() -> new RuntimeException("No hay monster con ese id: " + name));
+
+        return MonsterConverter.monsterEntityToDTO(monsterEntity, false);
+    }
 }

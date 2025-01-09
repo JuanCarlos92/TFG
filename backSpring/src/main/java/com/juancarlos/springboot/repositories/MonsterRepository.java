@@ -19,5 +19,7 @@ public interface MonsterRepository extends JpaRepository<MonsterBaseEntity, Long
     // Metodo buscar por Id
     Optional<MonsterBaseEntity> findById(Long id);
 
+    //Metodo buscar por nombre
+    Optional<MonsterBaseEntity> findByName(String nombre);
 
 }

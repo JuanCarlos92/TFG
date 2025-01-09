@@ -19,20 +19,74 @@ import { CommonModule } from '@angular/common';
 })
 export class MonsterComponent implements OnInit {
   monsters = []; // Lista de monstruos
-  
+  page: number = 0;
+  totalPages: number = 0;
+  searchTerm: string = '';
   constructor(private monsterService: MonsterService) { }
 
-  
+
   ngOnInit() {
-    this.getMonsters(); // Carga inicial de monstruos
+    this.getMonsterswtihPaginacion(); // Carga inicial de monstruos
   }
 
-  // Obtiene monstruos con paginación
-  getMonsters() {
-    this.monsterService.getMonsters().subscribe(res => {
-      console.log(res);
-      this.monsters = res.content;
 
+  // Obtiene monstruos con paginación
+  // getMonsterswtihPaginacion() {
+  //   this.monsterService.getMonsterswithPaginacion().subscribe(res => {
+  //     console.log(res);
+  //     this.monsters = res.content;
+
+  //   });
+  // }
+
+  getMonsterswtihPaginacion() {
+    this.monsterService.getMonsterswithPaginacion(this.page, 12).subscribe(res => {
+      console.log('Monstruos recibidos:', res);
+      this.monsters = res.content; // Datos de los monstruos
+      this.totalPages = res.totalPages; // Número total de páginas
+    }, error => {
+      console.error('Error al obtener monstruos:', error);
+    });
+  }
+
+  // Búsqueda por nombre
+  searchMonsters() {
+    this.page = 0; // Reinicia la paginación al buscar
+    this.getMonsterswtihPaginacion(); // Actualiza los resultados
+  }
+
+  // Paginación: página anterior
+  previousPage() {
+    if (this.page > 0) {
+      this.page--;
+      this.getMonsterswtihPaginacion();
+    }
+  }
+
+  // Paginación: página siguiente
+  nextPage() {
+    if (this.page < this.totalPages - 1) {
+      this.page++;
+      this.getMonsterswtihPaginacion();
+    }
+  }
+
+  searchMonstersByName() {
+    if (this.searchTerm.trim() === '') {
+      this.getMonsterswtihPaginacion(); // Si el campo está vacío, muestra los resultados con paginación
+      return;
+    }
+    this.monsterService.searchMonstersByName(this.searchTerm).subscribe({
+      next: res => {
+        console.log('Resultados de búsqueda:', res);
+        this.monsters = res; // Actualiza los monstruos con los resultados de la búsqueda
+      },
+      error: error => {
+        console.error('Error al buscar monstruos:', error);
+      },
+      complete: () => {
+        console.log('Búsqueda completada.');
+      }
     });
   }
 
