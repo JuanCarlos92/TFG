@@ -1,5 +1,8 @@
 package com.juancarlos.springboot.services;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Page;
@@ -41,11 +44,12 @@ public class MonsterServiceImpl implements MonsterService {
     }
 
     // Método monstruos por nombre
-    public MonsterBaseDTO getMonsterByName(String name) {
-        // El findById(Long) ya existe en JpaRepository
-        MonsterBaseEntity monsterEntity = monsterRepository.findByName(name)
-                .orElseThrow(() -> new RuntimeException("No hay monster con ese id: " + name));
+    public List<MonsterBaseDTO> getMonstersByName(String nombre) {
+        List<MonsterBaseEntity> monsterEntities = monsterRepository.findByNombreContainingIgnoreCase(nombre);
 
-        return MonsterConverter.monsterEntityToDTO(monsterEntity, false);
+        // Convertimos las entidades a DTOs
+        return monsterEntities.stream()
+                .map(monster -> MonsterConverter.monsterEntityToDTO(monster, false))
+                .collect(Collectors.toList());
     }
 }

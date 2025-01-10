@@ -72,23 +72,25 @@ export class MonsterComponent implements OnInit {
   }
 
   searchMonstersByName() {
-    if (this.searchTerm.trim() === '') {
-      this.getMonsterswtihPaginacion(); // Si el campo está vacío, muestra los resultados con paginación
+    const trimmedSearch = this.searchTerm.trim();
+
+    if (trimmedSearch === '') {// Si el campo está vacío, carga la paginación inicial
+      this.getMonsterswtihPaginacion();
       return;
     }
-    this.monsterService.searchMonstersByName(this.searchTerm).subscribe({
+
+    // Llamar al servicio para buscar mientras se escribe
+    this.monsterService.searchMonstersByName(trimmedSearch).subscribe({
       next: res => {
         console.log('Resultados de búsqueda:', res);
-        this.monsters = res; // Actualiza los monstruos con los resultados de la búsqueda
+        this.monsters = res; // Actualiza la lista con los resultados
       },
       error: error => {
         console.error('Error al buscar monstruos:', error);
-      },
-      complete: () => {
-        console.log('Búsqueda completada.');
       }
     });
   }
+
 
 }
 

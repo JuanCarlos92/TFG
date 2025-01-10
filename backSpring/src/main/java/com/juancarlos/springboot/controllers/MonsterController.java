@@ -1,5 +1,7 @@
 package com.juancarlos.springboot.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,13 +43,9 @@ public class MonsterController {
 	}
 
 	// Endpoint para obtener un monstruo por nombre
-	@GetMapping("/{name}")
-	public GetMonsterResponse getMonsterName(@RequestParam String nombre) {
-		MonsterBaseDTO monster = monsterService.getMonsterByName(nombre);
-		GetMonsterResponse response = GetMonsterResponse.builder().monsterDTO(monster).build();
-
-		response.setIsOk(true);
-		return response;
+	@GetMapping("/search")
+	public List<MonsterBaseDTO> getMonsters(@RequestParam("name") String nombre) {
+		return monsterService.getMonstersByName(nombre);
 	}
 
 }
