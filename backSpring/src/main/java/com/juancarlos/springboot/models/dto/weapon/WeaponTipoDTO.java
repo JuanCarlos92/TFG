@@ -17,6 +17,6 @@ public class WeaponTipoDTO {
     private Long id;
     private String tipoArma;
 
-    private List<WeaponBaseDTO> weaponListDTO;
+    private List<WeaponBaseDTO> weaponBaseDTO;
 
 }

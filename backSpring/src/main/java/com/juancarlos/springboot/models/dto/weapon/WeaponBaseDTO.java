@@ -23,8 +23,6 @@ public class WeaponBaseDTO {
     private Boolean elemento_oculto;
     private String elemento1;
     private Integer ataque_elemento1;
-    private String elemento2;
-    private Integer ataque_elemento2;
     private String sello_ancianos;
     private Integer ranura_1;
     private Integer ranura_2;
@@ -34,7 +32,5 @@ public class WeaponBaseDTO {
     private String protencia_frasco;
     private String municion;
     private Integer nivel_municion;
-    private String notas;
     private String configuracion_municion;
-    private String habilidad;
 }

@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "arma_lista")
+@Table(name = "arma_base")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -42,10 +42,6 @@ public class WeaponBaseEntity {
     private String elemento1;
     @Column(name = "ataque_elemento1", nullable = true)
     private Integer ataque_elemento1;
-    @Column(name = "elemento2", nullable = true)
-    private String elemento2;
-    @Column(name = "ataque_elemento2", nullable = true)
-    private Integer ataque_elemento2;
     @Column(name = "sello_ancianos", nullable = true)
     private String sello_ancianos;
     @Column(name = "ranura_1", nullable = true)
@@ -64,12 +60,8 @@ public class WeaponBaseEntity {
     private String municion;
     @Column(name = "nivel_municion", nullable = true)
     private Integer nivel_municion;
-    @Column(name = "notas", nullable = true)
-    private String notas;
     @Column(name = "configuracion_municion", nullable = true)
     private String configuracion_municion;
-    @Column(name = "habilidad", nullable = true)
-    private String habilidad;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_arma", referencedColumnName = "id")

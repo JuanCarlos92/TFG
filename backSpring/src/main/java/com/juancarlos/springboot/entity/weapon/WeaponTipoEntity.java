@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "arma_base")
+@Table(name = "arma_tipo")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
