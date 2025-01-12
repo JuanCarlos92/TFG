@@ -6,7 +6,6 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { CardMonsterComponent } from '../components/card-monster/card-monster.component';
-import { MenuComponent } from "../components/menu/menu.component";
 
 
 @NgModule({
@@ -16,7 +15,7 @@ import { MenuComponent } from "../components/menu/menu.component";
     IonicModule,
     HomePageRoutingModule,
     CardMonsterComponent,
-    MenuComponent
+
 ],
   declarations: [HomePage]
 })

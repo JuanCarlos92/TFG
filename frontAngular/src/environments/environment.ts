@@ -7,7 +7,7 @@ export const environment = {
 
   host: 'localhost',
   port: 8080,
-  monsters: '/api/monsters'
+  monsters: '/api/monster'
 };
 
 /*

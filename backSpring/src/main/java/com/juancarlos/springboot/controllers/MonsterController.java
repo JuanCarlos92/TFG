@@ -1,5 +1,7 @@
 package com.juancarlos.springboot.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,7 +27,7 @@ public class MonsterController {
 	// Endpoint para obtener monstruos con paginación
 	@GetMapping
 	public Page<MonsterBaseDTO> getMonsters(@RequestParam(defaultValue = "0") int page) { // Página por defecto: 0
-		int fixedSize = 10;
+		int fixedSize = 12;
 		return monsterService.getMonstersWithPagination(page, fixedSize);
 	}
 
@@ -38,6 +40,12 @@ public class MonsterController {
 		response.setIsOk(true);
 		return response;
 
+	}
+
+	// Endpoint para obtener un monstruo por nombre
+	@GetMapping("/search")
+	public List<MonsterBaseDTO> getMonsters(@RequestParam("name") String nombre) {
+		return monsterService.getMonstersByName(nombre);
 	}
 
 }

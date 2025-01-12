@@ -13,7 +13,7 @@ export class HomePage {
 
   constructor(private monsterService: MonsterService) {
 
-    this.monsterService.getMonsters().subscribe(res => {
+    this.monsterService.getMonsterswithPaginacion().subscribe(res => {
       console.log(res);
       this.monsters = res.content;
       

@@ -1,5 +1,6 @@
 package com.juancarlos.springboot.repositories;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,5 +20,7 @@ public interface MonsterRepository extends JpaRepository<MonsterBaseEntity, Long
     // Metodo buscar por Id
     Optional<MonsterBaseEntity> findById(Long id);
 
+    //Metodo buscar por nombre
+    List<MonsterBaseEntity> findByNombreContainingIgnoreCase(String nombre);
 
 }

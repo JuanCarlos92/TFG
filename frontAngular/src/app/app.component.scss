@@ -1,0 +1,77 @@
+
+table.css-table {
+  width: 100%;
+  table-layout: fixed;
+  background-color: #868484;
+  border-collapse: collapse; /* Elimina espacios entre bordes */
+  border-bottom: 1px solid #d4af37;
+}
+
+/* Primera columna (botón de menú) */
+.menu-button-column {
+  text-align: left;
+  padding-left: 10px;
+}
+.menu-button-column ion-icon {
+  color: #d4af37;
+}
+
+/* Segunda columna (texto Monster Hunter) */
+.monster-title-column {
+  width: 100%; 
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: 'Pirata One', serif; 
+  color: #d4af37; 
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 10px; /* Espaciado entre letras */
+  text-shadow: 2px 2px 4px #000;
+}
+
+.title-link{
+  text-decoration: none; /* Elimina el subrayado */
+  color: #d4af37;
+
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -10%; 
+  width: 10%; 
+  height: 100%;
+  background-color: #575656; 
+  color: white;
+  overflow: hidden;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  border-right: 1px solid #d4af37;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.side-menu.show {
+  left: 0; 
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.side-menu ul li {
+  margin: 15px 0;
+}
+
+.side-menu ul li a {
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.side-menu ul li a:hover {
+  text-decoration: underline;
+}
+
+

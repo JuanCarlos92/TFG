@@ -5,17 +5,17 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
   templateUrl: './card-monster.component.html',
   styleUrls: ['./card-monster.component.scss'],
 })
-export class CardMonsterComponent  implements OnInit, OnChanges {
+export class CardMonsterComponent implements OnInit, OnChanges {
 
   @Input()
   monster: any;
 
   constructor() { }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(_changes: SimpleChanges): void {
     console.log(this.monster);
   }
+  ngOnInit() { }
 
-  ngOnInit() {}
 
 }
