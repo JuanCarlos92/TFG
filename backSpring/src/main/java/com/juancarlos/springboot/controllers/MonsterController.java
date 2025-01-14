@@ -26,9 +26,16 @@ public class MonsterController {
 
 	// Endpoint para obtener monstruos con paginación
 	@GetMapping
-	public Page<MonsterBaseDTO> getMonsters(@RequestParam(defaultValue = "0") int page) { // Página por defecto: 0
-		int fixedSize = 12;
-		return monsterService.getMonstersWithPagination(page, fixedSize);
+	public Page<MonsterBaseDTO> getMonsters(@RequestParam(defaultValue = "0") int page,
+			@RequestParam(defaultValue = "12") int size, @RequestParam(required = false) String nombre) {
+
+		if (nombre != null && !nombre.isEmpty()) {
+			// Si el nombre está presente, filtra por nombre con paginación
+			return monsterService.getMonstersByNameWithPagination(nombre, page, size);
+		} else {
+			// Si no hay nombre, devuelve todos los monstruos con paginación
+			return monsterService.getMonstersWithPagination(page, size);
+		}
 	}
 
 	// Endpoint para obtener un monstruo por id
@@ -43,9 +50,9 @@ public class MonsterController {
 	}
 
 	// Endpoint para obtener un monstruo por nombre
-	@GetMapping("/search")
-	public List<MonsterBaseDTO> getMonsters(@RequestParam("name") String nombre) {
-		return monsterService.getMonstersByName(nombre);
-	}
+	// @GetMapping("/search")
+	// public List<MonsterBaseDTO> getMonsters(@RequestParam("name") String nombre) {
+	// 	return monsterService.getMonstersByName(nombre);
+	// }
 
 }
