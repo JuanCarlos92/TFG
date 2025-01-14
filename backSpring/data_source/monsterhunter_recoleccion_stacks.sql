@@ -26,7 +26,6 @@ CREATE TABLE `recoleccion_stacks` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) DEFAULT NULL,
   `normal` int DEFAULT NULL,
-  `shiny` int DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -37,7 +36,7 @@ CREATE TABLE `recoleccion_stacks` (
 
 LOCK TABLES `recoleccion_stacks` WRITE;
 /*!40000 ALTER TABLE `recoleccion_stacks` DISABLE KEYS */;
-INSERT INTO `recoleccion_stacks` VALUES (1,'Adamant Seed',NULL,NULL),(2,'Antidote Herb',3,NULL),(3,'Baitbug',NULL,NULL),(4,'Bitterbug',1,NULL),(5,'Blastnut',5,NULL),(6,'Blazenut',NULL,NULL),(7,'Blue Mushroom',3,NULL),(8,'Bomberry',NULL,NULL),(9,'Chillshroom',2,NULL),(10,'Devils Blight',NULL,NULL),(11,'Dragonfell Berry',NULL,NULL),(12,'Dragonstrike Nut',NULL,NULL),(13,'Dung',3,NULL),(14,'Exciteshroom',2,NULL),(15,'Fire Herb',3,NULL),(16,'Flamenut',20,NULL),(17,'Flashbug',NULL,NULL),(18,'Flowfern',3,NULL),(19,'Godbug',1,NULL),(20,'Herb',2,3),(21,'Honey',2,NULL),(22,'Ivy',NULL,NULL),(23,'Latchberry',40,NULL),(24,'Mandragora',NULL,NULL),(25,'Might Seed',NULL,NULL),(26,'Needleberry',40,NULL),(27,'Nitroshroom',2,NULL),(28,'Nulberry',NULL,NULL),(29,'Parashroom',2,NULL),(30,'Slashberry',10,NULL),(31,'Sleep Herb',2,4),(32,'Smokenut',NULL,NULL),(33,'Snow Herb',NULL,NULL),(34,'Spider Web',1,3),(35,'Thunderbug',NULL,NULL),(36,'Toadstool',1,NULL);
+INSERT INTO `recoleccion_stacks` VALUES (1,'Adamant Seed',NULL),(2,'Antidote Herb',3),(3,'Baitbug',NULL),(4,'Bitterbug',1),(5,'Blastnut',5),(6,'Blazenut',NULL),(7,'Blue Mushroom',3),(8,'Bomberry',NULL),(9,'Chillshroom',2),(10,'Devils Blight',NULL),(11,'Dragonfell Berry',NULL),(12,'Dragonstrike Nut',NULL),(13,'Dung',3),(14,'Exciteshroom',2),(15,'Fire Herb',3),(16,'Flamenut',20),(17,'Flashbug',NULL),(18,'Flowfern',3),(19,'Godbug',1),(20,'Herb',2),(21,'Honey',2),(22,'Ivy',NULL),(23,'Latchberry',40),(24,'Mandragora',NULL),(25,'Might Seed',NULL),(26,'Needleberry',40),(27,'Nitroshroom',2),(28,'Nulberry',NULL),(29,'Parashroom',2),(30,'Slashberry',10),(31,'Sleep Herb',2),(32,'Smokenut',NULL),(33,'Snow Herb',NULL),(34,'Spider Web',1),(35,'Thunderbug',NULL),(36,'Toadstool',1);
 /*!40000 ALTER TABLE `recoleccion_stacks` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-20 16:43:32
+-- Dump completed on 2025-01-14 21:38:23

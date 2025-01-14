@@ -14,6 +14,7 @@ import com.juancarlos.springboot.models.dto.monster.MonsterBaseDTO;
 import com.juancarlos.springboot.models.response.GetMonsterResponse;
 import com.juancarlos.springboot.services.MonsterService;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -26,6 +27,7 @@ public class MonsterController {
 
 	// Endpoint para obtener monstruos con paginación
 	@GetMapping
+	@Operation(summary = "Saludo", description = "Este endpoint devuelve un mensaje de saludo.")
 	public Page<MonsterBaseDTO> getMonsters(@RequestParam(defaultValue = "0") int page,
 			@RequestParam(defaultValue = "12") int size, @RequestParam(required = false) String nombre) {
 

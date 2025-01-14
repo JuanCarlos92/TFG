@@ -16,27 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `localizacion_base`
+-- Table structure for table `arma_tipo`
 --
 
-DROP TABLE IF EXISTS `localizacion_base`;
+DROP TABLE IF EXISTS `arma_tipo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `localizacion_base` (
-  `id` int NOT NULL,
-  `nombre` varchar(100) DEFAULT NULL,
+CREATE TABLE `arma_tipo` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `tipo_arma` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `localizacion_base`
+-- Dumping data for table `arma_tipo`
 --
 
-LOCK TABLES `localizacion_base` WRITE;
-/*!40000 ALTER TABLE `localizacion_base` DISABLE KEYS */;
-INSERT INTO `localizacion_base` VALUES (1,'Ancient Forest'),(2,'Wildspire Waste'),(3,'Coral Highlands'),(4,'Rotten Vale'),(5,'Elders Recess'),(6,'Everstream'),(7,'Great Ravine'),(8,'Arena'),(9,'Confluence of Fates'),(10,'Caverns of El Dorado'),(11,'Special Arena'),(12,'Hoarfrost Reach'),(13,'Origin Isle'),(14,'Guiding Lands'),(15,'Secluded Valley'),(16,'Seliana Supply Cache'),(17,'Castle Schrade');
-/*!40000 ALTER TABLE `localizacion_base` ENABLE KEYS */;
+LOCK TABLES `arma_tipo` WRITE;
+/*!40000 ALTER TABLE `arma_tipo` DISABLE KEYS */;
+INSERT INTO `arma_tipo` VALUES (1,'great-sword'),(2,'long-sword'),(3,'sword-and-shield'),(4,'dual-blades'),(5,'hammer'),(6,'hunting-horn'),(7,'lance'),(8,'gunlance'),(9,'switch-axe'),(10,'charge-blade'),(11,'insect-glaive'),(12,'light-bowgun'),(13,'heavy-bowgun');
+/*!40000 ALTER TABLE `arma_tipo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-14 21:38:24
+-- Dump completed on 2025-01-14 21:38:22

@@ -45,7 +45,7 @@ public class MonsterServiceImpl implements MonsterService {
     @Override
     public Page<MonsterBaseDTO> getMonstersByNameWithPagination(String nombre, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
-        Page<MonsterBaseEntity> monsterEntities = monsterRepository.findByNombre(nombre, pageable);
+        Page<MonsterBaseEntity> monsterEntities = monsterRepository.findByNombreContaining(nombre, pageable);
 
         // Convertimos cada MonsterEntity -> MonsterDTO
         return monsterEntities.map(m -> MonsterConverter.monsterEntityToDTO(m, false));

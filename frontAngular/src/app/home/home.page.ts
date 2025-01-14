@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MonsterService } from '../services/monster.service';
+import { MonsterBaseDTO } from '../models/monsterBaseDTO.model';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { MonsterService } from '../services/monster.service';
 })
 export class HomePage {
 
-  monsters = [];
+  monsters: MonsterBaseDTO[] = [];
 
   constructor(private monsterService: MonsterService) {
 

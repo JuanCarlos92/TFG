@@ -34,7 +34,6 @@ export class RequestService {
         )
         .subscribe(
           (res: HttpResponse<any>) => {
-            console.log('request', res);
             observer.next(res.body);
           },
           (res: HttpErrorResponse) => {

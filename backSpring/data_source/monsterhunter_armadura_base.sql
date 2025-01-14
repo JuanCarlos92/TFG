@@ -39,7 +39,8 @@ CREATE TABLE `armadura_base` (
   `defensa_rayo` int DEFAULT NULL,
   `defensa_hielo` int DEFAULT NULL,
   `defensa_dragon` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_armadura_base_nombre` (`nombre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -62,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-20 16:43:33
+-- Dump completed on 2025-01-14 21:38:22

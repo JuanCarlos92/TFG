@@ -36,7 +36,17 @@ CREATE TABLE `armaduraset_base` (
   `id_monster` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_monsterbase_armorsetbase` (`id_monster`),
-  CONSTRAINT `fk_monsterbase_armorsetbase` FOREIGN KEY (`id_monster`) REFERENCES `monster_base` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `fk_cabeza` (`cabeza`),
+  KEY `fk_pecho` (`pecho`),
+  KEY `fk_brazos` (`brazos`),
+  KEY `fk_cintura` (`cintura`),
+  KEY `fk_piernas` (`piernas`),
+  CONSTRAINT `fk_brazos` FOREIGN KEY (`brazos`) REFERENCES `armadura_base` (`nombre`),
+  CONSTRAINT `fk_cabeza` FOREIGN KEY (`cabeza`) REFERENCES `armadura_base` (`nombre`),
+  CONSTRAINT `fk_cintura` FOREIGN KEY (`cintura`) REFERENCES `armadura_base` (`nombre`),
+  CONSTRAINT `fk_monsterbase_armorsetbase` FOREIGN KEY (`id_monster`) REFERENCES `monster_base` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_pecho` FOREIGN KEY (`pecho`) REFERENCES `armadura_base` (`nombre`),
+  CONSTRAINT `fk_piernas` FOREIGN KEY (`piernas`) REFERENCES `armadura_base` (`nombre`)
 ) ENGINE=InnoDB AUTO_INCREMENT=352 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -59,4 +69,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-20 16:43:33
+-- Dump completed on 2025-01-14 21:38:23

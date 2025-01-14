@@ -32,7 +32,6 @@ CREATE TABLE `herramienta_base` (
   `ranura_1` int DEFAULT NULL,
   `ranura_2` int DEFAULT NULL,
   `ranura_3` int DEFAULT NULL,
-  `color_icono` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -43,7 +42,7 @@ CREATE TABLE `herramienta_base` (
 
 LOCK TABLES `herramienta_base` WRITE;
 /*!40000 ALTER TABLE `herramienta_base` DISABLE KEYS */;
-INSERT INTO `herramienta_base` VALUES (1,'Ghillie Mantle+','mantle',120,NULL,300,3,3,0,NULL),(2,'Temporal Mantle+','mantle',120,NULL,300,1,1,0,NULL),(3,'Health Booster+','booster',60,100,150,0,0,0,NULL),(4,'Rocksteady Mantle+','mantle',90,NULL,360,1,1,0,NULL),(5,'Challenger Mantle+','mantle',180,NULL,300,3,3,0,NULL),(6,'Vitality Mantle+','mantle',120,NULL,360,4,2,0,NULL),(7,'Fireproof Mantle+','mantle',180,NULL,210,2,2,0,NULL),(8,'Waterproof Mantle+','mantle',180,NULL,210,2,2,0,NULL),(9,'Iceproof Mantle+','mantle',180,NULL,210,2,2,0,NULL),(10,'Thunderproof Mantle+','mantle',180,NULL,210,2,2,0,NULL),(11,'Dragonproof Mantle+','mantle',120,NULL,300,2,1,0,NULL),(12,'Cleanser Booster+','booster',60,120,150,0,0,0,NULL),(13,'Glider Mantle+','mantle',180,NULL,120,4,4,0,NULL),(14,'Evasion Mantle+','mantle',90,NULL,300,2,2,0,NULL),(15,'Impact Mantle+','mantle',90,NULL,360,3,2,0,NULL),(16,'Apothecary Mantle+','mantle',60,NULL,210,3,2,0,NULL),(17,'Immunity Mantle+','mantle',120,NULL,210,3,2,0,NULL),(18,'Affinity Booster+','booster',60,NULL,180,0,0,0,NULL),(19,'Bandit Mantle+','mantle',180,NULL,210,3,1,0,NULL),(20,'Assassins Hood+','mantle',360,NULL,180,3,2,0,NULL);
+INSERT INTO `herramienta_base` VALUES (1,'Ghillie Mantle+','mantle',120,NULL,300,3,3,0),(2,'Temporal Mantle+','mantle',120,NULL,300,1,1,0),(3,'Health Booster+','booster',60,100,150,0,0,0),(4,'Rocksteady Mantle+','mantle',90,NULL,360,1,1,0),(5,'Challenger Mantle+','mantle',180,NULL,300,3,3,0),(6,'Vitality Mantle+','mantle',120,NULL,360,4,2,0),(7,'Fireproof Mantle+','mantle',180,NULL,210,2,2,0),(8,'Waterproof Mantle+','mantle',180,NULL,210,2,2,0),(9,'Iceproof Mantle+','mantle',180,NULL,210,2,2,0),(10,'Thunderproof Mantle+','mantle',180,NULL,210,2,2,0),(11,'Dragonproof Mantle+','mantle',120,NULL,300,2,1,0),(12,'Cleanser Booster+','booster',60,120,150,0,0,0),(13,'Glider Mantle+','mantle',180,NULL,120,4,4,0),(14,'Evasion Mantle+','mantle',90,NULL,300,2,2,0),(15,'Impact Mantle+','mantle',90,NULL,360,3,2,0),(16,'Apothecary Mantle+','mantle',60,NULL,210,3,2,0),(17,'Immunity Mantle+','mantle',120,NULL,210,3,2,0),(18,'Affinity Booster+','booster',60,NULL,180,0,0,0),(19,'Bandit Mantle+','mantle',180,NULL,210,3,1,0),(20,'Assassins Hood+','mantle',360,NULL,180,3,2,0);
 /*!40000 ALTER TABLE `herramienta_base` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-20 16:43:32
+-- Dump completed on 2025-01-14 21:38:22
