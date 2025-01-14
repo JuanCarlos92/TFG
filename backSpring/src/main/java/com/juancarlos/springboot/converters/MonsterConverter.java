@@ -72,6 +72,7 @@ public class MonsterConverter {
                 .trampa_escollo(monsterBaseEntity.getTrampa_escollo())
                 .trampa_electrica(monsterBaseEntity.getTrampa_electrica())
                 .trampa_hiedra(monsterBaseEntity.getTrampa_hiedra())
+                .descripcion(monsterBaseEntity.getDescripcion())
                 .monsterBreakDTO(listaMonsterBreaks)
                 .monsterDolenciasDTO(listaMonsterDolencias)
                 .monsterHabitatsDTO(listaMonsterHabitats)

@@ -26,7 +26,7 @@ public class WeaponConverter {
         return WeaponTipoDTO.builder()
                 .id(weaponEntity.getId())
                 .tipoArma(weaponEntity.getTipoArma())
-                .weaponListDTO(listaWeaponBase)
+                .weaponBaseDTO(listaWeaponBase)
                 .build();
     }
 
@@ -49,8 +49,6 @@ public class WeaponConverter {
                 .elemento_oculto(wl.getElemento_oculto())
                 .elemento1(wl.getElemento1())
                 .ataque_elemento1(wl.getAtaque_elemento1())
-                .elemento2(wl.getElemento2())
-                .ataque_elemento2(wl.getAtaque_elemento2())
                 .sello_ancianos(wl.getSello_ancianos())
                 .ranura_1(wl.getRanura_1())
                 .ranura_2(wl.getRanura_2())
@@ -59,9 +57,7 @@ public class WeaponConverter {
                 .frasco(wl.getFrasco())
                 .municion(wl.getMunicion())
                 .nivel_municion(wl.getNivel_municion())
-                .notas(wl.getNotas())
                 .configuracion_municion(wl.getConfiguracion_municion())
-                .habilidad(wl.getHabilidad())
                 .build();
     }
 }

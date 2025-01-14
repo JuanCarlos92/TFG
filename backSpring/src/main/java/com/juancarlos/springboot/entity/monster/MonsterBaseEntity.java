@@ -32,6 +32,8 @@ public class MonsterBaseEntity {
     private Boolean trampa_electrica;
     @Column(name = "trampa_hiedra", nullable = true)
     private Boolean trampa_hiedra;
+    @Column(name = "descripcion", nullable = true)
+    private Boolean descripcion;
 
     @OneToMany(mappedBy = "monsterBase", fetch = FetchType.LAZY)
     private List<MonsterBreakEntity> monsterBreaks;
