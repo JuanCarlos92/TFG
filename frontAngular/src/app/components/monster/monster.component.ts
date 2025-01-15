@@ -17,8 +17,7 @@ import { debounceTime, first, Observable, Subject, Subscription } from 'rxjs';
     CommonModule,
     IonicModule,
     FormsModule,
-    CardMonsterComponent // Importa el componente CardMonsterComponent
-    ,
+    CardMonsterComponent, // Importa el componente CardMonsterComponent
     WikiMonsterComponent
 ]
 })
@@ -55,13 +54,11 @@ export class MonsterComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // Obtiene monstruos con paginación y/o búsqueda
   getMonstersWithPaginacion(): void {
-    
-
     this.monsterService.getMonstersWithPaginacion(this.page, this.size, this.nameMonster).pipe(first()).subscribe({
       next: (res) => {
         console.log('Monstruos recibidos:', res);
-        this.monsters = res.content; // Datos de los monstruos
-        this.totalPages = res.totalPages; // Número total de páginas
+        this.monsters = res.content || []; // Datos de los monstruos
+        this.totalPages = res.totalPages || 0; // Número total de páginas
 
       },
       error: (error) => {

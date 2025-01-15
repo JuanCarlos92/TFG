@@ -1,3 +1,5 @@
+import { MonsterBreakDTO } from "./monsterBreakDTO.model";
+
 export interface MonsterBaseDTO {
   id: number;
   nombre: string;
@@ -8,6 +10,6 @@ export interface MonsterBaseDTO {
   trampa_hiedra: boolean;
   descripcion: boolean;
 
-  //monsterBreakDTO: MonsterBreakDTO[];
+  monsterBreakDTO: MonsterBreakDTO[];
 
   }

@@ -28,13 +28,25 @@ export class CardMonsterComponent implements OnInit, OnChanges, AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      const div = document.querySelector(`#${this.monster['nombre']}`);
-  
-      this.listener = this.renderer.listen(div, 'click', () => {
-        this.monsterNameSelected.emit(div?.id);
-      });
+      // Normaliza el nombre para generar un ID válido
+      const normalizedName = this.normalizeName(this.monster['nombre']);
+      const div = document.querySelector(`#${normalizedName}`);
       
+      if (div) {
+        // Agrega el listener al elemento encontrado
+        this.listener = this.renderer.listen(div, 'click', () => {
+          this.monsterNameSelected.emit(this.monster['nombre']); // Emitir el nombre original
+        });
+      } else {
+        console.error(`No se encontró el elemento con ID: ${normalizedName}`);
+      }
     });
+  }
+  
+
+  // Agrega este método de normalización
+  normalizeName(name: string): string {
+    return name.replace(/\s+/g, '-').toLowerCase(); // Reemplaza espacios con guiones y convierte a minúsculas
   }
 
 }

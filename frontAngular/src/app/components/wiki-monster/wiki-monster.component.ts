@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { first } from 'rxjs';
 import { MonsterBaseDTO } from 'src/app/models/monsterBaseDTO.model';
@@ -7,13 +8,16 @@ import { MonsterService } from 'src/app/services/monster.service';
   selector: 'app-wiki-monster',
   templateUrl: './wiki-monster.component.html',
   styleUrls: ['./wiki-monster.component.scss'],
+  imports: [
+    CommonModule
+  ]
 })
 export class WikiMonsterComponent implements OnInit {
 
   @Input()
   monster!: MonsterBaseDTO;
 
-  infoMonster: any;
+  infoMonster: any = {};
 
   constructor(private monsterService: MonsterService) { }
 

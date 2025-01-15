@@ -21,7 +21,7 @@ public class MonsterBaseDTO {
     private Boolean trampa_escollo;
     private Boolean trampa_electrica;
     private Boolean trampa_hiedra;
-    private Boolean descripcion;
+    private String descripcion;
 
     private List<MonsterBreakDTO> monsterBreakDTO;
     private List<MonsterDolenciasDTO> monsterDolenciasDTO;

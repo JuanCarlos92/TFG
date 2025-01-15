@@ -1,7 +1,22 @@
-<p>
-  {{infoMonster.nombre}}
-</p>
-
-<p>
-  {{infoMonster.size}}
-</p>
+<div *ngIf="infoMonster">
+  <h1>{{ infoMonster?.nombre }}</h1>
+  <p><strong>Ecología:</strong> {{ infoMonster?.ecologia }}</p>
+  <p><strong>Tamaño:</strong> {{ infoMonster?.size }}</p>
+  <p><strong>Trampa escollo:</strong> {{ infoMonster?.trampa_escollo ? 'Sí' : 'No' }}</p>
+  <p><strong>Trampa eléctrica:</strong> {{ infoMonster?.trampa_electrica ? 'Sí' : 'No' }}</p>
+  <p><strong>Trampa de hiedra:</strong> {{ infoMonster?.trampa_hiedra ? 'Sí' : 'No' }}</p>
+  <p><strong>Descripción:</strong> {{ infoMonster?.descripcion }}</p>
+</div>
+<!-- Partes del monstruo -->
+<div *ngIf="infoMonster?.monsterBreakDTO?.length > 0">
+  <h2>Partes rompibles:</h2>
+  <ul>
+    <!-- Bucle para mostrar todas las partes -->
+    <li *ngFor="let part of infoMonster.monsterBreakDTO">
+      <p><strong>Parte:</strong> {{ part?.parte || 'N/A' }}</p>
+      <p><strong>Estrecimiento:</strong> {{ part?.estrecimiento || 'N/A' }}</p>
+      <p><strong>Corte:</strong> {{ part?.corte || 'N/A' }}</p>
+      <p><strong>Herida:</strong> {{ part?.herida || 'N/A' }}</p>
+    </li>
+  </ul>
+</div>
