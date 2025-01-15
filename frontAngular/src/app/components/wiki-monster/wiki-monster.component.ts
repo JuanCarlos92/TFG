@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { first } from 'rxjs';
-import { MonsterBaseDTO } from 'src/app/models/monsterBaseDTO.model';
+import { MonsterBaseDTO } from 'src/app/models/monster/MonsterBaseDTO.model';
 import { MonsterService } from 'src/app/services/monster.service';
 
 @Component({

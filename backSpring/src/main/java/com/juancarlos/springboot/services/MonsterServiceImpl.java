@@ -25,7 +25,7 @@ public class MonsterServiceImpl implements MonsterService {
 
     // Método monstruos por id
     @Override
-    public MonsterBaseDTO getMonster(Long id) {
+    public MonsterBaseDTO getMonsterId(Long id) {
         MonsterBaseEntity monsterEntity = monsterRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("No hay monster con ese id: " + id));
         // Con relaciones
@@ -42,6 +42,7 @@ public class MonsterServiceImpl implements MonsterService {
         return monsterEntities.map(m -> MonsterConverter.monsterEntityToDTO(m, false));
     }
 
+    // Método monstruos con paginación + nombre
     @Override
     public Page<MonsterBaseDTO> getMonstersByNameWithPagination(String nombre, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
@@ -50,14 +51,4 @@ public class MonsterServiceImpl implements MonsterService {
         // Convertimos cada MonsterEntity -> MonsterDTO
         return monsterEntities.map(m -> MonsterConverter.monsterEntityToDTO(m, false));
     }
-
-    // // Método monstruos por nombre
-    // public List<MonsterBaseDTO> getMonstersByName(String nombre) {
-    //     List<MonsterBaseEntity> monsterEntities = monsterRepository.findByNombre(nombre);
-
-    //     // Convertimos las entidades a DTOs
-    //     return monsterEntities.stream()
-    //             .map(monster -> MonsterConverter.monsterEntityToDTO(monster, false))
-    //             .collect(Collectors.toList());
-    // }
 }

@@ -1,4 +1,4 @@
-import { MonsterBaseDTO } from "./monsterBaseDTO.model";
+import { MonsterBaseDTO } from "./monster/MonsterBaseDTO.model";
 
 export interface GetMonsterResponse {
   monsterDTO: MonsterBaseDTO;

@@ -5,7 +5,7 @@ import { FormControl, FormsModule } from '@angular/forms';
 import { CardMonsterComponent } from "../card-monster/card-monster.component";
 import { CommonModule } from '@angular/common';
 import { WikiMonsterComponent } from "../wiki-monster/wiki-monster.component";
-import { MonsterBaseDTO } from 'src/app/models/monsterBaseDTO.model';
+import { MonsterBaseDTO } from 'src/app/models/monster/MonsterBaseDTO.model';
 import { debounceTime, first, Observable, Subject, Subscription } from 'rxjs';
 
 @Component({

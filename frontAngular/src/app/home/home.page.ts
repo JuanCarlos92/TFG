@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MonsterService } from '../services/monster.service';
-import { MonsterBaseDTO } from '../models/monsterBaseDTO.model';
+import { MonsterBaseDTO } from '../models/monster/MonsterBaseDTO.model';
 
 @Component({
   selector: 'app-home',
