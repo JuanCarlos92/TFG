@@ -13,12 +13,12 @@
     
     <!-- Controles de paginación -->
     <div class="d-flex justify-content-center mt-3">
-      <ion-button (click)="previousPage()" [disabled]="page === 0">
+      <button class="btn btn-secondary mx-1" (click)="previousPage()" [disabled]="page === 0">
         Anterior
-      </ion-button>
-      <ion-button (click)="nextPage()" [disabled]="page >= totalPages - 1">
+      </button>
+      <button class="btn btn-secondary mx-1" (click)="nextPage()" [disabled]="page >= totalPages - 1">
         Siguiente
-      </ion-button>
+      </button>
     </div>
   
     <!-- Grid de tarjetas -->

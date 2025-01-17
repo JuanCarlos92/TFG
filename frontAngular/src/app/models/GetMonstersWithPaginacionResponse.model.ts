@@ -11,6 +11,4 @@ export interface GetMonstersWithPaginacionResponse {
   totalElements: number;
   totalPages: number;
 
-  //monsterBreakDTO: MonsterBreakDTO[];
-
   }

@@ -1,6 +1,5 @@
 package com.juancarlos.springboot.repositories;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,6 +16,7 @@ public interface MonsterRepository extends JpaRepository<MonsterBaseEntity, Long
     // Método paginacion (buscar todo)
     Page<MonsterBaseEntity> findAll(Pageable pageable);
 
+    // Método paginacion + nombre
     Page<MonsterBaseEntity> findByNombreContaining(String nombre, Pageable pageable);
 
     // Metodo buscar por Id

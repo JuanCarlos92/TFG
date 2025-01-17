@@ -20,11 +20,30 @@
     </ion-toolbar>
   </ion-header>
 
+  
   <!-- Menú desplegable -->
   <div [class.show]="isMenuOpen" class="side-menu">
     <ul>
       <li>
-        <a [routerLink]="['/monsters']">Monster</a>
+        <!-- Monsters Link -->
+        <a [routerLink]="['/monsters']" class="menu-link">
+          <ion-icon name="paw-outline" class="menu-icon"></ion-icon>
+          Monsters
+        </a>
+      </li>
+      <li>
+        <!-- Weapons Link -->
+        <a [routerLink]="['/weapons']" class="menu-link">
+          <ion-icon name="shield-outline" class="menu-icon"></ion-icon>
+          Weapons
+        </a>
+      </li>
+      <li>
+        <!-- New Link with Icon -->
+        <a [routerLink]="['/armors']" class="menu-link">
+          <ion-icon name="shield-outline" class="menu-icon"></ion-icon>
+          Armors
+        </a>
       </li>
     </ul>
   </div>

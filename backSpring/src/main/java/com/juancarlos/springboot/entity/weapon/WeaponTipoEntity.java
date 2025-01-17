@@ -25,5 +25,5 @@ public class WeaponTipoEntity {
 
     
     @OneToMany(mappedBy = "WeaponBase", fetch = FetchType.LAZY)
-    private List<WeaponBaseEntity> weaponList;
+    private List<WeaponBaseEntity> weaponBase;
 }

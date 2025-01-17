@@ -1,6 +1,6 @@
-import { MonsterBreakDTO } from "./monsterBreakDTO.model";
-import { MonsterDolenciasDTO } from "./monsterDolenciasDTO.model";
-import { MonsterHabitatsDTO } from "./monsterHabitatsDTO.model";
+import { MonsterBreakDTO } from "./MonsterBreakDTO.model";
+import { MonsterDolenciasDTO } from "./MonsterDolenciasDTO.model";
+import { MonsterHabitatsDTO } from "./MonsterHabitatsDTO.model";
 import { MonsterRewardsDTO } from "./MonsterRewardsDTO.model";
 import { MonsterWeaknessesDTO } from "./MonsterWeaknessesDTO.model";
 import { MonsterZonasHitDTO } from "./MonsterZonasHitDTO.model";

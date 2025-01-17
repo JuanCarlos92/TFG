@@ -1,5 +1,7 @@
 package com.juancarlos.springboot.models.dto.weapon;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,8 +14,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class WeaponBaseDTO {
-
+    private Long id;
     private String nombre;
+    private String tipo_arma;
     private String predecesor;
     private String categoria;
     private Integer rareza;
@@ -33,4 +36,8 @@ public class WeaponBaseDTO {
     private String municion;
     private Integer nivel_municion;
     private String configuracion_municion;
+
+    private List<WeaponCraftDTO> weaponCraftDTO;
+    private List<WeaponArcoDTO> weaponArcoDTO;
+    private List<WeaponMunicionDTO> weaponMunicionDTO;
 }

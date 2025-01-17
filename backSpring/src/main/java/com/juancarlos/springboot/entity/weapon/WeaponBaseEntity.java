@@ -66,5 +66,8 @@ public class WeaponBaseEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_arma", referencedColumnName = "id")
     @JsonIgnore
-    private WeaponTipoEntity WeaponBase;
+    private WeaponTipoEntity WeaponTipo;
+
+    
+
 }

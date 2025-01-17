@@ -1,82 +1,234 @@
-<!-- Información General 3 -->
-<div *ngIf="infoMonster" class="container mt-4">
-  <table class="table table-bordered mx-auto shadow-sm" style="width: 80%; background-color: #f9f9f9; text-align: left;">
-    <!-- Fila 1: Imagen + Nombre -->
-    <tr>
-      <td colspan="2" class="text-center" style="border: 1px solid #ddd; padding: 15px;">
-        <img [src]="'assets/images/monsters/' + infoMonster?.nombre + '.png'" alt="{{ infoMonster?.nombre }}" width="180" style="border-radius: 8px;">
-        <h1 style="margin-top: 10px; color: #333;">{{ infoMonster?.nombre }}</h1>
-      </td>
-    </tr>
-    <!-- Fila 2: Descripción -->
-    <tr>
-      <td>Descripción:</td>
-      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoMonster?.descripcion }}</td>
-    </tr>
-    <!-- Fila 3: Tamaño -->
-    <tr>
-      <td>Tamaño:</td>
-      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoMonster?.size }}</td>
-    </tr>
-  </table>
+<div class="container mt-4 text-center">
+  <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Monsters</button>
 </div>
+  <!-- Información General -->
+  <div *ngIf="infoMonster" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <!-- Fila 1: Imagen + Nombre -->
+      <tr>
+        <td colspan="2" class="text-center" style="border: 1px solid #ddd; padding: 15px;">
+          <img [src]="'assets/images/monsters/' + infoMonster?.nombre + '.png'" alt="{{ infoMonster?.nombre }}"
+            width="180" style="border-radius: 8px;">
+          <h1 style="margin-top: 10px; color: #333;">{{ infoMonster?.nombre }}</h1>
+        </td>
+      </tr>
+      <!-- Fila 2: Descripción -->
+      <tr>
+        <td>Descripción:</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ infoMonster?.descripcion }}</td>
+      </tr>
+      <!-- Fila 3: Tamaño -->
+      <tr>
+        <td>Tamaño:</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ infoMonster?.size }}</td>
+      </tr>
+    </table>
+  </div>
 
-<!-- Trampas -->
-<div *ngIf="infoMonster" class="container mt-4">
-  <h2 style="text-align: center;">Trampas</h2>
-  <table class="table table-bordered mx-auto shadow-sm" style="width: 80%; background-color: #f9f9f9; text-align: left;">
-    <!-- Fila 1: Trampa escollo -->
-    <tr>
-      <td>Escollo:</td>
-      <td style="padding: 12px; font-size: 14px;">{{ infoMonster?.trampa_escollo ? 'Sí' : 'No' }}</td>
-    </tr>
-    <!-- Fila 2: Trampa eléctrica -->
-    <tr>
-      <td>Eléctrica:</td>
-      <td style="padding: 12px; font-size: 14px;">{{ infoMonster?.trampa_electrica ? 'Sí' : 'No' }}</td>
-    </tr>
-    <!-- Fila 3: Trampa de hiedra -->
-    <tr>
-      <td>Hiedra:</td>
-      <td style="padding: 12px; font-size: 14px;">{{ infoMonster?.trampa_hiedra ? 'Sí' : 'No' }}</td>
-    </tr>
-  </table>
-</div>
-
-
-
-
-<!-- Filosofia -->
-<div *ngIf="infoMonster?.monsterZonasHitDTO?.length > 0">
-  <h2>Filosofía:</h2>
-  <ul>
-    <!-- Bucle -->
-    <li *ngFor="let v of infoMonster.monsterZonasHitDTO">
-      <p><strong>Zona de impacto:</strong> {{ v?.zonaImpacto}}</p>
-      <p><strong>Corte:</strong> {{ v?.corte}}</p>
-      <p><strong>Impacto:</strong> {{ v?.impacto}}</p>
-      <p><strong>Disparo:</strong> {{ v?.disparo}}</p>
-      <p><strong>Fuego:</strong> {{ v?.fuego}}</p>
-      <p><strong>Agua:</strong> {{ v?.agua}}</p>
-      <p><strong>Rayo:</strong> {{ v?.rayo}}</p>
-      <p><strong>Hielo:</strong> {{ v?.hielo}}</p>
-      <p><strong>Dragon:</strong> {{ v?.dragon}}</p>
-      <p><strong>KO:</strong> {{ v?.ko}}</p>
-    </li>
-  </ul>
-</div>
+  <!-- Botones de Navegación -->
+  <div class="container mt-4 text-center">
+    <button class="btn btn-secondary mx-1" (click)="scrollTo('trampas')">Trampas</button>
+    <button class="btn btn-secondary mx-1" (click)="scrollTo('filosofia')">Filosofía</button>
+    <button class="btn btn-secondary mx-1" (click)="scrollTo('debilidades')">Debilidades</button>
+    <button class="btn btn-secondary mx-1" (click)="scrollTo('vulnerabilidades')">Vulnerabilidades</button>
+    <button class="btn btn-secondary mx-1" (click)="scrollTo('dolencias')">Dolencias</button>
+    <button class="btn btn-secondary mx-1" (click)="scrollTo('recompensas')">Recompensas</button>
+  </div>
 
 
-<!-- Vulnerabilidad de partes -->
-<div *ngIf="infoMonster?.monsterBreakDTO?.length > 0">
-  <h2>Vulnerabilidad de partes:</h2>
-  <ul>
-    <!-- Bucle  -->
-    <li *ngFor="let v of infoMonster.monsterBreakDTO">
-      <p><strong>Parte:</strong> {{ v?.parte || 'N/A' }}</p>
-      <p><strong>Estrecimiento:</strong> {{ v?.estrecimiento || 'N/A' }}</p>
-      <p><strong>Corte:</strong> {{ v?.corte || 'N/A' }}</p>
-      <p><strong>Herida:</strong> {{ v?.herida || 'N/A' }}</p>
-    </li>
-  </ul>
-</div>
+  <!-- Trampas -->
+  <div id="trampas" *ngIf="infoMonster" class="container mt-4">
+    <h2 style="text-align: center;">Trampas</h2>
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <tr>
+        <td>Escollo:</td>
+        <td style="padding: 12px; font-size: 14px;">{{ infoMonster?.trampa_escollo ? 'Sí' : 'No' }}</td>
+      </tr>
+      <tr>
+        <td>Eléctrica:</td>
+        <td style="padding: 12px; font-size: 14px;">{{ infoMonster?.trampa_electrica ? 'Sí' : 'No' }}</td>
+      </tr>
+      <tr>
+        <td>Hiedra:</td>
+        <td style="padding: 12px; font-size: 14px;">{{ infoMonster?.trampa_hiedra ? 'Sí' : 'No' }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Filosofía -->
+  <div id="filosofia" *ngIf="infoMonster?.monsterZonasHitDTO?.length > 0" class="container mt-4">
+    <h2 style="text-align: center;">Filosofía</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Zona de Impacto</th>
+          <th>Corte</th>
+          <th>Impacto</th>
+          <th>Disparo</th>
+          <th>Fuego</th>
+          <th>Agua</th>
+          <th>Rayo</th>
+          <th>Hielo</th>
+          <th>Dragón</th>
+          <th>KO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of infoMonster.monsterZonasHitDTO">
+          <td>{{ v?.zonaImpacto }}</td>
+          <td>{{ v?.corte }}</td>
+          <td>{{ v?.impacto }}</td>
+          <td>{{ v?.disparo }}</td>
+          <td>{{ v?.fuego }}</td>
+          <td>{{ v?.agua }}</td>
+          <td>{{ v?.rayo }}</td>
+          <td>{{ v?.hielo }}</td>
+          <td>{{ v?.dragon }}</td>
+          <td>{{ v?.ko }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Debilidades -->
+  <div id="debilidades" *ngIf="infoMonster?.monsterWeaknessesDTO?.length > 0" class="container mt-4">
+    <h2 style="text-align: center;">Debilidades</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Forma</th>
+          <th>Estado Alterado Descripción</th>
+          <th>Fuego</th>
+          <th>Agua</th>
+          <th>Rayo</th>
+          <th>Hielo</th>
+          <th>Dragón</th>
+          <th>Veneno</th>
+          <th>Sleep</th>
+          <th>Parálisis</th>
+          <th>Nitro</th>
+          <th>Stun</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of infoMonster.monsterWeaknessesDTO">
+          <td>{{ v?.forma }}</td>
+          <td>{{ v?.descripcionAlterado || 'N/A' }}</td>
+          <td>{{ v?.fuego || 'N/A' }}</td>
+          <td>{{ v?.agua || 'N/A' }}</td>
+          <td>{{ v?.rayo || 'N/A' }}</td>
+          <td>{{ v?.hielo || 'N/A' }}</td>
+          <td>{{ v?.dragon || 'N/A' }}</td>
+          <td>{{ v?.veneno || 'N/A' }}</td>
+          <td>{{ v?.sleep || 'N/A' }}</td>
+          <td>{{ v?.paralisis || 'N/A' }}</td>
+          <td>{{ v?.nitro || 'N/A' }}</td>
+          <td>{{ v?.stun || 'N/A' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- Vulnerabilidades -->
+  <div id="vulnerabilidades" *ngIf="infoMonster?.monsterBreakDTO?.length > 0" class="container mt-4">
+    <h2 style="text-align: center;">Vulnerabilidades</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Parte</th>
+          <th>Estrecimiento</th>
+          <th>Corte</th>
+          <th>Herida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of infoMonster.monsterBreakDTO">
+          <td>{{ v?.parte || 'N/A' }}</td>
+          <td>{{ v?.estrecimiento || 'N/A' }}</td>
+          <td>{{ v?.corte || 'N/A' }}</td>
+          <td>{{ v?.herida || 'N/A' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- Dolencias -->
+  <div id="dolencias" *ngIf="infoMonster?.monsterDolenciasDTO?.length > 0" class="container mt-4">
+    <h2 style="text-align: center;">Dolencias</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Rugido</th>
+          <th>Viento</th>
+          <th>Temblor</th>
+          <th>Defensa baja</th>
+          <th>Plaga fuego</th>
+          <th>Plaga agua</th>
+          <th>Plaga rayo</th>
+          <th>Plaga hielo</th>
+          <th>Plaga dragón</th>
+          <th>Plaga nitro</th>
+          <th>Regional</th>
+          <th>Veneno</th>
+          <th>Sueño</th>
+          <th>Parálisis</th>
+          <th>Sangrado</th>
+          <th>Stun</th>
+          <th>Fango</th>
+          <th>Efluente</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of infoMonster.monsterDolenciasDTO">
+          <td>{{ v?.rugido || 'N/A' }}</td>
+          <td>{{ v?.viento || 'N/A' }}</td>
+          <td>{{ v?.temblor || 'N/A' }}</td>
+          <td>{{ v?.defensa_baja || 'N/A' }}</td>
+          <td>{{ v?.plaga_fuego || 'N/A' }}</td>
+          <td>{{ v?.plaga_agua || 'N/A' }}</td>
+          <td>{{ v?.plaga_rayo || 'N/A' }}</td>
+          <td>{{ v?.plaga_hielo || 'N/A' }}</td>
+          <td>{{ v?.plaga_dragon || 'N/A' }}</td>
+          <td>{{ v?.plaga_nitro || 'N/A' }}</td>
+          <td>{{ v?.regional || 'N/A' }}</td>
+          <td>{{ v?.veneno || 'N/A' }}</td>
+          <td>{{ v?.sleep || 'N/A' }}</td>
+          <td>{{ v?.paralisis || 'N/A' }}</td>
+          <td>{{ v?.sangrado || 'N/A' }}</td>
+          <td>{{ v?.aturdimiento || 'N/A' }}</td>
+          <td>{{ v?.fango || 'N/A' }}</td>
+          <td>{{ v?.efluente || 'N/A' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- Recompensas -->
+  <div id="recompensas" *ngIf="infoMonster?.monsterRewardsDTO?.length > 0" class="container mt-4">
+    <h2 style="text-align: center;">Recompensas</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Rango</th>
+          <th>Condiciones</th>
+          <th>Objeto</th>
+          <th>Cantidad</th>
+          <th>Porcentaje de drop</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of infoMonster.monsterRewardsDTO">
+          <td>{{ v?.rang || 'N/A' }}</td>
+          <td>{{ v?.condiciones || 'N/A' }}</td>
+          <td>{{ v?.item || 'N/A' }}</td>
+          <td>{{ v?.stack || 'N/A' }}</td>
+          <td>{{ v?.percentage ? v.percentage + '%' : 'N/A' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

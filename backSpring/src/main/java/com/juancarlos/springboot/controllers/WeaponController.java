@@ -1,5 +1,7 @@
 package com.juancarlos.springboot.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.data.domain.Page;
 
 import com.juancarlos.springboot.models.dto.weapon.WeaponTipoDTO;
-import com.juancarlos.springboot.models.response.GetWeaponResponse;
+import com.juancarlos.springboot.models.response.GetWeaponTipoResponse;
 import com.juancarlos.springboot.services.WeaponService;
 
 import lombok.AllArgsConstructor;
@@ -22,18 +24,20 @@ public class WeaponController {
 	@Autowired
 	private WeaponService weaponService;
 
+
+	
+
 	// Endpoint para obtener monstruos con paginación
-	@GetMapping
-	public Page<WeaponTipoDTO> getMonsters(@RequestParam(defaultValue = "0") int page) { // Página por defecto: 0
-		int fixedSize = 12;
-		return weaponService.getWeaponsWithPagination(page, fixedSize);
-	}
+    @GetMapping("/types")
+    public List<WeaponTipoDTO> getAllWeaponTypes() {
+        return weaponService.getAllWeaponTypes();
+    }
 
 	// Endpoint para obtener un monstruo por id
 	@GetMapping("/{id}")
-	public GetWeaponResponse getMonster(@PathVariable Long id) {
-		WeaponTipoDTO weapon = weaponService.getWeapon(id);
-		GetWeaponResponse response = GetWeaponResponse.builder().weaponDTO(weapon).build();
+	public GetWeaponTipoResponse getMonster(@PathVariable Long id) {
+		WeaponTipoDTO weapon = weaponService.getWeaponTypeId(id);
+		GetWeaponTipoResponse response = GetWeaponTipoResponse.builder().weaponTipoDTO(weapon).build();
 
 		response.setIsOk(true);
 		return response;
