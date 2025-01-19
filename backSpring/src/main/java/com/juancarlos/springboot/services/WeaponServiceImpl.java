@@ -1,16 +1,13 @@
 package com.juancarlos.springboot.services;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.juancarlos.springboot.converters.MonsterConverter;
 import com.juancarlos.springboot.converters.WeaponConverter;
 import com.juancarlos.springboot.converters.WeaponTipoConverter;
-import com.juancarlos.springboot.entity.monster.MonsterBaseEntity;
 import com.juancarlos.springboot.entity.weapon.WeaponBaseEntity;
 import com.juancarlos.springboot.entity.weapon.WeaponTipoEntity;
 import com.juancarlos.springboot.models.dto.weapon.WeaponBaseDTO;
@@ -30,7 +27,7 @@ public class WeaponServiceImpl implements WeaponService {
     private WeaponRepository weaponRepository;
 
     // --------------- weaponTipoRepository --------------------
-    // El findById(Long) ya existe en JpaRepository
+    // Método weapon por id
     @Override
     public WeaponTipoDTO getWeaponTypeId(Long id) {
         WeaponTipoEntity weaponEntity = weaponTipoRepository.findById(id)
@@ -39,12 +36,24 @@ public class WeaponServiceImpl implements WeaponService {
         return WeaponTipoConverter.weaponEntityToDTO(weaponEntity, true);
     }
 
-    // Método para obtener todos los tipos de armas sin paginación
+    // Método weapontype con paginacion
     @Override
-    public List<WeaponTipoDTO> getAllWeaponTypes() {
-        List<WeaponTipoEntity> weaponEntities = weaponTipoRepository.findAll();
-        return weaponEntities.stream().map(entity -> WeaponTipoConverter.weaponEntityToDTO(entity, true))
-                .collect(Collectors.toList());
+    public Page<WeaponTipoDTO> getWeaponTypesWithPagination(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<WeaponTipoEntity> weaponEntities = weaponTipoRepository.findAll(pageable);
+
+        // Convertimos cada WeaponEntities -> WeaponDTO sin relaciones
+        return weaponEntities.map(w -> WeaponTipoConverter.weaponEntityToDTO(w, false));
+    }
+
+    // Método weapontype con paginacion + nombre
+    @Override
+    public Page<WeaponTipoDTO> getWeaponTypesByNameWithPagination(String tipoArma, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<WeaponTipoEntity> weaponEntities = weaponTipoRepository.findBytipoArmaContaining(tipoArma, pageable);
+
+        // Convertimos cada WeaponEntities -> WeaponDTO sin relaciones
+        return weaponEntities.map(w -> WeaponTipoConverter.weaponEntityToDTO(w, false));
     }
 
     // ----------------- weaponRepository ---------------------
@@ -52,25 +61,32 @@ public class WeaponServiceImpl implements WeaponService {
     @Override
     public WeaponBaseDTO getWeaponId(Long id) {
         WeaponBaseEntity weaponEntity = weaponRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("No hay monster con ese id: " + id));
+                .orElseThrow(() -> new RuntimeException("No hay arma con ese id: " + id));
         // Con relaciones
         return WeaponConverter.weaponEntityToDTO(weaponEntity, true);
     }
 
+    // Método weapon con paginación
     @Override
     public Page<WeaponBaseDTO> getWeaponsWithPagination(int page, int size) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getWeaponsWithPagination'");
+        Pageable pageable = PageRequest.of(page, size);
+        Page<WeaponBaseEntity> weaponEntities = weaponRepository.findAll(pageable);
+
+        // Convertimos cada WeaponEntities -> WeaponDTO sin relaciones
+        return weaponEntities.map(w -> WeaponConverter.weaponEntityToDTO(w, false));
+
     }
 
-    // // Método weapon con paginación
-    // @Override
-    // public Page<WeaponTipoDTO> getWeaponsWithPagination(int page, int size) {
-    // Pageable pageable = PageRequest.of(page, size);
-    // Page<WeaponTipoEntity> weaponEntities = weaponRepository.findAll(pageable);
+    // Método weapon con paginación + nombre
+    @Override
+    public Page<WeaponBaseDTO> getWeaponsByNameWithPagination(String nombre, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<WeaponBaseEntity> weaponEntities = weaponRepository.findByNombreContaining(nombre, pageable);
 
-    // // Convertimos cada WeaponEntities -> WeaponDTO sin relaciones
-    // return weaponEntities.map(w -> WeaponConverter.weaponEntityToDTO(w, false));
-    // }
+        // Convertimos cada WeaponEntities -> WeaponDTO
+        return weaponEntities.map(m -> WeaponConverter.weaponEntityToDTO(m, false));
+    }
+
+
 
 }

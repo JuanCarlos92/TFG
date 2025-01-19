@@ -1,12 +1,12 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { MonsterService } from 'src/app/services/monster.service';
 import { IonicModule } from '@ionic/angular';
-import { FormControl, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { CardMonsterComponent } from "../card-monster/card-monster.component";
 import { CommonModule } from '@angular/common';
 import { WikiMonsterComponent } from "../wiki-monster/wiki-monster.component";
 import { MonsterBaseDTO } from 'src/app/models/monster/MonsterBaseDTO.model';
-import { debounceTime, first, Observable, Subject, Subscription } from 'rxjs';
+import { debounceTime, first, Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-monster',
@@ -90,7 +90,7 @@ export class MonsterComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  monterNameSelected(event: string) {
+  monsterNameSelected(event: string) {
     this.selectedMonster = this.monsters.filter(v => v.nombre === event)[0];
   }
 

@@ -37,7 +37,12 @@ public class WeaponBaseDTO {
     private Integer nivel_municion;
     private String configuracion_municion;
 
+    //Lista de armas craft
     private List<WeaponCraftDTO> weaponCraftDTO;
+    //Lista de armas arco
     private List<WeaponArcoDTO> weaponArcoDTO;
+    //Lista de armas municion
     private List<WeaponMunicionDTO> weaponMunicionDTO;
+    //Lista de armas melodia notas
+    private List<WeaponMelodiaNotaDTO> weaponMelodiaNotaDTO;
 }

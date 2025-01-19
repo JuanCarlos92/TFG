@@ -19,6 +19,6 @@ public class WeaponArcoDTO {
     private String paralisis;
     private String veneno;
     private String sueno;
-    private String explosion;
+    private String explosivo;
     
 }

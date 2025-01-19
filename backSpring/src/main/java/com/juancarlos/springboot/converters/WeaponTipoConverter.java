@@ -3,29 +3,27 @@ package com.juancarlos.springboot.converters;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.juancarlos.springboot.entity.weapon.WeaponBaseEntity;
-import com.juancarlos.springboot.entity.weapon.WeaponTipoEntity;
-import com.juancarlos.springboot.models.dto.weapon.WeaponBaseDTO;
-import com.juancarlos.springboot.models.dto.weapon.WeaponTipoDTO;
+import com.juancarlos.springboot.entity.weapon.*;
+import com.juancarlos.springboot.models.dto.weapon.*;
 
 public class WeaponTipoConverter {
 
     // Convierte una MonsterEntity a MonsterDTO
     public static WeaponTipoDTO weaponEntityToDTO(WeaponTipoEntity weaponTipoEntity, boolean flagWithRelations) {
-            if (weaponTipoEntity == null) {
-                return null;
-            }
-            // Si withRelations == true, convertimos las listas
-            // Si withRelations == false, las dejamos en null o en una lista vacía
-            List<WeaponBaseDTO> listaWeaponBase = flagWithRelations ? weaponTipoEntity.getWeaponBase()
-                    .stream()
-                    .map(WeaponTipoConverter::convertBaseEntityToDto)
-                    .collect(Collectors.toList())
-                    : null;
-    
-            return WeaponTipoDTO.builder()
-                    .id(weaponTipoEntity.getId())
-                    .tipoArma(weaponTipoEntity.getTipoArma())
+        if (weaponTipoEntity == null) {
+            return null;
+        }
+        // Si withRelations == true, convertimos las listas
+        // Si withRelations == false, las dejamos en null o en una lista vacía
+        List<WeaponBaseDTO> listaWeaponBase = flagWithRelations ? weaponTipoEntity.getWeaponBase()
+                .stream()
+                .map(WeaponTipoConverter::convertBaseEntityToDto)
+                .collect(Collectors.toList())
+                : null;
+
+        return WeaponTipoDTO.builder()
+                .id(weaponTipoEntity.getId())
+                .tipoArma(weaponTipoEntity.getTipoArma())
                 .weaponBaseDTO(listaWeaponBase)
                 .build();
     }
@@ -38,7 +36,7 @@ public class WeaponTipoConverter {
     // Convierte WeaponBaseEntity a WeaponBaseDTO
     private static WeaponBaseDTO convertBaseEntityToDto(WeaponBaseEntity wl) {
         return WeaponBaseDTO.builder()
-
+                .id(wl.getId())
                 .nombre(wl.getNombre())
                 .predecesor(wl.getPredecesor())
                 .categoria(wl.getCategoria())

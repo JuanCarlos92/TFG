@@ -3,20 +3,8 @@ package com.juancarlos.springboot.converters;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.juancarlos.springboot.entity.monster.MonsterBaseEntity;
-import com.juancarlos.springboot.entity.monster.MonsterBreakEntity;
-import com.juancarlos.springboot.entity.monster.MonsterDolenciasEntity;
-import com.juancarlos.springboot.entity.monster.MonsterHabitatsEntity;
-import com.juancarlos.springboot.entity.monster.MonsterRewardsEntity;
-import com.juancarlos.springboot.entity.monster.MonsterWeaknessesEntity;
-import com.juancarlos.springboot.entity.monster.MonsterZonasHitEntity;
-import com.juancarlos.springboot.models.dto.monster.MonsterBaseDTO;
-import com.juancarlos.springboot.models.dto.monster.MonsterBreakDTO;
-import com.juancarlos.springboot.models.dto.monster.MonsterDolenciasDTO;
-import com.juancarlos.springboot.models.dto.monster.MonsterHabitatsDTO;
-import com.juancarlos.springboot.models.dto.monster.MonsterRewardsDTO;
-import com.juancarlos.springboot.models.dto.monster.MonsterWeaknessesDTO;
-import com.juancarlos.springboot.models.dto.monster.MonsterZonasHitDTO;
+import com.juancarlos.springboot.entity.monster.*;
+import com.juancarlos.springboot.models.dto.monster.*;
 
 public class MonsterConverter {
 

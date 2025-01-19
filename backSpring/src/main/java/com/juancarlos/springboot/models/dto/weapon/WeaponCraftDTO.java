@@ -12,6 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class WeaponCraftDTO {
+    
     private String nombre_base;
     private String tipo_arma;
     private String tipo;

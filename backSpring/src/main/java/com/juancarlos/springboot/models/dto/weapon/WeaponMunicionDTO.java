@@ -13,7 +13,6 @@ import lombok.Setter;
 @Builder
 public class WeaponMunicionDTO {
 
-    private Integer id;
     private String nombreArma;
     private Integer desviacion;
     private String especial;

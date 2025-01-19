@@ -1,17 +1,17 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, Renderer2, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, Renderer2, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-card-monster',
-  templateUrl: './card-monster.component.html',
-  styleUrls: ['./card-monster.component.scss'],
+  selector: 'app-card-weapontype',
+  templateUrl: './card-weapontype.component.html',
+  styleUrls: ['./card-weapontype.component.scss'],
 })
-export class CardMonsterComponent implements OnInit, OnChanges, AfterViewInit {
+export class CardWeapontypeComponent implements OnInit, OnChanges, AfterViewInit {
 
   @Input()
-  monster: any;
+  weaponTipo: any;
 
   @Output()
-  monsterNameSelected = new EventEmitter<string>();
+  weaponNameSelected = new EventEmitter<string>();
 
   listener: any;
 
@@ -29,13 +29,13 @@ export class CardMonsterComponent implements OnInit, OnChanges, AfterViewInit {
   ngAfterViewInit(): void {
     setTimeout(() => {
       // Normaliza el nombre para generar un ID válido
-      const normalizedName = this.normalizeName(this.monster['nombre']);
+      const normalizedName = this.normalizeName(this.weaponTipo['tipoArma']);
       const div = document.querySelector(`#${normalizedName}`);
-      
+
       if (div) {
         // Agrega el listener al elemento encontrado
         this.listener = this.renderer.listen(div, 'click', () => {
-          this.monsterNameSelected.emit(this.monster['nombre']); // Emitir el nombre original
+          this.weaponNameSelected.emit(this.weaponTipo['tipoArma']); // Emitir el nombre original
         });
       } else {
         console.error(`No se encontró el elemento con ID: ${normalizedName}`);

@@ -4,11 +4,13 @@
 
 export const environment = {
   production: false,
-
   host: 'localhost',
   port: 8080,
-  monsters: '/api/monster'
+  monsters: '/api/monster',
+  weapons: '/api/weapon',
+  weaponsTipo: '/api/weapon/tipo'
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

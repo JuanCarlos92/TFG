@@ -1,4 +1,7 @@
 export interface Weapon {
-    id: number;      
+    id: number;
     nombre: string;
+    tipo_arma: string;
+    rareza: number;
+    ataque: number;
   }

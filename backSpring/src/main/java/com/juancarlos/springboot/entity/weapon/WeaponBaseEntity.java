@@ -1,5 +1,7 @@
 package com.juancarlos.springboot.entity.weapon;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
@@ -63,11 +65,23 @@ public class WeaponBaseEntity {
     @Column(name = "configuracion_municion", nullable = true)
     private String configuracion_municion;
 
+    // Relacion muchos a uno con la tabla weaponTipo
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_arma", referencedColumnName = "id")
+    @JoinColumn(name = "id_tipo", referencedColumnName = "id")
     @JsonIgnore
     private WeaponTipoEntity WeaponTipo;
 
-    
+    @OneToMany(mappedBy = "weaponBase", fetch = FetchType.LAZY)
+    private List<WeaponCraftEntity> weaponCraft; // Relacion uno a muchos con la tabla weaponCraft
+
+    @OneToMany(mappedBy = "weaponBase", fetch = FetchType.LAZY)
+    private List<WeaponArcoEntity> weaponArco; // Relacion uno a muchos con la tabla weaponArco
+
+    @OneToMany(mappedBy = "weaponBase", fetch = FetchType.LAZY)
+    private List<WeaponMunicionEntity> weaponMunicion; // Relacion uno a muchos con la tabla monsterMunicion
+
+    @OneToMany(mappedBy = "weaponBase", fetch = FetchType.LAZY)
+    private List<WeaponMelodiaNotaEntity> weaponMelodiaNota; // Relacion uno a muchos con la tabla weaponMelodiaNota
+
 
 }
