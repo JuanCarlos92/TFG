@@ -1,0 +1,16 @@
+<div class="container mt-4 text-center">
+  <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Weapons</button>
+</div>
+<!-- Información General -->
+<!-- <div *ngIf="inforWeapon" class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+  style="width: 80%; background-color: #f9f9f9; text-align: left;">
+
+  </table> -->
+
+  <div *ngIf="inforWeapon">
+    <h1>{{ inforWeapon.nombre }}</h1>
+    <p>Rareza: {{ inforWeapon.rareza }}</p>
+    <p>Ataque: {{ inforWeapon.ataque }}</p>
+    <!-- Agrega más detalles según sea necesario -->
+  </div>

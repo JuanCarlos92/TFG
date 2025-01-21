@@ -34,7 +34,8 @@ export class CardWeapontypeComponent implements OnInit, OnChanges, AfterViewInit
 
       if (div) {
         // Agrega el listener al elemento encontrado
-        this.listener = this.renderer.listen(div, 'click', () => {
+        this.listener = this.renderer.listen(div, 'click', (event: Event) => {
+          event.preventDefault(); // Previene la acción predeterminada
           this.weaponNameSelected.emit(this.weaponTipo['tipoArma']); // Emitir el nombre original
         });
       } else {
@@ -45,7 +46,7 @@ export class CardWeapontypeComponent implements OnInit, OnChanges, AfterViewInit
 
   // Agrega este método de normalización
   normalizeName(name: string): string {
-    return name.replace(/\s+/g, '-').toLowerCase(); // Reemplaza espacios con guiones y convierte a minúsculas
+    return name.trim().replace(/\s+/g, '-'); // Solo reemplaza espacios, preserva guiones existentes
   }
 
 }

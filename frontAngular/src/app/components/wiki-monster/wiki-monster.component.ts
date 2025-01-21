@@ -23,7 +23,6 @@ export class WikiMonsterComponent implements OnInit {
 
   ngOnInit() {
 
-    // Llama al servicio `monsterService` para obtener los datos del monstruo específico.
     // El ID del monstruo se obtiene de la propiedad `this.monster['id']`
     this.monsterService.getMonster(this.monster['id']).pipe(first()).subscribe({
       next: (res) => {

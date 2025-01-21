@@ -1,12 +1,39 @@
 <ion-content class="ion-padding" [fullscreen]="true">
-
-  <div *ngIf="!selectedWeaponTipo">
-    <!-- Grid de tarjetas Tipos de armas-->
-    <div class="row">
-      <div *ngFor="let weaponTipo of weaponstipos" class="col-6 col-md-4 col-lg-3 text-center my-2">
-        <app-card-weapontype [weaponTipo]="weaponTipo"
-          (weaponNameSelected)="weaponTipoNameSelected($event)"></app-card-weapontype>
-      </div>
+  <!-- Grid de tarjetas Tipos de armas -->
+  <div class="row">
+    <div *ngFor="let weaponTipo of weaponstipos" class="col-6 col-md-4 col-lg-3 text-center my-2">
+      <app-card-weapontype [weaponTipo]="weaponTipo"
+        (weaponNameSelected)="weaponTipoNameSelected($event)"></app-card-weapontype>
     </div>
   </div>
+
+  <!-- titulo de la tabla (nombre del tipo) -->
+  <div *ngIf="selectedWeaponTipo" class="weapon-details mt-4">
+    <h2 style="text-align: center;">{{ selectedWeaponTipo.tipoArma }}</h2>
+  </div>
+
+  <!-- Lista de armas -->
+  <div id="listaArmas" *ngIf="infoWeapon?.weaponBaseDTO?.length ?? 0 > 0" class="container mt-4">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Rareza</th>
+          <th>Ataque</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of infoWeapon?.weaponBaseDTO">
+          <td>
+          <a [routerLink]="['/weapon', v?.id]" style="text-decoration: none; color: inherit;">
+            {{ v?.nombre }}
+          </a>
+          </td>
+          <td>{{ v?.rareza }}</td>
+          <td>{{ v?.ataque }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </ion-content>

@@ -38,6 +38,7 @@ public class WeaponTipoConverter {
         return WeaponBaseDTO.builder()
                 .id(wl.getId())
                 .nombre(wl.getNombre())
+                .tipo_arma(wl.getTipo_arma())
                 .predecesor(wl.getPredecesor())
                 .categoria(wl.getCategoria())
                 .rareza(wl.getRareza())

@@ -1,7 +1,8 @@
 import { WeaponTipoDTO } from "./weapon/WeaponTipoDTO.model";
 
 export interface GetWeaponTipoResponse {
-  monsterDTO: WeaponTipoDTO;
+  weaponTipoDTO: WeaponTipoDTO;
+  weaponDTO: WeaponTipoDTO;
   codError: string;
   isOk: boolean;
 
