@@ -26,9 +26,9 @@ CREATE TABLE `armadura_skills` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre_base` varchar(100) DEFAULT NULL,
   `nombre_skill1` varchar(100) DEFAULT NULL,
-  `nombre_nivel1` int DEFAULT NULL,
+  `nivel_skill1` int DEFAULT NULL,
   `nombre_skill2` varchar(100) DEFAULT NULL,
-  `nombre_nivel2` int DEFAULT NULL,
+  `nivel_skill2` int DEFAULT NULL,
   `id_armadura` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_armorbase_skills` (`id_armadura`),
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-18 14:35:54
+-- Dump completed on 2025-01-22 17:57:51

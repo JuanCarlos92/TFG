@@ -46,10 +46,10 @@ CREATE TABLE `arma_base` (
   `nivel_municion` int DEFAULT NULL,
   `configuracion_municion` varchar(100) DEFAULT NULL,
   `notas` varchar(100) DEFAULT NULL,
-  `id_arma` int DEFAULT NULL,
+  `id_tipo` int DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_armalist_armabase` (`id_arma`),
-  CONSTRAINT `fk_armalist_armabase` FOREIGN KEY (`id_arma`) REFERENCES `arma_tipo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `fk_armalist_armabase` (`id_tipo`),
+  CONSTRAINT `fk_armalist_armabase` FOREIGN KEY (`id_tipo`) REFERENCES `arma_tipo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -72,4 +72,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-18 14:35:53
+-- Dump completed on 2025-01-22 17:57:51

@@ -26,9 +26,9 @@ CREATE TABLE `armaduraset_bonus_base` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) DEFAULT NULL,
   `nombre_skill1` varchar(100) DEFAULT NULL,
-  `requerido_skill1` int DEFAULT NULL,
+  `nivel_skill1` int DEFAULT NULL,
   `nombre_skill2` varchar(100) DEFAULT NULL,
-  `requerido_skill2` int DEFAULT NULL,
+  `nivel_skill2` int DEFAULT NULL,
   `id_armaduraset` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_armorset_armorsetbonusbase` (`id_armaduraset`),
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-18 14:35:55
+-- Dump completed on 2025-01-22 17:57:52

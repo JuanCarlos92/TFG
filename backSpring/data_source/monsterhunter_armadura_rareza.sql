@@ -16,36 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `adorno_tasadrop`
+-- Table structure for table `armadura_rareza`
 --
 
-DROP TABLE IF EXISTS `adorno_tasadrop`;
+DROP TABLE IF EXISTS `armadura_rareza`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `adorno_tasadrop` (
+CREATE TABLE `armadura_rareza` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `piedra_fey` varchar(100) DEFAULT NULL,
-  `cinco` int DEFAULT NULL,
-  `seis` int DEFAULT NULL,
-  `siete` int DEFAULT NULL,
-  `ocho` int DEFAULT NULL,
-  `nueve` int DEFAULT NULL,
-  `diez` int DEFAULT NULL,
-  `once` int DEFAULT NULL,
-  `doce` int DEFAULT NULL,
-  `trece` int DEFAULT NULL,
+  `rareza` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `adorno_tasadrop`
+-- Dumping data for table `armadura_rareza`
 --
 
-LOCK TABLES `adorno_tasadrop` WRITE;
-/*!40000 ALTER TABLE `adorno_tasadrop` DISABLE KEYS */;
-INSERT INTO `adorno_tasadrop` VALUES (1,'mysterious',85,15,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'glowing',65,34,1,NULL,NULL,NULL,NULL,NULL,NULL),(3,'worn',10,82,6,2,NULL,NULL,NULL,NULL,NULL),(4,'warped',NULL,7,18,5,NULL,NULL,NULL,NULL,NULL),(5,'ancient',NULL,53,NULL,NULL,NULL,33,NULL,NULL,NULL),(6,'carved',NULL,NULL,NULL,NULL,34,21,38,8,NULL),(7,'sealed',NULL,NULL,NULL,NULL,22,NULL,5,10,3);
-/*!40000 ALTER TABLE `adorno_tasadrop` ENABLE KEYS */;
+LOCK TABLES `armadura_rareza` WRITE;
+/*!40000 ALTER TABLE `armadura_rareza` DISABLE KEYS */;
+INSERT INTO `armadura_rareza` VALUES (1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10),(11,11),(12,12);
+/*!40000 ALTER TABLE `armadura_rareza` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-22 17:57:52
+-- Dump completed on 2025-01-22 17:57:51
