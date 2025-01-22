@@ -33,8 +33,7 @@ export class WeaponComponent implements OnInit {
   totalPages: number = 0; // Total de páginas disponibles
   selectedWeaponTipo: WeaponTipoDTO | undefined;
   selectedWeaponTipoId: number | undefined;
-  nameWeaponTipo!: string;
-  infoWeapon: any = {};
+  infoWeapon: any;
   weaponId!: number;
 
   search$!: Subscription;
@@ -44,11 +43,11 @@ export class WeaponComponent implements OnInit {
   ngOnInit() {
     this.getWeaponTypeWithPaginacion(); // Carga inicial de tipos de armas
 
-    // Obtener el ID del arma desde la URL
-    this.route.params.subscribe((params) => {
-      this.weaponId = params['id'];
-      this.loadWeaponInfo();
-    });
+    // // Obtener el ID del arma desde la URL
+    // this.route.params.subscribe((params) => {
+    //   this.weaponId = params['id'];
+    //   this.loadWeaponInfo();
+    // });
 
   }
   loadWeaponInfo(): void {
@@ -65,7 +64,7 @@ export class WeaponComponent implements OnInit {
 
   // Obtiene tipos de armas
   getWeaponTypeWithPaginacion(): void {
-    this.weaponService.getWeaponTypeWithPaginacion(this.page, this.size, this.nameWeaponTipo).pipe(first()).subscribe({
+    this.weaponService.getWeaponTypeWithPaginacion(this.page, this.size).pipe(first()).subscribe({
       next: (res) => {
         console.log('Tipos de armas recibidos:', res);
         this.weaponstipos = res.content || []; // Datos de los tipos de armas

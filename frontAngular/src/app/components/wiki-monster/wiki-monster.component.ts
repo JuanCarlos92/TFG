@@ -17,7 +17,7 @@ export class WikiMonsterComponent implements OnInit {
   @Input()
   monster!: MonsterBaseDTO;
 
-  infoMonster: any = {};
+  infoMonster: any;
 
   constructor(private monsterService: MonsterService) { }
 
