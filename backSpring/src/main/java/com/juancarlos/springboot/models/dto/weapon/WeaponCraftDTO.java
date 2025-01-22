@@ -13,17 +13,17 @@ import lombok.Setter;
 @Builder
 public class WeaponCraftDTO {
     
-    private String nombre_base;
-    private String tipo_arma;
+    private String nombreBase;
+    private String tipoArma;
     private String tipo;
-    private String nombre_material1;
-    private Integer cantidad_material1;
-    private String nombre_material2;
-    private Integer cantidad_material2;
-    private String nombre_material3;
-    private Integer cantidad_material3;
-    private String nombre_material4;
-    private Integer cantidad_material4;
+    private String nombreMaterial1;
+    private Integer cantidadMaterial1;
+    private String nombreMaterial2;
+    private Integer cantidadMaterial2;
+    private String nombreMaterial3;
+    private Integer cantidadMaterial3;
+    private String nombreMaterial4;
+    private Integer cantidadMaterial4;
 
 
 }

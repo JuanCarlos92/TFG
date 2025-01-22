@@ -11,9 +11,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class ArmorSkillDTO {
-    private String nombre_base;
-    private String nombre_skill1;
-    private Integer nivel_skill1;
-    private String nombre_skill2;
-    private Integer nivel_skill2;
+    private String nombreBase;
+    private String nombreSkill1;
+    private Integer nivelSkill1;
+    private String nombreSkill2;
+    private Integer nivelSkill2;
 }

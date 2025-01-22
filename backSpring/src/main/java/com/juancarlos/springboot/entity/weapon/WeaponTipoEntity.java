@@ -23,6 +23,6 @@ public class WeaponTipoEntity {
     @Column(name = "tipo_arma", nullable = false)
     private String tipoArma;
 
-    @OneToMany(mappedBy = "WeaponTipo", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "weaponTipo", fetch = FetchType.LAZY)
     private List<WeaponBaseEntity> weaponBase;  // Relacion uno a muchos con la tabla arma_base
 }

@@ -21,7 +21,7 @@ public class MonsterZonasHitEntity {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
     @Column(name = "nombre_base", unique = false, nullable = false)
-    private String nombre_base;
+    private String nombreBase;
     @Column(name = "zonaImpacto", unique = false, nullable = true)
     private String zonaImpacto;
     @Column(name = "corte", unique = false, nullable = true)

@@ -1,5 +1,8 @@
 package com.juancarlos.springboot.entity.monster;
 
+import com.juancarlos.springboot.entity.armor.ArmorSetBaseEntity;
+import com.juancarlos.springboot.entity.quest.QuestMonsterEntity;
+
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -27,29 +30,37 @@ public class MonsterBaseEntity {
     @Column(name = "size", nullable = true)
     private String size;
     @Column(name = "trampa_escollo", nullable = true)
-    private Boolean trampa_escollo;
+    private Boolean trampaEscollo;
     @Column(name = "trampa_electrica", nullable = true)
-    private Boolean trampa_electrica;
+    private Boolean trampaElectrica;
     @Column(name = "trampa_hiedra", nullable = true)
-    private Boolean trampa_hiedra;
+    private Boolean trampaHiedra;
     @Column(name = "descripcion", nullable = true)
     private String descripcion;
 
     @OneToMany(mappedBy = "monsterBase", fetch = FetchType.LAZY)
-    private List<MonsterBreakEntity> monsterBreaks;
+    private List<MonsterBreakEntity> monsterBreaks; // Relacion uno a muchos con la tabla monster break
 
     @OneToMany(mappedBy = "monsterBase", fetch = FetchType.LAZY)
-    private List<MonsterDolenciasEntity> monsterDolencias;
+    private List<MonsterDolenciasEntity> monsterDolencias; // Relacion uno a muchos con la tabla monster dolencias
 
     @OneToMany(mappedBy = "monsterBase", fetch = FetchType.LAZY)
-    private List<MonsterHabitatsEntity> monsterHabitats;
+    private List<MonsterHabitatsEntity> monsterHabitats; // Relacion uno a muchos con la tabla monster habitats
 
     @OneToMany(mappedBy = "monsterBase", fetch = FetchType.LAZY)
-    private List<MonsterRewardsEntity> monsterRewards;
+    private List<MonsterRewardsEntity> monsterRewards; // Relacion uno a muchos con la tabla monster recompensas
 
     @OneToMany(mappedBy = "monsterBase", fetch = FetchType.LAZY)
-    private List<MonsterWeaknessesEntity> monsterWeaknesses;
+    private List<MonsterWeaknessesEntity> monsterWeaknesses; // Relacion uno a muchos con la tabla monster weaknesses
 
     @OneToMany(mappedBy = "monsterBase", fetch = FetchType.LAZY)
-    private List<MonsterZonasHitEntity> monsterZonasHit;
+    private List<MonsterZonasHitEntity> monsterZonasHit; // Relacion uno a muchos con la tabla monster zonashit
+
+    @OneToMany(mappedBy = "monsterBase", fetch = FetchType.LAZY)
+    private List<ArmorSetBaseEntity> armorSetBase; // Relacion uno a muchos con la tabla armaduraset base
+
+    @OneToMany(mappedBy = "monsterBase", fetch = FetchType.LAZY)
+    private List<QuestMonsterEntity> questMonster; // Relacion uno a muchos con la tabla mision monstruos
+
+
 }

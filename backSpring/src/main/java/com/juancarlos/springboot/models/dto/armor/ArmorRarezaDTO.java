@@ -15,7 +15,7 @@ import lombok.Setter;
 @Builder
 public class ArmorRarezaDTO {
     private Long id;
-    private int rareza;
+    private Integer rareza;
 
     //Lista de armaduras base
     private List<ArmorBaseDTO> armorBaseDTO;

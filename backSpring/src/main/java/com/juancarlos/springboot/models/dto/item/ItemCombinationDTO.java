@@ -15,5 +15,5 @@ public class ItemCombinationDTO {
     private String nombre_resultado;
     private String primero;
     private String segundo;
-    private int calidad;
+    private Integer calidad;
 }

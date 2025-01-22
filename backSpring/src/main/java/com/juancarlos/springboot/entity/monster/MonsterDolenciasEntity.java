@@ -21,7 +21,7 @@ public class MonsterDolenciasEntity {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
     @Column(name = "nombre_base", unique = true, nullable = false)
-    private String nombre_base;
+    private String nombreBase;
     @Column(name = "rugido", nullable = false)
     private String rugido;
     @Column(name = "viento", nullable = false)
@@ -29,19 +29,19 @@ public class MonsterDolenciasEntity {
     @Column(name = "temblor", nullable = false)
     private String temblor;
     @Column(name = "defensa_baja", nullable = false)
-    private Boolean defensa_baja;
+    private Boolean defensaBaja;
     @Column(name = "plaga_fuego", nullable = false)
-    private Boolean plaga_fuego;
+    private Boolean plagaFuego;
     @Column(name = "plaga_agua", nullable = false)
-    private Boolean plaga_agua;
+    private Boolean plagaAgua;
     @Column(name = "plaga_rayo", nullable = false)
-    private Boolean plaga_rayo;
+    private Boolean plagaRayo;
     @Column(name = "plaga_hielo", nullable = false)
-    private Boolean plaga_hielo;
+    private Boolean plagaHielo;
     @Column(name = "plaga_dragon", nullable = false)
-    private Boolean plaga_dragon;
+    private Boolean plagaDragon;
     @Column(name = "plaga_nitro", nullable = false)
-    private Boolean plaga_nitro;
+    private Boolean plagaNitro;
     @Column(name = "regional", nullable = false)
     private Boolean regional;
     @Column(name = "veneno", nullable = false)

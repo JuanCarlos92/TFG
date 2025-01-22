@@ -20,7 +20,7 @@ public class MonsterRewardsEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(name = "base_name", unique = true, nullable = false)
-    private String nombre_base;
+    private String nombreBase;
     @Column(name = "rang", nullable = true)
     private String rang;
     @Column(name = "condiciones", nullable = true)

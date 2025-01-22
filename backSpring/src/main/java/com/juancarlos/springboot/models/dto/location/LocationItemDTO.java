@@ -13,10 +13,10 @@ import lombok.Setter;
 public class LocationItemDTO {
 
     private String nombre_base;
-    private int area;
+    private Integer area;
     private String rango;
     private String item;
-    private int stack;
-    private int porcentaje;
-    private int nodos;
+    private Integer stack;
+    private Integer porcentaje;
+    private Integer nodos;
 }

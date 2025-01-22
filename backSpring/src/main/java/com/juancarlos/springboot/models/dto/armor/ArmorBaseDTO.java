@@ -16,20 +16,20 @@ import lombok.Setter;
 public class ArmorBaseDTO {
     private Long id;
     private String nombre;
-    private int rareza;
+    private Integer rareza;
     private String tipo;
     private String genero;
-    private int ranura_1;
-    private int ranura_2;
-    private int ranura_3;
-    private int defensa_base;
-    private int defensa_max;
-    private int defensa_aumento_max;
-    private int defensa_fuego;
-    private int defensa_agua;
-    private int defensa_rayo;
-    private int defensa_hielo;
-    private int defensa_dragon;
+    private Integer ranura1;
+    private Integer ranura2;
+    private Integer ranura3;
+    private Integer defensaBase;
+    private Integer defensaMax;
+    private Integer defensaAumentoMax;
+    private Integer defensaFuego;
+    private Integer defensaAgua;
+    private Integer defensaRayo;
+    private Integer defensaHielo;
+    private Integer defensaDragon;
 
     //Lista de armaduras craft
     private List<ArmorCraftDTO> armorCraftDTO;

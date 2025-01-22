@@ -16,26 +16,26 @@ import lombok.Setter;
 public class WeaponBaseDTO {
     private Long id;
     private String nombre;
-    private String tipo_arma;
+    private String tipoArma;
     private String predecesor;
     private String categoria;
     private Integer rareza;
     private Integer ataque;
     private Integer afinidad;
     private Integer defensa;
-    private Boolean elemento_oculto;
+    private Boolean elementoOculto;
     private String elemento1;
-    private Integer ataque_elemento1;
-    private String sello_ancianos;
-    private Integer ranura_1;
-    private Integer ranura_2;
-    private Integer ranura_3;
-    private String bono_kinsecto;
+    private Integer ataqueElemento1;
+    private String selloAncianos;
+    private Integer ranura1;
+    private Integer ranura2;
+    private Integer ranura3;
+    private String bonoKinsecto;
     private String frasco;
-    private String protencia_frasco;
+    private String potenciaFrasco;
     private String municion;
-    private Integer nivel_municion;
-    private String configuracion_municion;
+    private Integer nivelMunicion;
+    private String confMunicion;
 
     //Lista de armas craft
     private List<WeaponCraftDTO> weaponCraftDTO;

@@ -12,8 +12,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class WeaponArcoDTO {
-    private String nombre_base;
-    private String tipo_arma;
+    private String nombreBase;
+    private String tipoArma;
     private String proximidad;
     private String potencia;
     private String paralisis;

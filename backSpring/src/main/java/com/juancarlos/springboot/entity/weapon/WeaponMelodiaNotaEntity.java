@@ -22,7 +22,7 @@ public class WeaponMelodiaNotaEntity {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
     @Column(name = "nombre_base", unique = false, nullable = false)
-    private String nombre_base;
+    private String nombreBase;
     @Column(name = "notas", unique = false, nullable = true)
     private String notas;
 

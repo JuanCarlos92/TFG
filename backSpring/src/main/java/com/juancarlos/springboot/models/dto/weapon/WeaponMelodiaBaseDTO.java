@@ -17,12 +17,12 @@ public class WeaponMelodiaBaseDTO {
 
     private Long id;
     private String nombre;
-    private Integer duracion_base;
-    private Integer extension_base;
-    private Integer duracion_m1;
-    private Integer extension_m1;
-    private Integer duracion_m2;
-    private Integer extension_m2;
+    private Integer duracionBase;
+    private Integer extensionBase;
+    private Integer duracionM1;
+    private Integer extensionM1;
+    private Integer duracionM2;
+    private Integer extensionM2;
 
     //Lista de armas melodia nota
     private List<WeaponMelodiaNotaDTO> weaponMelodiaNotaDTO;

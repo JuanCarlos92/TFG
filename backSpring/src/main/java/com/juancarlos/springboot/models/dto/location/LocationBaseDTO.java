@@ -1,6 +1,8 @@
 package com.juancarlos.springboot.models.dto.location;
 import java.util.List;
 
+import com.juancarlos.springboot.models.dto.quest.QuestBaseDTO;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,7 +20,8 @@ public class LocationBaseDTO {
 
     //lista de localizaciones campamentos
     private List<LocationCampDTO> locationCampDTO;
-
     //lista de localizaciones items
     private List<LocationItemDTO> locationItemDTO;
+    //Lista de ubicacion de misiones
+    private List<QuestBaseDTO> questBaseDTO;
 }

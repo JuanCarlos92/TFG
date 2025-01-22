@@ -14,7 +14,7 @@ import lombok.Setter;
 @Builder
 public class WeaponMelodiaNotaDTO {
     
-    private String nombre_base;
+    private String nombreBase;
     private String notas;
 
 }

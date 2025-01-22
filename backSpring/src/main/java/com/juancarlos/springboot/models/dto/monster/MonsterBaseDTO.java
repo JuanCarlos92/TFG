@@ -2,6 +2,9 @@ package com.juancarlos.springboot.models.dto.monster;
 
 import java.util.List;
 
+import com.juancarlos.springboot.models.dto.armor.ArmorSetBaseDTO;
+import com.juancarlos.springboot.models.dto.quest.QuestMonsterDTO;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,9 +21,9 @@ public class MonsterBaseDTO {
     private String nombre;
     private String ecologia;
     private String size;
-    private Boolean trampa_escollo;
-    private Boolean trampa_electrica;
-    private Boolean trampa_hiedra;
+    private Boolean trampaEscollo;
+    private Boolean trampaElectrica;
+    private Boolean trampaHiedra;
     private String descripcion;
 
     private List<MonsterBreakDTO> monsterBreakDTO;
@@ -29,7 +32,7 @@ public class MonsterBaseDTO {
     private List<MonsterRewardsDTO> monsterRewardsDTO;
     private List<MonsterWeaknessesDTO> monsterWeaknessesDTO;
     private List<MonsterZonasHitDTO> monsterZonasHitDTO;
-
-    
+    private List<ArmorSetBaseDTO> armorSetBaseDTO;
+    private List<QuestMonsterDTO> questMonsterDTO;
 
 }

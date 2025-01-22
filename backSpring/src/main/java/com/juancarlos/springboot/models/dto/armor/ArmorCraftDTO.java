@@ -12,14 +12,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class ArmorCraftDTO {
-    private String nombre_base;
-    private String nombre_item1;
-    private Integer cantidad_item1;
-    private String nombre_item2;
-    private Integer cantidad_item2;
-    private String nombre_item3;
-    private Integer cantidad_item3;
-    private String nombre_item4;
-    private Integer cantidad_item4;
+    private String nombreBase;
+    private String nombreItem1;
+    private Integer cantidadItem1;
+    private String nombreItem2;
+    private Integer cantidadItem2;
+    private String nombreItem3;
+    private Integer cantidadItem3;
+    private String nombreItem4;
+    private Integer cantidadItem4;
 
 }

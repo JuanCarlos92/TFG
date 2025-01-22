@@ -1,0 +1,54 @@
+package com.juancarlos.springboot.entity.armor;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.juancarlos.springboot.entity.monster.MonsterBaseEntity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "armaduraset_base")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class ArmorSetBaseEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", unique = true, nullable = false)
+    private Long id;
+    @Column(name = "nombre", unique = true, nullable = false)
+    private String nombre;
+    @Column(name = "rango", nullable = true)
+    private String rango;
+    @Column(name = "monster", nullable = true)
+    private String monster;
+    @Column(name = "cabeza", nullable = true)
+    private String cabeza;
+    @Column(name = "pecho", nullable = true)
+    private String pecho;
+    @Column(name = "brazos", nullable = true)
+    private String brazos;
+    @Column(name = "cintura", nullable = true)
+    private String cintura;
+    @Column(name = "piernas", nullable = true)
+    private String piernas;
+    @Column(name = "bonus", nullable = true)
+    private String bonus;
+
+    // Relacion muchos a uno con la tabla monster base
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_monster", referencedColumnName = "id")
+    @JsonIgnore
+    private MonsterBaseEntity monsterBase;
+
+    @OneToMany(mappedBy = "armorSetBase", fetch = FetchType.LAZY)
+    private List<ArmorBaseEntity> armorBase; // Relacion uno a muchos con la tabla armor base
+
+    @OneToMany(mappedBy = "armorSetBase", fetch = FetchType.LAZY)
+    private List<ArmorSetBaseBonusEntity> armorSetBaseBonus; // Relacion uno a muchos con la tabla armorset base bonus
+}

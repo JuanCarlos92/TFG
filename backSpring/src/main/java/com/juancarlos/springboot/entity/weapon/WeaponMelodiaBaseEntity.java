@@ -24,17 +24,17 @@ public class WeaponMelodiaBaseEntity {
     @Column(name = "nombre", unique = false, nullable = false)
     private String nombre;
     @Column(name = "duracion_base", unique = false, nullable = true)
-    private Integer duracion_base;
+    private Integer duracionBase;
     @Column(name = "extension_base", nullable = true)
-    private Integer extension_base;
+    private Integer extensionBase;
     @Column(name = "duracion_m1", nullable = true)
-    private Integer duracion_m1;
+    private Integer duracionM1;
     @Column(name = "extension_m1", nullable = true)
-    private Integer extension_m1;
+    private Integer extensionM1;
     @Column(name = "duracion_m2", nullable = true)
-    private Integer duracion_m2;
+    private Integer duracionM2;
     @Column(name = "extension_m2", nullable = true)
-    private Integer extension_m2;
+    private Integer extensionM2;
 
     @OneToMany(mappedBy = "weaponMelodiaBase", fetch = FetchType.LAZY)
     private List<WeaponMelodiaNotaEntity> weaponMelodiaNota; // Relacion uno a muchos con la tabla weaponMelodiaNota

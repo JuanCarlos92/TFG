@@ -22,7 +22,7 @@ public class MonsterBreakEntity {
     private Long id;
     @Column(name = "nombre_base", unique = false, nullable = false)
     private String nombre_base;
-    @Column(name = "parte", unique = false, nullable = true)
+    @Column(name = "parte", nullable = true)
     private String parte;
     @Column(name = "estremecimiento", nullable = true)
     private Integer estremecimiento;

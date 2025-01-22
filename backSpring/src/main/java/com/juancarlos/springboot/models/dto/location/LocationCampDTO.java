@@ -15,6 +15,6 @@ public class LocationCampDTO {
 
     private String nombre_base;
     private String nombre_campamento;
-    private int area;
+    private Integer area;
 
 }

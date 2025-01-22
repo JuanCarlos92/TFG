@@ -21,9 +21,9 @@ public class WeaponArcoEntity {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
     @Column(name = "nombre_base", unique = false, nullable = false)
-    private String nombre_base;
+    private String nombreBase;
     @Column(name = "tipo_arma", unique = false, nullable = true)
-    private String tipo_arma;
+    private String tipoArma;
     @Column(name = "proximidad", nullable = true)
     private String proximidad;
     @Column(name = "potencia", nullable = true)

@@ -16,12 +16,12 @@ public class KinsectBaseDTO {
     private Long id;
     private String nombre;
     private String previo;
-    private int rareza;
-    private String tipo_ataque;
+    private Integer rareza;
+    private String tipoAtaque;
     private String efecto;
-    private int poder;
-    private int velocidad;
-    private int cura;
+    private Integer poder;
+    private Integer velocidad;
+    private Integer cura;
 
     //Lista de kinsect craft
     private List<KinsectCraftDTO> kinsectCraftDTO;

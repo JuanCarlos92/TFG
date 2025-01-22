@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.models.dto.mantle;
+package com.juancarlos.springboot.models.dto.tool;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,15 +11,15 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class MantleBaseDTO {
+public class ToolBaseDTO {
 
     private Long id;
     private String nombre;
     private String herramienta_tipo;
-    private int duracion;
-    private int duracion_actualizada;
-    private int recarga;
-    private int ranura_1;
-    private int ranura_2;
-    private int ranura_3;
+    private Integer duracion;
+    private Integer duracion_actualizada;
+    private Integer recarga;
+    private Integer ranura_1;
+    private Integer ranura_2;
+    private Integer ranura_3;
 }

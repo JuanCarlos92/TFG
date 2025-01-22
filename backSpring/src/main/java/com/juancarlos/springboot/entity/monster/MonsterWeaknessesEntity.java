@@ -21,7 +21,7 @@ public class MonsterWeaknessesEntity {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
     @Column(name = "base_name", unique = false, nullable = false)
-    private String nombre_base;
+    private String nombreBase;
     @Column(name = "form", unique = false, nullable = true)
     private String forma;
     @Column(name = "alt_description", unique = false, nullable = true)

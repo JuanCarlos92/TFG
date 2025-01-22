@@ -20,7 +20,7 @@ public class MonsterHabitatsEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(name = "nombre_base", unique = true, nullable = false)
-    private String nombre_base;
+    private String nombreBase;
     @Column(name = "mapa", nullable = true)
     private String mapa;
     @Column(name = "areaInicial", nullable = true)

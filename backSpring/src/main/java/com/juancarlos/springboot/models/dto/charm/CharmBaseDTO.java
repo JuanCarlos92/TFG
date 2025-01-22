@@ -16,11 +16,11 @@ public class CharmBaseDTO {
     private Long id;
     private String nombre;
     private String previo;
-    private String rareza;
-    private String nombre_skill1;
-    private Integer nivel_skill1;
-    private String nombre_skill2;
-    private Integer nivel_skill2;
+    private Integer rareza;
+    private String nombreSkill1;
+    private Integer nivelSkill1;
+    private String nombreSkill2;
+    private Integer nivelSkill2;
 
     //Lista de amuletos craft
     private List<CharmCraftDTO> charmCraftDTO;

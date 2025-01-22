@@ -1,5 +1,9 @@
 package com.juancarlos.springboot.models.dto.item;
+
 import java.util.List;
+
+import com.juancarlos.springboot.models.dto.location.LocationItemDTO;
+import com.juancarlos.springboot.models.dto.quest.QuestRewardDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,14 +21,18 @@ public class ItemBaseDTO {
     private String nombre;
     private String categoria;
     private String subCategoria;
-    private int rareza;
-    private int precio_compra;
-    private int precio_venta;
-    private int limite_carga;
-    private int puntos;
-    private String nombre_icono;
-    private String nombre_color;
+    private Integer rareza;
+    private Integer precioCompra;
+    private Integer precioVenta;
+    private Integer limiteCarga;
+    private Integer puntos;
+    private String nombreIcono;
+    private String nombreColor;
 
-    //Lista de combinacion de items
+    // Lista de combinacion de items
     private List<ItemCombinationDTO> itemCombinationDTO;
+    // Lista de localizacion de items
+    private List<LocationItemDTO> locationItemDTO;
+    // Lista de item con recompensa de mision
+    private List<QuestRewardDTO> questRewardDTO;
 }

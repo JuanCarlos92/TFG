@@ -25,7 +25,7 @@ public class WeaponBaseEntity {
     @Column(name = "nombre", unique = true, nullable = false)
     private String nombre;
     @Column(name = "tipo_arma", nullable = false)
-    private String tipo_arma;
+    private String tipoArma;
     @Column(name = "predecesor", nullable = true)
     private String predecesor;
     @Column(name = "categoria", nullable = true)
@@ -39,37 +39,37 @@ public class WeaponBaseEntity {
     @Column(name = "defensa", nullable = true)
     private Integer defensa;
     @Column(name = "elemento_oculto", nullable = true)
-    private Boolean elemento_oculto;
+    private Boolean elementoOculto;
     @Column(name = "elemento1", nullable = true)
     private String elemento1;
     @Column(name = "ataque_elemento1", nullable = true)
-    private Integer ataque_elemento1;
+    private Integer ataqueElemento1;
     @Column(name = "sello_ancianos", nullable = true)
-    private String sello_ancianos;
+    private String selloAncianos;
     @Column(name = "ranura_1", nullable = true)
-    private Integer ranura_1;
+    private Integer ranura1;
     @Column(name = "ranura_2", nullable = true)
-    private Integer ranura_2;
+    private Integer ranura2;
     @Column(name = "ranura_3", nullable = true)
-    private Integer ranura_3;
+    private Integer ranura3;
     @Column(name = "bono_kinsecto", nullable = true)
-    private String bono_kinsecto;
+    private String bonoKinsecto;
     @Column(name = "frasco", nullable = true)
     private String frasco;
     @Column(name = "potencia_frasco", nullable = true)
-    private String potencia_frasco;
+    private String potenciaFrasco;
     @Column(name = "municion", nullable = true)
     private String municion;
     @Column(name = "nivel_municion", nullable = true)
-    private Integer nivel_municion;
+    private Integer nivelMunicion;
     @Column(name = "configuracion_municion", nullable = true)
-    private String configuracion_municion;
+    private String confMunicion;
 
     // Relacion muchos a uno con la tabla weaponTipo
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_tipo", referencedColumnName = "id")
     @JsonIgnore
-    private WeaponTipoEntity WeaponTipo;
+    private WeaponTipoEntity weaponTipo;
 
     @OneToMany(mappedBy = "weaponBase", fetch = FetchType.LAZY)
     private List<WeaponCraftEntity> weaponCraft; // Relacion uno a muchos con la tabla weaponCraft

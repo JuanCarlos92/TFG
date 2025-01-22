@@ -40,26 +40,26 @@ public class WeaponConverter {
         return WeaponBaseDTO.builder() // Creamos un nuevo objeto WeaponBaseDTO
                 .id(weaponBaseEntity.getId())
                 .nombre(weaponBaseEntity.getNombre())
-                .tipo_arma(weaponBaseEntity.getTipo_arma())
+                .tipoArma(weaponBaseEntity.getTipoArma())
                 .predecesor(weaponBaseEntity.getPredecesor())
                 .categoria(weaponBaseEntity.getCategoria())
                 .rareza(weaponBaseEntity.getRareza())
                 .ataque(weaponBaseEntity.getAtaque())
                 .afinidad(weaponBaseEntity.getAfinidad())
                 .defensa(weaponBaseEntity.getDefensa())
-                .elemento_oculto(weaponBaseEntity.getElemento_oculto())
+                .elementoOculto(weaponBaseEntity.getElementoOculto())
                 .elemento1(weaponBaseEntity.getElemento1())
-                .ataque_elemento1(weaponBaseEntity.getAtaque_elemento1())
-                .sello_ancianos(weaponBaseEntity.getSello_ancianos())
-                .ranura_1(weaponBaseEntity.getRanura_1())
-                .ranura_2(weaponBaseEntity.getRanura_2())
-                .ranura_3(weaponBaseEntity.getRanura_3())
-                .bono_kinsecto(weaponBaseEntity.getBono_kinsecto())
+                .ataqueElemento1(weaponBaseEntity.getAtaqueElemento1())
+                .selloAncianos(weaponBaseEntity.getSelloAncianos())
+                .ranura1(weaponBaseEntity.getRanura1())
+                .ranura2(weaponBaseEntity.getRanura2())
+                .ranura3(weaponBaseEntity.getRanura3())
+                .bonoKinsecto(weaponBaseEntity.getBonoKinsecto())
                 .frasco(weaponBaseEntity.getFrasco())
-                .protencia_frasco(weaponBaseEntity.getPotencia_frasco())
+                .potenciaFrasco(weaponBaseEntity.getPotenciaFrasco())
                 .municion(weaponBaseEntity.getMunicion())
-                .nivel_municion(weaponBaseEntity.getNivel_municion())
-                .configuracion_municion(weaponBaseEntity.getConfiguracion_municion())
+                .nivelMunicion(weaponBaseEntity.getNivelMunicion())
+                .confMunicion(weaponBaseEntity.getConfMunicion())
                 .weaponCraftDTO(listaWeaponCraft) // Lista de WeaponCraftDTO
                 .weaponArcoDTO(listaWeaponArco) // Lista de WeaponArcoDTO
                 .weaponMunicionDTO(listaWeaponMunicion) // Lista de WeaponMunicionDTO
@@ -75,25 +75,25 @@ public class WeaponConverter {
     // Convierte WeaponCraftEntity a WeaponCraftDTO
     private static WeaponCraftDTO convertCraftEntityToDto(WeaponCraftEntity wc) {
         return WeaponCraftDTO.builder()
-                .nombre_base(wc.getNombre_base())
-                .tipo_arma(wc.getTipo_arma())
+                .nombreBase(wc.getNombreBase())
+                .tipoArma(wc.getTipoArma())
                 .tipo(wc.getTipo())
-                .nombre_material1(wc.getNombre_material1())
-                .cantidad_material1(wc.getCantidad_material1())
-                .nombre_material2(wc.getNombre_material2())
-                .cantidad_material2(wc.getCantidad_material2())
-                .nombre_material3(wc.getNombre_material3())
-                .cantidad_material3(wc.getCantidad_material3())
-                .nombre_material4(wc.getNombre_material4())
-                .cantidad_material4(wc.getCantidad_material4())
+                .nombreMaterial1(wc.getNombreMaterial1())
+                .cantidadMaterial1(wc.getCantidadMaterial1())
+                .nombreMaterial2(wc.getNombreMaterial2())
+                .cantidadMaterial2(wc.getCantidadMaterial2())
+                .nombreMaterial3(wc.getNombreMaterial3())
+                .cantidadMaterial3(wc.getCantidadMaterial3())
+                .nombreMaterial4(wc.getNombreMaterial4())
+                .cantidadMaterial4(wc.getCantidadMaterial4())
                 .build();
     }
 
     // Convierte WeaponArcoEntity a WeaponArcoDTO
     private static WeaponArcoDTO convertArcoEntityToDto(WeaponArcoEntity wa) {
         return WeaponArcoDTO.builder()
-                .nombre_base(wa.getNombre_base())
-                .tipo_arma(wa.getTipo_arma())
+                .nombreBase(wa.getNombreBase())
+                .tipoArma(wa.getTipoArma())
                 .proximidad(wa.getProximidad())
                 .potencia(wa.getPotencia())
                 .paralisis(wa.getParalisis())
@@ -232,7 +232,7 @@ public class WeaponConverter {
     // Convierte WeaponMelodiaNotaEntity a WeaponMelodiaNotaDTO
     public static WeaponMelodiaNotaDTO convertWeaponMelodiaNotaEntityToDTO(WeaponMelodiaNotaEntity wmnota) {
         return WeaponMelodiaNotaDTO.builder()
-                .nombre_base(wmnota.getNombre_base())
+                .nombreBase(wmnota.getNombreBase())
                 .notas(wmnota.getNotas())
                 .build();
     }
