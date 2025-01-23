@@ -8,7 +8,7 @@ import com.juancarlos.springboot.models.dto.weapon.*;
 
 public class WeaponTipoConverter {
 
-    // Convierte una MonsterEntity a MonsterDTO
+    // Convierte una WeaponTipoEntity a WeaponTipoDTO
     public static WeaponTipoDTO weaponEntityToDTO(WeaponTipoEntity weaponTipoEntity, boolean flagWithRelations) {
         if (weaponTipoEntity == null) {
             return null;

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.juancarlos.springboot.entity.location.LocationItemEntity;
 import com.juancarlos.springboot.entity.quest.QuestBaseEntity;
 import com.juancarlos.springboot.entity.quest.QuestRewardEntity;
-import com.juancarlos.springboot.entity.recoleccionStack.RecoleccionStackEntity;
+import com.juancarlos.springboot.entity.recoleccion.RecoleccionStackEntity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

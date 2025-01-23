@@ -26,8 +26,8 @@ public class WeaponServiceImpl implements WeaponService {
     @Autowired
     private WeaponRepository weaponRepository;
 
-    // --------------- weaponTipoRepository --------------------
-    // Método weapon por id
+    // --------------- weaponTipo --------------------
+    // Método weapon tipo por id
     @Override
     public WeaponTipoDTO getWeaponTypeId(Long id) {
         WeaponTipoEntity weaponEntity = weaponTipoRepository.findById(id)
@@ -56,7 +56,7 @@ public class WeaponServiceImpl implements WeaponService {
         return weaponEntities.map(w -> WeaponTipoConverter.weaponEntityToDTO(w, false));
     }
 
-    // ----------------- weaponRepository ---------------------
+    // ----------------- weapon ---------------------
     // Método weapon por id
     @Override
     public WeaponBaseDTO getWeaponId(Long id) {

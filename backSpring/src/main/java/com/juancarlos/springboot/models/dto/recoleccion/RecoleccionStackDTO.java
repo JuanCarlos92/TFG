@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.models.dto.recoleccionStack;
+package com.juancarlos.springboot.models.dto.recoleccion;
 import java.util.List;
 
 import com.juancarlos.springboot.models.dto.item.ItemBaseDTO;

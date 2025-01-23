@@ -2,8 +2,6 @@ package com.juancarlos.springboot.entity.armor;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,7 +20,7 @@ public class ArmorRarezaEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "rareza", unique = true, nullable = false)
+    @Column(name = "rareza", nullable = false)
     private Integer rareza;
 
     @OneToMany(mappedBy = "armorRareza", fetch = FetchType.LAZY)

@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.entity.recoleccionStack;
+package com.juancarlos.springboot.entity.recoleccion;
 
 import java.util.List;
 
