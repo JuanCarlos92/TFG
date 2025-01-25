@@ -20,27 +20,27 @@ public class MonsterZonasHitEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "nombre_base", unique = false, nullable = false)
+    @Column(name = "nombre_base", nullable = false)
     private String nombreBase;
-    @Column(name = "zonaImpacto", unique = false, nullable = true)
+    @Column(name = "zona_impacto")
     private String zonaImpacto;
-    @Column(name = "corte", unique = false, nullable = true)
+    @Column(name = "corte")
     private Integer corte;
-    @Column(name = "impacto", unique = false, nullable = true)
+    @Column(name = "impacto")
     private Integer impacto;
-    @Column(name = "disparo", unique = false, nullable = true)
+    @Column(name = "disparo")
     private Integer disparo;
-    @Column(name = "fuego", unique = false, nullable = true)
+    @Column(name = "fuego")
     private Integer fuego;
-    @Column(name = "agua", unique = false, nullable = true)
+    @Column(name = "agua")
     private Integer agua;
-    @Column(name = "rayo", unique = false, nullable = true)
+    @Column(name = "rayo")
     private Integer rayo;
-    @Column(name = "hielo", unique = false, nullable = true)
+    @Column(name = "hielo")
     private Integer hielo;
-    @Column(name = "dragon", unique = false, nullable = true)
+    @Column(name = "dragon")
     private Integer dragon;
-    @Column(name = "ko", unique = false, nullable = true)
+    @Column(name = "ko")
     private Integer ko;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

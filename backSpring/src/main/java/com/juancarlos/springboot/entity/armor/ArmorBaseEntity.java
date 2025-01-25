@@ -23,33 +23,33 @@ public class ArmorBaseEntity {
     private Long id;
     @Column(name = "nombre", unique = true, nullable = false)
     private String nombre;
-    @Column(name = "rareza", nullable = true)
+    @Column(name = "rareza")
     private Integer rareza;
-    @Column(name = "tipo", nullable = true)
+    @Column(name = "tipo")
     private String tipo;
-    @Column(name = "genero", nullable = true)
+    @Column(name = "genero")
     private String genero;
-    @Column(name = "ranura_1", nullable = true)
+    @Column(name = "ranura_1")
     private Integer ranura1;
-    @Column(name = "ranura_2", nullable = true)
+    @Column(name = "ranura_2")
     private Integer ranura2;
-    @Column(name = "ranura_3", nullable = true)
+    @Column(name = "ranura_3")
     private Integer ranura3;
-    @Column(name = "defensa_base", nullable = true)
+    @Column(name = "defensa_base")
     private Integer defensaBase;
-    @Column(name = "defensa_max", nullable = true)
+    @Column(name = "defensa_max")
     private Integer defensaMax;
-    @Column(name = "defensa_aumento_max", nullable = true)
+    @Column(name = "defensa_aumento_max")
     private Integer defensaAumentoMax;
-    @Column(name = "defensa_fuego", nullable = true)
+    @Column(name = "defensa_fuego")
     private Integer defensaFuego;
-    @Column(name = "defensa_agua", nullable = true)
+    @Column(name = "defensa_agua")
     private Integer defensaAgua;
-    @Column(name = "defensa_rayo", nullable = true)
+    @Column(name = "defensa_rayo")
     private Integer defensaRayo;
-    @Column(name = "defensa_hielo", nullable = true)
+    @Column(name = "defensa_hielo")
     private Integer defensaHielo;
-    @Column(name = "defensaDragon", nullable = true)
+    @Column(name = "defensa_dragon")
     private Integer defensaDragon;
 
     // Relacion muchos a uno con la tabla armadura rareza

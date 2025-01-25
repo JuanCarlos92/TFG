@@ -26,43 +26,43 @@ public class WeaponBaseEntity {
     private String nombre;
     @Column(name = "tipo_arma", nullable = false)
     private String tipoArma;
-    @Column(name = "predecesor", nullable = true)
+    @Column(name = "predecesor")
     private String predecesor;
-    @Column(name = "categoria", nullable = true)
+    @Column(name = "categoria")
     private String categoria;
-    @Column(name = "rareza", nullable = true)
+    @Column(name = "rareza")
     private Integer rareza;
-    @Column(name = "ataque", nullable = true)
+    @Column(name = "ataque")
     private Integer ataque;
-    @Column(name = "afinidad", nullable = true)
+    @Column(name = "afinidad")
     private Integer afinidad;
-    @Column(name = "defensa", nullable = true)
+    @Column(name = "defensa")
     private Integer defensa;
-    @Column(name = "elemento_oculto", nullable = true)
+    @Column(name = "elemento_oculto")
     private Boolean elementoOculto;
-    @Column(name = "elemento1", nullable = true)
+    @Column(name = "elemento1")
     private String elemento1;
-    @Column(name = "ataque_elemento1", nullable = true)
+    @Column(name = "ataque_elemento1")
     private Integer ataqueElemento1;
-    @Column(name = "sello_ancianos", nullable = true)
+    @Column(name = "sello_ancianos")
     private String selloAncianos;
-    @Column(name = "ranura_1", nullable = true)
+    @Column(name = "ranura_1")
     private Integer ranura1;
-    @Column(name = "ranura_2", nullable = true)
+    @Column(name = "ranura_2")
     private Integer ranura2;
-    @Column(name = "ranura_3", nullable = true)
+    @Column(name = "ranura_3")
     private Integer ranura3;
-    @Column(name = "bono_kinsecto", nullable = true)
+    @Column(name = "bono_kinsecto")
     private String bonoKinsecto;
-    @Column(name = "frasco", nullable = true)
+    @Column(name = "frasco")
     private String frasco;
-    @Column(name = "potencia_frasco", nullable = true)
+    @Column(name = "potencia_frasco")
     private String potenciaFrasco;
-    @Column(name = "municion", nullable = true)
+    @Column(name = "municion")
     private String municion;
-    @Column(name = "nivel_municion", nullable = true)
+    @Column(name = "nivel_municion")
     private Integer nivelMunicion;
-    @Column(name = "configuracion_municion", nullable = true)
+    @Column(name = "configuracion_municion")
     private String confMunicion;
 
     // Relacion muchos a uno con la tabla weaponTipo

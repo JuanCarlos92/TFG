@@ -1,5 +1,7 @@
 package com.juancarlos.springboot.controllers;
 
+import com.juancarlos.springboot.entity.weapon.WeaponBaseEntity;
+import com.juancarlos.springboot.services.WeaponService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,9 +14,11 @@ import com.juancarlos.springboot.models.dto.weapon.WeaponBaseDTO;
 import com.juancarlos.springboot.models.dto.weapon.WeaponTipoDTO;
 import com.juancarlos.springboot.models.response.GetWeaponResponse;
 import com.juancarlos.springboot.models.response.GetWeaponTipoResponse;
-import com.juancarlos.springboot.services.WeaponService;
+
 
 import lombok.AllArgsConstructor;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/weapon")
@@ -24,18 +28,13 @@ public class WeaponController {
 	@Autowired
 	private WeaponService weaponService;
 
+	// ---------------------------- WeaponBase ----------------------------
 	// Endpoint para obtener armas con paginación
 	@GetMapping()
 	public Page<WeaponBaseDTO> getWeaponWithPagination(@RequestParam(defaultValue = "0") int page,
-			@RequestParam(defaultValue = "12") int size, @RequestParam(required = false) String nombre) {
-
-		if (nombre != null && !nombre.isEmpty()) {
-			// Si el nombre está presente, filtra por nombre con paginación
-			return weaponService.getWeaponsByNameWithPagination(nombre, page, size);
-		} else {
-			// Si no hay nombre, devuelve todas las armas con paginación
+			@RequestParam(defaultValue = "12") int size) {
 			return weaponService.getWeaponsWithPagination(page, size);
-		}
+
 	}
 
 	// Endpoint para obtener un arma por id
@@ -49,20 +48,18 @@ public class WeaponController {
 
 	}
 
+	@GetMapping("/rareza")
+	public List<WeaponBaseEntity> getWeaponsByRareza(@RequestParam int rareza) {
+		return weaponService.getWeaponsByRareza(rareza);
+	}
+
 	// ----------------------------- WeaponTipo -----------------------------
 
 	// Endpoint para obtener tipos de armas con paginación
 	@GetMapping("/tipo")
 	public Page<WeaponTipoDTO> getWeaponTipoWithPagination(@RequestParam(defaultValue = "0") int page,
-			@RequestParam(defaultValue = "14") int size, @RequestParam(required = false) String nombre) {
-
-		if (nombre != null && !nombre.isEmpty()) {
-			// Si el nombre está presente, filtra por nombre con paginación
-			return weaponService.getWeaponTypesByNameWithPagination(nombre, page, size);
-		} else {
-			// Si no hay nombre, devuelve todos los tipos de armas con paginación
+			@RequestParam(defaultValue = "14") int size) {
 			return weaponService.getWeaponTypesWithPagination(page, size);
-		}
 	}
 
 	// Endpoint para obtener un tipo de arma por id

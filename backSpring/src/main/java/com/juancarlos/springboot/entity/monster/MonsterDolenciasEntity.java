@@ -22,41 +22,41 @@ public class MonsterDolenciasEntity {
     private Long id;
     @Column(name = "nombre_base", unique = true, nullable = false)
     private String nombreBase;
-    @Column(name = "rugido", nullable = false)
+    @Column(name = "rugido")
     private String rugido;
-    @Column(name = "viento", nullable = false)
+    @Column(name = "viento")
     private String viento;
-    @Column(name = "temblor", nullable = false)
+    @Column(name = "temblor")
     private String temblor;
-    @Column(name = "defensa_baja", nullable = false)
+    @Column(name = "defensa_baja")
     private Boolean defensaBaja;
-    @Column(name = "plaga_fuego", nullable = false)
+    @Column(name = "plaga_fuego")
     private Boolean plagaFuego;
-    @Column(name = "plaga_agua", nullable = false)
+    @Column(name = "plaga_agua")
     private Boolean plagaAgua;
-    @Column(name = "plaga_rayo", nullable = false)
+    @Column(name = "plaga_rayo")
     private Boolean plagaRayo;
-    @Column(name = "plaga_hielo", nullable = false)
+    @Column(name = "plaga_hielo")
     private Boolean plagaHielo;
-    @Column(name = "plaga_dragon", nullable = false)
+    @Column(name = "plaga_dragon")
     private Boolean plagaDragon;
-    @Column(name = "plaga_nitro", nullable = false)
+    @Column(name = "plaga_nitro")
     private Boolean plagaNitro;
-    @Column(name = "regional", nullable = false)
+    @Column(name = "regional")
     private Boolean regional;
-    @Column(name = "veneno", nullable = false)
+    @Column(name = "veneno")
     private Boolean veneno;
-    @Column(name = "sueño", nullable = false)
+    @Column(name = "sueño")
     private Boolean sleep;
-    @Column(name = "paralisis", nullable = false)
+    @Column(name = "paralisis")
     private Boolean paralisis;
-    @Column(name = "sangrado", nullable = false)
+    @Column(name = "sangrado")
     private Boolean sangrado;
-    @Column(name = "aturdimiento", nullable = false)
+    @Column(name = "aturdimiento")
     private Boolean aturdimiento;
-    @Column(name = "fango", nullable = false)
+    @Column(name = "fango")
     private Boolean fango;
-    @Column(name = "efluente", nullable = false)
+    @Column(name = "efluente")
     private Boolean efluente;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

@@ -20,21 +20,21 @@ public class WeaponArcoEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "nombre_base", unique = false, nullable = false)
+    @Column(name = "nombre_base", nullable = false)
     private String nombreBase;
-    @Column(name = "tipo_arma", unique = false, nullable = true)
+    @Column(name = "tipo_arma")
     private String tipoArma;
-    @Column(name = "proximidad", nullable = true)
+    @Column(name = "proximidad")
     private String proximidad;
-    @Column(name = "potencia", nullable = true)
+    @Column(name = "potencia")
     private String potencia;
-    @Column(name = "paralisis", nullable = true)
+    @Column(name = "paralisis")
     private String paralisis;
-    @Column(name = "veneno", nullable = true)
+    @Column(name = "veneno")
     private String veneno;
-    @Column(name = "sleep", nullable = true)
+    @Column(name = "sleep")
     private String sueno;
-    @Column(name = "explosivo", nullable = true)
+    @Column(name = "explosivo")
     private String explosivo;
 
     // Relacion con la tabla arma_base

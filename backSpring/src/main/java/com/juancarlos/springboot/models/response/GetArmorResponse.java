@@ -14,5 +14,5 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class GetArmorResponse extends Response {
-    private ArmorBaseDTO armorBaseDTO;
+    private ArmorBaseDTO armorDTO;
 }

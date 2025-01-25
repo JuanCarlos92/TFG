@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.converters;
+package com.juancarlos.springboot.converters.weapon;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -7,35 +7,30 @@ import com.juancarlos.springboot.entity.weapon.*;
 import com.juancarlos.springboot.models.dto.weapon.*;
 
 public class WeaponConverter {
-    // Convierte una MonsterEntity a MonsterDTO
-    public static WeaponBaseDTO weaponEntityToDTO(WeaponBaseEntity weaponBaseEntity, boolean flagWithRelations) {
+    // Convierte una WeaponEntity a WeaponDTO
+    public static WeaponBaseDTO weaponEntityToDTO(WeaponBaseEntity weaponBaseEntity) {
         if (weaponBaseEntity == null) {
             return null;
         }
-        // Si withRelations == true, convertimos las listas
-        // Si withRelations == false, las dejamos en null o en una lista vacía
-        List<WeaponCraftDTO> listaWeaponCraft = flagWithRelations ? weaponBaseEntity.getWeaponCraft()
+        // Convertimos las lista
+        List<WeaponCraftDTO> listaWeaponCraft = weaponBaseEntity.getWeaponCraft()
                 .stream()
                 .map(WeaponConverter::convertCraftEntityToDto)
-                .collect(Collectors.toList())
-                : null;
-        List<WeaponArcoDTO> listaWeaponArco = flagWithRelations ? weaponBaseEntity.getWeaponArco()
+                .collect(Collectors.toList());
+        List<WeaponArcoDTO> listaWeaponArco = weaponBaseEntity.getWeaponArco()
                 .stream()
                 .map(WeaponConverter::convertArcoEntityToDto)
-                .collect(Collectors.toList())
-                : null;
+                .collect(Collectors.toList());
 
-        List<WeaponMunicionDTO> listaWeaponMunicion = flagWithRelations ? weaponBaseEntity.getWeaponMunicion()
+        List<WeaponMunicionDTO> listaWeaponMunicion = weaponBaseEntity.getWeaponMunicion()
                 .stream()
                 .map(WeaponConverter::convertMunicionEntityToDto)
-                .collect(Collectors.toList())
-                : null;
+                .collect(Collectors.toList());
 
-        List<WeaponMelodiaNotaDTO> listaWeaponMelodiaNota = flagWithRelations ? weaponBaseEntity.getWeaponMelodiaNota()
+        List<WeaponMelodiaNotaDTO> listaWeaponMelodiaNota = weaponBaseEntity.getWeaponMelodiaNota()
                 .stream()
                 .map(WeaponConverter::convertWeaponMelodiaNotaEntityToDTO)
-                .collect(Collectors.toList())
-                : null;
+                .collect(Collectors.toList());
 
         return WeaponBaseDTO.builder() // Creamos un nuevo objeto WeaponBaseDTO
                 .id(weaponBaseEntity.getId())
@@ -65,11 +60,6 @@ public class WeaponConverter {
                 .weaponMunicionDTO(listaWeaponMunicion) // Lista de WeaponMunicionDTO
                 .weaponMelodiaNotaDTO(listaWeaponMelodiaNota) // Lista de WeaponMelodiaNota
                 .build();
-    }
-
-    public static WeaponBaseDTO weaponEntityToDTO(WeaponBaseEntity weaponbaseEntity) {
-        // Por defecto, llamamos a la versión flag = true
-        return weaponEntityToDTO(weaponbaseEntity, true);
     }
 
     // Convierte WeaponCraftEntity a WeaponCraftDTO

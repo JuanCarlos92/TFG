@@ -21,19 +21,19 @@ public class WeaponMelodiaBaseEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "nombre", unique = false, nullable = false)
+    @Column(name = "nombre", nullable = false)
     private String nombre;
-    @Column(name = "duracion_base", unique = false, nullable = true)
+    @Column(name = "duracion_base")
     private Integer duracionBase;
-    @Column(name = "extension_base", nullable = true)
+    @Column(name = "extension_base")
     private Integer extensionBase;
-    @Column(name = "duracion_m1", nullable = true)
+    @Column(name = "duracion_m1")
     private Integer duracionM1;
-    @Column(name = "extension_m1", nullable = true)
+    @Column(name = "extension_m1")
     private Integer extensionM1;
-    @Column(name = "duracion_m2", nullable = true)
+    @Column(name = "duracion_m2")
     private Integer duracionM2;
-    @Column(name = "extension_m2", nullable = true)
+    @Column(name = "extension_m2")
     private Integer extensionM2;
 
     @OneToMany(mappedBy = "weaponMelodiaBase", fetch = FetchType.LAZY)

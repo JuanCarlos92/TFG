@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.juancarlos.springboot.converters.MonsterConverter;
+import com.juancarlos.springboot.converters.monster.MonsterConverter;
 import com.juancarlos.springboot.entity.monster.MonsterBaseEntity;
 import com.juancarlos.springboot.models.dto.monster.MonsterBaseDTO;
 import com.juancarlos.springboot.repositories.MonsterRepository;
@@ -20,7 +20,7 @@ public class MonsterServiceImpl implements MonsterService {
     @Autowired
     private MonsterRepository monsterRepository;
 
-    // Método monstruos por id
+    // Metodo monstruos por id
     @Override
     public MonsterBaseDTO getMonsterId(Long id) {
         MonsterBaseEntity monsterEntity = monsterRepository.findById(id)
@@ -29,7 +29,7 @@ public class MonsterServiceImpl implements MonsterService {
         return MonsterConverter.monsterEntityToDTO(monsterEntity, true);
     }
 
-    // Método monstruos con paginación
+    // Metodo monstruos con paginación
     @Override
     public Page<MonsterBaseDTO> getMonstersWithPagination(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
@@ -39,7 +39,7 @@ public class MonsterServiceImpl implements MonsterService {
         return monsterEntities.map(m -> MonsterConverter.monsterEntityToDTO(m, false));
     }
 
-    // Método monstruos con paginación + nombre
+    // Metodo monstruos con paginación + nombre
     @Override
     public Page<MonsterBaseDTO> getMonstersByNameWithPagination(String nombre, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);

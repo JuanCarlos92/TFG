@@ -14,12 +14,9 @@ import com.juancarlos.springboot.entity.weapon.WeaponTipoEntity;
 @Repository
 public interface WeaponTipoRepository extends JpaRepository<WeaponTipoEntity, Long> {
 
-     // Método paginacion (buscar todo)
+     // Metodo paginacion (buscartodo)
     Page<WeaponTipoEntity> findAll(Pageable pageable);
 
-    // Método paginacion + nombre
-    Page<WeaponTipoEntity> findBytipoArmaContaining(String tipoArma, Pageable pageable);
-    
     // Metodo buscar por Id
     Optional<WeaponTipoEntity> findById(Long id);
     

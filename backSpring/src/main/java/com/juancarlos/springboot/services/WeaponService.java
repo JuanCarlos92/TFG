@@ -1,30 +1,33 @@
 package com.juancarlos.springboot.services;
 
 
+import com.juancarlos.springboot.entity.weapon.WeaponBaseEntity;
 import org.springframework.data.domain.Page;
 
 import com.juancarlos.springboot.models.dto.weapon.WeaponBaseDTO;
 import com.juancarlos.springboot.models.dto.weapon.WeaponTipoDTO;
 
+import java.util.List;
+
 
 public interface WeaponService {
 
+    // ---------------------- WeaponTipo ----------------------------
     // Obtener arma tipo por id
-    public WeaponTipoDTO getWeaponTypeId(Long id);
+    WeaponTipoDTO getWeaponTypeId(Long id);
 
-    // Método paginacion tipos de armas
-    public Page<WeaponTipoDTO> getWeaponTypesWithPagination(int page, int size);
-    public Page<WeaponTipoDTO> getWeaponTypesByNameWithPagination(String tipoArma, int page, int size);
+    // Metodo paginacion tipos de armas
+    Page<WeaponTipoDTO> getWeaponTypesWithPagination(int page, int size);
 
-    // -----------------------------------------------------
+    // ---------------------- WeaponBase ----------------------------
 
     // Obtener Weapon por id
-    public WeaponBaseDTO getWeaponId(Long id);
+    WeaponBaseDTO getWeaponId(Long id);
 
-    // Método paginacion armas
-    public Page<WeaponBaseDTO> getWeaponsWithPagination(int page, int size);
-    public Page<WeaponBaseDTO> getWeaponsByNameWithPagination(String nombre, int page, int size);
+    // Metodo paginacion armas
+    Page<WeaponBaseDTO> getWeaponsWithPagination(int page, int size);
 
-
+    // Metodo para filtrar por rareza
+    List<WeaponBaseEntity> getWeaponsByRareza(int rareza);
     
 }

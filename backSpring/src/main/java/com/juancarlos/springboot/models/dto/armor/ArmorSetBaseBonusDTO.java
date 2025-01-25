@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ArmorSetBaseBonus {
+public class ArmorSetBaseBonusDTO {
     private String nombre;
     private String nombreSkill1;
     private Integer nivelSkill1;

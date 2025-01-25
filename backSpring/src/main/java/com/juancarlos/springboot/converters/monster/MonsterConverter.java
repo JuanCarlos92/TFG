@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.converters;
+package com.juancarlos.springboot.converters.monster;
 
 import java.util.List;
 import java.util.stream.Collectors;

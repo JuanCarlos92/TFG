@@ -20,15 +20,15 @@ public class MonsterBreakEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "nombre_base", unique = false, nullable = false)
+    @Column(name = "nombre_base", nullable = false)
     private String nombre_base;
-    @Column(name = "parte", nullable = true)
+    @Column(name = "parte")
     private String parte;
-    @Column(name = "estremecimiento", nullable = true)
+    @Column(name = "estremecimiento")
     private Integer estremecimiento;
-    @Column(name = "herida", nullable = true)
+    @Column(name = "herida")
     private Integer herida;
-    @Column(name = "corte", nullable = true)
+    @Column(name = "corte")
     private Integer corte;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

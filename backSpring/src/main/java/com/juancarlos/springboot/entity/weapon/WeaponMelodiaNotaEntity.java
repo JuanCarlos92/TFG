@@ -2,7 +2,6 @@ package com.juancarlos.springboot.entity.weapon;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,9 +20,9 @@ public class WeaponMelodiaNotaEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "nombre_base", unique = false, nullable = false)
+    @Column(name = "nombre_base", nullable = false)
     private String nombreBase;
-    @Column(name = "notas", unique = false, nullable = true)
+    @Column(name = "notas")
     private String notas;
 
     // Relacion con la tabla arma_melodia_base
@@ -37,5 +36,5 @@ public class WeaponMelodiaNotaEntity {
     @JoinColumn(name = "id_arma_nota", referencedColumnName = "id")
     @JsonIgnore
     private WeaponBaseEntity weaponBase;
-    
+
 }

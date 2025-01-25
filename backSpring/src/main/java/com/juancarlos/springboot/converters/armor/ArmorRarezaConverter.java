@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.converters;
+package com.juancarlos.springboot.converters.armor;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,28 +11,21 @@ import com.juancarlos.springboot.models.dto.armor.ArmorRarezaDTO;
 public class ArmorRarezaConverter {
 
     // Convierte una ArmorRarezaEntity a ArmorRarezaDTO
-    public static ArmorRarezaDTO ArmorRarezaEntityToDTO(ArmorRarezaEntity armorRarezaEntity, boolean flagWithRelations) {
+    public static ArmorRarezaDTO ArmorRarezaEntityToDTO(ArmorRarezaEntity armorRarezaEntity) {
         if (armorRarezaEntity == null) {
             return null;
         }
-        // Si withRelations == true, convertimos las listas
-        // Si withRelations == false, las dejamos en null o en una lista vacía
-        List<ArmorBaseDTO> listaArmorBase = flagWithRelations ? armorRarezaEntity.getArmorBase()
+        // Convertimos la lista
+        List<ArmorBaseDTO> listaArmorBase = armorRarezaEntity.getArmorBase()
                 .stream()
                 .map(ArmorRarezaConverter::convertBaseEntityToDto)
-                .collect(Collectors.toList())
-                : null;
+                .collect(Collectors.toList());
 
         return ArmorRarezaDTO.builder()
                 .id(armorRarezaEntity.getId())
                 .rareza(armorRarezaEntity.getRareza())
                 .armorBaseDTO(listaArmorBase)
                 .build();
-    }
-
-    public static ArmorRarezaDTO ArmorRarezaToDTO(ArmorRarezaEntity armorRarezaEntity) {
-        // Por defecto, llamamos a la versión flag = true
-        return ArmorRarezaEntityToDTO(armorRarezaEntity, true);
     }
 
     // Convierte ArmorBaseEntity a ArmorBaseDTO

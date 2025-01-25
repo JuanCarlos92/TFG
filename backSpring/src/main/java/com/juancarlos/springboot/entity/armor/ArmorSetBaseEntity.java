@@ -23,21 +23,21 @@ public class ArmorSetBaseEntity {
     private Long id;
     @Column(name = "nombre", unique = true, nullable = false)
     private String nombre;
-    @Column(name = "rango", nullable = true)
+    @Column(name = "rango")
     private String rango;
-    @Column(name = "monster", nullable = true)
+    @Column(name = "monster")
     private String monster;
-    @Column(name = "cabeza", nullable = true)
+    @Column(name = "cabeza")
     private String cabeza;
-    @Column(name = "pecho", nullable = true)
+    @Column(name = "pecho")
     private String pecho;
-    @Column(name = "brazos", nullable = true)
+    @Column(name = "brazos")
     private String brazos;
-    @Column(name = "cintura", nullable = true)
+    @Column(name = "cintura")
     private String cintura;
-    @Column(name = "piernas", nullable = true)
+    @Column(name = "piernas")
     private String piernas;
-    @Column(name = "bonus", nullable = true)
+    @Column(name = "bonus")
     private String bonus;
 
     // Relacion muchos a uno con la tabla monster base

@@ -21,13 +21,13 @@ public class MonsterHabitatsEntity {
     private Long id;
     @Column(name = "nombre_base", unique = true, nullable = false)
     private String nombreBase;
-    @Column(name = "mapa", nullable = true)
+    @Column(name = "mapa")
     private String mapa;
-    @Column(name = "areaInicial", nullable = true)
+    @Column(name = "area_inicial")
     private Integer areaInicial;
-    @Column(name = "areaMovimiento", nullable = true)
+    @Column(name = "area_movimiento")
     private String areaMovimiento;
-    @Column(name = "areaDescanso", nullable = true)
+    @Column(name = "area_descanso")
     private String areaDescanso;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

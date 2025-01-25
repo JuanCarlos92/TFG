@@ -20,31 +20,31 @@ public class MonsterWeaknessesEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "base_name", unique = false, nullable = false)
+    @Column(name = "base_name", nullable = false)
     private String nombreBase;
-    @Column(name = "form", unique = false, nullable = true)
+    @Column(name = "form")
     private String forma;
-    @Column(name = "alt_description", unique = false, nullable = true)
+    @Column(name = "alt_description")
     private String descripcionAlterado;
-    @Column(name = "fire", unique = false, nullable = true)
+    @Column(name = "fire")
     private Integer fuego;
-    @Column(name = "water", unique = false, nullable = true)
+    @Column(name = "water")
     private Integer agua;
-    @Column(name = "thunder", unique = false, nullable = true)
+    @Column(name = "thunder")
     private Integer rayo;
-    @Column(name = "ice", unique = false, nullable = true)
+    @Column(name = "ice")
     private Integer hielo;
-    @Column(name = "dragon", unique = false, nullable = true)
+    @Column(name = "dragon")
     private Integer dragon;
-    @Column(name = "poison", unique = false, nullable = true)
+    @Column(name = "poison")
     private Integer veneno;
-    @Column(name = "sleep", unique = false, nullable = true)
+    @Column(name = "sleep")
     private Integer sleep;
-    @Column(name = "paralysis", unique = false, nullable = true)
+    @Column(name = "paralysis")
     private Integer paralisis;
-    @Column(name = "blast", unique = false, nullable = true)
+    @Column(name = "blast")
     private Integer nitro;
-    @Column(name = "stun", unique = false, nullable = true)
+    @Column(name = "stun")
     private Integer stun;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

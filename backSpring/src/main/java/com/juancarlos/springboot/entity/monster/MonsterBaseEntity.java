@@ -25,17 +25,17 @@ public class MonsterBaseEntity {
     private Long id;
     @Column(name = "nombre", unique = true, nullable = false)
     private String nombre;
-    @Column(name = "ecologia", nullable = true)
+    @Column(name = "ecologia")
     private String ecologia;
-    @Column(name = "size", nullable = true)
+    @Column(name = "size")
     private String size;
-    @Column(name = "trampa_escollo", nullable = true)
+    @Column(name = "trampa_escollo")
     private Boolean trampaEscollo;
-    @Column(name = "trampa_electrica", nullable = true)
+    @Column(name = "trampa_electrica")
     private Boolean trampaElectrica;
-    @Column(name = "trampa_hiedra", nullable = true)
+    @Column(name = "trampa_hiedra")
     private Boolean trampaHiedra;
-    @Column(name = "descripcion", nullable = true)
+    @Column(name = "descripcion")
     private String descripcion;
 
     @OneToMany(mappedBy = "monsterBase", fetch = FetchType.LAZY)

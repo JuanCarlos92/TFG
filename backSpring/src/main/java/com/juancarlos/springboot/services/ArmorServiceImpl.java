@@ -8,13 +8,16 @@ import org.springframework.stereotype.Service;
 
 import com.juancarlos.springboot.models.dto.armor.ArmorBaseDTO;
 import com.juancarlos.springboot.models.dto.armor.ArmorRarezaDTO;
+import com.juancarlos.springboot.models.dto.armor.ArmorSetBaseDTO;
 import com.juancarlos.springboot.repositories.ArmorRarezaRepository;
 import com.juancarlos.springboot.repositories.ArmorRepository;
-import com.juancarlos.springboot.converters.ArmorRarezaConverter;
-import com.juancarlos.springboot.converters.WeaponConverter;
+import com.juancarlos.springboot.repositories.ArmorSetRepository;
+import com.juancarlos.springboot.converters.armor.ArmorConverter;
+import com.juancarlos.springboot.converters.armor.ArmorRarezaConverter;
+import com.juancarlos.springboot.converters.armor.ArmorSetBaseConverter;
 import com.juancarlos.springboot.entity.armor.ArmorBaseEntity;
 import com.juancarlos.springboot.entity.armor.ArmorRarezaEntity;
-import com.juancarlos.springboot.entity.weapon.WeaponBaseEntity;
+import com.juancarlos.springboot.entity.armor.ArmorSetBaseEntity;
 
 import lombok.AllArgsConstructor;
 
@@ -28,66 +31,68 @@ public class ArmorServiceImpl implements ArmorService {
     @Autowired
     private ArmorRepository armorRepository;
 
-    // --------------- ArmorRareza --------------------
-    // Método armor rareza por id
+    @Autowired
+    private ArmorSetRepository armorSetRepository;
+
+    // --------------- Armor Rareza --------------------
+    // Metodo armor rareza por id
     @Override
     public ArmorRarezaDTO getArmorRarityId(Long id) {
         ArmorRarezaEntity armorEntity = armorRarezaRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("No hay armaduras con ese id: " + id));
+                .orElseThrow(() -> new RuntimeException("No hay rareza de armaduras con ese id: " + id));
 
-        return ArmorRarezaConverter.ArmorRarezaEntityToDTO(armorEntity, false);
+        return ArmorRarezaConverter.ArmorRarezaEntityToDTO(armorEntity);
     }
 
-    // Método armor rareza con paginacion
+    // Metodo armor rareza con paginacion
     @Override
     public Page<ArmorRarezaDTO> getArmorRarityWithPagination(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<ArmorRarezaEntity> armorEntities = armorRarezaRepository.findAll(pageable);
 
         // Convertimos cada ArmorEntities -> ArmorDTO sin relaciones
-        return armorEntities.map(w -> ArmorRarezaConverter.ArmorRarezaEntityToDTO(w, false));
+        return armorEntities.map(ArmorRarezaConverter::ArmorRarezaEntityToDTO);
 
     }
 
-    // Método armor rareza con paginacion + rareza
-    @Override
-    public Page<ArmorRarezaDTO> getArmorRarityByNameWithPagination(String rareza, int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
-        Page<ArmorRarezaEntity> armorEntities = armorRarezaRepository.findAll(pageable);
-
-        // Convertimos cada ArmorEntities -> ArmorDTO sin relaciones
-        return armorEntities.map(w -> ArmorRarezaConverter.ArmorRarezaEntityToDTO(w, true));
-
-    }
-
-    // --------------------- Armor ------------------------
-    // Método armadura por id
+    // --------------------- Armor Base ------------------------
+    // Metodo armadura por id
     @Override
     public ArmorBaseDTO getArmorId(Long id) {
         ArmorBaseEntity armorEntity = armorRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("No hay armadura con ese id: " + id));
+                .orElseThrow(() -> new RuntimeException("No hay armaduras con ese id: " + id));
         // Con relaciones
-        return ArmorConverter.ArmorEntityToDTO(armorEntity, true);
+        return ArmorConverter.armorEntityToDTO(armorEntity);
     }
-    // Método armaduras con paginación
 
+    // Metodo armaduras con paginación
     @Override
     public Page<ArmorBaseDTO> getArmorWithPagination(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<ArmorBaseEntity> armorEntities = armorRepository.findAll(pageable);
 
         // Convertimos cada WeaponEntities -> WeaponDTO sin relaciones
-        return armorRepository.map(w -> ArmorConverter.ArmorEntityToDTO(w, false));
+        return armorEntities.map(ArmorConverter::armorEntityToDTO);
     }
 
-    // Método armaduras con paginación + nombre
+    // --------------------- ArmorSet ------------------------
+    // Metodo armaduraSet por id
     @Override
-    public Page<ArmorBaseDTO> getArmorByNameWithPagination(String nombre, int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
-        Page<ArmorBaseEntity> armorEntities = armorRepository.findByNombreContaining(nombre, pageable);
+    public ArmorSetBaseDTO getArmorSetId(Long id) {
+        ArmorSetBaseEntity armorEntity = armorSetRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("No hay armaduraSet con ese id: " + id));
+        // Con relaciones
+        return ArmorSetBaseConverter.armorSetEntityToDTO(armorEntity);
+    }
 
-        // Convertimos cada WeaponEntities -> WeaponDTO
-        return armorRepository.map(m -> ArmorConverter.ArmorEntityToDTO(m, false));
+    // Metodo armaduraSet con paginación
+    @Override
+    public Page<ArmorSetBaseDTO> getArmorSetWithPagination(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<ArmorSetBaseEntity> armorEntities = armorSetRepository.findAll(pageable);
+
+        // Convertimos cada WeaponEntities -> WeaponDTO sin relaciones
+        return armorEntities.map(ArmorSetBaseConverter::armorSetEntityToDTO);
     }
 
 }

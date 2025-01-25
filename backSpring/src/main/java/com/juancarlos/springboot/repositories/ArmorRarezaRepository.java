@@ -12,11 +12,8 @@ import com.juancarlos.springboot.entity.armor.ArmorRarezaEntity;
 @Repository
 public interface ArmorRarezaRepository extends JpaRepository<ArmorRarezaEntity, Long> {
     
-    // Método paginacion (buscar todo)
+    // Metodo paginacion (buscartodo)
     Page<ArmorRarezaEntity> findAll(Pageable pageable);
-
-    // Método paginacion + nombre
-    Page<ArmorRarezaEntity> findByRarezaArmaContaining(String rareza, Pageable pageable);
 
     // Metodo buscar por Id
     Optional<ArmorRarezaEntity> findById(Long id);

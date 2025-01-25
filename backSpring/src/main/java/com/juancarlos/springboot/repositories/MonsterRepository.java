@@ -13,10 +13,10 @@ import org.springframework.data.domain.Pageable;
 @Repository
 public interface MonsterRepository extends JpaRepository<MonsterBaseEntity, Long> {
 
-    // Método paginacion (buscar todo)
+    // Metodo paginacion (buscartodo)
     Page<MonsterBaseEntity> findAll(Pageable pageable);
 
-    // Método paginacion + nombre
+    // Metodo paginacion + nombre
     Page<MonsterBaseEntity> findByNombreContaining(String nombre, Pageable pageable);
 
     // Metodo buscar por Id

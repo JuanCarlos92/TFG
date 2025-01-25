@@ -28,6 +28,6 @@ public class ArmorSetBaseDTO {
     //Lista de armaduras base
     private List<ArmorBaseDTO> armorBaseDTO;
     //Lista de bonos de armaduras
-    private List<ArmorSetBaseBonus> armorSetBaseBonus;
+    private List<ArmorSetBaseBonusDTO> armorSetBaseBonus;
 
 }

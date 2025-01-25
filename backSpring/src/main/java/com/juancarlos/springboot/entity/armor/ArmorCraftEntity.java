@@ -29,8 +29,12 @@ public class ArmorCraftEntity {
     private String nombreItem2;
     @Column(name = "cantidad_item2", nullable = true)
     private Integer cantidadItem2;
+    @Column(name = "nombre_item3", nullable = true)
+    private String nombreItem3;
     @Column(name = "cantidad_item3", nullable = true)
     private Integer cantidadItem3;
+    @Column(name = "nombre_item4", nullable = true)
+    private String nombreItem4;
     @Column(name = "cantidad_item4", nullable = true)
     private Integer cantidadItem4;
 

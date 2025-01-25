@@ -21,15 +21,15 @@ public class MonsterRewardsEntity {
     private Long id;
     @Column(name = "base_name", unique = true, nullable = false)
     private String nombreBase;
-    @Column(name = "rang", nullable = true)
+    @Column(name = "rang")
     private String rang;
-    @Column(name = "condiciones", nullable = true)
+    @Column(name = "condiciones")
     private String condiciones;
-    @Column(name = "item", nullable = true)
+    @Column(name = "item")
     private String item;
-    @Column(name = "stack", nullable = true)
+    @Column(name = "stack")
     private Integer stack;
-    @Column(name = "percentage", nullable = true)
+    @Column(name = "percentage")
     private Integer percentage;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

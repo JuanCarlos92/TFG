@@ -20,17 +20,17 @@ public class CharmBaseEntity {
     private Long id;
     @Column(name = "nombre", unique = true, nullable = false)
     private String nombre;
-    @Column(name = "previo", nullable = true)
+    @Column(name = "previo")
     private String previo;
-    @Column(name = "rareza", nullable = true)
+    @Column(name = "rareza")
     private Integer rareza;
-    @Column(name = "nombre_skill1", nullable = true)
+    @Column(name = "nombre_skill1")
     private String nombreSkill1;
-    @Column(name = "nivel_skill1", nullable = true)
+    @Column(name = "nivel_skill1")
     private Integer nivelSkill1;
-    @Column(name = "nombre_skill2", nullable = true)
+    @Column(name = "nombre_skill2")
     private String nombreSkill2;
-    @Column(name = "nivel_skill2", nullable = true)
+    @Column(name = "nivel_skill2")
     private Integer nivelSkill2;
 
     @OneToMany(mappedBy = "charmBase", fetch = FetchType.LAZY)
