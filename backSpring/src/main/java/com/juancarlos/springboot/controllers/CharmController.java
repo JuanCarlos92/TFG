@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/charm")
 @AllArgsConstructor
-public class ChamController {
+public class CharmController {
     @Autowired
     private CharmService charmService;
 

@@ -1,12 +1,13 @@
 package com.juancarlos.springboot.converters.weapon;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import com.juancarlos.springboot.entity.weapon.*;
 import com.juancarlos.springboot.models.dto.weapon.*;
 
-public class WeaponTipoConverter {
+public class WeaponTypeConverter {
 
     // Convierte una WeaponTipoEntity a WeaponTipoDTO
     public static WeaponTipoDTO weaponEntityToDTO(WeaponTipoEntity weaponTipoEntity) {
@@ -16,7 +17,7 @@ public class WeaponTipoConverter {
         // Convertimos la lista
         List<WeaponBaseDTO> listaWeaponBase = weaponTipoEntity.getWeaponBase()
                 .stream()
-                .map(WeaponTipoConverter::convertBaseEntityToDto)
+                .map(WeaponTypeConverter::convertBaseEntityToDto)
                 .collect(Collectors.toList());
 
         return WeaponTipoDTO.builder()
@@ -52,5 +53,17 @@ public class WeaponTipoConverter {
                 .nivelMunicion(wl.getNivelMunicion())
                 .confMunicion(wl.getConfMunicion())
                 .build();
+    }
+
+
+    public static List<WeaponTipoDTO> weaponEntityToDTO(List<WeaponTipoEntity> weaponTipoEntity) {
+        List<WeaponTipoDTO> weaponsTipoDTO = new ArrayList<>();
+        for (WeaponTipoEntity w: weaponTipoEntity) {
+
+            weaponsTipoDTO.add(weaponEntityToDTO(w));
+        }
+
+        return weaponsTipoDTO;
+
     }
 }

@@ -1,6 +1,6 @@
 import { WeaponTipoDTO } from "./weapon/WeaponTipoDTO.model";
 
-export interface GetWeaponTipoResponse {
+export interface GetWeaponTypeResponse {
   weaponTipoDTO: WeaponTipoDTO;
   weaponDTO: WeaponTipoDTO;
   codError: string;

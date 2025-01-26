@@ -8,7 +8,10 @@ export const environment = {
   port: 8080,
   monsters: '/api/monster',
   weapons: '/api/weapon',
-  weaponsTipo: '/api/weapon/tipo'
+  weaponsTypeId: '/api/weapon/type',
+  armors: '/api/armor',
+  armorsRarityId: '/api/armor/rarity',
+  armorsSet:'/api/armor/set'
 };
 
 

@@ -7,18 +7,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-
-import com.juancarlos.springboot.entity.weapon.WeaponTipoEntity;
-
+import com.juancarlos.springboot.entity.armor.ArmorRarezaEntity;
 
 @Repository
-public interface WeaponTipoRepository extends JpaRepository<WeaponTipoEntity, Long> {
-
-     // Metodo paginacion (buscartodo)
-    Page<WeaponTipoEntity> findAll(Pageable pageable);
+public interface ArmorRarityRepository extends JpaRepository<ArmorRarezaEntity, Long> {
 
     // Metodo buscar por Id
-    Optional<WeaponTipoEntity> findById(Long id);
-    
-
+//    Optional<ArmorRarezaEntity> findById(Long id);
 }

@@ -1,3 +1,5 @@
+import { ArmorSetBaseDTO } from "../armor/ArmorSetBaseDTO.model";
+import { QuestMonsterDTO } from "../quest/QuestMonsterDTO.model";
 import { MonsterBreakDTO } from "./MonsterBreakDTO.model";
 import { MonsterDolenciasDTO } from "./MonsterDolenciasDTO.model";
 import { MonsterHabitatsDTO } from "./MonsterHabitatsDTO.model";
@@ -21,4 +23,6 @@ export interface MonsterBaseDTO {
   monsterRewardsDTO: MonsterRewardsDTO[];
   monsterWeaknessesDTO: MonsterWeaknessesDTO[];
   monsterZonasHitDTO: MonsterZonasHitDTO[];
+  armorSetBaseDTO: ArmorSetBaseDTO[];
+  questMonsterDTO: QuestMonsterDTO[];
   }

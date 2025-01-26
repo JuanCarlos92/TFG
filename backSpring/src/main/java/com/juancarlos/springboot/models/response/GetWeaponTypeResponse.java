@@ -1,6 +1,6 @@
 package com.juancarlos.springboot.models.response;
 
-import com.juancarlos.springboot.models.dto.armor.ArmorRarezaDTO;
+import com.juancarlos.springboot.models.dto.weapon.WeaponTipoDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,6 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class GetArmorRarezaResponse extends Response{
-    private ArmorRarezaDTO armorRarezaDTO;
+public class GetWeaponTypeResponse extends Response {
+    private WeaponTipoDTO weaponTipoDTO;
+
 }

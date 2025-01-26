@@ -6,6 +6,8 @@ import com.juancarlos.springboot.models.dto.armor.ArmorBaseDTO;
 import com.juancarlos.springboot.models.dto.armor.ArmorRarezaDTO;
 import com.juancarlos.springboot.models.dto.armor.ArmorSetBaseDTO;
 
+import java.util.List;
+
 public interface ArmorService {
 
     // ---------------------- Armor rareza -------------------------------
@@ -13,16 +15,13 @@ public interface ArmorService {
     ArmorRarezaDTO getArmorRarityId(Long id);
 
     // Metodo paginacion rareza de armaduras
-    Page<ArmorRarezaDTO> getArmorRarityWithPagination(int page, int size);
+    List<ArmorRarezaDTO> getArmorRarityList();
 
     // ----------------------- Armor base --------------------------------
     // Obtener armaduras por id
     ArmorBaseDTO getArmorId(Long id);
 
-    // Metodo paginacion armaduras
-    Page<ArmorBaseDTO> getArmorWithPagination(int page, int size);
-
-    // ------------------------ ArmorSet -----------------------------
+    // ------------------------ ArmorSet ---------------------------------
     // Obtener armadurasSet por id
     ArmorSetBaseDTO getArmorSetId(Long id);
 

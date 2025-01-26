@@ -20,12 +20,12 @@ public class ArmorSetBaseConverter {
         //Convertimos las listas
         List<ArmorBaseDTO> listaArmorBase = armorSetBaseEntity.getArmorBase()
                 .stream()
-                .map(ArmorSetBaseConverter::converArmorBaseEntityToDTO)
+                .map(ArmorSetBaseConverter::convertArmorBaseEntityToDTO)
                 .collect(Collectors.toList());
 
         List<ArmorSetBaseBonusDTO> listaArmorSetBaseBonus = armorSetBaseEntity.getArmorSetBaseBonus()
                         .stream()
-                        .map(ArmorSetBaseConverter::converArmorSetBaseBonusEntityToDTO)
+                        .map(ArmorSetBaseConverter::convertArmorSetBaseBonusEntityToDTO)
                         .collect(Collectors.toList());
 
         return ArmorSetBaseDTO.builder() // Creamos un nuevo objeto de tipo ArmorSetBaseDTO
@@ -45,7 +45,7 @@ public class ArmorSetBaseConverter {
     }
 
     // Convierte ArmorBaseEntity a ArmorBaseDTO
-    public static ArmorBaseDTO converArmorBaseEntityToDTO(ArmorBaseEntity ab) {
+    public static ArmorBaseDTO convertArmorBaseEntityToDTO(ArmorBaseEntity ab) {
         return ArmorBaseDTO.builder()
                 .nombre(ab.getNombre())
                 .rareza(ab.getRareza())
@@ -66,7 +66,7 @@ public class ArmorSetBaseConverter {
     }
 
     // Convierte ArmorSetBaseBonusEntity a ArmorSetBaseBonusDTO
-    public static ArmorSetBaseBonusDTO converArmorSetBaseBonusEntityToDTO(ArmorSetBaseBonusEntity asbb) {
+    public static ArmorSetBaseBonusDTO convertArmorSetBaseBonusEntityToDTO(ArmorSetBaseBonusEntity asbb) {
         return ArmorSetBaseBonusDTO.builder()
                 .nombre(asbb.getNombre())
                 .nombreSkill1(asbb.getNombreSkill1())

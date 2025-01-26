@@ -11,7 +11,7 @@ import { WeaponService } from 'src/app/services/weapon.service';
     CommonModule
   ]
 })
-export class WikiWeaponComponent  implements OnInit {
+export class WikiWeaponComponent implements OnInit {
 
   @Input()
   weapon!: WeaponBaseDTO;
@@ -21,7 +21,7 @@ export class WikiWeaponComponent  implements OnInit {
   constructor(private weaponService: WeaponService) { }
 
   ngOnInit() {
-
+    console.log(this.weapon);
     this.weaponService.getWeapon(this.weapon['id']).subscribe({
       next: (res) => {
         console.log('Armas ' + this.weapon['id'], res);

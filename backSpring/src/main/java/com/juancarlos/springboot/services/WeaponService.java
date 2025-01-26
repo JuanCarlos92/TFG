@@ -16,18 +16,12 @@ public interface WeaponService {
     // Obtener arma tipo por id
     WeaponTipoDTO getWeaponTypeId(Long id);
 
-    // Metodo paginacion tipos de armas
-    Page<WeaponTipoDTO> getWeaponTypesWithPagination(int page, int size);
+    // Metodo lista tipos de armas
+    List<WeaponTipoDTO> getWeaponTypeList();
 
     // ---------------------- WeaponBase ----------------------------
 
     // Obtener Weapon por id
     WeaponBaseDTO getWeaponId(Long id);
 
-    // Metodo paginacion armas
-    Page<WeaponBaseDTO> getWeaponsWithPagination(int page, int size);
-
-    // Metodo para filtrar por rareza
-    List<WeaponBaseEntity> getWeaponsByRareza(int rareza);
-    
 }

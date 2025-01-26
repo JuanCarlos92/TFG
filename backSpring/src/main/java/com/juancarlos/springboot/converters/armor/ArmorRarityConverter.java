@@ -1,24 +1,27 @@
 package com.juancarlos.springboot.converters.armor;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import com.juancarlos.springboot.entity.armor.ArmorBaseEntity;
 import com.juancarlos.springboot.entity.armor.ArmorRarezaEntity;
+import com.juancarlos.springboot.entity.weapon.WeaponTipoEntity;
 import com.juancarlos.springboot.models.dto.armor.ArmorBaseDTO;
 import com.juancarlos.springboot.models.dto.armor.ArmorRarezaDTO;
+import com.juancarlos.springboot.models.dto.weapon.WeaponTipoDTO;
 
-public class ArmorRarezaConverter {
+public class ArmorRarityConverter {
 
     // Convierte una ArmorRarezaEntity a ArmorRarezaDTO
-    public static ArmorRarezaDTO ArmorRarezaEntityToDTO(ArmorRarezaEntity armorRarezaEntity) {
+    public static ArmorRarezaDTO armorRarityEntityToDTO(ArmorRarezaEntity armorRarezaEntity) {
         if (armorRarezaEntity == null) {
             return null;
         }
         // Convertimos la lista
         List<ArmorBaseDTO> listaArmorBase = armorRarezaEntity.getArmorBase()
                 .stream()
-                .map(ArmorRarezaConverter::convertBaseEntityToDto)
+                .map(ArmorRarityConverter::convertBaseEntityToDto)
                 .collect(Collectors.toList());
 
         return ArmorRarezaDTO.builder()
@@ -48,5 +51,16 @@ public class ArmorRarezaConverter {
                 .defensaHielo(ab.getDefensaHielo())
                 .defensaDragon(ab.getDefensaDragon())
                 .build();
+    }
+
+    public static List<ArmorRarezaDTO> armorRarityEntityToDTO(List<ArmorRarezaEntity> armorRarezaEntity) {
+        List<ArmorRarezaDTO> armorsRarezaDTO = new ArrayList<>();
+        for (ArmorRarezaEntity w: armorRarezaEntity) {
+
+            armorsRarezaDTO.add(armorRarityEntityToDTO(w));
+        }
+
+        return armorsRarezaDTO;
+
     }
 }

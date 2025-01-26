@@ -1,5 +1,6 @@
 package com.juancarlos.springboot.controllers;
 
+import com.juancarlos.springboot.models.response.GetArmorRarityListResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.juancarlos.springboot.models.dto.armor.ArmorBaseDTO;
 import com.juancarlos.springboot.models.dto.armor.ArmorRarezaDTO;
 import com.juancarlos.springboot.models.dto.armor.ArmorSetBaseDTO;
-import com.juancarlos.springboot.models.response.GetArmorRarezaResponse;
+import com.juancarlos.springboot.models.response.GetArmorRarityResponse;
 import com.juancarlos.springboot.models.response.GetArmorResponse;
 import com.juancarlos.springboot.models.response.GetArmorSetResponse;
 import com.juancarlos.springboot.services.ArmorService;
@@ -25,15 +26,14 @@ public class ArmorController {
 	@Autowired
 	private ArmorService armorService;
 
-	// ---------------------------- ArmorBase ----------------------------
-	// Endpoint para obtener armaduras con paginación
+	// Endpoint para obtener las rarezas de armaduras con paginación
 	@GetMapping()
-	public Page<ArmorBaseDTO> getArmorWithPagination(@RequestParam(defaultValue = "0") int page,
-			@RequestParam(defaultValue = "12") int size) {
-			return armorService.getArmorWithPagination(page, size);
-
+	public GetArmorRarityListResponse getArmorRarityList() {
+		GetArmorRarityListResponse response = new GetArmorRarityListResponse();
+		response.setArmorRarezaDTO(armorService.getArmorRarityList());
+		return response;
 	}
-
+	// ---------------------------- ArmorBase ----------------------------
 	// Endpoint para obtener una armadura por id
 	@GetMapping("/{id}")
 	public GetArmorResponse getArmorId(@PathVariable Long id) {
@@ -46,19 +46,11 @@ public class ArmorController {
 	}
 
 	// ----------------------------- ArmorRareza -----------------------------
-	// Endpoint para obtener las rarezas de armaduras con paginación
-	@GetMapping("/rareza")
-	public Page<ArmorRarezaDTO> getArmorRarezaWithPagination(@RequestParam(defaultValue = "0") int page,
-			@RequestParam(defaultValue = "12") int size) {
-			return armorService.getArmorRarityWithPagination(page, size);
-
-	}
-
 	// Endpoint para obtener una rareza de armadura id
-	@GetMapping("/rareza/{id}")
-	public GetArmorRarezaResponse getWeaponTypeId(@PathVariable Long id) {
+	@GetMapping("/rarity/{id}")
+	public GetArmorRarityResponse getWeaponTypeId(@PathVariable Long id) {
 		ArmorRarezaDTO armor = armorService.getArmorRarityId(id);
-		GetArmorRarezaResponse response = GetArmorRarezaResponse.builder().armorRarezaDTO(armor).build();
+		GetArmorRarityResponse response = GetArmorRarityResponse.builder().armorRarezaDTO(armor).build();
 
 		response.setIsOk(true);
 		return response;

@@ -7,6 +7,8 @@ import { WeaponService } from 'src/app/services/weapon.service';
 import { WeaponTipoDTO } from 'src/app/models/weapon/WeaponTipoDTO.model';
 import { debounceTime, first, Subject, Subscription } from 'rxjs';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { WeaponBaseDTO } from 'src/app/models/weapon/WeaponBaseDTO.model';
+import { WikiWeaponComponent } from "../wiki-weapon/wiki-weapon.component";
 
 @Component({
   selector: 'app-weapon',
@@ -18,8 +20,9 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
     IonicModule,
     FormsModule,
     CardWeapontypeComponent, // Importa el componente CardWeapontypeComponent
-    RouterModule, // Importa el componente WikiWeaponComponent
-  ]
+    RouterModule,
+    WikiWeaponComponent
+]
 })
 export class WeaponComponent implements OnInit {
 
@@ -27,27 +30,22 @@ export class WeaponComponent implements OnInit {
   weapontipo!: WeaponTipoDTO;
 
   weaponstipos: WeaponTipoDTO[] = []; // Lista de weapontype
-  page: number = 0; // Página actual
-  size: number = 14; // Tamaño de la página
-  size20: number = 20; // Tamaño de la página
-  totalPages: number = 0; // Total de páginas disponibles
   selectedWeaponTipo: WeaponTipoDTO | undefined;
   selectedWeaponTipoId: number | undefined;
-  infoWeapon: any;
+  infoWeapon?: WeaponBaseDTO;
+  infoWeaponTipo?: WeaponTipoDTO;
+  infoWeaponTipoFiltrado?: WeaponTipoDTO;
   weaponId!: number;
+  mostrarWiki = false;
+  weaponWiki!: WeaponBaseDTO;
 
   search$!: Subscription;
 
   constructor(private route: ActivatedRoute, private weaponService: WeaponService) { }
 
   ngOnInit() {
-    this.getWeaponTypeWithPaginacion(); // Carga inicial de tipos de armas
+    this.getWeaponTypeList(); // Carga inicial de tipos de armas
 
-    // // Obtener el ID del arma desde la URL
-    // this.route.params.subscribe((params) => {
-    //   this.weaponId = params['id'];
-    //   this.loadWeaponInfo();
-    // });
 
   }
   loadWeaponInfo(): void {
@@ -63,12 +61,11 @@ export class WeaponComponent implements OnInit {
   }
 
   // Obtiene tipos de armas
-  getWeaponTypeWithPaginacion(): void {
-    this.weaponService.getWeaponTypeWithPaginacion(this.page, this.size).pipe(first()).subscribe({
+  getWeaponTypeList(): void {
+    this.weaponService.getWeaponTypeList().pipe(first()).subscribe({
       next: (res) => {
+        this.weaponstipos = res.weaponTipoDTO;
         console.log('Tipos de armas recibidos:', res);
-        this.weaponstipos = res.content || []; // Datos de los tipos de armas
-        this.totalPages = res.totalPages || 0; // Número total de páginas
       },
       error: (error) => {
         console.error('Error al obtener los tipos de armas:', error);
@@ -81,7 +78,8 @@ export class WeaponComponent implements OnInit {
     this.weaponService.getWeaponType(id).pipe(first()).subscribe({
       next: (res) => {
         console.log('weapon ' + id, res);
-        this.infoWeapon = res.weaponTipoDTO;
+        this.infoWeaponTipo = res.weaponTipoDTO;
+        this.infoWeaponTipoFiltrado = {...res.weaponTipoDTO};
       },
       error: (error) => {
         console.error('Error al obtener armas:', error);
@@ -90,7 +88,7 @@ export class WeaponComponent implements OnInit {
   }
 
   // Maneja la selección de un tipo de arma
-  weaponTipoNameSelected(event: string) {
+  weaponTypeNameSelected(event: string) {
     this.selectedWeaponTipo = this.weaponstipos.filter(v => v.tipoArma === event)[0];
     this.selectedWeaponTipoId = this.selectedWeaponTipo?.id;
     console.log('ID del tipo de arma seleccionado:', this.selectedWeaponTipoId);
@@ -100,6 +98,18 @@ export class WeaponComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.search$.unsubscribe();
+  }
+
+  clickRareza(n: number) {
+    const filtro = this.infoWeaponTipo?.weaponBaseDTO.filter(v => v.rareza === n);
+    if (filtro && this.infoWeaponTipoFiltrado) {
+      this.infoWeaponTipoFiltrado.weaponBaseDTO = filtro;
+    }
+  }
+
+  displayWiki(weapon: WeaponBaseDTO) {
+    this.weaponWiki = weapon;
+    this.mostrarWiki = !this.mostrarWiki;
   }
 
 }

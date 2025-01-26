@@ -1,39 +1,61 @@
 <ion-content class="ion-padding" [fullscreen]="true">
-  <!-- Grid de tarjetas Tipos de armas -->
-  <div class="row">
-    <div *ngFor="let weaponTipo of weaponstipos" class="col-6 col-md-4 col-lg-3 text-center my-2">
-      <app-card-weapontype [weaponTipo]="weaponTipo"
-        (weaponNameSelected)="weaponTipoNameSelected($event)"></app-card-weapontype>
+
+  <div *ngIf="!mostrarWiki">
+    <!-- Grid de tarjetas Tipos de armas -->
+    <div class="row">
+      <div *ngFor="let weaponTipo of weaponstipos" class="col-6 col-md-4 col-lg-3 text-center my-2">
+        <app-card-weapontype [weaponTipo]="weaponTipo"
+          (weaponNameSelected)="weaponTypeNameSelected($event)"></app-card-weapontype>
+      </div>
+    </div>
+
+    <!-- titulo de la tabla (nombre del tipo) -->
+    <div *ngIf="selectedWeaponTipo" class="weapon-details mt-4">
+      <h2 style="text-align: center;">{{ selectedWeaponTipo.tipoArma }}</h2>
+    </div>
+
+    <!-- Lista de armas -->
+    <div id="listaArmas" *ngIf="infoWeaponTipoFiltrado?.weaponBaseDTO?.length ?? 0 > 0" class="container mt-4">
+      <div>
+        <button (click)="clickRareza(1)">1</button>
+        <button (click)="clickRareza(2)">2</button>
+        <button (click)="clickRareza(3)">3</button>
+        <button (click)="clickRareza(4)">4</button>
+        <button (click)="clickRareza(5)">5</button>
+        <button (click)="clickRareza(6)">6</button>
+        <button (click)="clickRareza(7)">7</button>
+        <button (click)="clickRareza(8)">8</button>
+        <button (click)="clickRareza(9)">9</button>
+        <button (click)="clickRareza(10)">10</button>
+        <button (click)="clickRareza(11)">11</button>
+        <button (click)="clickRareza(12)">12</button>
+      </div>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Rareza</th>
+            <th>Ataque</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of infoWeaponTipoFiltrado?.weaponBaseDTO">
+            <td>
+              <a (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+                {{ v?.nombre }}
+              </a>
+            </td>
+            <td>{{ v?.rareza }}</td>
+            <td>{{ v?.ataque }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <!-- titulo de la tabla (nombre del tipo) -->
-  <div *ngIf="selectedWeaponTipo" class="weapon-details mt-4">
-    <h2 style="text-align: center;">{{ selectedWeaponTipo.tipoArma }}</h2>
+  <div *ngIf="mostrarWiki">
+    <app-wiki-weapon [weapon]="weaponWiki"></app-wiki-weapon>
   </div>
 
-  <!-- Lista de armas -->
-  <div id="listaArmas" *ngIf="infoWeapon?.weaponBaseDTO?.length ?? 0 > 0" class="container mt-4">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Rareza</th>
-          <th>Ataque</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let v of infoWeapon?.weaponBaseDTO">
-          <td>
-          <a [routerLink]="['/weapon', v?.id]" style="text-decoration: none; color: inherit;">
-            {{ v?.nombre }}
-          </a>
-          </td>
-          <td>{{ v?.rareza }}</td>
-          <td>{{ v?.ataque }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 
 </ion-content>

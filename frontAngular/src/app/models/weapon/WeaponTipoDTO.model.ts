@@ -4,5 +4,5 @@ export interface WeaponTipoDTO {
 id: number;
 tipoArma: string;
 
-WeaponBaseDTO: WeaponBaseDTO[];
+weaponBaseDTO: WeaponBaseDTO[];
 }
