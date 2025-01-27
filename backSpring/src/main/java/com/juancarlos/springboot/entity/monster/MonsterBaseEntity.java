@@ -59,8 +59,5 @@ public class MonsterBaseEntity {
     @OneToMany(mappedBy = "monsterBase", fetch = FetchType.LAZY)
     private List<ArmorSetBaseEntity> armorSetBase; // Relacion uno a muchos con la tabla armaduraset base
 
-    @OneToMany(mappedBy = "monsterBase", fetch = FetchType.LAZY)
-    private List<QuestMonsterEntity> questMonster; // Relacion uno a muchos con la tabla mision monstruos
-
 
 }

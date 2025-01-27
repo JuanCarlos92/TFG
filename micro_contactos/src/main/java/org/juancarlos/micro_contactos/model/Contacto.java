@@ -1,16 +1,14 @@
 package org.juancarlos.micro_contactos.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "contactos")
 public class Contacto {
     @Id
-    @Column(name = "idContacto", columnDefinition = "int UNSIGNED not null")
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idcontacto", columnDefinition = "int UNSIGNED not null")
+    private int idContacto;
 
     @Column(name = "nombre", nullable = false, length = 45)
     private String nombre;
@@ -19,14 +17,15 @@ public class Contacto {
     private String email;
 
     @Column(name = "edad", columnDefinition = "int UNSIGNED not null")
-    private Long edad;
+    private int edad;
 
-    public Long getId() {
-        return id;
+
+    public int getIdContacto() {
+        return idContacto;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdContacto(int id) {
+        this.idContacto = id;
     }
 
     public String getNombre() {
@@ -45,12 +44,13 @@ public class Contacto {
         this.email = email;
     }
 
-    public Long getEdad() {
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(Long edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
+
 
 }

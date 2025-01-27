@@ -64,11 +64,6 @@ public class MonsterConverter {
                                 .map(MonsterConverter::convertArmorSetBaseEntityToDto).collect(Collectors.toList())
                                 : null;
 
-                List<QuestMonsterDTO> listaQuestMonster = flagWithRelations ? monsterBaseEntity.getQuestMonster()
-                                .stream()
-                                .map(MonsterConverter::convertQuestMonsterEntityToDto).collect(Collectors.toList())
-                                : null;
-
                 return MonsterBaseDTO.builder()
                                 .id(monsterBaseEntity.getId())
                                 .nombre(monsterBaseEntity.getNombre())
@@ -85,7 +80,6 @@ public class MonsterConverter {
                                 .monsterWeaknessesDTO(listaMonsterWeaknesse)
                                 .monsterZonasHitDTO(listaMonsterZonasHit)
                                 .armorSetBaseDTO(listaArmorSetBase)
-                                .questMonsterDTO(listaQuestMonster)     
                                 .build();
         }
 
@@ -194,15 +188,6 @@ public class MonsterConverter {
                                 .cintura(asb.getCintura())
                                 .piernas(asb.getPiernas())
                                 .bonus(asb.getBonus())
-                                .build();
-        }
-
-        // Convierte QuestMonsterEntity a QuestMonsterDTO
-        private static QuestMonsterDTO convertQuestMonsterEntityToDto(QuestMonsterEntity qm) {
-                return QuestMonsterDTO.builder()
-                                .monster(qm.getMonster())
-                                .calidad(qm.getCalidad())
-                                .esObjetivo(qm.getEsObjetivo())
                                 .build();
         }
 

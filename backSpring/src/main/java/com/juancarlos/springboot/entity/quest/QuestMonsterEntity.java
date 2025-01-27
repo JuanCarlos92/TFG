@@ -23,7 +23,7 @@ public class QuestMonsterEntity {
     private String monster;
     @Column(name = "calidad", nullable = true)
     private Integer calidad;
-    @Column(name = "esObjetivo", nullable = true)
+    @Column(name = "es_objetivo", nullable = true)
     private Boolean esObjetivo;
 
     // Relacion muchos a uno con la tabla mision base
@@ -31,11 +31,5 @@ public class QuestMonsterEntity {
     @JoinColumn(name = "id_mision", referencedColumnName = "id")
     @JsonIgnore
     private QuestBaseEntity questBase;
-
-    // Relacion muchos a uno con la tabla mision base
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_monster", referencedColumnName = "id")
-    @JsonIgnore
-    private MonsterBaseEntity monsterBase;
-
+    
 }

@@ -1,13 +1,13 @@
 export interface WeaponCraftDTO {
-    nombre_base: string;
-    tipo_arma: string;
+    nombreBase: string;
+    tipoArma: string;
     tipo: string;
-    nombre_material1: string;
-    cantidad_material1: number;
-    nombre_material2: string;
-    cantidad_material2: number;
-    nombre_material3: string;
-    cantidad_material3: number;
-    nombre_material4: string;
-    cantidad_material4: number;
+    nombreMaterial1: string;
+    cantidadMaterial1: number;
+    nombreMaterial2: string;
+    cantidadMaterial2: number;
+    nombreMaterial3: string;
+    cantidadMaterial3: number;
+    nombreMaterial4: string;
+    cantidadMaterial4: number;
 }

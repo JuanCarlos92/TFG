@@ -2,15 +2,107 @@
   <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Weapons</button>
 </div>
 <!-- Información General -->
-<!-- <div *ngIf="inforWeapon" class="container mt-4">
+<div *ngIf="inforWeapon" class="container mt-4">
   <table class="table table-bordered mx-auto shadow-sm"
-  style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <!-- Nombre + Imagen pequeña opcional -->
+    <tr>
+      <td colspan="2" class="text-center" style="border: 1px solid #ddd; padding: 15px;">
+        <h1 style="margin-top: 10px; color: #333;">{{ inforWeapon?.nombre }}</h1>
+      </td>
+    </tr>
+    <tr>
+      <!-- Tipo de arma -->
+      <td class="text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.tipoArma }}</td>
+    </tr>
+  </table>
+</div>
 
-  </table> -->
+<!-- Tabla 1: Rareza ataque afinidad Elemento-->
+<div id="tabla1" *ngIf="inforWeapon" class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <tr>
+      <th>Rareza</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.rareza }}</td>
+    </tr>
+    <tr>
+      <th>Ataque</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ataque }}</td>
+    </tr>
+    <tr>
+      <th>Afinidad</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.afinidad ? inforWeapon.afinidad + '%'
+        :'N/A'}}</td>
+    </tr>
+    <tr>
+      <th>Elemento Oculto</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.elementoOculto ? 'Sí' : 'No'}}</td>
+    </tr>
+    <tr>
+      <th>Elemento</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.elemento1 || 'N/A'}}</td>
+    </tr>
+    <tr>
+      <th>Ataque elemental</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ataqueElemento1 || 'N/A'}}</td>
+    </tr>
+  </table>
+</div>
 
-  <div *ngIf="inforWeapon">
-    <h1>{{ inforWeapon.nombre }}</h1>
-    <p>Rareza: {{ inforWeapon.rareza }}</p>
-    <p>Ataque: {{ inforWeapon.ataque }}</p>
-    <!-- Agrega más detalles según sea necesario -->
-  </div>
+<!-- Tabla 2: Ranuras -->
+<div id="tabla2" *ngIf="inforWeapon" class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <thead>
+      <tr>
+        <th>Ranura 1</th>
+        <th>Ranura 2</th>
+        <th>Ranura 3</th>
+        <th>Sello de los Ancianos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ranura1 || 'N/A'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ranura2 || 'N/A'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ranura3 || 'N/A'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.selloAncianos || 'N/A'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Insertar imagen grande (opcional)-->
+
+<!-- Tabla 4: Crafteo -->
+<div id="trampas" *ngIf="inforWeapon?.weaponCraftDTO?.length > 0 " class="container mt-4">
+  <h2 style="text-align: center;">Crafteo</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Material 1</th>
+        <th>Cantidad </th>
+        <th>Material 2</th>
+        <th>Cantidad</th>
+        <th>Material 3</th>
+        <th>Cantidad</th>
+        <th>Material 4</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponCraftDTO">
+        <td>{{ v?.tipo || 'N/A'}}</td>
+        <td>{{ v?.nombreMaterial1 || 'N/A'}}</td>
+        <td>{{ v?.cantidadMaterial1 || 'N/A'}}</td>
+        <td>{{ v?.nombreMaterial2 || 'N/A'}}</td>
+        <td>{{ v?.cantidadMaterial2 || 'N/A'}}</td>
+        <td>{{ v?.nombreMaterial3 || 'N/A'}}</td>
+        <td>{{ v?.cantidadMaterial3 || 'N/A'}}</td>
+        <td>{{ v?.nombreMaterial4 || 'N/A'}}</td>
+        <td>{{ v?.cantidadMaterial4 || 'N/A'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

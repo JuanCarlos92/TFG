@@ -16,7 +16,7 @@ export class WikiWeaponComponent implements OnInit {
   @Input()
   weapon!: WeaponBaseDTO;
 
-  inforWeapon: any = {};
+  inforWeapon: any;
 
   constructor(private weaponService: WeaponService) { }
 

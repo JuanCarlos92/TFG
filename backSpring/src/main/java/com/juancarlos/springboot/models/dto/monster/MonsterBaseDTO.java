@@ -33,6 +33,6 @@ public class MonsterBaseDTO {
     private List<MonsterWeaknessesDTO> monsterWeaknessesDTO;
     private List<MonsterZonasHitDTO> monsterZonasHitDTO;
     private List<ArmorSetBaseDTO> armorSetBaseDTO;
-    private List<QuestMonsterDTO> questMonsterDTO;
+//    private List<QuestMonsterDTO> questMonsterDTO;
 
 }
