@@ -22,7 +22,7 @@ export interface WeaponBaseDTO {
     ranura3: number;
     bonokinsecto: string;
     frasco: string;
-    protenciaFrasco: string;
+    potenciaFrasco: string;
     municion: string;
     nivelMunicion: number;
     confMunicion: string;

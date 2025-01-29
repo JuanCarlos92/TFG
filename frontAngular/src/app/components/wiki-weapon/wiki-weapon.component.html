@@ -5,12 +5,18 @@
 <div *ngIf="inforWeapon" class="container mt-4">
   <table class="table table-bordered mx-auto shadow-sm"
     style="width: 80%; background-color: #f9f9f9; text-align: left;">
+
     <!-- Nombre + Imagen pequeña opcional -->
     <tr>
-      <td colspan="2" class="text-center" style="border: 1px solid #ddd; padding: 15px;">
-        <h1 style="margin-top: 10px; color: #333;">{{ inforWeapon?.nombre }}</h1>
+      <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+          <img [src]="'assets/images/weapons/' + inforWeapon?.tipoArma + '.png'" width="50" height="50"
+            style="border-radius: 8px;">
+          <h2 style="margin: 0; color: #333;">{{ inforWeapon?.nombre }}</h2>
+        </div>
       </td>
     </tr>
+
     <tr>
       <!-- Tipo de arma -->
       <td class="text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.tipoArma }}</td>
@@ -18,7 +24,7 @@
   </table>
 </div>
 
-<!-- Tabla 1: Rareza ataque afinidad Elemento-->
+<!-- Tabla: Rareza ataque afinidad Elemento-->
 <div id="tabla1" *ngIf="inforWeapon" class="container mt-4">
   <table class="table table-bordered mx-auto shadow-sm"
     style="width: 80%; background-color: #f9f9f9; text-align: left;">
@@ -50,8 +56,8 @@
   </table>
 </div>
 
-<!-- Tabla 2: Ranuras -->
-<div id="tabla2" *ngIf="inforWeapon" class="container mt-4">
+<!-- Tabla: Ranuras -->
+<div id="Ranura" *ngIf="inforWeapon" class="container mt-4">
   <table class="table table-bordered mx-auto shadow-sm"
     style="width: 80%; background-color: #f9f9f9; text-align: left;">
     <thead>
@@ -72,10 +78,82 @@
     </tbody>
   </table>
 </div>
-<!-- Insertar imagen grande (opcional)-->
 
-<!-- Tabla 3: Crafteo -->
-<div id="trampas" *ngIf="inforWeapon?.weaponCraftDTO?.length > 0 " class="container mt-4">
+<!-- Tabla: Municion para lanza Pistola -->
+<div id="MunicionLanzaPistola" *ngIf="inforWeapon?.municion?.length > 0 " class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <tr>
+      <th>Tipo de munición:</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.municion}}</td>
+      <td style="border: 1px solid #ddd; padding: 15px;"> Nvl: {{ inforWeapon?.nivelMunicion || 'N/A'}}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Tabla: Viales hacha cargada -->
+<div id="Viales" *ngIf="inforWeapon?.frasco?.length > 0 " class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <tr>
+      <th>Tipo de vial:</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.frasco}}</td>
+      <td style="border: 1px solid #ddd; padding: 15px;"> Potencia: {{ inforWeapon?.potenciaFrasco || 'N/A'}}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Tabla: Bonus Kinsecto -->
+<div id="Kinsecto" *ngIf="inforWeapon?.bonoKinsecto?.length > 0 " class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <tr>
+      <th>Bonus kinsecto:</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.bonoKinsecto}}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Tabla: Arco -->
+<div id="Crafteo" *ngIf="inforWeapon?.weaponArcoDTO?.length > 0 " class="container mt-4">
+  <h2 style="text-align: center;">Arco</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Proximidad</th>
+        <th>Potencia</th>
+        <th>Paralisis</th>
+        <th>Veneno</th>
+        <th>Sueño</th>
+        <th>Exposivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponArcoDTO">
+        <td>{{ v?.proximidad || 'N/A'}}</td>
+        <td>{{ v?.potencia || 'N/A'}}</td>
+        <td>{{ v?.paralisis || 'N/A'}}</td>
+        <td>{{ v?.veneno || 'N/A'}}</td>
+        <td>{{ v?.sueno || 'N/A'}}</td>
+        <td>{{ v?.explosivo || 'N/A'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Imagen grande -->
+<div *ngIf="inforWeapon?.tipoArma" class="container mt-4 text-center">
+  <div style="width: 90%; height: 500px; overflow: hidden; border: 5px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: auto;">
+    <img [src]="'assets/images/weapons/wiki/' + inforWeapon?.tipoArma + '.png'" 
+         alt="Imagen grande de {{ inforWeapon?.tipoArma }}" 
+         class="img-fluid" 
+         style="object-fit: cover; width: 100%; height: 100%; object-position: top;">
+  </div>
+</div>
+
+
+<!-- Tabla: Crafteo -->
+<div id="Crafteo" *ngIf="inforWeapon?.weaponCraftDTO?.length > 0 " class="container mt-4">
   <h2 style="text-align: center;">Crafteo</h2>
   <table class="table table-bordered table-striped">
     <thead>
@@ -106,8 +184,9 @@
     </tbody>
   </table>
 </div>
-<!-- Tabla 4: Municion -->
-<div id="trampas" *ngIf="inforWeapon?.weaponMunicionDTO?.length > 0 " class="container mt-4">
+
+<!-- Tabla: Municion -->
+<div id="Municion" *ngIf="inforWeapon?.weaponMunicionDTO?.length > 0 " class="container mt-4">
   <h2 style="text-align: center;">Municion</h2>
   <table class="table table-bordered table-striped">
     <thead>

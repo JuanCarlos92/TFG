@@ -15,6 +15,11 @@ export class AppComponent {
     this.isMenuOpen = !this.isMenuOpen; // Alterna el estado del menú
   }
 
+    // Se cierra cuando se hace clic en un enlace
+    closeMenu() {
+      this.isMenuOpen = false;
+    }
+
   // Escucha clics
   @HostListener('document:click', ['$event'])
   handleClickOutside(event: MouseEvent) {

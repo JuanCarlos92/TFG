@@ -2,10 +2,11 @@
 
   <div *ngIf="!mostrarWiki">
     <!-- Grid de tarjetas Tipos de armas -->
-    <div class="row">
-      <div *ngFor="let weaponTipo of weaponstipos" class="col-6 col-md-4 col-lg-3 text-center my-2">
+    <div class="row justify-content-center">
+      <div *ngFor="let weaponTipo of weaponstipos" class="col-3 col-md-2 col-lg-1 text-center my-0 px-0">
         <app-card-weapontype [weaponTipo]="weaponTipo"
-          (weaponNameSelected)="weaponTypeNameSelected($event)"></app-card-weapontype>
+          (weaponNameSelected)="weaponTypeNameSelected($event)">
+        </app-card-weapontype>
       </div>
     </div>
 
@@ -17,18 +18,18 @@
     <!-- Lista de armas -->
     <div id="listaArmas" *ngIf="infoWeaponTipoFiltrado?.weaponBaseDTO?.length ?? 0 > 0" class="container mt-4">
       <div>
-        <button (click)="clickRareza(1)">1</button>
-        <button (click)="clickRareza(2)">2</button>
-        <button (click)="clickRareza(3)">3</button>
-        <button (click)="clickRareza(4)">4</button>
-        <button (click)="clickRareza(5)">5</button>
-        <button (click)="clickRareza(6)">6</button>
-        <button (click)="clickRareza(7)">7</button>
-        <button (click)="clickRareza(8)">8</button>
-        <button (click)="clickRareza(9)">9</button>
-        <button (click)="clickRareza(10)">10</button>
-        <button (click)="clickRareza(11)">11</button>
-        <button (click)="clickRareza(12)">12</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(1)">1</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(2)">2</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(3)">3</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(4)">4</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(5)">5</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(6)">6</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(7)">7</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(8)">8</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(9)">9</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(10)">10</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(11)">11</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(12)">12</button>
       </div>
       <table class="table table-bordered table-striped">
         <thead>
