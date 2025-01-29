@@ -26,7 +26,7 @@ public class ArmorController {
 	@Autowired
 	private ArmorService armorService;
 
-	// Endpoint para obtener las rarezas de armaduras con paginación
+	// Endpoint para obtener las rarezas de armaduras con lista
 	@GetMapping()
 	public GetArmorRarityListResponse getArmorRarityList() {
 		GetArmorRarityListResponse response = new GetArmorRarityListResponse();

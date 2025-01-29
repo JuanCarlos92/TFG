@@ -1,10 +1,14 @@
 package com.juancarlos.springboot.converters.armor;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import com.juancarlos.springboot.entity.armor.*;
+import com.juancarlos.springboot.entity.weapon.WeaponTipoEntity;
 import com.juancarlos.springboot.models.dto.armor.*;
+import com.juancarlos.springboot.models.dto.weapon.WeaponBaseDTO;
+import com.juancarlos.springboot.models.dto.weapon.WeaponTipoDTO;
 
 public class ArmorConverter {
     // Convierte una ArmorEntity a ArmorDTO
@@ -69,6 +73,16 @@ public class ArmorConverter {
                 .nombreSkill2(as.getNombreSkill2())
                 .nivelSkill2(as.getNivelSkill2())
                 .build();
+    }
+
+    public static List<ArmorBaseDTO> armorEntityToDTO(List<ArmorBaseEntity> armorBaseEntity) {
+        List<ArmorBaseDTO> armorBaseDTO = new ArrayList<>();
+        for (ArmorBaseEntity w : armorBaseEntity) {
+
+            armorBaseDTO.add(armorEntityToDTO(w));
+        }
+
+        return armorBaseDTO;
     }
 
 }

@@ -74,7 +74,7 @@
 </div>
 <!-- Insertar imagen grande (opcional)-->
 
-<!-- Tabla 4: Crafteo -->
+<!-- Tabla 3: Crafteo -->
 <div id="trampas" *ngIf="inforWeapon?.weaponCraftDTO?.length > 0 " class="container mt-4">
   <h2 style="text-align: center;">Crafteo</h2>
   <table class="table table-bordered table-striped">
@@ -105,4 +105,36 @@
       </tr>
     </tbody>
   </table>
+<!-- Tabla 4: Municion -->
+<div id="trampas" *ngIf="inforWeapon?.weaponMunicionDTO?.length > 0 " class="container mt-4">
+  <h2 style="text-align: center;">Municion</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Material 1</th>
+        <th>Cantidad </th>
+        <th>Material 2</th>
+        <th>Cantidad</th>
+        <th>Material 3</th>
+        <th>Cantidad</th>
+        <th>Material 4</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponCraftDTO">
+        <td>{{ v?.tipo || 'N/A'}}</td>
+        <td>{{ v?.nombreMaterial1 || 'N/A'}}</td>
+        <td>{{ v?.cantidadMaterial1 || 'N/A'}}</td>
+        <td>{{ v?.nombreMaterial2 || 'N/A'}}</td>
+        <td>{{ v?.cantidadMaterial2 || 'N/A'}}</td>
+        <td>{{ v?.nombreMaterial3 || 'N/A'}}</td>
+        <td>{{ v?.cantidadMaterial3 || 'N/A'}}</td>
+        <td>{{ v?.nombreMaterial4 || 'N/A'}}</td>
+        <td>{{ v?.cantidadMaterial4 || 'N/A'}}</td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>
