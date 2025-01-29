@@ -105,36 +105,380 @@
       </tr>
     </tbody>
   </table>
+</div>
 <!-- Tabla 4: Municion -->
 <div id="trampas" *ngIf="inforWeapon?.weaponMunicionDTO?.length > 0 " class="container mt-4">
   <h2 style="text-align: center;">Municion</h2>
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th>Tipo</th>
-        <th>Material 1</th>
-        <th>Cantidad </th>
-        <th>Material 2</th>
-        <th>Cantidad</th>
-        <th>Material 3</th>
-        <th>Cantidad</th>
-        <th>Material 4</th>
-        <th>Cantidad</th>
+        <th>Desviacion</th>
+        <th>Especial</th>
+        <th>Normal 1 Cargador</th>
+        <th>Normal 1 Rapido</th>
+        <th>Normal 1 Retroceso</th>
+        <th>Normal 1 Recarga</th>
+        <th>Normal 2 Cargador</th>
+        <th>Normal 2 Rapido</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let v of inforWeapon.weaponCraftDTO">
-        <td>{{ v?.tipo || 'N/A'}}</td>
-        <td>{{ v?.nombreMaterial1 || 'N/A'}}</td>
-        <td>{{ v?.cantidadMaterial1 || 'N/A'}}</td>
-        <td>{{ v?.nombreMaterial2 || 'N/A'}}</td>
-        <td>{{ v?.cantidadMaterial2 || 'N/A'}}</td>
-        <td>{{ v?.nombreMaterial3 || 'N/A'}}</td>
-        <td>{{ v?.cantidadMaterial3 || 'N/A'}}</td>
-        <td>{{ v?.nombreMaterial4 || 'N/A'}}</td>
-        <td>{{ v?.cantidadMaterial4 || 'N/A'}}</td>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.desviacion || 'N/A'}}</td>
+        <td>{{ v?.especial || 'N/A'}}</td>
+        <td>{{ v?.normal1Cargador || 'N/A'}}</td>
+        <td>{{ v?.normal1Rapido || 'N/A'}}</td>
+        <td>{{ v?.normal1Retroceso || 'N/A'}}</td>
+        <td>{{ v?.normal1Recarga || 'N/A'}}</td>
+        <td>{{ v?.normal2Cargador || 'N/A'}}</td>
+        <td>{{ v?.normal2Rapido || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Normal 2 Retroceso</th>
+        <th>Normal 2 Recarga</th>
+        <th>Normal 3 Cargador</th>
+        <th>Normal 3 Rapido</th>
+        <th>Normal 3 Retroceso</th>
+        <th>Normal 3 Recarga</th>
+        <th>Perforante 1 Cargador</th>
+        <th>Perforante 1 Rapido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.normal2Retroceso || 'N/A'}}</td>
+        <td>{{ v?.normal2Recarga || 'N/A'}}</td>
+        <td>{{ v?.normal3Cargador || 'N/A'}}</td>
+        <td>{{ v?.normal3Rapido || 'N/A'}}</td>
+        <td>{{ v?.normal3Retroceso || 'N/A'}}</td>
+        <td>{{ v?.normal3Recarga || 'N/A'}}</td>
+        <td>{{ v?.perforante1Cargador || 'N/A'}}</td>
+        <td>{{ v?.perforante1Rapido || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Perforante 1 Retroceso</th>
+        <th>Perforante 1 Recarga</th>
+        <th>Perforante 2 Cargador</th>
+        <th>Perforante 2 Rapido</th>
+        <th>Perforante 2 Retroceso</th>
+        <th>Perforante 2 Recarga</th>
+        <th>Perforante 3 Cargador</th>
+        <th>Perforante 3 Rapido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.perforante1Retroceso || 'N/A'}}</td>
+        <td>{{ v?.perforante1Recarga || 'N/A'}}</td>
+        <td>{{ v?.perforante2Cargador || 'N/A'}}</td>
+        <td>{{ v?.perforante2Rapido || 'N/A'}}</td>
+        <td>{{ v?.perforante2Retroceso || 'N/A'}}</td>
+        <td>{{ v?.perforante2Recarga || 'N/A'}}</td>
+        <td>{{ v?.perforante3Cargador || 'N/A'}}</td>
+        <td>{{ v?.perforante3Rapido || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Perforante 3 Retroceso</th>
+        <th>Perforante 3 Recarga</th>
+        <th>Dispersa 1 Cargador</th>
+        <th>Dispersa 1 Rapido</th>
+        <th>Dispersa 1 Retroceso</th>
+        <th>Dispersa 1 Recarga</th>
+        <th>Dispersa 2 Cargador</th>
+        <th>Dispersa 2 Rapido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.perforante3Retroceso || 'N/A'}}</td>
+        <td>{{ v?.perforante3Recarga || 'N/A'}}</td>
+        <td>{{ v?.dispersa1Cargador || 'N/A'}}</td>
+        <td>{{ v?.dispersa1Rapido || 'N/A'}}</td>
+        <td>{{ v?.dispersa1Retroceso || 'N/A'}}</td>
+        <td>{{ v?.dispersa1Recarga || 'N/A'}}</td>
+        <td>{{ v?.dispersa2Cargador || 'N/A'}}</td>
+        <td>{{ v?.dispersa2Rapido || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Dispersa 2 Retroceso</th>
+        <th>Dispersa 2 Recarga</th>
+        <th>Dispersa 3 Cargador</th>
+        <th>Dispersa 3 Rapido</th>
+        <th>Dispersa 3 Retroceso</th>
+        <th>Dispersa 3 Recarga</th>
+        <th>Pegajosa 1 Cargador</th>
+        <th>Pegajosa 1 Retroceso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.dispersa2Retroceso || 'N/A'}}</td>
+        <td>{{ v?.dispersa2Recarga || 'N/A'}}</td>
+        <td>{{ v?.dispersa3Cargador || 'N/A'}}</td>
+        <td>{{ v?.dispersa3Rapido || 'N/A'}}</td>
+        <td>{{ v?.dispersa3Retroceso || 'N/A'}}</td>
+        <td>{{ v?.dispersa3Recarga || 'N/A'}}</td>
+        <td>{{ v?.pegajosa1Cargador || 'N/A'}}</td>
+        <td>{{ v?.pegajosa1Retroceso || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Pegajosa 1 Recarga</th>
+        <th>Pegajosa 2 Cargador</th>
+        <th>Pegajosa 2 Retroceso</th>
+        <th>Pegajosa 2 Recarga</th>
+        <th>Pegajosa 3 Cargador</th>
+        <th>Pegajosa 3 Retroceso</th>
+        <th>Pegajosa 3 Recarga</th>
+        <th>Racimo 1 Cargador</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.pegajosa1Recarga || 'N/A'}}</td>
+        <td>{{ v?.pegajosa2Cargador || 'N/A'}}</td>
+        <td>{{ v?.pegajosa2Retroceso || 'N/A'}}</td>
+        <td>{{ v?.pegajosa2Recarga || 'N/A'}}</td>
+        <td>{{ v?.pegajosa3Cargador || 'N/A'}}</td>
+        <td>{{ v?.pegajosa3Retroceso || 'N/A'}}</td>
+        <td>{{ v?.pegajosa3Recarga || 'N/A'}}</td>
+        <td>{{ v?.racimo1Cargador || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Racimo 1 Retroceso</th>
+        <th>Racimo 1 Recarga</th>
+        <th>Racimo 2 Cargador</th>
+        <th>Racimo 2 Retroceso</th>
+        <th>Racimo 2 Recarga</th>
+        <th>Racimo 3 Cargador</th>
+        <th>Racimo 3 Retroceso</th>
+        <th>Racimo 3 Recarga</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.racimo1Retroceso || 'N/A'}}</td>
+        <td>{{ v?.racimo1Recarga || 'N/A'}}</td>
+        <td>{{ v?.racimo2Cargador || 'N/A'}}</td>
+        <td>{{ v?.racimo2Retroceso || 'N/A'}}</td>
+        <td>{{ v?.racimo2Recarga || 'N/A'}}</td>
+        <td>{{ v?.racimo3Cargador || 'N/A'}}</td>
+        <td>{{ v?.racimo3Retroceso || 'N/A'}}</td>
+        <td>{{ v?.racimo3Recarga || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Curativa 1 Cargador</th>
+        <th>Curativa 1 Retroceso</th>
+        <th>Curativa 1 Recarga</th>
+        <th>Curativa 2 Cargador</th>
+        <th>Curativa 2 Retroceso</th>
+        <th>Curativa 2 Recarga</th>
+        <th>Venenosa 1 Cargador</th>
+        <th>Venenosa 1 Retroceso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.curativa1Cargador || 'N/A'}}</td>
+        <td>{{ v?.curativa1Retroceso || 'N/A'}}</td>
+        <td>{{ v?.curativa1Recarga || 'N/A'}}</td>
+        <td>{{ v?.curativa2Cargador || 'N/A'}}</td>
+        <td>{{ v?.curativa2Retroceso || 'N/A'}}</td>
+        <td>{{ v?.curativa2Recarga || 'N/A'}}</td>
+        <td>{{ v?.venenosa1Cargador || 'N/A'}}</td>
+        <td>{{ v?.venenosa1Retroceso || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Venenosa 1 Recarga</th>
+        <th>Venenosa 2 Cargador</th>
+        <th>Venenosa 2 Retroceso</th>
+        <th>Venenosa 2 Recarga</th>
+        <th>Paralisis 1 Cargador</th>
+        <th>Paralisis 1 Retroceso</th>
+        <th>Paralisis 1 Recarga</th>
+        <th>Paralisis 2 Cargador</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.venenosa1Recarga || 'N/A'}}</td>
+        <td>{{ v?.venenos2Cargador || 'N/A'}}</td>
+        <td>{{ v?.venenosa2Retroceso || 'N/A'}}</td>
+        <td>{{ v?.venenosa2Recarga || 'N/A'}}</td>
+        <td>{{ v?.paralisis1Cargador || 'N/A'}}</td>
+        <td>{{ v?.paralisis1Retroceso || 'N/A'}}</td>
+        <td>{{ v?.paralisis1Recarga || 'N/A'}}</td>
+        <td>{{ v?.paralisis2Cargador || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Paralisis 2 Retroceso</th>
+        <th>Paralisis 2 Recarga</th>
+        <th>Somnifera 1 Cargador</th>
+        <th>Somnifera 1 Retroceso</th>
+        <th>Somnifera 1 Recarga</th>
+        <th>Somnifera 2 Cargador</th>
+        <th>Somnifera 2 Retroceso</th>
+        <th>Somnifera 2 Recarga</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.paralisis2Retroceso || 'N/A'}}</td>
+        <td>{{ v?.paralisis2Recarga || 'N/A'}}</td>
+        <td>{{ v?.sonmifera1Cargador || 'N/A'}}</td>
+        <td>{{ v?.sonmifera1Retroceso || 'N/A'}}</td>
+        <td>{{ v?.somnifera1Recarga || 'N/A'}}</td>
+        <td>{{ v?.sonmifera2Cargador || 'N/A'}}</td>
+        <td>{{ v?.sonmifera2Retroceso || 'N/A'}}</td>
+        <td>{{ v?.somnifera2Recarga || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Agotadora 1 Cargador</th>
+        <th>Agotadora 1 Rapido</th>
+        <th>Agotadora 1 Retroceso</th>
+        <th>Agotadora 1 Recarga</th>
+        <th>Agotadora 2 Cargador</th>
+        <th>Agotadora 2 Rapido</th>
+        <th>Agotadora 2 Retroceso</th>
+        <th>Agotadora 2 Recarga</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.agotador1Cargador || 'N/A'}}</td>
+        <td>{{ v?.agotador1Rapido || 'N/A'}}</td>
+        <td>{{ v?.agotador1Retroceso || 'N/A'}}</td>
+        <td>{{ v?.agotador1Recarga || 'N/A'}}</td>
+        <td>{{ v?.agotador2Cargador || 'N/A'}}</td>
+        <td>{{ v?.agotador2Rapido || 'N/A'}}</td>
+        <td>{{ v?.agotador2Retroceso || 'N/A'}}</td>
+        <td>{{ v?.agotador2Recarga || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Ignea Cargador</th>
+        <th>Ignea Rapido</th>
+        <th>Ignea Retroceso</th>
+        <th>Ignea Recarga</th>
+        <th>Acuatica Cargador</th>
+        <th>Acuatica Rapido</th>
+        <th>Acuatica Retroceso</th>
+        <th>Acuatica Recarga</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.igneaCargador || 'N/A'}}</td>
+        <td>{{ v?.igneaRapido || 'N/A'}}</td>
+        <td>{{ v?.igneaRetroceso || 'N/A'}}</td>
+        <td>{{ v?.igneaRecarga || 'N/A'}}</td>
+        <td>{{ v?.acuaticaCargador || 'N/A'}}</td>
+        <td>{{ v?.acuaticaRapido || 'N/A'}}</td>
+        <td>{{ v?.acuaticaRetroceso || 'N/A'}}</td>
+        <td>{{ v?.acuaticaRecarga || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Helada Cargador</th>
+        <th>Helada Rapido</th>
+        <th>Helada Retroceso</th>
+        <th>Helada Recarga</th>
+        <th>Electrica Cargador</th>
+        <th>Electrica Rapido</th>
+        <th>Electrica Retroceso</th>
+        <th>Electrica Recarga</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.heladaCargador || 'N/A'}}</td>
+        <td>{{ v?.heladaRapido || 'N/A'}}</td>
+        <td>{{ v?.heladaRetroceso || 'N/A'}}</td>
+        <td>{{ v?.heladaRecarga || 'N/A'}}</td>
+        <td>{{ v?.electricaCargador || 'N/A'}}</td>
+        <td>{{ v?.electricaRapido || 'N/A'}}</td>
+        <td>{{ v?.electricaRetroceso || 'N/A'}}</td>
+        <td>{{ v?.electricaRecarga || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Dragon Cargador</th>
+        <th>Dragon Retroceso</th>
+        <th>Dragon Recarga</th>
+        <th>Cortante Cargador</th>
+        <th>Cortante Retroceso</th>
+        <th>Cortante Recarga</th>
+        <th>Wyvern Cargador</th>
+        <th>Wyvern Recarga</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.dragonCargador || 'N/A'}}</td>
+        <td>{{ v?.dragonRetroceso || 'N/A'}}</td>
+        <td>{{ v?.dragonRecarga || 'N/A'}}</td>
+        <td>{{ v?.cortanteCargador || 'N/A'}}</td>
+        <td>{{ v?.cortanteRetroceso || 'N/A'}}</td>
+        <td>{{ v?.cortanteRecarga || 'N/A'}}</td>
+        <td>{{ v?.wyvernCargador || 'N/A'}}</td>
+        <td>{{ v?.wyvernRecarga || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Demonio Cargador</th>
+        <th>Demonio Retroceso</th>
+        <th>Demonio Recarga</th>
+        <th>Armadura Cargador</th>
+        <th>Armadura Retroceso</th>
+        <th>Armadura Recarga</th>
+        <th>Tranquilizante Cargador</th>
+        <th>Tranquilizante Retroceso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.demonioCargador || 'N/A'}}</td>
+        <td>{{ v?.demonioRetroceso || 'N/A'}}</td>
+        <td>{{ v?.demonioRecarga || 'N/A'}}</td>
+        <td>{{ v?.armaduraCargador || 'N/A'}}</td>
+        <td>{{ v?.armaduraRetroceso || 'N/A'}}</td>
+        <td>{{ v?.armaduraRecarga || 'N/A'}}</td>
+        <td>{{ v?.tranquilizanteCargador || 'N/A'}}</td>
+        <td>{{ v?.tranquilizanteRetroceso || 'N/A'}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>Tranquilizante Recarga</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+        <td>{{ v?.tranquilizanteRecarga || 'N/A'}}</td>
       </tr>
     </tbody>
   </table>
-
 </div>
