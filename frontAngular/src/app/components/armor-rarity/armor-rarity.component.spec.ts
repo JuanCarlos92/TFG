@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { CardWeaponComponent } from './card-weapon.component';
+import { ArmorRarityComponent } from './armor-rarity.component';
 
-describe('CardWeaponComponent', () => {
-  let component: CardWeaponComponent;
-  let fixture: ComponentFixture<CardWeaponComponent>;
+describe('ArmorRarityComponent', () => {
+  let component: ArmorRarityComponent;
+  let fixture: ComponentFixture<ArmorRarityComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardWeaponComponent ],
+      declarations: [ ArmorRarityComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CardWeaponComponent);
+    fixture = TestBed.createComponent(ArmorRarityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

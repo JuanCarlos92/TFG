@@ -45,9 +45,8 @@ export class WeaponComponent implements OnInit {
 
   ngOnInit() {
     this.getWeaponTypeList(); // Carga inicial de tipos de armas
-
-
   }
+
   loadWeaponInfo(): void {
     this.weaponService.getWeapon(this.weaponId).subscribe({
       next: (res) => {
@@ -73,7 +72,7 @@ export class WeaponComponent implements OnInit {
     });
   }
 
-  // Obtiene las armas del tipo seleccionado
+  // Obtiene las armas del tipo seleccionado por id
   getWeaponType(id: number): void {
     this.weaponService.getWeaponType(id).pipe(first()).subscribe({
       next: (res) => {
