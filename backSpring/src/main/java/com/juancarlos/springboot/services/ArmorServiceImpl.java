@@ -36,22 +36,22 @@ public class ArmorServiceImpl implements ArmorService {
 
     // --------------- Armor Rareza --------------------
     // Metodo armor rareza por id
-    @Override
-    public ArmorRarezaDTO getArmorRarityId(Long id) {
-        ArmorRarezaEntity armorEntity = armorRarityRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("No hay rareza de armaduras con ese id: " + id));
-
-        return ArmorRarityConverter.armorRarityEntityToDTO(armorEntity);
-    }
-
-    // Metodo armor rareza con lista
-    @Override
-    public List<ArmorRarezaDTO> getArmorRarityList() {
-        List<ArmorRarezaEntity> armorEntity = armorRarityRepository.findAll();
-
-        return ArmorRarityConverter.armorRarityEntityToDTO(armorEntity);
-
-    }
+//    @Override
+//    public ArmorRarezaDTO getArmorRarityId(Long id) {
+//        ArmorRarezaEntity armorEntity = armorRarityRepository.findById(id)
+//                .orElseThrow(() -> new RuntimeException("No hay rareza de armaduras con ese id: " + id));
+//
+//        return ArmorRarityConverter.armorRarityEntityToDTO(armorEntity);
+//    }
+//
+//    // Metodo armor rareza con lista
+//    @Override
+//    public List<ArmorRarezaDTO> getArmorRarityList() {
+//        List<ArmorRarezaEntity> armorEntity = armorRarityRepository.findAll();
+//
+//        return ArmorRarityConverter.armorRarityEntityToDTO(armorEntity);
+//
+//    }
 
     // --------------------- Armor Base ------------------------
     // Metodo armadura por id
@@ -60,6 +60,12 @@ public class ArmorServiceImpl implements ArmorService {
         ArmorBaseEntity armorEntity = armorRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("No hay armaduras con ese id: " + id));
         // Con relaciones
+        return ArmorConverter.armorEntityToDTO(armorEntity);
+    }
+
+    @Override
+    public List<ArmorBaseDTO> getArmorList() {
+        List<ArmorBaseEntity> armorEntity = armorRepository.findAll();
         return ArmorConverter.armorEntityToDTO(armorEntity);
     }
 

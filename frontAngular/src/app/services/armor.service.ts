@@ -5,6 +5,7 @@ import { RequestService, RequestServiceOptions } from './request.service';
 import { GetArmorRarityListResponse } from '../models/GetArmorRarityListResponse.model';
 import { GetArmorRarityResponse } from '../models/GetArmorRarityResponse.model';
 import { GetArmorResponse } from '../models/GetArmorResponse.model';
+import { GetArmorListResponse } from '../models/GetArmorListResponse.model';
 
 
 @Injectable({
@@ -13,7 +14,18 @@ import { GetArmorResponse } from '../models/GetArmorResponse.model';
 export class ArmorService {
     constructor(private requestService: RequestService) { }
 
-    public getArmorRarityList(): Observable<GetArmorRarityListResponse> {
+    // public getArmorRarityList(): Observable<GetArmorRarityListResponse> {
+    //     let url = `${environment.armors}`;
+
+    //     const requestServiceOptions: RequestServiceOptions = {
+    //         url: url,
+    //         method: 'GET',
+    //         responseType: 'json',
+    //     };
+    //     return this.requestService.request(requestServiceOptions, false, true);
+    // }
+
+    public getArmorList(): Observable<GetArmorListResponse> {
         let url = `${environment.armors}`;
 
         const requestServiceOptions: RequestServiceOptions = {
@@ -24,15 +36,16 @@ export class ArmorService {
         return this.requestService.request(requestServiceOptions, false, true);
     }
 
-    public getArmorRarity(id: number): Observable<GetArmorRarityResponse> {
-        let url = `${environment.armorsRarityId}/${id}`;
-        const requestServiceOptions: RequestServiceOptions = {
-            url: url,
-            method: 'GET',
-            responseType: 'json',
-        };
-        return this.requestService.request(requestServiceOptions, false, true);
-    }
+
+    // public getArmorRarity(id: number): Observable<GetArmorRarityResponse> {
+    //     let url = `${environment.armorsRarityId}/${id}`;
+    //     const requestServiceOptions: RequestServiceOptions = {
+    //         url: url,
+    //         method: 'GET',
+    //         responseType: 'json',
+    //     };
+    //     return this.requestService.request(requestServiceOptions, false, true);
+    // }
 
     public getArmor(id: number): Observable<GetArmorResponse> {
         let url = `${environment.armors}/${id}`;

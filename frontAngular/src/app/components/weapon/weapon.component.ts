@@ -14,12 +14,12 @@ import { WikiWeaponComponent } from "../wiki-weapon/wiki-weapon.component";
   selector: 'app-weapon',
   templateUrl: './weapon.component.html',
   styleUrls: ['./weapon.component.scss'],
-  standalone: true, // Declara el componente como independiente
+  standalone: true,
   imports: [
     CommonModule,
     IonicModule,
     FormsModule,
-    CardWeapontypeComponent, // Importa el componente CardWeapontypeComponent
+    CardWeapontypeComponent,
     RouterModule,
     WikiWeaponComponent
 ]
@@ -29,7 +29,7 @@ export class WeaponComponent implements OnInit {
   @Input()
   weapontipo!: WeaponTipoDTO;
 
-  weaponstipos: WeaponTipoDTO[] = []; // Lista de weapontype
+  weaponstipos: WeaponTipoDTO[] = [];
   selectedWeaponTipo: WeaponTipoDTO | undefined;
   selectedWeaponTipoId: number | undefined;
   infoWeapon?: WeaponBaseDTO;

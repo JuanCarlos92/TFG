@@ -1,8 +1,8 @@
-import { ArmorBaseDTO } from './ArmorBaseDTO.model';
+// import { ArmorBaseDTO } from './ArmorBaseDTO.model';
 
-export interface ArmorRarezaDTO {
-  id: number;
-  rareza: number;
+// export interface ArmorRarezaDTO {
+//   id: number;
+//   rareza: number;
 
-  armorBaseDTO: ArmorBaseDTO[];
-}
+//   armorBaseDTO: ArmorBaseDTO[];
+// }

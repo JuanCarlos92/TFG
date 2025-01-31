@@ -13,8 +13,6 @@ import com.juancarlos.springboot.entity.armor.ArmorBaseEntity;
 @Repository
 public interface ArmorRepository extends JpaRepository<ArmorBaseEntity, Long> {
 
-    // Metodo paginacion (buscartodo)
-    Page<ArmorBaseEntity> findAll(Pageable pageable);
 
     // Metodo buscar por Id
     Optional<ArmorBaseEntity> findById(Long id);

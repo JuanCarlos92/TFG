@@ -1,26 +1,32 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 import { first, Subscription } from 'rxjs';
 import { ArmorBaseDTO } from 'src/app/models/armor/ArmorBaseDTO.model';
-import { ArmorRarezaDTO } from 'src/app/models/armor/ArmorRarezaDTO.model';
 import { ArmorService } from 'src/app/services/armor.service';
 
 @Component({
   selector: 'app-armor',
   templateUrl: './armor.component.html',
   styleUrls: ['./armor.component.scss'],
-
+  standalone: true,
+  imports: [
+    CommonModule,
+    IonicModule
+  ]
 })
 export class ArmorComponent implements OnInit {
 
-  @Input()
-  armorRareza!: ArmorRarezaDTO;
 
-  armorsRarezas: ArmorRarezaDTO[] = []; // Lista de armorRarity
-  selectArmorRareza: ArmorRarezaDTO | undefined;
+
+  @Input()
+  armorBase!: ArmorBaseDTO;
+
+  armorsBase: ArmorBaseDTO[] = [];
   selectArmorRarezaId: number | undefined;
   infoArmor?: ArmorBaseDTO;
-  infoArmorRareza?: ArmorRarezaDTO;
+  infoArmorFiltrado?: ArmorBaseDTO;
   armorId!: number;
   mostrarWiki = false;
   armorWiki!: ArmorBaseDTO;
@@ -30,34 +36,79 @@ export class ArmorComponent implements OnInit {
   constructor(private route: ActivatedRoute, private armorService: ArmorService) { }
 
   ngOnInit() {
-    this.getArmorRarityList(); //Carga inicial de rareza de armaduras
+    this.loadArmorInfo(); //Carga inicial de armaduras
   }
 
-  //Obtiene Rarezas de armaduras
-  getArmorRarityList(): void {
-    this.armorService.getArmorRarityList().pipe(first()).subscribe({
+  // Cargar infor de armadura
+  loadArmorInfo(): void {
+    this.armorService.getArmor(this.armorId).subscribe({
       next: (res) => {
-        this.armorsRarezas = res.armorRarezaDTO;
-        console.log('Tipos de armaduras recibidos:', res);
+        console.log('informacion de la armadura:', res);
+        this.infoArmor = res.armorDTO;
       },
       error: (error) => {
-        console.error('Error al obtener la información del arma:', error);
+        console.log('Error loadArmorInfo al obtener la información de la armadura:', error);
       },
     });
   }
 
-  // Obtiene las armaduras de la rareza seleccionada por id
-  getArmorRarity(id: number): void {
-    this.armorService.getArmorRarity(id).pipe(first()).subscribe({
+  //Obtiene lista armaduras
+  getArmorList(): void {
+    this.armorService.getArmorList().pipe(first()).subscribe({
+      next: (res) => {
+        this.armorsBase = res.armorBaseDTO;
+        console.log('armaduras recibidas:', res);
+      },
+      error: (error) => {
+        console.error('Error getArmorList al obtener la información de la armadura:', error);
+      },
+    });
+  }
+
+  getArmor(id: number): void {
+    this.armorService.getArmor(id).pipe(first()).subscribe({
       next: (res) => {
         console.log('armor ' + id, res);
-        this.infoArmorRareza = res.armorRarezaDTO;
+        this.infoArmor = res.armorDTO;
+        this.infoArmorFiltrado = { ...res.armorDTO };
       },
       error: (error) => {
-        console.error('Error al obtener la información de la armadura:', error);
-      },
-    });
+        console.error('Error getArmor al obtener armaduras:', error);
+      }
+    })
   }
-  
+
 
 }
+
+
+
+//   armors: ArmorBaseDTO[] = [];
+//   filteredArmors: ArmorBaseDTO[] = [];
+//   selectedRareza: number | null = null;
+
+//   constructor(private armorService: ArmorService) { }
+
+//   ngOnInit() {
+//     this.getArmorList(); // Carga inicial de todas las armaduras
+//   }
+
+//   // Obtiene la lista completa de armaduras
+//   getArmorList(): void {
+//     this.armorService.getArmorList().pipe(first()).subscribe({
+//       next: (res) => {
+//         this.armors = res.armorBaseDTO;
+//         console.log('Lista completa de armaduras:', this.armors);
+//       },
+//       error: (error) => {
+//         console.error('Error al obtener la lista de armaduras:', error);
+//       }
+//     });
+//   }
+
+//   // Filtra las armaduras por rareza seleccionada
+//   filterByRareza(rareza: number): void {
+//     this.selectedRareza = rareza;
+//     this.filteredArmors = this.armors.filter(armor => armor.rareza === rareza);
+//   }
+// }

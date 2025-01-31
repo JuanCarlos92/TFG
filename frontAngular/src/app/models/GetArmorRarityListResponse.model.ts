@@ -1,7 +1,7 @@
-import { ArmorRarezaDTO } from "./armor/ArmorRarezaDTO.model";
+// import { ArmorRarezaDTO } from "./armor/ArmorRarezaDTO.model";
 
 
-export interface GetArmorRarityListResponse {
-  armorRarezaDTO: ArmorRarezaDTO[];
+// export interface GetArmorRarityListResponse {
+//   armorRarezaDTO: ArmorRarezaDTO[];
 
-  }
+//   }

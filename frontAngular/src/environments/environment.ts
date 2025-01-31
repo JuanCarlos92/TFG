@@ -10,7 +10,6 @@ export const environment = {
   weapons: '/api/weapon',
   weaponsTypeId: '/api/weapon/type',
   armors: '/api/armor',
-  armorsRarityId: '/api/armor/rarity',
   armorsSet:'/api/armor/set'
 };
 

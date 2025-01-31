@@ -12,14 +12,17 @@ public interface ArmorService {
 
     // ---------------------- Armor rareza -------------------------------
     // Obtener rareza de armadura por id
-    ArmorRarezaDTO getArmorRarityId(Long id);
-
-    // Metodo paginacion rareza de armaduras
-    List<ArmorRarezaDTO> getArmorRarityList();
+//    ArmorRarezaDTO getArmorRarityId(Long id);
+//
+//    // Metodo lista rareza de armaduras
+//    List<ArmorRarezaDTO> getArmorRarityList();
 
     // ----------------------- Armor base --------------------------------
     // Obtener armaduras por id
     ArmorBaseDTO getArmorId(Long id);
+
+    // Metodo lista de armaduras
+    List<ArmorBaseDTO> getArmorList();
 
     // ------------------------ ArmorSet ---------------------------------
     // Obtener armadurasSet por id
