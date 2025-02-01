@@ -22,7 +22,7 @@ import { WikiWeaponComponent } from "../wiki-weapon/wiki-weapon.component";
     CardWeapontypeComponent,
     RouterModule,
     WikiWeaponComponent
-]
+  ]
 })
 export class WeaponComponent implements OnInit {
 
@@ -47,6 +47,7 @@ export class WeaponComponent implements OnInit {
     this.getWeaponTypeList(); // Carga inicial de tipos de armas
   }
 
+  // Cargar infor de armas ID
   loadWeaponInfo(): void {
     this.weaponService.getWeapon(this.weaponId).subscribe({
       next: (res) => {
@@ -78,7 +79,7 @@ export class WeaponComponent implements OnInit {
       next: (res) => {
         console.log('weapon ' + id, res);
         this.infoWeaponTipo = res.weaponTipoDTO;
-        this.infoWeaponTipoFiltrado = {...res.weaponTipoDTO};
+        this.infoWeaponTipoFiltrado = { ...res.weaponTipoDTO };
       },
       error: (error) => {
         console.error('Error al obtener armas:', error);
@@ -99,7 +100,7 @@ export class WeaponComponent implements OnInit {
     this.search$.unsubscribe();
   }
 
-  clickRareza(n: number) {
+  filterByRarity(n: number) {
     const filtro = this.infoWeaponTipo?.weaponBaseDTO.filter(v => v.rareza === n);
     if (filtro && this.infoWeaponTipoFiltrado) {
       this.infoWeaponTipoFiltrado.weaponBaseDTO = filtro;

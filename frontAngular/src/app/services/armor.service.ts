@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { RequestService, RequestServiceOptions } from './request.service';
-import { GetArmorRarityListResponse } from '../models/GetArmorRarityListResponse.model';
-import { GetArmorRarityResponse } from '../models/GetArmorRarityResponse.model';
 import { GetArmorResponse } from '../models/GetArmorResponse.model';
 import { GetArmorListResponse } from '../models/GetArmorListResponse.model';
 

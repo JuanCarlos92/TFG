@@ -3,14 +3,14 @@
   <div>
     <button *ngFor="let r of [1,2,3,4,5,6,7,8,9,10,11,12]" 
             class="btn btn-secondary mx-1 custom-btn"
-            (click)="filterByRareza(r)">
-      {{ r }}
+            (click)="filterByRarity(r)">
+      Rareza {{ r }}
     </button>
   </div>
 
-  <!-- Lista de Armaduras Filtradas -->
-  <div *ngIf="filteredArmors.length > 0" class="container mt-4">
-    <h2 class="text-center">Armaduras de Rareza {{ selectedRareza }}</h2>
+  <!-- Lista de Armaduras -->
+  <div *ngIf="armorsListBase.length > 0" class="container mt-4">
+    <h2 class="text-center">Armaduras</h2>
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
@@ -20,12 +20,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let armor of filteredArmors">
-          <td>{{ armor.nombre }}</td>
-          <td>{{ armor.rareza }}</td>
-          <td>{{ armor.tipo }}</td>
+        <tr *ngFor="let v of filteredArmors">
+          <td>
+            <a (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+              {{ v?.nombre }}
+            </a>
+          </td>
+          <td>{{ v?.rareza }}</td>
+          <td>{{ v?.tipo }}</td>
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <div *ngIf="mostrarWiki">
+    <app-wiki-armor [armor]="armorWiki"></app-wiki-armor>
   </div>
 </ion-content>

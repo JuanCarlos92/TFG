@@ -15,22 +15,22 @@
       <h2 style="text-align: center;">{{ selectedWeaponTipo.tipoArma }}</h2>
     </div>
 
-    <!-- Lista de armas -->
     <div id="listaArmas" *ngIf="infoWeaponTipoFiltrado?.weaponBaseDTO?.length ?? 0 > 0" class="container mt-4">
       <div>
-        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(1)">1</button>
-        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(2)">2</button>
-        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(3)">3</button>
-        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(4)">4</button>
-        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(5)">5</button>
-        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(6)">6</button>
-        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(7)">7</button>
-        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(8)">8</button>
-        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(9)">9</button>
-        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(10)">10</button>
-        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(11)">11</button>
-        <button class="btn btn-secondary mx-1 custom-btn" (click)="clickRareza(12)">12</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(1)">1</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(2)">2</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(3)">3</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(4)">4</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(5)">5</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(6)">6</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(7)">7</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(8)">8</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(9)">9</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(10)">10</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(11)">11</button>
+        <button class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(12)">12</button>
       </div>
+      <!-- Lista de armas -->
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
@@ -57,6 +57,5 @@
   <div *ngIf="mostrarWiki">
     <app-wiki-weapon [weapon]="weaponWiki"></app-wiki-weapon>
   </div>
-
 
 </ion-content>

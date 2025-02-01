@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { first, Subscription } from 'rxjs';
 import { ArmorBaseDTO } from 'src/app/models/armor/ArmorBaseDTO.model';
 import { ArmorService } from 'src/app/services/armor.service';
+import { WikiArmorComponent } from "../wiki-armor/wiki-armor.component";
 
 @Component({
   selector: 'app-armor',
@@ -13,8 +14,10 @@ import { ArmorService } from 'src/app/services/armor.service';
   standalone: true,
   imports: [
     CommonModule,
-    IonicModule
-  ]
+    IonicModule,
+    RouterModule,
+    WikiArmorComponent
+]
 })
 export class ArmorComponent implements OnInit {
 
@@ -23,23 +26,24 @@ export class ArmorComponent implements OnInit {
   @Input()
   armorBase!: ArmorBaseDTO;
 
-  armorsBase: ArmorBaseDTO[] = [];
-  selectArmorRarezaId: number | undefined;
+  armorsListBase: ArmorBaseDTO[] = [];
+  filteredArmors: ArmorBaseDTO[] = [];
   infoArmor?: ArmorBaseDTO;
-  infoArmorFiltrado?: ArmorBaseDTO;
   armorId!: number;
   mostrarWiki = false;
   armorWiki!: ArmorBaseDTO;
 
+  selectArmorRarezaId: number | undefined;
+  infoArmorFiltrado?: ArmorBaseDTO;
   search$!: Subscription;
 
   constructor(private route: ActivatedRoute, private armorService: ArmorService) { }
 
   ngOnInit() {
-    this.loadArmorInfo(); //Carga inicial de armaduras
+    this.getArmorList();  // Obtiene la lista de armaduras
   }
 
-  // Cargar infor de armadura
+  // Cargar infor de armadura ID
   loadArmorInfo(): void {
     this.armorService.getArmor(this.armorId).subscribe({
       next: (res) => {
@@ -56,8 +60,10 @@ export class ArmorComponent implements OnInit {
   getArmorList(): void {
     this.armorService.getArmorList().pipe(first()).subscribe({
       next: (res) => {
-        this.armorsBase = res.armorBaseDTO;
+        this.armorsListBase = res.armorDTO || [];
+        this.filteredArmors = this.armorsListBase; // Inicializa con todas las armaduras
         console.log('armaduras recibidas:', res);
+        console.log('Lista de armaduras:', this.armorsListBase);
       },
       error: (error) => {
         console.error('Error getArmorList al obtener la información de la armadura:', error);
@@ -65,19 +71,38 @@ export class ArmorComponent implements OnInit {
     });
   }
 
-  getArmor(id: number): void {
-    this.armorService.getArmor(id).pipe(first()).subscribe({
-      next: (res) => {
-        console.log('armor ' + id, res);
-        this.infoArmor = res.armorDTO;
-        this.infoArmorFiltrado = { ...res.armorDTO };
-      },
-      error: (error) => {
-        console.error('Error getArmor al obtener armaduras:', error);
-      }
-    })
+  // Función para filtrar por rareza
+  filterByRarity(rareza: number): void {
+    console.log('Filtrando por rareza:', rareza);
+    this.filteredArmors = this.armorsListBase.filter(armor => armor.rareza === rareza);
+    console.log('Armaduras filtradas:', this.filteredArmors); 
   }
 
+  displayWiki(armor: ArmorBaseDTO) {
+    this.armorWiki = armor;
+    this.mostrarWiki = !this.mostrarWiki;
+  }
+
+
+  // getArmor(id: number): void {
+  //   this.armorService.getArmor(id).pipe(first()).subscribe({
+  //     next: (res) => {
+  //       console.log('armor ' + id, res);
+  //       this.infoArmor = res.armorDTO;
+  //       this.infoArmorFiltrado = { ...res.armorDTO };
+  //     },
+  //     error: (error) => {
+  //       console.error('Error getArmor al obtener armaduras:', error);
+  //     }
+  //   })
+  // }
+
+  // clickRareza(n: number) {
+  //   const filtro = this.infoArmor?.filter(v => v.rareza === n);
+  //   if (filtro && this.infoWeaponTipoFiltrado) {
+  //     this.infoWeaponTipoFiltrado.weaponBaseDTO = filtro;
+  //   }
+  // }
 
 }
 
