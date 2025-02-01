@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ArmorBaseDTO } from 'src/app/models/armor/ArmorBaseDTO.model';
 import { ArmorService } from 'src/app/services/armor.service';
@@ -6,6 +7,9 @@ import { ArmorService } from 'src/app/services/armor.service';
   selector: 'app-wiki-armor',
   templateUrl: './wiki-armor.component.html',
   styleUrls: ['./wiki-armor.component.scss'],
+    imports: [
+      CommonModule
+    ]
 })
 export class WikiArmorComponent implements OnInit {
 

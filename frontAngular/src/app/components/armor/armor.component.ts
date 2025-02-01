@@ -21,8 +21,6 @@ import { WikiArmorComponent } from "../wiki-armor/wiki-armor.component";
 })
 export class ArmorComponent implements OnInit {
 
-
-
   @Input()
   armorBase!: ArmorBaseDTO;
 
@@ -33,9 +31,9 @@ export class ArmorComponent implements OnInit {
   mostrarWiki = false;
   armorWiki!: ArmorBaseDTO;
 
-  selectArmorRarezaId: number | undefined;
-  infoArmorFiltrado?: ArmorBaseDTO;
-  search$!: Subscription;
+  // selectArmorRarezaId: number | undefined;
+  // infoArmorFiltrado?: ArmorBaseDTO;
+  // search$!: Subscription;
 
   constructor(private route: ActivatedRoute, private armorService: ArmorService) { }
 
@@ -60,7 +58,7 @@ export class ArmorComponent implements OnInit {
   getArmorList(): void {
     this.armorService.getArmorList().pipe(first()).subscribe({
       next: (res) => {
-        this.armorsListBase = res.armorDTO || [];
+        this.armorsListBase = res.armorDTO;
         this.filteredArmors = this.armorsListBase; // Inicializa con todas las armaduras
         console.log('armaduras recibidas:', res);
         console.log('Lista de armaduras:', this.armorsListBase);
@@ -72,9 +70,9 @@ export class ArmorComponent implements OnInit {
   }
 
   // Función para filtrar por rareza
-  filterByRarity(rareza: number): void {
-    console.log('Filtrando por rareza:', rareza);
-    this.filteredArmors = this.armorsListBase.filter(armor => armor.rareza === rareza);
+  filterByRarity(n: number): void {
+    console.log('Filtrando por rareza:', n);
+    this.filteredArmors = this.armorsListBase.filter(v => v.rareza === n);
     console.log('Armaduras filtradas:', this.filteredArmors); 
   }
 
@@ -82,7 +80,7 @@ export class ArmorComponent implements OnInit {
     this.armorWiki = armor;
     this.mostrarWiki = !this.mostrarWiki;
   }
-
+}
 
   // getArmor(id: number): void {
   //   this.armorService.getArmor(id).pipe(first()).subscribe({
@@ -103,9 +101,6 @@ export class ArmorComponent implements OnInit {
   //     this.infoWeaponTipoFiltrado.weaponBaseDTO = filtro;
   //   }
   // }
-
-}
-
 
 
 //   armors: ArmorBaseDTO[] = [];

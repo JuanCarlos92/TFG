@@ -39,7 +39,7 @@ export class WeaponComponent implements OnInit {
   mostrarWiki = false;
   weaponWiki!: WeaponBaseDTO;
 
-  search$!: Subscription;
+  // search$!: Subscription;
 
   constructor(private route: ActivatedRoute, private weaponService: WeaponService) { }
 
@@ -96,9 +96,9 @@ export class WeaponComponent implements OnInit {
     this.getWeaponType(this.selectedWeaponTipoId);
   }
 
-  ngOnDestroy(): void {
-    this.search$.unsubscribe();
-  }
+  // ngOnDestroy(): void {
+  //   this.search$.unsubscribe();
+  // }
 
   filterByRarity(n: number) {
     const filtro = this.infoWeaponTipo?.weaponBaseDTO.filter(v => v.rareza === n);

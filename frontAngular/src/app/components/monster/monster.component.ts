@@ -12,12 +12,12 @@ import { debounceTime, first, Subject, Subscription } from 'rxjs';
   selector: 'app-monster',
   templateUrl: './monster.component.html',
   styleUrls: ['./monster.component.scss'],
-  standalone: true, // Declara el componente como independiente
+  standalone: true,
   imports: [
     CommonModule,
     IonicModule,
     FormsModule,
-    CardMonsterComponent, // Importa el componente CardMonsterComponent
+    CardMonsterComponent,
     WikiMonsterComponent
 ]
 })
