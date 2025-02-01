@@ -1,6 +1,10 @@
 <div class="container mt-4 text-center">
   <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Armors</button>
 </div>
+<!-- Información General -->
+<div *ngIf="inforArmor" class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
     <!-- Nombre -->
     <tr>
       <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
@@ -9,3 +13,131 @@
         </div>
       </td>
     </tr>
+
+    <tr>
+      <!-- Tipo de armadura -->
+      <td class="text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.tipo }}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Tabla: Rareza ataque afinidad Elemento-->
+<div id="tabla1" *ngIf="inforArmor" class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <tr>
+      <th>Defensa Base</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaBase }}</td>
+    </tr>
+    <tr>
+      <th>Defensa Máxima</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaMax }}</td>
+    </tr>
+    <tr>
+      <th>Defensa con Aumento Máximo</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaAumentoMax }}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Tabla: Ranuras -->
+<div id="Ranura" *ngIf="inforArmor" class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <thead>
+      <tr>
+        <th>Ranura 1</th>
+        <th>Ranura 2</th>
+        <th>Ranura 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.ranura1 || 'N/A'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.ranura2 || 'N/A'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.ranura3 || 'N/A'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Tabla: Defensa elementales -->
+<div id="DefElemental" *ngIf="inforArmor" class="container mt-4">
+  <h2 style="text-align: center;">Defensas Elementales</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Defensa Fuego</th>
+        <th>defensa Agua</th>
+        <th>defensa Rayo</th>
+        <th>defensa Hielo</th>
+        <th>defensa Dragon</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaFuego || 'N/A'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaAgua || 'N/A'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaRayo || 'N/A'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaHielo || 'N/A'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaDragon || 'N/A'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Tabla: Skill -->
+<div id="Crafteo" *ngIf="inforArmor?.armorSkillDTO?.length > 0 " class="container mt-4">
+  <h2 style="text-align: center;">Habilidades de la armadura</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Habilidad 1</th>
+        <th>Nivel de habilidad</th>
+        <th>Habilidad 2</th>
+        <th>Nivel de habilidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforArmor.armorSkillDTO">
+        <td>{{ v?.nombreSkill1 || 'N/A'}}</td>
+        <td>{{ v?.nivelSkill1 || 'N/A'}}</td>
+        <td>{{ v?.nombreSkill2 || 'N/A'}}</td>
+        <td>{{ v?.nivelSkill2 || 'N/A'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Tabla: Crafteo -->
+<div id="Crafteo" *ngIf="inforArmor?.armorCraftDTO?.length > 0 " class="container mt-4">
+  <h2 style="text-align: center;">Crafteo</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Material 1</th>
+        <th>Cantidad </th>
+        <th>Material 2</th>
+        <th>Cantidad</th>
+        <th>Material 3</th>
+        <th>Cantidad</th>
+        <th>Material 4</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforArmor.armorCraftDTO">
+        <td>{{ v?.nombreItem1 || 'N/A'}}</td>
+        <td>{{ v?.cantidadItem1 || 'N/A'}}</td>
+        <td>{{ v?.nombreItem2 || 'N/A'}}</td>
+        <td>{{ v?.cantidadItem2 || 'N/A'}}</td>
+        <td>{{ v?.nombreItem3 || 'N/A'}}</td>
+        <td>{{ v?.cantidadItem3 || 'N/A'}}</td>
+        <td>{{ v?.nombreItem4 || 'N/A'}}</td>
+        <td>{{ v?.cantidadItem4 || 'N/A'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

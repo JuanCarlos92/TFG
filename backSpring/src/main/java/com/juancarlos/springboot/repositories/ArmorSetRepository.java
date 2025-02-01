@@ -12,9 +12,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ArmorSetRepository extends JpaRepository<ArmorSetBaseEntity, Long> {
 
-    // Metodo paginacion (buscartodo)
-    Page<ArmorSetBaseEntity> findAll(Pageable pageable);
-
     // Metodo buscar por Id
     Optional<ArmorSetBaseEntity> findById(Long id);
 }

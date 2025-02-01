@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.juancarlos.springboot.models.dto.armor.ArmorBaseDTO;
-import com.juancarlos.springboot.models.dto.armor.ArmorRarezaDTO;
 import com.juancarlos.springboot.models.dto.armor.ArmorSetBaseDTO;
 import com.juancarlos.springboot.services.ArmorService;
 
@@ -23,22 +22,13 @@ public class ArmorController {
 	@Autowired
 	private ArmorService armorService;
 
-	// Endpoint para obtener las rarezas de armaduras con lista
-//	@GetMapping()
-//	public GetArmorRarityListResponse getArmorRarityList() {
-//		GetArmorRarityListResponse response = new GetArmorRarityListResponse();
-//		response.setArmorRarezaDTO(armorService.getArmorRarityList());
-//		return response;
-//	}
 	// ---------------------------- ArmorBase ----------------------------
-
 	@GetMapping()
 	public GetArmorListResponse getArmorList() {
 		GetArmorListResponse response = new GetArmorListResponse();
 		response.setArmorDTO(armorService.getArmorList());
 		return response;
 	}
-
 
 	// Endpoint para obtener una armadura por id
 	@GetMapping("/{id}")
@@ -50,18 +40,6 @@ public class ArmorController {
 		return response;
 
 	}
-
-	// ----------------------------- ArmorRareza -----------------------------
-	// Endpoint para obtener una rareza de armadura id
-//	@GetMapping("/rarity/{id}")
-//	public GetArmorRarityResponse getWeaponTypeId(@PathVariable Long id) {
-//		ArmorRarezaDTO armor = armorService.getArmorRarityId(id);
-//		GetArmorRarityResponse response = GetArmorRarityResponse.builder().armorRarezaDTO(armor).build();
-//
-//		response.setIsOk(true);
-//		return response;
-//
-//	}
 
 	// ----------------------------- ArmorSet -----------------------------
 	// Endpoint para obtener las armaduraSet con paginación

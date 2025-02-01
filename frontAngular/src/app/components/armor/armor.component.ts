@@ -80,7 +80,13 @@ export class ArmorComponent implements OnInit {
     this.armorWiki = armor;
     this.mostrarWiki = !this.mostrarWiki;
   }
+
+  closeWiki(){
+    this.mostrarWiki = false;
+  }
 }
+
+
 
   // getArmor(id: number): void {
   //   this.armorService.getArmor(id).pipe(first()).subscribe({

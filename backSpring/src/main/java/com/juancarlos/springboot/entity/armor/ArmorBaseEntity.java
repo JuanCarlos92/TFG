@@ -52,11 +52,6 @@ public class ArmorBaseEntity {
     @Column(name = "defensa_dragon")
     private Integer defensaDragon;
 
-    // Relacion muchos a uno con la tabla armadura rareza
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_rareza", referencedColumnName = "id")
-    @JsonIgnore
-    private ArmorRarezaEntity armorRareza;
 
     // Relacion muchos a uno con la tabla armaduraset base
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

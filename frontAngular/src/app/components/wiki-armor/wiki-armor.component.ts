@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ArmorBaseDTO } from 'src/app/models/armor/ArmorBaseDTO.model';
 import { ArmorService } from 'src/app/services/armor.service';
 
@@ -15,6 +15,9 @@ export class WikiArmorComponent implements OnInit {
 
   @Input()
   armor!: ArmorBaseDTO;
+
+  @Output()
+  closeWiki = new EventEmitter<boolean>();
 
   inforArmor: any;
 
@@ -40,7 +43,9 @@ export class WikiArmorComponent implements OnInit {
     }
   }
 
+  // Cambiar con output emit
   reloadPage(): void {
-    window.location.reload();
+    this.closeWiki.emit();
+    
   }
 }

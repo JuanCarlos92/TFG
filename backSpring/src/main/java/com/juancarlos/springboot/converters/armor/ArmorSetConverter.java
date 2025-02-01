@@ -1,5 +1,6 @@
 package com.juancarlos.springboot.converters.armor;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,7 +11,7 @@ import com.juancarlos.springboot.models.dto.armor.ArmorBaseDTO;
 import com.juancarlos.springboot.models.dto.armor.ArmorSetBaseBonusDTO;
 import com.juancarlos.springboot.models.dto.armor.ArmorSetBaseDTO;
 
-public class ArmorSetBaseConverter {
+public class ArmorSetConverter {
     // Convierte una ArmorEntity a ArmorDTO
     public static ArmorSetBaseDTO armorSetEntityToDTO(ArmorSetBaseEntity armorSetBaseEntity) {
         if (armorSetBaseEntity == null) {
@@ -20,12 +21,12 @@ public class ArmorSetBaseConverter {
         //Convertimos las listas
         List<ArmorBaseDTO> listaArmorBase = armorSetBaseEntity.getArmorBase()
                 .stream()
-                .map(ArmorSetBaseConverter::convertArmorBaseEntityToDTO)
+                .map(ArmorSetConverter::convertArmorBaseEntityToDTO)
                 .collect(Collectors.toList());
 
         List<ArmorSetBaseBonusDTO> listaArmorSetBaseBonus = armorSetBaseEntity.getArmorSetBaseBonus()
                         .stream()
-                        .map(ArmorSetBaseConverter::convertArmorSetBaseBonusEntityToDTO)
+                        .map(ArmorSetConverter::convertArmorSetBaseBonusEntityToDTO)
                         .collect(Collectors.toList());
 
         return ArmorSetBaseDTO.builder() // Creamos un nuevo objeto de tipo ArmorSetBaseDTO
@@ -74,6 +75,16 @@ public class ArmorSetBaseConverter {
                 .nombreSkill2(asbb.getNombreSkill2())
                 .nivelSkill2(asbb.getNivelSkill2())
                 .build();
+    }
+
+    public static List<ArmorSetBaseDTO> armorSetEntityToDTO(List<ArmorSetBaseEntity> armorSetBaseEntity) {
+        List<ArmorSetBaseDTO> armorSetBaseDTO = new ArrayList<>();
+        for (ArmorSetBaseEntity w : armorSetBaseEntity) {
+
+            armorSetBaseDTO.add(armorSetEntityToDTO(w));
+        }
+
+        return armorSetBaseDTO;
     }
 
 }

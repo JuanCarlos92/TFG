@@ -44,6 +44,8 @@ export class WikiMonsterComponent implements OnInit {
     }
   }
 
+
+  // Cambiar con output emit
   reloadPage(): void {
     window.location.reload(); // Recarga la página actual
   }
