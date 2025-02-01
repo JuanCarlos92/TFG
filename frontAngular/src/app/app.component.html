@@ -20,7 +20,7 @@
     </ion-toolbar>
   </ion-header>
 
-  
+
   <!-- Menú desplegable -->
   <div [class.show]="isMenuOpen" class="side-menu">
     <ul>
@@ -34,15 +34,20 @@
       <li>
         <!-- Weapons Link -->
         <a [routerLink]="['/weapons']" class="menu-link" (click)="closeMenu()">
-          <!-- <img src="assets/icon/ico-iceborne.png" class="menu-icon"/> -->
           Weapons
         </a>
       </li>
       <li>
-        <!-- New Link with Icon -->
+        <!-- Armor Link -->
         <a [routerLink]="['/armors']" class="menu-link" (click)="closeMenu()">
-          <!-- <img src="assets/icon/ico-iceborne.png" class="menu-icon"/> -->
           Armors
+        </a>
+      </li>
+
+      <li>
+        <!-- Armor Set Link -->
+        <a [routerLink]="['/armorsSet']" class="menu-link" (click)="closeMenu()">
+          Armors Set
         </a>
       </li>
     </ul>
@@ -50,6 +55,3 @@
 
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
-
-
-

@@ -1,0 +1,38 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+
+<!-- Lista de set de Armaduras -->
+<div *ngIf="armorsSetList.length > 0 && !mostrarWiki" class="container mt-4">
+  <div>
+    <button *ngFor="let r of ['MR','HR','LR']" class="btn btn-secondary mx-1 custom-btn"
+      (click)="filterByRange(r)">
+      Rango {{ r }}
+    </button>
+  </div>
+  <h2 class="text-center">Set de armaduras</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Rango</th>
+          <th>Monster</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of filteredArmors">
+          <td>
+            <a (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+              {{ v?.nombre }}
+            </a>
+          </td>
+          <td>{{ v?.rango }}</td>
+          <td>{{ v?.monster || 'N/A'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="mostrarWiki">
+    <app-wiki-armor-set [armorSet] ="armorSetWiki" (closeWiki)="closeWiki()"></app-wiki-armor-set>
+  </div>
+
+</ion-content>

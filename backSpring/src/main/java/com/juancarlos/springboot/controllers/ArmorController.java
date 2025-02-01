@@ -44,10 +44,10 @@ public class ArmorController {
 	// ----------------------------- ArmorSet -----------------------------
 	// Endpoint para obtener las armaduraSet con paginación
 	@GetMapping("/set")
-	public Page<ArmorSetBaseDTO> getArmorSetWithPagination(@RequestParam(defaultValue = "0") int page,
-			@RequestParam(defaultValue = "12") int size) {
-			return armorService.getArmorSetWithPagination(page, size);
-
+	public GetArmorSetListResponse getArmorSetList() {
+		GetArmorSetListResponse response = new GetArmorSetListResponse();
+		response.setArmorSetDTO(armorService.getArmorSetList());
+		return response;
 	}
 
 	// Endpoint para obtener una armadura por id
@@ -55,10 +55,8 @@ public class ArmorController {
 	public GetArmorSetResponse getArmorSetId(@PathVariable Long id) {
 		ArmorSetBaseDTO armor = armorService.getArmorSetId(id);
 		GetArmorSetResponse response = GetArmorSetResponse.builder().armorSetBaseDTO(armor).build();
-
 		response.setIsOk(true);
 		return response;
 
 	}
-
 }

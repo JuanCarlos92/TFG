@@ -14,6 +14,5 @@ export interface ArmorSetBaseDTO {
   bonus: string;
 
   armorBaseDTO: ArmorBaseDTO[];
-
   armorSetBaseBonus: ArmorSetBaseBonusDTO[];
 }

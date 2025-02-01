@@ -1,20 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ArmorBaseDTO } from 'src/app/models/armor/ArmorBaseDTO.model';
+import { ArmorSetBaseDTO } from 'src/app/models/armor/ArmorSetBaseDTO.model';
 import { ArmorService } from 'src/app/services/armor.service';
 
 @Component({
-  selector: 'app-wiki-armor',
-  templateUrl: './wiki-armor.component.html',
-  styleUrls: ['./wiki-armor.component.scss'],
-    imports: [
-      CommonModule
-    ]
+  selector: 'app-wiki-armor-set',
+  templateUrl: './wiki-armor-set.component.html',
+  styleUrls: ['./wiki-armor-set.component.scss'],
+  imports: [
+    CommonModule
+  ]
 })
-export class WikiArmorComponent implements OnInit {
+export class WikiArmorSetComponent implements OnInit {
 
   @Input()
-  armor!: ArmorBaseDTO;
+  armorSet!: ArmorSetBaseDTO;
 
   @Output()
   closeWiki = new EventEmitter<boolean>();
@@ -24,15 +24,15 @@ export class WikiArmorComponent implements OnInit {
   constructor(private armorService: ArmorService) { }
 
   ngOnInit() {
-    console.log(this.armor);
-    this.armorService.getArmor(this.armor.id).subscribe({
+    console.log(this.armorSet);
+    this.armorService.getArmorSet(this.armorSet.id).subscribe({
       next: (res) => {
-        console.log('Armaduras: ' + this.armor['id'], res);
-        this.inforArmor = res.armorDTO;
+        console.log('Armaduras set ' + this.armorSet['id'], res);
+        this.inforArmor = res.armorSetBaseDTO;
         console.log('inforArmor:' , this.inforArmor);
       },
       error: (error) => {
-        console.error('Error al obtener la armadura:', error);
+        console.error('Error al obtener la armadura set:', error);
       },
     });
   }
@@ -46,6 +46,7 @@ export class WikiArmorComponent implements OnInit {
 
   reloadPage(): void {
     this.closeWiki.emit();
-    
+
   }
+
 }

@@ -55,7 +55,7 @@
   </div>
 
   <div *ngIf="mostrarWiki">
-    <app-wiki-weapon [weapon]="weaponWiki"></app-wiki-weapon>
+    <app-wiki-weapon [weapon]="weaponWiki" (closeWiki)="closeWiki()"></app-wiki-weapon>
   </div>
 
 </ion-content>

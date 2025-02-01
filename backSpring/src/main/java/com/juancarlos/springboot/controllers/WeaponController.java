@@ -24,6 +24,7 @@ public class WeaponController {
 	@Autowired
 	private WeaponService weaponService;
 
+	// ----------------------------- WeaponTipo -----------------------------
 	// Endpoint para obtener tipos de armas con lista
 	@GetMapping()
 	public GetWeaponTypeListResponse getWeaponTypeList() {
@@ -31,21 +32,6 @@ public class WeaponController {
 		response.setWeaponTipoDTO(weaponService.getWeaponTypeList());
 		return response;
 	}
-
-	// ---------------------------- WeaponBase ----------------------------
-
-	// Endpoint para obtener un arma por id
-	@GetMapping("/{id}")
-	public GetWeaponResponse getWeaponId(@PathVariable Long id) {
-		WeaponBaseDTO weapon = weaponService.getWeaponId(id);
-		GetWeaponResponse response = GetWeaponResponse.builder().weaponDTO(weapon).build();
-
-		response.setIsOk(true);
-		return response;
-
-	}
-
-	// ----------------------------- WeaponTipo -----------------------------
 
 	// Endpoint para obtener un tipo de arma por id
 	@GetMapping("/type/{id}")
@@ -56,6 +42,16 @@ public class WeaponController {
 		response.setIsOk(true);
 		return response;
 
+	}
+	// ---------------------------- WeaponBase ----------------------------
+	// Endpoint para obtener un arma por id
+	@GetMapping("/{id}")
+	public GetWeaponResponse getWeaponId(@PathVariable Long id) {
+		WeaponBaseDTO weapon = weaponService.getWeaponId(id);
+		GetWeaponResponse response = GetWeaponResponse.builder().weaponDTO(weapon).build();
+
+		response.setIsOk(true);
+		return response;
 	}
 
 }

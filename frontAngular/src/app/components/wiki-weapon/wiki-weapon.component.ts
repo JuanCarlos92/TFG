@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { WeaponBaseDTO } from 'src/app/models/weapon/WeaponBaseDTO.model';
 import { WeaponService } from 'src/app/services/weapon.service';
 
@@ -15,6 +15,9 @@ export class WikiWeaponComponent implements OnInit {
 
   @Input()
   weapon!: WeaponBaseDTO;
+
+  @Output()
+  closeWiki = new EventEmitter<boolean>();
 
   inforWeapon: any;
 
@@ -41,7 +44,7 @@ export class WikiWeaponComponent implements OnInit {
   }
 
   reloadPage(): void {
-    window.location.reload();
-  }
+    this.closeWiki.emit();
 
+  }
 }

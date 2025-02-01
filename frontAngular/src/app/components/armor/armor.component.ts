@@ -26,14 +26,8 @@ export class ArmorComponent implements OnInit {
 
   armorsListBase: ArmorBaseDTO[] = [];
   filteredArmors: ArmorBaseDTO[] = [];
-  infoArmor?: ArmorBaseDTO;
-  armorId!: number;
   mostrarWiki = false;
   armorWiki!: ArmorBaseDTO;
-
-  // selectArmorRarezaId: number | undefined;
-  // infoArmorFiltrado?: ArmorBaseDTO;
-  // search$!: Subscription;
 
   constructor(private route: ActivatedRoute, private armorService: ArmorService) { }
 
@@ -41,18 +35,18 @@ export class ArmorComponent implements OnInit {
     this.getArmorList();  // Obtiene la lista de armaduras
   }
 
-  // Cargar infor de armadura ID
-  loadArmorInfo(): void {
-    this.armorService.getArmor(this.armorId).subscribe({
-      next: (res) => {
-        console.log('informacion de la armadura:', res);
-        this.infoArmor = res.armorDTO;
-      },
-      error: (error) => {
-        console.log('Error loadArmorInfo al obtener la información de la armadura:', error);
-      },
-    });
-  }
+  // // Cargar infor de armadura ID
+  // loadArmorInfo(): void {
+  //   this.armorService.getArmor(this.armorId).subscribe({
+  //     next: (res) => {
+  //       console.log('informacion de la armadura:', res);
+  //       this.infoArmor = res.armorDTO;
+  //     },
+  //     error: (error) => {
+  //       console.log('Error loadArmorInfo al obtener la información de la armadura:', error);
+  //     },
+  //   });
+  // }
 
   //Obtiene lista armaduras
   getArmorList(): void {
@@ -69,11 +63,11 @@ export class ArmorComponent implements OnInit {
     });
   }
 
-  // Función para filtrar por rareza
+  // filtrar por rareza
   filterByRarity(n: number): void {
     console.log('Filtrando por rareza:', n);
     this.filteredArmors = this.armorsListBase.filter(v => v.rareza === n);
-    console.log('Armaduras filtradas:', this.filteredArmors); 
+    console.log('Armaduras filtradas:' , this.filteredArmors); 
   }
 
   displayWiki(armor: ArmorBaseDTO) {
@@ -85,56 +79,3 @@ export class ArmorComponent implements OnInit {
     this.mostrarWiki = false;
   }
 }
-
-
-
-  // getArmor(id: number): void {
-  //   this.armorService.getArmor(id).pipe(first()).subscribe({
-  //     next: (res) => {
-  //       console.log('armor ' + id, res);
-  //       this.infoArmor = res.armorDTO;
-  //       this.infoArmorFiltrado = { ...res.armorDTO };
-  //     },
-  //     error: (error) => {
-  //       console.error('Error getArmor al obtener armaduras:', error);
-  //     }
-  //   })
-  // }
-
-  // clickRareza(n: number) {
-  //   const filtro = this.infoArmor?.filter(v => v.rareza === n);
-  //   if (filtro && this.infoWeaponTipoFiltrado) {
-  //     this.infoWeaponTipoFiltrado.weaponBaseDTO = filtro;
-  //   }
-  // }
-
-
-//   armors: ArmorBaseDTO[] = [];
-//   filteredArmors: ArmorBaseDTO[] = [];
-//   selectedRareza: number | null = null;
-
-//   constructor(private armorService: ArmorService) { }
-
-//   ngOnInit() {
-//     this.getArmorList(); // Carga inicial de todas las armaduras
-//   }
-
-//   // Obtiene la lista completa de armaduras
-//   getArmorList(): void {
-//     this.armorService.getArmorList().pipe(first()).subscribe({
-//       next: (res) => {
-//         this.armors = res.armorBaseDTO;
-//         console.log('Lista completa de armaduras:', this.armors);
-//       },
-//       error: (error) => {
-//         console.error('Error al obtener la lista de armaduras:', error);
-//       }
-//     });
-//   }
-
-//   // Filtra las armaduras por rareza seleccionada
-//   filterByRareza(rareza: number): void {
-//     this.selectedRareza = rareza;
-//     this.filteredArmors = this.armors.filter(armor => armor.rareza === rareza);
-//   }
-// }

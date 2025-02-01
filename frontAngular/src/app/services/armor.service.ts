@@ -4,6 +4,8 @@ import { environment } from 'src/environments/environment';
 import { RequestService, RequestServiceOptions } from './request.service';
 import { GetArmorResponse } from '../models/GetArmorResponse.model';
 import { GetArmorListResponse } from '../models/GetArmorListResponse.model';
+import { GetArmorSetListResponse } from '../models/GetArmorSetListResponse.model';
+import { GetArmorSetResponse } from '../models/GetArmorSetResponse.model';
 
 
 @Injectable({
@@ -32,6 +34,28 @@ export class ArmorService {
         };
         return this.requestService.request(requestServiceOptions, false, true);
     }
+
+    public getArmorSetList(): Observable<GetArmorSetListResponse> {
+        let url = `${environment.armorsSet}`;
+
+        const requestServiceOptions: RequestServiceOptions = {
+            url: url,
+            method: 'GET',
+            responseType: 'json',
+        };
+        return this.requestService.request(requestServiceOptions, false, true);
+    }
+
+    public getArmorSet(id: number): Observable<GetArmorSetResponse> {
+        let url = `${environment.armorsSet}/${id}`;
+        const requestServiceOptions: RequestServiceOptions = {
+            url: url,
+            method: 'GET',
+            responseType: 'json',
+        };
+        return this.requestService.request(requestServiceOptions, false, true);
+    }
+
 }
 
 

@@ -47,18 +47,18 @@ export class WeaponComponent implements OnInit {
     this.getWeaponTypeList(); // Carga inicial de tipos de armas
   }
 
-  // Cargar infor de armas ID
-  loadWeaponInfo(): void {
-    this.weaponService.getWeapon(this.weaponId).subscribe({
-      next: (res) => {
-        console.log('Información del arma:', res);
-        this.infoWeapon = res.weaponDTO;
-      },
-      error: (error) => {
-        console.error('Error al obtener la información del arma:', error);
-      },
-    });
-  }
+  // // Cargar infor de armas ID
+  // loadWeaponInfo(): void {
+  //   this.weaponService.getWeapon(this.weaponId).subscribe({
+  //     next: (res) => {
+  //       console.log('Información del arma:', res);
+  //       this.infoWeapon = res.weaponDTO;
+  //     },
+  //     error: (error) => {
+  //       console.error('Error al obtener la información del arma:', error);
+  //     },
+  //   });
+  // }
 
   // Obtiene tipos de armas
   getWeaponTypeList(): void {
@@ -96,10 +96,6 @@ export class WeaponComponent implements OnInit {
     this.getWeaponType(this.selectedWeaponTipoId);
   }
 
-  // ngOnDestroy(): void {
-  //   this.search$.unsubscribe();
-  // }
-
   filterByRarity(n: number) {
     const filtro = this.infoWeaponTipo?.weaponBaseDTO.filter(v => v.rareza === n);
     if (filtro && this.infoWeaponTipoFiltrado) {
@@ -112,4 +108,7 @@ export class WeaponComponent implements OnInit {
     this.mostrarWiki = !this.mostrarWiki;
   }
 
+  closeWiki() {
+    this.mostrarWiki = false;
+  }
 }

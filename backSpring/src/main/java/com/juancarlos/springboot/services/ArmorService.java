@@ -1,7 +1,5 @@
 package com.juancarlos.springboot.services;
 
-import org.springframework.data.domain.Page;
-
 import com.juancarlos.springboot.models.dto.armor.ArmorBaseDTO;
 import com.juancarlos.springboot.models.dto.armor.ArmorSetBaseDTO;
 

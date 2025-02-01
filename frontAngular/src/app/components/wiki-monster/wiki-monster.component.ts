@@ -35,7 +35,7 @@ export class WikiMonsterComponent implements OnInit {
     });
 
   }
-  
+
   // Este método permite desplazarse suavemente hacia una sección específica de la página.
   scrollTo(sectionId: string): void {
     const section = document.getElementById(sectionId);
@@ -44,10 +44,8 @@ export class WikiMonsterComponent implements OnInit {
     }
   }
 
-
-  // Cambiar con output emit
   reloadPage(): void {
     window.location.reload(); // Recarga la página actual
   }
-  
+
 }

@@ -1,7 +1,7 @@
 import { ArmorSetBaseDTO } from "./armor/ArmorSetBaseDTO.model";
 
 export interface GetArmorSetResponse {
-  armorSetDTO: ArmorSetBaseDTO;
+  armorSetBaseDTO: ArmorSetBaseDTO;
   codError: string;
   isOk: boolean;
 
