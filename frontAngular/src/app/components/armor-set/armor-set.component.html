@@ -2,7 +2,7 @@
 
 <!-- Lista de set de Armaduras -->
 <div *ngIf="armorsSetList.length > 0 && !mostrarWiki" class="container mt-4">
-  <div>
+  <div class="d-flex justify-content-center mb-3">
     <button *ngFor="let r of ['MR','HR','LR']" class="btn btn-secondary mx-1 custom-btn"
       (click)="filterByRange(r)">
       Rango {{ r }}

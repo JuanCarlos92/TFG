@@ -13,6 +13,69 @@
         </div>
       </td>
     </tr>
+    <tr>
+      <!-- Rango del set armadura -->
+      <td class="text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.rango }}</td>
+    </tr>
   </table>
 </div>
-sdasd
+
+<!-- Tabla: Rareza del set armadura -->
+<div id="Rareza" *ngIf="inforArmor?.armorBaseDTO?.length > 0" class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <tr>
+      <th>Rareza</th>
+      <td style="border: 1px solid #ddd; padding: 15px;"> {{ inforArmor?.armorBaseDTO[0]?.rareza }}</td>
+    </tr>
+    <tr>
+      <th>Genero</th>
+      <td style="border: 1px solid #ddd; padding: 15px;"> {{ inforArmor?.armorBaseDTO[0]?.genero }}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Tabla: Partes de armadura -->
+<div id="Crafteo" *ngIf="inforArmor?.armorBaseDTO?.length > 0 " class="container mt-4">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Defensa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforArmor.armorBaseDTO">
+        <td>{{ v?.nombre || 'N/A'}}</td>
+        <td>{{ v?.tipo || 'N/A'}}</td>
+        <td>{{ v?.defensaBase || 'N/A'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Tabla: Habilidades de la armadura -->
+<div id="Crafteo" *ngIf="inforArmor?.armorSetBaseBonus?.length > 0 " class="container mt-4">
+  <h2 style="text-align: center;">Habilidades del Set de armadura</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Habilidad 1</th>
+        <th>Nivel</th>
+        <th>Habilidad 2</th>
+        <th>Nivel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforArmor.armorSetBaseBonus">
+        <td>{{ v?.nombre || 'N/A'}}</td>
+        <td>{{ v?.nombreSkill1 || 'N/A'}}</td>
+        <td>{{ v?.nivelSkill1 || 'N/A'}}</td>
+        <td>{{ v?.nombreSkill2 || 'N/A'}}</td>
+        <td>{{ v?.nivelSkill2 || 'N/A'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

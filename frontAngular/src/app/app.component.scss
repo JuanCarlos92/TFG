@@ -1,4 +1,4 @@
-
+// ---- Tabla del titulo ---- //
 table.css-table {
   width: 100%;
   table-layout: fixed;
@@ -30,11 +30,12 @@ table.css-table {
 }
 
 .title-link{
-  text-decoration: none; /* Elimina el subrayado */
+  text-decoration: none;
   color: #d4af37;
 
 }
 
+// ---------- MENU ---------- //
 .side-menu {
   position: fixed;
   top: 0;
