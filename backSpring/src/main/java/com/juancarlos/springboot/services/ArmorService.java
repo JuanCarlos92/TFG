@@ -8,14 +8,14 @@ import java.util.List;
 public interface ArmorService {
 
     // ----------------------- Armor base --------------------------------
-    // Obtener armaduras por id
+    // Obtener armaduras por iD
     ArmorBaseDTO getArmorId(Long id);
 
     // Metodo lista de armaduras
     List<ArmorBaseDTO> getArmorList();
 
     // ------------------------ ArmorSet ---------------------------------
-    // Obtener armadurasSet por id
+    // Obtener armadurasSet por iD
     ArmorSetBaseDTO getArmorSetId(Long id);
 
     // Metodo lista armaduras set

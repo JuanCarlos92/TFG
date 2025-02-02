@@ -31,7 +31,6 @@ public class ArmorServiceImpl implements ArmorService {
     public ArmorBaseDTO getArmorId(Long id) {
         ArmorBaseEntity armorEntity = armorRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("No hay armaduras con ese id: " + id));
-        // Con relaciones
         return ArmorConverter.armorEntityToDTO(armorEntity);
     }
 
@@ -47,7 +46,6 @@ public class ArmorServiceImpl implements ArmorService {
     public ArmorSetBaseDTO getArmorSetId(Long id) {
         ArmorSetBaseEntity armorEntity = armorSetRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("No hay armaduraSet con ese id: " + id));
-        // Con relaciones
         return ArmorSetConverter.armorSetEntityToDTO(armorEntity);
     }
 

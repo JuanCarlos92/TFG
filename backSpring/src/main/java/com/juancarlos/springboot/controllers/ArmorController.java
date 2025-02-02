@@ -30,7 +30,7 @@ public class ArmorController {
 		return response;
 	}
 
-	// Endpoint para obtener una armadura por id
+	// Endpoint para obtener una armadura por iD
 	@GetMapping("/{id}")
 	public GetArmorResponse getArmorId(@PathVariable Long id) {
 		ArmorBaseDTO armor = armorService.getArmorId(id);
@@ -50,7 +50,7 @@ public class ArmorController {
 		return response;
 	}
 
-	// Endpoint para obtener una armadura por id
+	// Endpoint para obtener una armadura por iD
 	@GetMapping("/set/{id}")
 	public GetArmorSetResponse getArmorSetId(@PathVariable Long id) {
 		ArmorSetBaseDTO armor = armorService.getArmorSetId(id);
