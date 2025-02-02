@@ -1,6 +1,8 @@
 package com.juancarlos.springboot.controllers;
 
 import com.juancarlos.springboot.models.dto.charm.CharmBaseDTO;
+import com.juancarlos.springboot.models.response.GetArmorSetListResponse;
+import com.juancarlos.springboot.models.response.GetCharmListResponse;
 import com.juancarlos.springboot.models.response.GetCharmResponse;
 import com.juancarlos.springboot.services.CharmService;
 import lombok.AllArgsConstructor;
@@ -15,11 +17,12 @@ public class CharmController {
     @Autowired
     private CharmService charmService;
 
-    // Endpoint para obtener amuletos con paginación
+    // Endpoint para obtener amuletos con lista
     @GetMapping()
-    public Page<CharmBaseDTO> getCharmWithPagination(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "12") int size) {
-        return charmService.getCharmWithPagination(page, size);
-
+    public GetCharmListResponse getCharmList() {
+        GetCharmListResponse response = new GetCharmListResponse();
+        response.setCharmDTO(charmService.getCharmList());
+        return response;
     }
 
     // Endpoint para obtener un amuleto por id

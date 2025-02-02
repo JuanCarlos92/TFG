@@ -10,6 +10,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CharmServiceImpl implements CharmService {
 
@@ -24,11 +26,8 @@ public class CharmServiceImpl implements CharmService {
     }
 
     @Override
-    public Page<CharmBaseDTO> getCharmWithPagination(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
-        Page<CharmBaseEntity> charmEntities = charmRepository.findAll(pageable);
-
-        // Convertimos cada WeaponEntities -> WeaponDTO sin relaciones
-        return charmEntities.map(CharmConverter::charmEntityToDTO);
+    public List<CharmBaseDTO> getCharmList() {
+        List<CharmBaseEntity> charmEntity = charmRepository.findAll();
+        return CharmConverter.charmEntityToDTO(charmEntity);
     }
 }

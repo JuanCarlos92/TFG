@@ -39,26 +39,11 @@ export class WeaponComponent implements OnInit {
   mostrarWiki = false;
   weaponWiki!: WeaponBaseDTO;
 
-  // search$!: Subscription;
-
   constructor(private route: ActivatedRoute, private weaponService: WeaponService) { }
 
   ngOnInit() {
     this.getWeaponTypeList(); // Carga inicial de tipos de armas
   }
-
-  // // Cargar infor de armas ID
-  // loadWeaponInfo(): void {
-  //   this.weaponService.getWeapon(this.weaponId).subscribe({
-  //     next: (res) => {
-  //       console.log('Información del arma:', res);
-  //       this.infoWeapon = res.weaponDTO;
-  //     },
-  //     error: (error) => {
-  //       console.error('Error al obtener la información del arma:', error);
-  //     },
-  //   });
-  // }
 
   // Obtiene tipos de armas
   getWeaponTypeList(): void {

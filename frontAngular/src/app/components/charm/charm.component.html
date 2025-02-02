@@ -1,0 +1,36 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+
+  <!-- Lista de Amuletos -->
+  <div *ngIf="charmsList.length > 0 && !mostrarWiki" class="container mt-4">
+    <div class="d-flex justify-content-center mb-3">
+      <button *ngFor="let r of [3,4,5,6,7,8,9,10,11,12]" class="btn btn-secondary mx-1 custom-btn"
+        (click)="filterByRarity(r)">
+        Rareza {{ r }}
+      </button>
+    </div>
+    <h2 class="text-center">Amuletos</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Rareza</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of filteredCharm">
+          <td>
+            <a (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+              {{ v?.nombre }}
+            </a>
+          </td>
+          <td>{{ v?.rareza }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="mostrarWiki">
+    <app-wiki-charm [charm]="charmWiki" (closeWiki)="closeWiki()"></app-wiki-charm>
+  </div>
+
+</ion-content>

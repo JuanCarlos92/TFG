@@ -11,9 +11,6 @@ import java.util.Optional;
 @Repository
 public interface CharmRepository extends JpaRepository<CharmBaseEntity, Long> {
 
-    // Metodo paginacion (buscartodo)
-    Page<CharmBaseEntity> findAll(Pageable pageable);
-
     // Metodo buscar por Id
     Optional<CharmBaseEntity> findById(Long id);
 }

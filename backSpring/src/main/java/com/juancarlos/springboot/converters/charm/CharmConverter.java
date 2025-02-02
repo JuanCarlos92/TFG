@@ -1,10 +1,13 @@
 package com.juancarlos.springboot.converters.charm;
 
+import com.juancarlos.springboot.entity.armor.ArmorBaseEntity;
 import com.juancarlos.springboot.entity.charm.CharmBaseEntity;
 import com.juancarlos.springboot.entity.charm.CharmCraftEntity;
+import com.juancarlos.springboot.models.dto.armor.ArmorBaseDTO;
 import com.juancarlos.springboot.models.dto.charm.CharmBaseDTO;
 import com.juancarlos.springboot.models.dto.charm.CharmCraftDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -47,5 +50,15 @@ public class CharmConverter {
                 .nombreItem4(cc.getNombreItem4())
                 .cantidadItem4(cc.getCantidadItem4())
                 .build();
+    }
+
+    public static List<CharmBaseDTO> charmEntityToDTO(List<CharmBaseEntity> charmBaseEntity) {
+        List<CharmBaseDTO> charmBaseDTO = new ArrayList<>();
+        for (CharmBaseEntity w : charmBaseEntity) {
+
+            charmBaseDTO.add(charmEntityToDTO(w));
+        }
+
+        return charmBaseDTO;
     }
 }
