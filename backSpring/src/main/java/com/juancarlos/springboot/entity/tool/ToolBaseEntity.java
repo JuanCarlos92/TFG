@@ -17,9 +17,9 @@ public class ToolBaseEntity {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
     @Column(name = "nombre", unique = true, nullable = false)
-    private String monster;
+    private String nombre;
     @Column(name = "herramienta_tipo", nullable = true)
-    private String herramienta_tipo;
+    private String herramientaTipo;
     @Column(name = "duracion", nullable = true)
     private Integer duracion;
     @Column(name = "duracion_actualizada", nullable = true)

@@ -2,11 +2,9 @@ package com.juancarlos.springboot.controllers;
 
 import com.juancarlos.springboot.models.response.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.juancarlos.springboot.models.dto.armor.ArmorBaseDTO;
@@ -23,6 +21,7 @@ public class ArmorController {
 	private ArmorService armorService;
 
 	// ---------------------------- ArmorBase ----------------------------
+	// Endpoint para obtener las armaduras con lista
 	@GetMapping()
 	public GetArmorListResponse getArmorList() {
 		GetArmorListResponse response = new GetArmorListResponse();
@@ -42,7 +41,7 @@ public class ArmorController {
 	}
 
 	// ----------------------------- ArmorSet -----------------------------
-	// Endpoint para obtener las armaduraSet con paginación
+	// Endpoint para obtener las armaduraSet con lista
 	@GetMapping("/set")
 	public GetArmorSetListResponse getArmorSetList() {
 		GetArmorSetListResponse response = new GetArmorSetListResponse();

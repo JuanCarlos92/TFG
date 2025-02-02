@@ -34,6 +34,7 @@ public class ArmorServiceImpl implements ArmorService {
         return ArmorConverter.armorEntityToDTO(armorEntity);
     }
 
+    // Metodo armadura con lista
     @Override
     public List<ArmorBaseDTO> getArmorList() {
         List<ArmorBaseEntity> armorEntity = armorRepository.findAll();
@@ -49,7 +50,7 @@ public class ArmorServiceImpl implements ArmorService {
         return ArmorSetConverter.armorSetEntityToDTO(armorEntity);
     }
 
-    // Metodo armaduraSet con paginación
+    // Metodo armaduraSet con lista
     @Override
     public List<ArmorSetBaseDTO> getArmorSetList() {
         List<ArmorSetBaseEntity> armorEntity = armorSetRepository.findAll();

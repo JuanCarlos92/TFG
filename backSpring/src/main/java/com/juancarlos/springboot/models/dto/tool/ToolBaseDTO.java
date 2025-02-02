@@ -15,9 +15,9 @@ public class ToolBaseDTO {
 
     private Long id;
     private String nombre;
-    private String herramienta_tipo;
+    private String herramientatipo;
     private Integer duracion;
-    private Integer duracion_actualizada;
+    private Integer duracionActualizada;
     private Integer recarga;
     private Integer ranura_1;
     private Integer ranura_2;
