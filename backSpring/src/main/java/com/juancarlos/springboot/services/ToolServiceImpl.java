@@ -12,7 +12,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Service
-public class ToolServiceImpl implements ToolServices{
+public class ToolServiceImpl implements ToolService {
 
     @Autowired
     private ToolRepository toolRepository;
