@@ -20,19 +20,19 @@ public class KinsectBaseEntity {
     private Long id;
     @Column(name = "nombre", unique = true, nullable = false)
     private String nombre;
-    @Column(name = "previo", nullable = true)
+    @Column(name = "previo")
     private String previo;
-    @Column(name = "rareza", nullable = true)
+    @Column(name = "rareza")
     private Integer rareza;
-    @Column(name = "tipo_ataque", nullable = true)
+    @Column(name = "tipo_ataque")
     private String tipoAtaque;
-    @Column(name = "efecto", nullable = true)
+    @Column(name = "efecto")
     private String efecto;
-    @Column(name = "poder", nullable = true)
+    @Column(name = "poder")
     private Integer poder;
-    @Column(name = "velocidad", nullable = true)
+    @Column(name = "velocidad")
     private Integer velocidad;
-    @Column(name = "cura", nullable = true)
+    @Column(name = "cura")
     private Integer cura;
 
     @OneToMany(mappedBy = "kinsectBase", fetch = FetchType.LAZY)

@@ -16,16 +16,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RecoleccionStackEntity {
+public class RecoleccionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
     @Column(name = "nombre", unique = true, nullable = false)
-    private String monster;
-    @Column(name = "normal", nullable = true)
+    private String nombre;
+    @Column(name = "normal")
     private Integer normal;
 
-     @OneToMany(mappedBy = "recoleccionStack", fetch = FetchType.LAZY)
+     @OneToMany(mappedBy = "recoleccion", fetch = FetchType.LAZY)
     private List<ItemBaseEntity> itemBase; // Relacion uno a muchos con la tabla item base
 }

@@ -46,42 +46,42 @@ public class ArmorSetConverter {
     }
 
     // Convierte ArmorBaseEntity a ArmorBaseDTO
-    public static ArmorBaseDTO convertArmorBaseEntityToDTO(ArmorBaseEntity ab) {
+    public static ArmorBaseDTO convertArmorBaseEntityToDTO(ArmorBaseEntity v) {
         return ArmorBaseDTO.builder()
-                .nombre(ab.getNombre())
-                .rareza(ab.getRareza())
-                .tipo(ab.getTipo())
-                .genero(ab.getGenero())
-                .ranura1(ab.getRanura1())
-                .ranura2(ab.getRanura2())
-                .ranura3(ab.getRanura3())
-                .defensaBase(ab.getDefensaBase())
-                .defensaMax(ab.getDefensaMax())
-                .defensaAumentoMax(ab.getDefensaAumentoMax())
-                .defensaFuego(ab.getDefensaFuego())
-                .defensaAgua(ab.getDefensaAgua())
-                .defensaRayo(ab.getDefensaRayo())
-                .defensaHielo(ab.getDefensaHielo())
-                .defensaDragon(ab.getDefensaDragon())
+                .nombre(v.getNombre())
+                .rareza(v.getRareza())
+                .tipo(v.getTipo())
+                .genero(v.getGenero())
+                .ranura1(v.getRanura1())
+                .ranura2(v.getRanura2())
+                .ranura3(v.getRanura3())
+                .defensaBase(v.getDefensaBase())
+                .defensaMax(v.getDefensaMax())
+                .defensaAumentoMax(v.getDefensaAumentoMax())
+                .defensaFuego(v.getDefensaFuego())
+                .defensaAgua(v.getDefensaAgua())
+                .defensaRayo(v.getDefensaRayo())
+                .defensaHielo(v.getDefensaHielo())
+                .defensaDragon(v.getDefensaDragon())
                 .build();
     }
 
     // Convierte ArmorSetBaseBonusEntity a ArmorSetBaseBonusDTO
-    public static ArmorSetBaseBonusDTO convertArmorSetBaseBonusEntityToDTO(ArmorSetBaseBonusEntity asbb) {
+    public static ArmorSetBaseBonusDTO convertArmorSetBaseBonusEntityToDTO(ArmorSetBaseBonusEntity v) {
         return ArmorSetBaseBonusDTO.builder()
-                .nombre(asbb.getNombre())
-                .nombreSkill1(asbb.getNombreSkill1())
-                .nivelSkill1(asbb.getNivelSkill1())
-                .nombreSkill2(asbb.getNombreSkill2())
-                .nivelSkill2(asbb.getNivelSkill2())
+                .nombre(v.getNombre())
+                .nombreSkill1(v.getNombreSkill1())
+                .nivelSkill1(v.getNivelSkill1())
+                .nombreSkill2(v.getNombreSkill2())
+                .nivelSkill2(v.getNivelSkill2())
                 .build();
     }
 
     public static List<ArmorSetBaseDTO> armorSetEntityToDTO(List<ArmorSetBaseEntity> armorSetBaseEntity) {
         List<ArmorSetBaseDTO> armorSetBaseDTO = new ArrayList<>();
-        for (ArmorSetBaseEntity w : armorSetBaseEntity) {
+        for (ArmorSetBaseEntity v : armorSetBaseEntity) {
 
-            armorSetBaseDTO.add(armorSetEntityToDTO(w));
+            armorSetBaseDTO.add(armorSetEntityToDTO(v));
         }
 
         return armorSetBaseDTO;

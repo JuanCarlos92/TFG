@@ -12,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class SkillNvlDTO {
-    private String nombre_base;
+    private String nombreBase;
     private Integer nivel;
     private String descripcion;
 }

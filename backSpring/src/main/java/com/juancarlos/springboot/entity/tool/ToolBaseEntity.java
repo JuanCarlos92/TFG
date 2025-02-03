@@ -18,19 +18,19 @@ public class ToolBaseEntity {
     private Long id;
     @Column(name = "nombre", unique = true, nullable = false)
     private String nombre;
-    @Column(name = "herramienta_tipo", nullable = true)
+    @Column(name = "herramienta_tipo")
     private String herramientaTipo;
-    @Column(name = "duracion", nullable = true)
+    @Column(name = "duracion")
     private Integer duracion;
-    @Column(name = "duracion_actualizada", nullable = true)
+    @Column(name = "duracion_actualizada")
     private Integer duracionActualizada;
-    @Column(name = "recarga", nullable = true)
+    @Column(name = "recarga")
     private Integer recarga;
-    @Column(name = "ranura_1", nullable = true)
+    @Column(name = "ranura_1")
     private Integer ranura1;
-    @Column(name = "ranura_2", nullable = true)
+    @Column(name = "ranura_2")
     private Integer ranura2;
-    @Column(name = "ranura_3", nullable = true)
+    @Column(name = "ranura_3")
     private Integer ranura3;
 
 }

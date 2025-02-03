@@ -5,14 +5,12 @@ import java.util.stream.Collectors;
 
 import com.juancarlos.springboot.entity.armor.ArmorSetBaseEntity;
 import com.juancarlos.springboot.entity.monster.*;
-import com.juancarlos.springboot.entity.quest.QuestMonsterEntity;
 import com.juancarlos.springboot.models.dto.armor.ArmorSetBaseDTO;
 import com.juancarlos.springboot.models.dto.monster.*;
-import com.juancarlos.springboot.models.dto.quest.QuestMonsterDTO;
 
 public class MonsterConverter {
 
-        // Convierte una MonsterEntity a MonsterDTO
+        // Convierte un MonsterEntity a MonsterDTO
         public static MonsterBaseDTO monsterEntityToDTO(MonsterBaseEntity monsterBaseEntity,
                         boolean flagWithRelations) {
                 if (monsterBaseEntity == null) {
@@ -89,105 +87,105 @@ public class MonsterConverter {
         }
 
         // Convierte MonsterBreakEntity a MonsterBreakDTO
-        private static MonsterBreakDTO convertBreakEntityToDto(MonsterBreakEntity mb) {
+        private static MonsterBreakDTO convertBreakEntityToDto(MonsterBreakEntity v) {
                 return MonsterBreakDTO.builder()
-                                .parte(mb.getParte())
-                                .estrecimiento(mb.getEstremecimiento())
-                                .herida(mb.getHerida())
-                                .corte(mb.getCorte())
+                                .parte(v.getParte())
+                                .estrecimiento(v.getEstremecimiento())
+                                .herida(v.getHerida())
+                                .corte(v.getCorte())
                                 .build();
         }
 
         // Convierte MonsterDolenciasEntity a MonsterDolenciasDTO
-        private static MonsterDolenciasDTO convertDolenciasEntityToDto(MonsterDolenciasEntity md) {
+        private static MonsterDolenciasDTO convertDolenciasEntityToDto(MonsterDolenciasEntity v) {
                 return MonsterDolenciasDTO.builder()
-                                .rugido(md.getRugido())
-                                .viento(md.getViento())
-                                .temblor(md.getTemblor())
-                                .defensaBaja(md.getDefensaBaja())
-                                .plagaFuego(md.getPlagaFuego())
-                                .plagaAgua(md.getPlagaAgua())
-                                .plagaRayo(md.getPlagaRayo())
-                                .plagaHielo(md.getPlagaHielo())
-                                .plagaDragon(md.getPlagaDragon())
-                                .plagaNitro(md.getPlagaNitro())
-                                .regional(md.getRegional())
-                                .veneno(md.getVeneno())
-                                .sleep(md.getSleep())
-                                .paralisis(md.getParalisis())
-                                .sangrado(md.getSangrado())
-                                .aturdimiento(md.getAturdimiento())
-                                .fango(md.getFango())
-                                .efluente(md.getEfluente())
+                                .rugido(v.getRugido())
+                                .viento(v.getViento())
+                                .temblor(v.getTemblor())
+                                .defensaBaja(v.getDefensaBaja())
+                                .plagaFuego(v.getPlagaFuego())
+                                .plagaAgua(v.getPlagaAgua())
+                                .plagaRayo(v.getPlagaRayo())
+                                .plagaHielo(v.getPlagaHielo())
+                                .plagaDragon(v.getPlagaDragon())
+                                .plagaNitro(v.getPlagaNitro())
+                                .regional(v.getRegional())
+                                .veneno(v.getVeneno())
+                                .sleep(v.getSleep())
+                                .paralisis(v.getParalisis())
+                                .sangrado(v.getSangrado())
+                                .aturdimiento(v.getAturdimiento())
+                                .fango(v.getFango())
+                                .efluente(v.getEfluente())
                                 .build();
         }
 
         // Convierte MonsterHabitatsEntity a MonsterHabitatsDTO
-        private static MonsterHabitatsDTO convertHabitatsEntityToDto(MonsterHabitatsEntity mh) {
+        private static MonsterHabitatsDTO convertHabitatsEntityToDto(MonsterHabitatsEntity v) {
                 return MonsterHabitatsDTO.builder()
-                                .mapa(mh.getMapa())
-                                .areaInicial(mh.getAreaInicial())
-                                .areaMovimiento(mh.getAreaMovimiento())
-                                .areaDescanso(mh.getAreaDescanso())
+                                .mapa(v.getMapa())
+                                .areaInicial(v.getAreaInicial())
+                                .areaMovimiento(v.getAreaMovimiento())
+                                .areaDescanso(v.getAreaDescanso())
                                 .build();
         }
 
         // Convierte MonsterRewardsEntity a MonsterRewardsDTO
-        private static MonsterRewardsDTO convertRewardsEntityToDto(MonsterRewardsEntity mr) {
+        private static MonsterRewardsDTO convertRewardsEntityToDto(MonsterRewardsEntity v) {
                 return MonsterRewardsDTO.builder()
-                                .rang(mr.getRang())
-                                .condiciones(mr.getCondiciones())
-                                .item(mr.getItem())
-                                .stack(mr.getStack())
-                                .percentage(mr.getPercentage())
+                                .rang(v.getRang())
+                                .condiciones(v.getCondiciones())
+                                .item(v.getItem())
+                                .stack(v.getStack())
+                                .percentage(v.getPercentage())
                                 .build();
         }
 
         // Convierte MonsterWeaknessesEntity a MonsterWeaknessesDTO
-        private static MonsterWeaknessesDTO convertWeaknessesEntityToDto(MonsterWeaknessesEntity mw) {
+        private static MonsterWeaknessesDTO convertWeaknessesEntityToDto(MonsterWeaknessesEntity v) {
                 return MonsterWeaknessesDTO.builder()
-                                .forma(mw.getForma())
-                                .descripcionAlterado(mw.getDescripcionAlterado())
-                                .fuego(mw.getFuego())
-                                .agua(mw.getAgua())
-                                .rayo(mw.getRayo())
-                                .hielo(mw.getHielo())
-                                .dragon(mw.getDragon())
-                                .veneno(mw.getVeneno())
-                                .sleep(mw.getSleep())
-                                .paralisis(mw.getParalisis())
-                                .nitro(mw.getNitro())
-                                .stun(mw.getStun())
+                                .forma(v.getForma())
+                                .descripcionAlterado(v.getDescripcionAlterado())
+                                .fuego(v.getFuego())
+                                .agua(v.getAgua())
+                                .rayo(v.getRayo())
+                                .hielo(v.getHielo())
+                                .dragon(v.getDragon())
+                                .veneno(v.getVeneno())
+                                .sleep(v.getSleep())
+                                .paralisis(v.getParalisis())
+                                .nitro(v.getNitro())
+                                .stun(v.getStun())
                                 .build();
         }
 
         // Convierte MonsterZonasHitEntity a MonsterZonasHitDTO
-        private static MonsterZonasHitDTO convertZonasHitEntityToDto(MonsterZonasHitEntity mzh) {
+        private static MonsterZonasHitDTO convertZonasHitEntityToDto(MonsterZonasHitEntity v) {
                 return MonsterZonasHitDTO.builder()
-                                .zonaImpacto(mzh.getZonaImpacto())
-                                .corte(mzh.getCorte())
-                                .impacto(mzh.getImpacto())
-                                .disparo(mzh.getDisparo())
-                                .fuego(mzh.getFuego())
-                                .agua(mzh.getAgua())
-                                .rayo(mzh.getRayo())
-                                .hielo(mzh.getHielo())
-                                .dragon(mzh.getDragon())
-                                .ko(mzh.getKo())
+                                .zonaImpacto(v.getZonaImpacto())
+                                .corte(v.getCorte())
+                                .impacto(v.getImpacto())
+                                .disparo(v.getDisparo())
+                                .fuego(v.getFuego())
+                                .agua(v.getAgua())
+                                .rayo(v.getRayo())
+                                .hielo(v.getHielo())
+                                .dragon(v.getDragon())
+                                .ko(v.getKo())
                                 .build();
         }
 
         // Convierte ArmorSetBaseEntity a ArmorSetBaseDTO
-        private static ArmorSetBaseDTO convertArmorSetBaseEntityToDto(ArmorSetBaseEntity asb) {
+        private static ArmorSetBaseDTO convertArmorSetBaseEntityToDto(ArmorSetBaseEntity v) {
                 return ArmorSetBaseDTO.builder()
-                                .nombre(asb.getNombre())
-                                .rango(asb.getRango())
-                                .cabeza(asb.getCabeza())
-                                .pecho(asb.getPecho())
-                                .brazos(asb.getBrazos())
-                                .cintura(asb.getCintura())
-                                .piernas(asb.getPiernas())
-                                .bonus(asb.getBonus())
+                                .nombre(v.getNombre())
+                                .rango(v.getRango())
+                                .cabeza(v.getCabeza())
+                                .pecho(v.getPecho())
+                                .brazos(v.getBrazos())
+                                .cintura(v.getCintura())
+                                .piernas(v.getPiernas())
+                                .bonus(v.getBonus())
                                 .build();
         }
 

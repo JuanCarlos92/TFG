@@ -7,10 +7,10 @@ import com.juancarlos.springboot.models.dto.monster.MonsterBaseDTO;
 
 public interface MonsterService {
 
-    // Obtener mostruo por id
+    // Metodo mostruo por ID
     MonsterBaseDTO getMonsterId(Long id);
 
-    // Metodo paginacion (buscartodo)
+    // Metodo paginacion
     Page<MonsterBaseDTO> getMonstersWithPagination(int page, int size);
     Page<MonsterBaseDTO> getMonstersByNameWithPagination(String nombre, int page, int size);
 

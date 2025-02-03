@@ -8,9 +8,4 @@ import com.juancarlos.springboot.entity.weapon.WeaponTipoEntity;
 
 
 @Repository
-public interface WeaponTypeRepository extends JpaRepository<WeaponTipoEntity, Long> {
-
-    // Metodo buscar por Id
-    //Optional<WeaponTipoEntity> findById(Long id);
-
-}
+public interface WeaponTypeRepository extends JpaRepository<WeaponTipoEntity, Long> { }

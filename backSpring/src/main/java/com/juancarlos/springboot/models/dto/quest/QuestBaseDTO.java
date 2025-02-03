@@ -19,10 +19,13 @@ public class QuestBaseDTO {
     private String categoria;
     private String rango;
     private Integer estrellas;
-    private String mision_tipo;
+    private String misionTipo;
     private String localizacion;
     private Integer zeny;
 
     // lista de mision de monstruo
     private List<QuestMonsterDTO> questMonsterDTO;
+
+    // lista de recompensa de la mision
+    private List<QuestRewardDTO> questRewardDTO;
 }

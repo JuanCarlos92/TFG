@@ -21,9 +21,9 @@ public class QuestMonsterEntity {
     private Long id;
     @Column(name = "monster", unique = true, nullable = false)
     private String monster;
-    @Column(name = "calidad", nullable = true)
+    @Column(name = "calidad")
     private Integer calidad;
-    @Column(name = "es_objetivo", nullable = true)
+    @Column(name = "es_objetivo")
     private Boolean esObjetivo;
 
     // Relacion muchos a uno con la tabla mision base

@@ -14,7 +14,7 @@ import com.juancarlos.springboot.services.ArmorService;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/api/armor")
+@RequestMapping("/armor")
 @AllArgsConstructor
 public class ArmorController {
 	@Autowired
@@ -29,7 +29,7 @@ public class ArmorController {
 		return response;
 	}
 
-	// Endpoint para obtener una armadura por iD
+	// Endpoint para obtener una armadura por ID
 	@GetMapping("/{id}")
 	public GetArmorResponse getArmorId(@PathVariable Long id) {
 		ArmorBaseDTO armor = armorService.getArmorId(id);

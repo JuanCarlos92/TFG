@@ -19,13 +19,13 @@ public class QuestRewardEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "grp", unique = true, nullable = false)
+    @Column(name = "grp")
     private String grupo;
-    @Column(name = "item", unique = true, nullable = false)
+    @Column(name = "item")
     private String item;
-    @Column(name = "stack", nullable = true)
+    @Column(name = "stack")
     private Integer stack;
-    @Column(name = "porcentaje", nullable = true)
+    @Column(name = "porcentaje")
     private Integer porcentaje;
 
      // Relacion muchos a uno con la tabla mision base

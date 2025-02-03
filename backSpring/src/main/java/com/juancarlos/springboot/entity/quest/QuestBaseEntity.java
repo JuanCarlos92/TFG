@@ -23,17 +23,17 @@ public class QuestBaseEntity {
     private Long id;
     @Column(name = "nombre", unique = true, nullable = false)
     private String nombre;
-    @Column(name = "categoria", nullable = true)
+    @Column(name = "categoria")
     private String categoria;
-    @Column(name = "rango", nullable = true)
+    @Column(name = "rango")
     private String rango;
-    @Column(name = "estrellas", nullable = true)
+    @Column(name = "estrellas")
     private Integer estrellas;
-    @Column(name = "mision_tipo", nullable = true)
-    private String mision_tipo;
-    @Column(name = "localizacion", nullable = true)
+    @Column(name = "mision_tipo")
+    private String misionTipo;
+    @Column(name = "localizacion")
     private String localizacion;
-    @Column(name = "zeny", nullable = true)
+    @Column(name = "zeny")
     private Integer zeny;
 
     // Relacion muchos a uno con la tabla localizacion

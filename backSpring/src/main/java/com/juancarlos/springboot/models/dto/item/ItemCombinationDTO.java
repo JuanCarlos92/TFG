@@ -12,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class ItemCombinationDTO {
-    private String nombre_resultado;
+    private String nombreResultado;
     private String primero;
     private String segundo;
     private Integer calidad;

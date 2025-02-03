@@ -13,15 +13,4 @@ import org.springframework.stereotype.Repository;
 import com.juancarlos.springboot.entity.weapon.WeaponBaseEntity;
 
 @Repository
-public interface WeaponRepository extends JpaRepository<WeaponBaseEntity, Long> {
-
-    // Metodo paginacion (buscartodo)
-    Page<WeaponBaseEntity> findAll(Pageable pageable);
-
-    // Metodo buscar por Id
-    Optional<WeaponBaseEntity> findById(Long id);
-
-    // Metodo para filtrar armas por rareza
-    @Query("SELECT w FROM WeaponBaseEntity w WHERE w.rareza = :rareza")
-    List<WeaponBaseEntity> findWeaponsByRareza(@Param("rareza") int rareza);
-}
+public interface WeaponRepository extends JpaRepository<WeaponBaseEntity, Long> { }

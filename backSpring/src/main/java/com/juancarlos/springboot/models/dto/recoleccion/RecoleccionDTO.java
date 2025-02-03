@@ -14,7 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RecoleccionStackDTO {
+public class RecoleccionDTO {
     private Long id;
     private String nombre;
     private Integer normal;

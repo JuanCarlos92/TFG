@@ -28,39 +28,39 @@ public class WeaponTypeConverter {
     }
 
     // Convierte WeaponBaseEntity a WeaponBaseDTO
-    private static WeaponBaseDTO convertBaseEntityToDto(WeaponBaseEntity wl) {
+    private static WeaponBaseDTO convertBaseEntityToDto(WeaponBaseEntity v) {
         return WeaponBaseDTO.builder()
-                .id(wl.getId())
-                .nombre(wl.getNombre())
-                .tipoArma(wl.getTipoArma())
-                .predecesor(wl.getPredecesor())
-                .categoria(wl.getCategoria())
-                .rareza(wl.getRareza())
-                .ataque(wl.getAtaque())
-                .afinidad(wl.getAfinidad())
-                .defensa(wl.getDefensa())
-                .elementoOculto(wl.getElementoOculto())
-                .elemento1(wl.getElemento1())
-                .ataqueElemento1(wl.getAtaqueElemento1())
-                .selloAncianos(wl.getSelloAncianos())
-                .ranura1(wl.getRanura1())
-                .ranura2(wl.getRanura2())
-                .ranura3(wl.getRanura3())
-                .bonoKinsecto(wl.getBonoKinsecto())
-                .frasco(wl.getFrasco())
-                .potenciaFrasco(wl.getPotenciaFrasco())
-                .municion(wl.getMunicion())
-                .nivelMunicion(wl.getNivelMunicion())
-                .confMunicion(wl.getConfMunicion())
+                .id(v.getId())
+                .nombre(v.getNombre())
+                .tipoArma(v.getTipoArma())
+                .predecesor(v.getPredecesor())
+                .categoria(v.getCategoria())
+                .rareza(v.getRareza())
+                .ataque(v.getAtaque())
+                .afinidad(v.getAfinidad())
+                .defensa(v.getDefensa())
+                .elementoOculto(v.getElementoOculto())
+                .elemento1(v.getElemento1())
+                .ataqueElemento1(v.getAtaqueElemento1())
+                .selloAncianos(v.getSelloAncianos())
+                .ranura1(v.getRanura1())
+                .ranura2(v.getRanura2())
+                .ranura3(v.getRanura3())
+                .bonoKinsecto(v.getBonoKinsecto())
+                .frasco(v.getFrasco())
+                .potenciaFrasco(v.getPotenciaFrasco())
+                .municion(v.getMunicion())
+                .nivelMunicion(v.getNivelMunicion())
+                .confMunicion(v.getConfMunicion())
                 .build();
     }
 
 
     public static List<WeaponTipoDTO> weaponEntityToDTO(List<WeaponTipoEntity> weaponTipoEntity) {
         List<WeaponTipoDTO> weaponsTipoDTO = new ArrayList<>();
-        for (WeaponTipoEntity w: weaponTipoEntity) {
+        for (WeaponTipoEntity v: weaponTipoEntity) {
 
-            weaponsTipoDTO.add(weaponEntityToDTO(w));
+            weaponsTipoDTO.add(weaponEntityToDTO(v));
         }
 
         return weaponsTipoDTO;

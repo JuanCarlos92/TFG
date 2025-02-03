@@ -1,16 +1,8 @@
 package com.juancarlos.springboot.repositories;
 
 import com.juancarlos.springboot.entity.charm.CharmBaseEntity;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
-
 @Repository
-public interface CharmRepository extends JpaRepository<CharmBaseEntity, Long> {
-
-    // Metodo buscar por Id
-    Optional<CharmBaseEntity> findById(Long id);
-}
+public interface CharmRepository extends JpaRepository<CharmBaseEntity, Long> { }

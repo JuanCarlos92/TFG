@@ -28,8 +28,8 @@ public class ToolConverter {
 
     public static List<ToolBaseDTO> toolEntityToDTO(List<ToolBaseEntity> toolBaseEntity){
         List<ToolBaseDTO> toolBaseDTO = new ArrayList<>();
-        for (ToolBaseEntity w : toolBaseEntity) {
-            toolBaseDTO.add(toolEntityToDTO(w));
+        for (ToolBaseEntity v : toolBaseEntity) {
+            toolBaseDTO.add(toolEntityToDTO(v));
         }
         return toolBaseDTO;
     }

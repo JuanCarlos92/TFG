@@ -7,8 +7,4 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface DecorationRepository extends JpaRepository<DecorationBaseEntity, Long> {
-
-    // Metodo buscar por Id
-    Optional<DecorationBaseEntity> findById(Long id);
-}
+public interface DecorationRepository extends JpaRepository<DecorationBaseEntity, Long> { }

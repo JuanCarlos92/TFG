@@ -20,7 +20,7 @@ public class MonsterServiceImpl implements MonsterService {
     @Autowired
     private MonsterRepository monsterRepository;
 
-    // Metodo monstruos por id
+    // Metodo monstruos por ID
     @Override
     public MonsterBaseDTO getMonsterId(Long id) {
         MonsterBaseEntity monsterEntity = monsterRepository.findById(id)
@@ -29,7 +29,7 @@ public class MonsterServiceImpl implements MonsterService {
         return MonsterConverter.monsterEntityToDTO(monsterEntity, true);
     }
 
-    // Metodo monstruos con paginación
+    // Metodo monstruos con paginacion
     @Override
     public Page<MonsterBaseDTO> getMonstersWithPagination(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
@@ -39,7 +39,7 @@ public class MonsterServiceImpl implements MonsterService {
         return monsterEntities.map(m -> MonsterConverter.monsterEntityToDTO(m, false));
     }
 
-    // Metodo monstruos con paginación + nombre
+    // Metodo monstruos con paginacion + nombre
     @Override
     public Page<MonsterBaseDTO> getMonstersByNameWithPagination(String nombre, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);

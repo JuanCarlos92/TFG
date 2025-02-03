@@ -18,11 +18,11 @@ public class LocationCampEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "nombre_base", unique = true, nullable = false)
+    @Column(name = "nombre_base")
     private String nombreBase;
-    @Column(name = "nombre_campamento", nullable = true)
+    @Column(name = "nombre_campamento")
     private String nombreCampamento;
-    @Column(name = "area", nullable = true)
+    @Column(name = "area")
     private Integer area;
 
     // Relacion muchos a uno con la tabla localizacion base

@@ -19,25 +19,25 @@ public class DecorationDropRateEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "priedra_fey", unique = true, nullable = false)
+    @Column(name = "piedra_fey", unique = true, nullable = false)
     private String priedraFey;
-    @Column(name = "cinco", nullable = true)
+    @Column(name = "cinco")
     private Integer cinco;
-    @Column(name = "seis", nullable = true)
+    @Column(name = "seis")
     private Integer seis;
-    @Column(name = "siete", nullable = true)
+    @Column(name = "siete")
     private Integer siete;
-    @Column(name = "ocho", nullable = true)
+    @Column(name = "ocho")
     private Integer ocho;
-    @Column(name = "nueve", nullable = true)
+    @Column(name = "nueve")
     private Integer nueve;
-    @Column(name = "diez", nullable = true)
+    @Column(name = "diez")
     private Integer diez;
-    @Column(name = "once", nullable = true)
+    @Column(name = "once")
     private Integer once;
-    @Column(name = "doce", nullable = true)
+    @Column(name = "doce")
     private Integer doce;
-    @Column(name = "trece", nullable = true)
+    @Column(name = "trece")
     private Integer trece;
 
      // Relacion muchos a uno con la tabla armuleto craft

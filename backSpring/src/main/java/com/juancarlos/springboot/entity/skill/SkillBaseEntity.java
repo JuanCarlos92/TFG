@@ -20,12 +20,12 @@ public class SkillBaseEntity {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
     @Column(name = "nombre", unique = true, nullable = false)
-    private String monster;
-    @Column(name = "color_icono", nullable = true)
+    private String nombre;
+    @Column(name = "color_icono")
     private String colorIcono;
-    @Column(name = "secreto", nullable = true)
+    @Column(name = "secreto")
     private Integer secreto;
-    @Column(name = "desbloqueos", nullable = true)
+    @Column(name = "desbloqueos")
     private String desbloqueos;
 
     @OneToMany(mappedBy = "skillBase", fetch = FetchType.LAZY)

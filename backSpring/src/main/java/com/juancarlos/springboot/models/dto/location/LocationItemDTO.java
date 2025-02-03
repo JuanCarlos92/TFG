@@ -12,7 +12,7 @@ import lombok.Setter;
 @Builder
 public class LocationItemDTO {
 
-    private String nombre_base;
+    private String nombreBase;
     private Integer area;
     private String rango;
     private String item;

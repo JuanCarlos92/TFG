@@ -5,6 +5,7 @@ import com.juancarlos.springboot.models.dto.tool.ToolBaseDTO;
 import java.util.List;
 
 public interface ToolServices {
-    // Metodo lista de armaduras
+
+    // Metodo lista de herramientas
     List<ToolBaseDTO> getToolList();
 }

@@ -28,8 +28,8 @@ public class DecorationConverter {
 
     public static List<DecorationBaseDTO> decorationEntityToDTO(List<DecorationBaseEntity> decorationBaseEntity){
         List<DecorationBaseDTO> decorationBaseDTO = new ArrayList<>();
-        for (DecorationBaseEntity w : decorationBaseEntity) {
-            decorationBaseDTO.add(decorationEntityToDTO(w));
+        for (DecorationBaseEntity v : decorationBaseEntity) {
+            decorationBaseDTO.add(decorationEntityToDTO(v));
         }
         return decorationBaseDTO;
     }

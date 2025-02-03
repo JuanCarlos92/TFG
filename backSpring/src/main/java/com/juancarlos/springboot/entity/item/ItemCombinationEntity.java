@@ -20,11 +20,11 @@ public class ItemCombinationEntity {
     private Long id;
     @Column(name = "nombre_resultado", unique = true, nullable = false)
     private String nombreResultado;
-    @Column(name = "primero", nullable = true)
+    @Column(name = "primero")
     private String primero;
-    @Column(name = "segundo", nullable = true)
+    @Column(name = "segundo")
     private String segundo;
-    @Column(name = "calidad", nullable = true)
+    @Column(name = "calidad")
     private Integer calidad;
 
     // Relacion muchos a uno con la tabla item combinacion

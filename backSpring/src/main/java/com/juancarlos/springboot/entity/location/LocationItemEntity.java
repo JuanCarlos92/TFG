@@ -20,17 +20,17 @@ public class LocationItemEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "nombre_base", unique = true, nullable = false)
+    @Column(name = "nombre_base")
     private String nombreBase;
-    @Column(name = "area", nullable = true)
+    @Column(name = "area")
     private Integer area;
-    @Column(name = "rango", nullable = true)
+    @Column(name = "rango")
     private String rango;
-    @Column(name = "stack", nullable = true)
+    @Column(name = "stack")
     private Integer stack;
-    @Column(name = "porcentaje", nullable = true)
+    @Column(name = "porcentaje")
     private Integer porcentaje;
-    @Column(name = "nodos", nullable = true)
+    @Column(name = "nodos")
     private Integer nodos;
 
     // Relacion muchos a uno con la tabla localizacion base

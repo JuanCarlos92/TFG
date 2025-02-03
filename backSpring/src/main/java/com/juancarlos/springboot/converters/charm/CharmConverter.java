@@ -1,9 +1,7 @@
 package com.juancarlos.springboot.converters.charm;
 
-import com.juancarlos.springboot.entity.armor.ArmorBaseEntity;
 import com.juancarlos.springboot.entity.charm.CharmBaseEntity;
 import com.juancarlos.springboot.entity.charm.CharmCraftEntity;
-import com.juancarlos.springboot.models.dto.armor.ArmorBaseDTO;
 import com.juancarlos.springboot.models.dto.charm.CharmBaseDTO;
 import com.juancarlos.springboot.models.dto.charm.CharmCraftDTO;
 
@@ -37,26 +35,26 @@ public class CharmConverter {
                 .build();
     }
     // Convierte CharmCrafEntity a CharmCrafDTO
-    public static CharmCraftDTO convertCharmCrafEntityToDTO(CharmCraftEntity cc) {
+    public static CharmCraftDTO convertCharmCrafEntityToDTO(CharmCraftEntity v) {
         return CharmCraftDTO.builder()
-                .nombreBase(cc.getNombreBase())
-                .tipo(cc.getTipo())
-                .nombreItem1(cc.getNombreItem1())
-                .cantidadItem1(cc.getCantidadItem1())
-                .nombreItem2(cc.getNombreItem2())
-                .cantidadItem2(cc.getCantidadItem2())
-                .nombreItem3(cc.getNombreItem3())
-                .cantidadItem3(cc.getCantidadItem3())
-                .nombreItem4(cc.getNombreItem4())
-                .cantidadItem4(cc.getCantidadItem4())
+                .nombreBase(v.getNombreBase())
+                .tipo(v.getTipo())
+                .nombreItem1(v.getNombreItem1())
+                .cantidadItem1(v.getCantidadItem1())
+                .nombreItem2(v.getNombreItem2())
+                .cantidadItem2(v.getCantidadItem2())
+                .nombreItem3(v.getNombreItem3())
+                .cantidadItem3(v.getCantidadItem3())
+                .nombreItem4(v.getNombreItem4())
+                .cantidadItem4(v.getCantidadItem4())
                 .build();
     }
 
     public static List<CharmBaseDTO> charmEntityToDTO(List<CharmBaseEntity> charmBaseEntity) {
         List<CharmBaseDTO> charmBaseDTO = new ArrayList<>();
-        for (CharmBaseEntity w : charmBaseEntity) {
+        for (CharmBaseEntity v : charmBaseEntity) {
 
-            charmBaseDTO.add(charmEntityToDTO(w));
+            charmBaseDTO.add(charmEntityToDTO(v));
         }
 
         return charmBaseDTO;

@@ -20,10 +20,10 @@ public class SkillNvlEntity {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
     @Column(name = "nombre_base", unique = true, nullable = false)
-    private String nombre_base;
-    @Column(name = "nivel", nullable = true)
+    private String nombreBase;
+    @Column(name = "nivel")
     private Integer nivel;
-    @Column(name = "descripcion", nullable = true)
+    @Column(name = "descripcion")
     private String descripcion;
 
     // Relacion muchos a uno con la tabla skill base

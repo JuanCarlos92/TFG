@@ -13,8 +13,8 @@ import lombok.Setter;
 @Builder
 public class LocationCampDTO {
 
-    private String nombre_base;
-    private String nombre_campamento;
+    private String nombreBase;
+    private String nombreCampamento;
     private Integer area;
 
 }
