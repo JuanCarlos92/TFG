@@ -14,7 +14,7 @@ import org.springframework.data.domain.Page;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/recoleccion")
+@RequestMapping("/api/recoleccion")
 @AllArgsConstructor
 public class RecoleccionController {
 

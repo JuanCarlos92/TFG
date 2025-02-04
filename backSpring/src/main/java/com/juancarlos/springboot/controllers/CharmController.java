@@ -11,7 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/charm")
+@RequestMapping("/api/charm")
 @AllArgsConstructor
 public class CharmController {
     @Autowired
@@ -27,7 +27,7 @@ public class CharmController {
 
     // Endpoint para obtener un amuleto por id
     @GetMapping("/{id}")
-    public GetCharmResponse getArmorId(@PathVariable Long id) {
+    public GetCharmResponse getCharmId(@PathVariable Long id) {
         CharmBaseDTO charm = charmService.getCharmId(id);
         GetCharmResponse response = GetCharmResponse.builder().charmDTO(charm).build();
 

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/skill")
+@RequestMapping("/api/skill")
 @AllArgsConstructor
 public class SkillController {
     @Autowired

@@ -2,18 +2,18 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { RequestService, RequestServiceOptions } from './request.service';
-import { GetCharmResponse } from '../models/response/GetCharmResponse.model';
-import { GetCharmListResponse } from '../models/response/GetCharmListResponse.model';
+import { GetDecorationResponse } from '../models/response/GetDecorationResponse.model';
+import { GetDecorationListResponse } from '../models/response/GetDecorationListResponse.model';
 
 
 @Injectable({
     providedIn: 'root'
 })
-export class CharmService {
+export class DecorationService {
     constructor(private requestService: RequestService) { }
 
-    public getCharmList(): Observable<GetCharmListResponse> {
-        let url = `${environment.charm}`;
+    public getDecorationList(): Observable<GetDecorationListResponse> {
+        let url = `${environment.decoration}`;
 
         const requestServiceOptions: RequestServiceOptions = {
             url: url,
@@ -23,8 +23,8 @@ export class CharmService {
         return this.requestService.request(requestServiceOptions, false, true);
     }
 
-    public getCharm(id: number): Observable<GetCharmResponse> {
-        let url = `${environment.charm}/${id}`;
+    public getDecoration(id: number): Observable<GetDecorationResponse> {
+        let url = `${environment.decoration}/${id}`;
         const requestServiceOptions: RequestServiceOptions = {
             url: url,
             method: 'GET',
@@ -34,5 +34,3 @@ export class CharmService {
     }
 
 }
-
-

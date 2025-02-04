@@ -17,7 +17,7 @@ import com.juancarlos.springboot.models.response.GetWeaponTypeResponse;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/weapon")
+@RequestMapping("/api/weapon")
 @AllArgsConstructor
 public class WeaponController {
 

@@ -14,7 +14,7 @@ export class WeaponService {
   constructor(private requestService: RequestService) { }
 
   public getWeaponTypeList(): Observable<GetWeaponTypeListResponse> {
-    let url = `${environment.weapons}`;
+    let url = `${environment.weapon}`;
 
     const requestServiceOptions: RequestServiceOptions = {
       url: url,
@@ -26,7 +26,7 @@ export class WeaponService {
   }
 
   public getWeaponType(id: number): Observable<GetWeaponTypeResponse> {
-    let url = `${environment.weaponsTypeId}/${id}`;
+    let url = `${environment.weaponTypeId}/${id}`;
 
     const requestServiceOptions: RequestServiceOptions = {
       url: url,
@@ -38,7 +38,7 @@ export class WeaponService {
   }
 
   public getWeapon(id: number): Observable<GetWeaponResponse> {
-    let url = `${environment.weapons}/${id}`;
+    let url = `${environment.weapon}/${id}`;
 
     const requestServiceOptions: RequestServiceOptions = {
       url: url,

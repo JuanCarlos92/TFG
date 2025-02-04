@@ -16,7 +16,7 @@ import com.juancarlos.springboot.services.MonsterService;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/monster")
+@RequestMapping("/api/monster")
 @AllArgsConstructor
 public class MonsterController {
 

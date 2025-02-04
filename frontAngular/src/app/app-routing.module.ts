@@ -5,15 +5,17 @@ import { WeaponComponent } from './components/weapon/weapon.component';
 import { ArmorComponent } from './components/armor/armor.component';
 import { ArmorSetComponent } from './components/armor-set/armor-set.component';
 import { CharmComponent } from './components/charm/charm.component';
+import { DecorationComponent } from './components/decoration/decoration.component';
 
 const routes: Routes = [
   {path: 'home',loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)},
   {path: '',redirectTo: 'home',pathMatch: 'full'},
-  {path: 'monsters', component: MonsterComponent },
-  {path: 'weapons', component: WeaponComponent },
-  {path: 'armors', component: ArmorComponent },
-  {path: 'armorsSet', component: ArmorSetComponent },
-  {path: 'charms', component: CharmComponent }
+  {path: 'monster', component: MonsterComponent },
+  {path: 'weapon', component: WeaponComponent },
+  {path: 'armor', component: ArmorComponent },
+  {path: 'armorSet', component: ArmorSetComponent },
+  {path: 'charm', component: CharmComponent },
+  {path: 'decoration', component: DecorationComponent }
 ];
 
 @NgModule({

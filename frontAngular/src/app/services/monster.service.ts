@@ -12,7 +12,7 @@ export class MonsterService {
   constructor(private requestService: RequestService) { }
 
   public getMonstersWithPaginacion(page: number = 0, size: number = 12, nombre?: string): Observable<GetMonstersWithPaginacionResponse> {
-    let url = `${environment.monsters}?page=${page}&size=${size}`;
+    let url = `${environment.monster}?page=${page}&size=${size}`;
 
     if (nombre && nombre.trim() !== '') {
       url += `&nombre=${encodeURIComponent(nombre)}`;
@@ -28,7 +28,7 @@ export class MonsterService {
   }
 
   public getMonster(id: number): Observable<GetMonsterResponse> {
-    let url = `${environment.monsters}/${id}`;
+    let url = `${environment.monster}/${id}`;
 
     const requestServiceOptions: RequestServiceOptions = {
       url: url,

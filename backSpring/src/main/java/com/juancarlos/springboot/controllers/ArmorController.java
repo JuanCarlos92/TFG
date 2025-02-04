@@ -14,7 +14,7 @@ import com.juancarlos.springboot.services.ArmorService;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/armor")
+@RequestMapping("/api/armor")
 @AllArgsConstructor
 public class ArmorController {
 	@Autowired

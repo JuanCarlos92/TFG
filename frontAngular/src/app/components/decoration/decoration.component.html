@@ -1,0 +1,41 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+
+  <!-- Lista de Adornos -->
+  <div *ngIf="decorationsList.length > 0 && !mostrarWiki" class="container mt-4">
+    <div class="d-flex justify-content-center mb-3">
+      <button *ngFor="let r of [5,6,7,8,9,10,11,12]" class="btn btn-secondary mx-1 custom-btn"
+        (click)="filterByRarity(r)">
+        Rareza {{ r }}
+      </button>
+    </div>
+    <h2 class="text-center">Adornos</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Rareza</th>
+          <th>Ranura</th>
+          <th>Habilidad 1</th>
+          <th>Nivel</th>
+          <th>Habilidad 2</th>
+          <th>Nivel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of filteredDecoration">
+          <td>
+            <a (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+              {{ v?.nombre }}
+            </a>
+          </td>
+          <td>{{ v?.rareza }}</td>
+          <td>{{ v?.ranura || 'N/A'}}</td>
+          <td>{{ v?.nombreSkill1 || 'N/A'}}</td>
+          <td>{{ v?.nivelSkill1 || 'N/A'}}</td>
+          <td>{{ v?.nombreSkill2 || 'N/A'}}</td>
+          <td>{{ v?.nivelSkill2 || 'N/A'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>

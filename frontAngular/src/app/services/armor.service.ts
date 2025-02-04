@@ -15,7 +15,7 @@ export class ArmorService {
     constructor(private requestService: RequestService) { }
 
     public getArmorList(): Observable<GetArmorListResponse> {
-        let url = `${environment.armors}`;
+        let url = `${environment.armor}`;
 
         const requestServiceOptions: RequestServiceOptions = {
             url: url,
@@ -26,7 +26,7 @@ export class ArmorService {
     }
 
     public getArmor(id: number): Observable<GetArmorResponse> {
-        let url = `${environment.armors}/${id}`;
+        let url = `${environment.armor}/${id}`;
         const requestServiceOptions: RequestServiceOptions = {
             url: url,
             method: 'GET',
@@ -36,7 +36,7 @@ export class ArmorService {
     }
 
     public getArmorSetList(): Observable<GetArmorSetListResponse> {
-        let url = `${environment.armorsSet}`;
+        let url = `${environment.armorSet}`;
 
         const requestServiceOptions: RequestServiceOptions = {
             url: url,
@@ -47,7 +47,7 @@ export class ArmorService {
     }
 
     public getArmorSet(id: number): Observable<GetArmorSetResponse> {
-        let url = `${environment.armorsSet}/${id}`;
+        let url = `${environment.armorSet}/${id}`;
         const requestServiceOptions: RequestServiceOptions = {
             url: url,
             method: 'GET',

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/quest")
+@RequestMapping("/api/quest")
 @AllArgsConstructor
 public class QuestController {
 
