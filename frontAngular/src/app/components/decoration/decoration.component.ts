@@ -29,7 +29,6 @@ export class DecorationComponent implements OnInit {
   decorationWiki!: DecorationBaseDTO;
 
 
-
   constructor(private route: ActivatedRoute, private decorationService: DecorationService) { }
 
   ngOnInit() {
@@ -56,15 +55,6 @@ export class DecorationComponent implements OnInit {
     console.log('filtrado por rareza:', n);
     this.filteredDecoration = this.decorationsList.filter(v => v.rareza === n);
     console.log('Armaduras filtrada por rango:', this.filteredDecoration);
-  }
-
-  displayWiki(decoration: DecorationBaseDTO) {
-    this.decorationWiki = decoration;
-    this.mostrarWiki = !this.mostrarWiki;
-  }
-
-  closeWiki() {
-    this.mostrarWiki = false;
   }
 
 }

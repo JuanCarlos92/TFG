@@ -6,6 +6,7 @@ import { ArmorComponent } from './components/armor/armor.component';
 import { ArmorSetComponent } from './components/armor-set/armor-set.component';
 import { CharmComponent } from './components/charm/charm.component';
 import { DecorationComponent } from './components/decoration/decoration.component';
+import { ItemComponent } from './components/item/item.component';
 
 const routes: Routes = [
   {path: 'home',loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'armor', component: ArmorComponent },
   {path: 'armorSet', component: ArmorSetComponent },
   {path: 'charm', component: CharmComponent },
-  {path: 'decoration', component: DecorationComponent }
+  {path: 'decoration', component: DecorationComponent },
+  {path: 'item', component: ItemComponent },
 ];
 
 @NgModule({

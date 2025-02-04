@@ -13,6 +13,7 @@ export const environment = {
   armorSet:'/api/armor/set',
   charm: '/api/charm',
   decoration: '/api/decoration',
+  item: '/api/item',
 };
 
 

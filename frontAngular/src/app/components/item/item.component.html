@@ -1,0 +1,36 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+
+  <!-- Lista de Adornos -->
+  <div *ngIf="itemsList.length > 0 && !mostrarWiki" class="container mt-4">
+    <div class="d-flex justify-content-center mb-3">
+      <button *ngFor="let category of ['item', 'material', 'misc']" class="btn btn-secondary mx-1 custom-btn"
+        (click)="filterByCategory(category)">
+        Categoria {{ category }}
+      </button>
+    </div>
+    <h2 class="text-center">Objetos</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Categoría</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of filteredItems">
+          <td>
+            <a (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+              {{ v?.nombre }}
+            </a>
+          </td>
+          <td>{{ v?.categoria }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="mostrarWiki">
+    <app-wiki-item [item]="itemWiki" (closeWiki)="closeWiki()"></app-wiki-item>
+  </div>
+
+</ion-content>

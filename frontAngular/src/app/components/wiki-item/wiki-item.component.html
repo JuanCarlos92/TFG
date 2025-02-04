@@ -1,0 +1,19 @@
+<div class="container mt-4 text-center">
+  <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Charms</button>
+</div>
+<!-- Información General -->
+<div *ngIf="inforItem" class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <!-- Nombre -->
+    <tr>
+      <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+          <h2 style="margin: 0; color: #333;">{{ inforItem?.nombre }}</h2>
+        </div>
+      </td>
+    </tr>
+    <tr>
+    </tr>
+  </table>
+</div>
