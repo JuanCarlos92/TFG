@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { RequestService, RequestServiceOptions } from './request.service';
-import { GetMonstersWithPaginacionResponse } from '../models/GetMonstersWithPaginacionResponse.model';
-import { GetMonsterResponse } from '../models/GetMonsterResponse.model';
+import { GetMonstersWithPaginacionResponse } from '../models/response/GetMonstersWithPaginacionResponse.model';
+import { GetMonsterResponse } from '../models/response/GetMonsterResponse.model';
 
 @Injectable({
   providedIn: 'root'

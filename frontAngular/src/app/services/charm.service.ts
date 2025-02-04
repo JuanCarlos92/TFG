@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { RequestService, RequestServiceOptions } from './request.service';
-import { GetCharmResponse } from '../models/GetCharmResponse.model';
-import { GetCharmListResponse } from '../models/GetCharmListResponse.model';
+import { GetCharmResponse } from '../models/response/GetCharmResponse.model';
+import { GetCharmListResponse } from '../models/response/GetCharmListResponse.model';
 
 
 @Injectable({

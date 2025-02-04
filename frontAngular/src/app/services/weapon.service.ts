@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { RequestService, RequestServiceOptions } from './request.service';
-import { GetWeaponResponse } from '../models/GetWeaponResponse.model';
-import { GetWeaponTypeListResponse } from '../models/GetWeaponTypeListResponse.model';
-import { GetWeaponTypeResponse } from '../models/GetWeaponTypeResponse.model';
+import { GetWeaponResponse } from '../models/response/GetWeaponResponse.model';
+import { GetWeaponTypeListResponse } from '../models/response/GetWeaponTypeListResponse.model';
+import { GetWeaponTypeResponse } from '../models/response/GetWeaponTypeResponse.model';
 
 
 @Injectable({

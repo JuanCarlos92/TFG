@@ -1,4 +1,4 @@
-import { WeaponBaseDTO } from "./weapon/WeaponBaseDTO.model";
+import { WeaponBaseDTO } from "../weapon/WeaponBaseDTO.model";
 
 export interface GetWeaponResponse {
   weaponDTO: WeaponBaseDTO;

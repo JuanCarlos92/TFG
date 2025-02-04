@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { RequestService, RequestServiceOptions } from './request.service';
-import { GetArmorResponse } from '../models/GetArmorResponse.model';
-import { GetArmorListResponse } from '../models/GetArmorListResponse.model';
-import { GetArmorSetListResponse } from '../models/GetArmorSetListResponse.model';
-import { GetArmorSetResponse } from '../models/GetArmorSetResponse.model';
+import { GetArmorResponse } from '../models/response/GetArmorResponse.model';
+import { GetArmorListResponse } from '../models/response/GetArmorListResponse.model';
+import { GetArmorSetListResponse } from '../models/response/GetArmorSetListResponse.model';
+import { GetArmorSetResponse } from '../models/response/GetArmorSetResponse.model';
 
 
 @Injectable({

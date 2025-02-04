@@ -19,9 +19,9 @@ public class ToolConverter {
                 .duracion(toolBaseEntity.getDuracion())
                 .duracionActualizada(toolBaseEntity.getDuracionActualizada())
                 .recarga(toolBaseEntity.getRecarga())
-                .ranura_1(toolBaseEntity.getRanura1())
-                .ranura_2(toolBaseEntity.getRanura2())
-                .ranura_3(toolBaseEntity.getRanura3())
+                .ranura1(toolBaseEntity.getRanura1())
+                .ranura2(toolBaseEntity.getRanura2())
+                .ranura3(toolBaseEntity.getRanura3())
                 .build();
 
     }

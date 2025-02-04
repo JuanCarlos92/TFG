@@ -1,7 +1,7 @@
-import { WeaponBaseDTO } from "./weapon/WeaponBaseDTO.model";
+import { KinsectBaseDTO } from "../kinsect/KinsectBaseDTO.model";
 
-export interface GetWeaponsWithPaginacionResponse {
-  content: WeaponBaseDTO[];
+export interface GetKinsectsWithPaginacionResponse {
+  content: KinsectBaseDTO[];
   empty: boolean;
   first: boolean;
   last: boolean;

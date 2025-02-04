@@ -1,4 +1,4 @@
-import { ArmorSetBaseDTO } from "./armor/ArmorSetBaseDTO.model";
+import { ArmorSetBaseDTO } from "../armor/ArmorSetBaseDTO.model";
 
 export interface GetArmorSetListResponse {
     armorSetDTO: ArmorSetBaseDTO[];

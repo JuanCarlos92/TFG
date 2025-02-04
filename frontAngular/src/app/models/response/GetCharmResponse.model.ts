@@ -1,4 +1,4 @@
-import { CharmBaseDTO } from "./charm/CharmBaseDTO.model";
+import { CharmBaseDTO } from "../charm/CharmBaseDTO.model";
 
 export interface GetCharmResponse {
   charmDTO: CharmBaseDTO;

@@ -12,14 +12,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class ToolBaseDTO {
-
     private Long id;
     private String nombre;
     private String herramientatipo;
     private Integer duracion;
     private Integer duracionActualizada;
     private Integer recarga;
-    private Integer ranura_1;
-    private Integer ranura_2;
-    private Integer ranura_3;
+    private Integer ranura1;
+    private Integer ranura2;
+    private Integer ranura3;
 }

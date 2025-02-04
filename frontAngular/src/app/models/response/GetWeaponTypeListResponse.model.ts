@@ -1,4 +1,4 @@
-import { WeaponTipoDTO } from "./weapon/WeaponTipoDTO.model";
+import { WeaponTipoDTO } from "../weapon/WeaponTipoDTO.model";
 
 export interface GetWeaponTypeListResponse {
   weaponTipoDTO: WeaponTipoDTO[];

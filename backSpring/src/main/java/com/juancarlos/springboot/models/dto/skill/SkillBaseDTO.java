@@ -22,6 +22,6 @@ public class SkillBaseDTO {
     private String desbloqueos;
 
     // Lista de niveles de skill
-    private List<SkillNvlDTO> SkillNvlDTO;
+    private List<SkillNvlDTO> skillNvlDTO;
 
 }

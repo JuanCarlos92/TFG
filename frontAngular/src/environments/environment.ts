@@ -6,12 +6,13 @@ export const environment = {
   production: false,
   host: 'localhost',
   port: 8080,
-  monsters: '/api/monster',
-  weapons: '/api/weapon',
-  weaponsTypeId: '/api/weapon/type',
-  armors: '/api/armor',
-  armorsSet:'/api/armor/set',
-  charms: '/api/charm'
+  monsters: '/monster',
+  weapons: '/weapon',
+  weaponsTypeId: '/weapon/type',
+  armors: '/armor',
+  armorsSet:'/armor/set',
+  charms: '/charm',
+  decorations: '/decoration',
 };
 
 

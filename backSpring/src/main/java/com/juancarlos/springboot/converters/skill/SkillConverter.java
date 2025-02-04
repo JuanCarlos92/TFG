@@ -28,7 +28,7 @@ public class SkillConverter {
                 .colorIcono(skillBaseEntity.getColorIcono())
                 .secreto(skillBaseEntity.getSecreto())
                 .desbloqueos(skillBaseEntity.getDesbloqueos())
-                .SkillNvlDTO(listaSkillNvl)
+                .skillNvlDTO(listaSkillNvl)
                 .build();
     }
 
