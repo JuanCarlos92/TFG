@@ -13,7 +13,80 @@
         </div>
       </td>
     </tr>
+
     <tr>
+    <!-- Categoria -->
+    <td class="text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.categoria }}</td>
     </tr>
   </table>
 </div>
+
+<!-- Tabla: Rareza , precio y capacidad -->
+<div id="tabla1" *ngIf="inforItem" class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <tr>
+      <th>Rareza</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.rareza }}</td>
+    </tr>
+    <tr>
+      <th>Precio de compra</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.precioCompra || 'N/A'}}</td>
+    </tr>
+    <tr>
+      <th>Precio de venta</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.precioVenta || 'N/A'}}</td>
+    </tr>
+    <tr>
+      <th>Capacidad max para llevar</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.limiteCarga || 'N/A'}}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Tabla: crafteo de items -->
+<div id="Crafteo" *ngIf="inforItem?.itemCombinationDTO?.length > 0 " class="container mt-4">
+  <h2 style="text-align: center;">Materiales para crear el objeto</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Material 1</th>
+        <th>Material 2</th>
+        <th>Resultado de la combinación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforItem.itemCombinationDTO">
+        <td>{{ v?.primero || 'N/A'}}</td>
+        <td>{{ v?.segundo || 'N/A'}}</td>
+        <td>{{ v?.nombreResultado}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Tabla: Localizacion de items -->
+<div id="Crafteo" *ngIf="inforItem?.locationItemDTO?.length > 0 " class="container mt-4">
+  <h2 style="text-align: center;">Localizacion del objeto</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Nombre de la zona</th>
+        <th>Nº Area</th>
+        <th>Rango</th>
+        <th>Porcentaje</th>
+        <th>Cantidad de nodos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of inforItem.locationItemDTO">
+        <td>{{ v?.nombreBase }}</td>
+        <td>{{ v?.area }}</td>
+        <td>{{ v?.rango || 'N/A' }}</td>
+        <td>{{ v?.porcentaje + '%' }}</td>
+        <td>{{ v?.nodos || 'N/A' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

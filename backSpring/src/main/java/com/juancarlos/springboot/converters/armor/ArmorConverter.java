@@ -28,7 +28,7 @@ public class ArmorConverter {
                 .map(ArmorConverter::convertArmorSkillEntityToDTO)
                 .collect(Collectors.toList());
 
-        return ArmorBaseDTO.builder() // Creamos un nuevo objeto ArmorBaseDTO
+        return ArmorBaseDTO.builder()
                 .id(armorBaseEntity.getId())
                 .nombre(armorBaseEntity.getNombre())
                 .rareza(armorBaseEntity.getRareza())
