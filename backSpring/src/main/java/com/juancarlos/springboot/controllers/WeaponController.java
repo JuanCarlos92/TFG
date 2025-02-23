@@ -33,7 +33,7 @@ public class WeaponController {
 		return response;
 	}
 
-	// Endpoint para obtener un tipo de arma por id
+	// Endpoint para obtener un tipo de arma por ID
 	@GetMapping("/type/{id}")
 	public GetWeaponTypeResponse getWeaponTypeId(@PathVariable Long id) {
 		WeaponTipoDTO weapon = weaponService.getWeaponTypeId(id);
@@ -44,7 +44,7 @@ public class WeaponController {
 
 	}
 	// ---------------------------- WeaponBase ----------------------------
-	// Endpoint para obtener un arma por id
+	// Endpoint para obtener un arma por ID
 	@GetMapping("/{id}")
 	public GetWeaponResponse getWeaponId(@PathVariable Long id) {
 		WeaponBaseDTO weapon = weaponService.getWeaponId(id);

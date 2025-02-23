@@ -1,10 +1,10 @@
 <div class="container mt-4 text-center">
-  <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Charms</button>
+  <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Amuletos</button>
 </div>
 <!-- Información General -->
 <div *ngIf="inforCharm" class="container mt-4">
   <table class="table table-bordered mx-auto shadow-sm"
-    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    style="width: 80%; text-align: left;">
     <!-- Nombre -->
     <tr>
       <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
@@ -43,10 +43,10 @@
     </thead>
     <tbody>
       <tr>
-        <td>{{ inforCharm?.nombreSkill1 || 'N/A'}}</td>
-        <td>{{ inforCharm?.nivelSkill1 || 'N/A'}}</td>
-        <td>{{ inforCharm?.nombreSkill2 || 'N/A'}}</td>
-        <td>{{ inforCharm?.nivelSkill2 || 'N/A'}}</td>
+        <td>{{ inforCharm?.nombreSkill1 || '---'}}</td>
+        <td>{{ inforCharm?.nivelSkill1 || '---'}}</td>
+        <td>{{ inforCharm?.nombreSkill2 || '---'}}</td>
+        <td>{{ inforCharm?.nivelSkill2 || '---'}}</td>
       </tr>
     </tbody>
   </table>
@@ -71,7 +71,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let v of inforCharm.charmCraftDTO">
-        <td>{{ v?.tipo || 'N/A'}}</td>
+        <td>{{ v?.tipo || '---'}}</td>
         <td>{{ v?.nombreItem1 || '--'}}</td>
         <td>{{ v?.cantidadItem1 || '--'}}</td>
         <td>{{ v?.nombreItem2 || '--'}}</td>

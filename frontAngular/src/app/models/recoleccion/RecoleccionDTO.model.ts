@@ -5,5 +5,5 @@ export interface RecoleccionDTO{
     nombre: string;
     normal: number;
 
-    ItemBaseDTO: ItemBaseDTO[];
+    itemBaseDTO: ItemBaseDTO[];
 }

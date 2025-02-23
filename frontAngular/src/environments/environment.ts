@@ -14,7 +14,11 @@ export const environment = {
   charm: '/api/charm',
   decoration: '/api/decoration',
   item: '/api/item',
-  kinsect: '/api/kinsect'
+  kinsect: '/api/kinsect',
+  location: '/api/location',
+  quest:'/api/quest',
+  recoleccion:'/api/recoleccion',
+  tool:'/api/tool'
 };
 
 

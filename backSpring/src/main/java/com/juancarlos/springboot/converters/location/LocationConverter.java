@@ -68,7 +68,7 @@ public class LocationConverter {
                 .nombreBase(v.getNombreBase())
                 .area(v.getArea())
                 .rango(v.getRango())
-                .item(v.getRango())
+                .item(v.getItem())
                 .stack(v.getStack())
                 .stack(v.getStack())
                 .porcentaje(v.getPorcentaje())

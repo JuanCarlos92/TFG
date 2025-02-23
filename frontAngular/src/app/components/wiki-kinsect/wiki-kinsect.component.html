@@ -25,11 +25,11 @@
     </tr>
     <tr>
       <th>Tipo de ataque</th>
-      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.tipoAtaque || 'N/A'}}</td>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.tipoAtaque || '---'}}</td>
     </tr>
     <tr>
       <th>Tipo de efecto</th>
-      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.efecto || 'N/A'}}</td>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.efecto || '---'}}</td>
     </tr>
   </table>
 </div>
@@ -44,11 +44,11 @@
     </tr>
     <tr>
       <th>Velocidad</th>
-      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.velocidad || 'N/A'}}</td>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.velocidad || '---'}}</td>
     </tr>
     <tr>
       <th>Cura</th>
-      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.cura || 'N/A'}}</td>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.cura || '---'}}</td>
     </tr>
   </table>
 </div>
@@ -57,7 +57,7 @@
 <div *ngIf="infoKinsect" class="container mt-4">
   <h2 style="text-align: center;">Evoluciona de</h2>
   <table class="table table-bordered mx-auto shadow-sm"
-    style="width: 60%; background-color: #f1f1f1; text-align: center;">
+    style="width: 60%; text-align: center;">
     <!-- Imagen + Nombre -->
     <tr>
       <td colspan="2" class="text-center" style="border: 1px solid #ddd; padding: 10px;">
@@ -86,14 +86,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let v of infoKinsect.kinsectCraftDTO">
-        <td>{{ v?.nombreItem1 || 'N/A'}}</td>
-        <td>{{ v?.calidadItem1 || 'N/A'}}</td>
-        <td>{{ v?.nombreItem2 || 'N/A'}}</td>
-        <td>{{ v?.calidadItem2 || 'N/A'}}</td>
-        <td>{{ v?.nombreItem3 || 'N/A'}}</td>
-        <td>{{ v?.calidadItem3 || 'N/A'}}</td>
-        <td>{{ v?.nombreItem4 || 'N/A'}}</td>
-        <td>{{ v?.calidadItem4 || 'N/A'}}</td>
+        <td>{{ v?.nombreItem1 || '---'}}</td>
+        <td>{{ v?.calidadItem1 || '---'}}</td>
+        <td>{{ v?.nombreItem2 || '---'}}</td>
+        <td>{{ v?.calidadItem2 || '---'}}</td>
+        <td>{{ v?.nombreItem3 || '---'}}</td>
+        <td>{{ v?.calidadItem3 || '---'}}</td>
+        <td>{{ v?.nombreItem4 || '---'}}</td>
+        <td>{{ v?.calidadItem4 || '---'}}</td>
       </tr>
     </tbody>
   </table>

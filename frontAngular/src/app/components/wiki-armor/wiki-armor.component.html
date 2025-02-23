@@ -1,10 +1,10 @@
 <div class="container mt-4 text-center">
-  <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Armors</button>
+  <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Armaduras</button>
 </div>
 <!-- Información General -->
 <div *ngIf="inforArmor" class="container mt-4">
   <table class="table table-bordered mx-auto shadow-sm"
-    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    style="width: 80%; text-align: left;">
     <!-- Nombre -->
     <tr>
       <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
@@ -13,7 +13,6 @@
         </div>
       </td>
     </tr>
-
     <tr>
       <!-- Tipo de armadura -->
       <td class="text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.tipo }}</td>
@@ -53,9 +52,9 @@
     </thead>
     <tbody>
       <tr>
-        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.ranura1 || 'N/A'}}</td>
-        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.ranura2 || 'N/A'}}</td>
-        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.ranura3 || 'N/A'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.ranura1 || '---'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.ranura2 || '---'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.ranura3 || '---'}}</td>
       </tr>
     </tbody>
   </table>
@@ -76,11 +75,11 @@
     </thead>
     <tbody>
       <tr>
-        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaFuego || 'N/A'}}</td>
-        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaAgua || 'N/A'}}</td>
-        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaRayo || 'N/A'}}</td>
-        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaHielo || 'N/A'}}</td>
-        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaDragon || 'N/A'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaFuego || '0'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaAgua || '0'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaRayo || '0'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaHielo || '0'}}</td>
+        <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaDragon || '0'}}</td>
       </tr>
     </tbody>
   </table>
@@ -100,10 +99,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let v of inforArmor.armorSkillDTO">
-        <td>{{ v?.nombreSkill1 || 'N/A'}}</td>
-        <td>{{ v?.nivelSkill1 || 'N/A'}}</td>
-        <td>{{ v?.nombreSkill2 || 'N/A'}}</td>
-        <td>{{ v?.nivelSkill2 || 'N/A'}}</td>
+        <td>{{ v?.nombreSkill1 || '---'}}</td>
+        <td>{{ v?.nivelSkill1 || '---'}}</td>
+        <td>{{ v?.nombreSkill2 || '---'}}</td>
+        <td>{{ v?.nivelSkill2 || '---'}}</td>
       </tr>
     </tbody>
   </table>
@@ -127,14 +126,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let v of inforArmor.armorCraftDTO">
-        <td>{{ v?.nombreItem1 || 'N/A'}}</td>
-        <td>{{ v?.cantidadItem1 || 'N/A'}}</td>
-        <td>{{ v?.nombreItem2 || 'N/A'}}</td>
-        <td>{{ v?.cantidadItem2 || 'N/A'}}</td>
-        <td>{{ v?.nombreItem3 || 'N/A'}}</td>
-        <td>{{ v?.cantidadItem3 || 'N/A'}}</td>
-        <td>{{ v?.nombreItem4 || 'N/A'}}</td>
-        <td>{{ v?.cantidadItem4 || 'N/A'}}</td>
+        <td>{{ v?.nombreItem1 || '---'}}</td>
+        <td>{{ v?.cantidadItem1 || '---'}}</td>
+        <td>{{ v?.nombreItem2 || '---'}}</td>
+        <td>{{ v?.cantidadItem2 || '---'}}</td>
+        <td>{{ v?.nombreItem3 || '---'}}</td>
+        <td>{{ v?.cantidadItem3 || '---'}}</td>
+        <td>{{ v?.nombreItem4 || '---'}}</td>
+        <td>{{ v?.cantidadItem4 || '---'}}</td>
       </tr>
     </tbody>
   </table>

@@ -8,5 +8,5 @@ export interface LocationBaseDTO{
 
     locationCampDTO: LocationCampDTO[];
     locationItemDTO: LocationItemDTO[];
-    QuestBaseDTO: QuestBaseDTO[];
+    questBaseDTO: QuestBaseDTO[];
 }

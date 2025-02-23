@@ -25,7 +25,7 @@ public class LocationController {
     //Endpoint para obtener zonas con paginacion
     @GetMapping()
     public Page<LocationBaseDTO> getLocationsWithPagination(@RequestParam(defaultValue = "0") int page,
-                                                           @RequestParam(defaultValue = "12") int size, @RequestParam(required = false) String nombre) {
+                                                           @RequestParam(defaultValue = "13") int size, @RequestParam(required = false) String nombre) {
 
         if (nombre != null && !nombre.isEmpty()) {
             // Si el nombre esta presente, filtra por nombre con paginacion

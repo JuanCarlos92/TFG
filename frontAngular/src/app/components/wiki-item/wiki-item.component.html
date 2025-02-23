@@ -1,10 +1,10 @@
 <div class="container mt-4 text-center">
-  <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Charms</button>
+  <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Objetos</button>
 </div>
 <!-- Información General -->
 <div *ngIf="inforItem" class="container mt-4">
   <table class="table table-bordered mx-auto shadow-sm"
-    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    style="width: 80%; text-align: left;">
     <!-- Nombre -->
     <tr>
       <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
@@ -30,15 +30,15 @@
     </tr>
     <tr>
       <th>Precio de compra</th>
-      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.precioCompra || 'N/A'}}</td>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.precioCompra || '---'}}</td>
     </tr>
     <tr>
       <th>Precio de venta</th>
-      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.precioVenta || 'N/A'}}</td>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.precioVenta || '---'}}</td>
     </tr>
     <tr>
       <th>Capacidad max para llevar</th>
-      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.limiteCarga || 'N/A'}}</td>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.limiteCarga || '---'}}</td>
     </tr>
   </table>
 </div>
@@ -56,8 +56,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let v of inforItem.itemCombinationDTO">
-        <td>{{ v?.primero || 'N/A'}}</td>
-        <td>{{ v?.segundo || 'N/A'}}</td>
+        <td>{{ v?.primero || '---'}}</td>
+        <td>{{ v?.segundo || '---'}}</td>
         <td>{{ v?.nombreResultado}}</td>
       </tr>
     </tbody>
@@ -81,9 +81,9 @@
       <tr *ngFor="let v of inforItem.locationItemDTO">
         <td>{{ v?.nombreBase }}</td>
         <td>{{ v?.area }}</td>
-        <td>{{ v?.rango || 'N/A' }}</td>
+        <td>{{ v?.rango || '---' }}</td>
         <td>{{ v?.porcentaje + '%' }}</td>
-        <td>{{ v?.nodos || 'N/A' }}</td>
+        <td>{{ v?.nodos || '---' }}</td>
       </tr>
     </tbody>
   </table>

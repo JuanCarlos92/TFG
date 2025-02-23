@@ -25,11 +25,11 @@
         <tr *ngFor="let v of filteredDecoration">
           <td>{{ v?.nombre }}</td>
           <td>{{ v?.rareza }}</td>
-          <td>{{ v?.ranura || 'N/A'}}</td>
-          <td>{{ v?.nombreSkill1 || 'N/A'}}</td>
-          <td>{{ v?.nivelSkill1 || 'N/A'}}</td>
-          <td>{{ v?.nombreSkill2 || 'N/A'}}</td>
-          <td>{{ v?.nivelSkill2 || 'N/A'}}</td>
+          <td>{{ v?.ranura || '---'}}</td>
+          <td>{{ v?.nombreSkill1 || '---'}}</td>
+          <td>{{ v?.nivelSkill1 || '---'}}</td>
+          <td>{{ v?.nombreSkill2 || '---'}}</td>
+          <td>{{ v?.nivelSkill2 || '---'}}</td>
         </tr>
       </tbody>
     </table>

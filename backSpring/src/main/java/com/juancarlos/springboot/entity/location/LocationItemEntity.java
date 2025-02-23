@@ -26,6 +26,8 @@ public class LocationItemEntity {
     private Integer area;
     @Column(name = "rango")
     private String rango;
+    @Column(name = "item")
+    private String item;
     @Column(name = "stack")
     private Integer stack;
     @Column(name = "porcentaje")

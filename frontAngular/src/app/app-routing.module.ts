@@ -8,6 +8,10 @@ import { CharmComponent } from './components/charm/charm.component';
 import { DecorationComponent } from './components/decoration/decoration.component';
 import { ItemComponent } from './components/item/item.component';
 import { KinsectComponent } from './components/kinsect/kinsect.component';
+import { LocationComponent } from './components/location/location.component';
+import { QuestComponent } from './components/quest/quest.component';
+import { RecoleccionComponent } from './components/recoleccion/recoleccion.component';
+import { ToolComponent } from './components/tool/tool.component';
 
 const routes: Routes = [
   {path: 'home',loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)},
@@ -20,6 +24,10 @@ const routes: Routes = [
   {path: 'decoration', component: DecorationComponent },
   {path: 'item', component: ItemComponent },
   {path: 'kinsect', component: KinsectComponent},
+  {path: 'location', component: LocationComponent},
+  {path: 'quest', component: QuestComponent},
+  {path: 'recoleccion', component: RecoleccionComponent},
+  {path: 'tool', component: ToolComponent},
 ];
 
 @NgModule({
