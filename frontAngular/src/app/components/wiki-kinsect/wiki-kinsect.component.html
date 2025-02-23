@@ -1,0 +1,100 @@
+<div class="container mt-4 text-center">
+  <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Kinsectos</button>
+</div>
+<!-- Información General -->
+<div *ngIf="infoKinsect" class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <!-- Fila 1: Imagen + Nombre -->
+    <tr>
+      <td colspan="2" class="text-center" style="border: 1px solid #ddd; padding: 15px;">
+        <img [src]="'assets/images/kinsects/' + infoKinsect?.nombre + '.png'" width="180" style="border-radius: 8px;">
+        <h1 style="margin-top: 10px; color: #333;">{{ infoKinsect?.nombre }}</h1>
+      </td>
+    </tr>
+  </table>
+</div>
+
+ <!-- Tabla: Rareza , tipo de ataque, tipo de efecto,  -->
+<div id="tabla1" *ngIf="infoKinsect" class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <tr>
+      <th>Rareza</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.rareza }}</td>
+    </tr>
+    <tr>
+      <th>Tipo de ataque</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.tipoAtaque || 'N/A'}}</td>
+    </tr>
+    <tr>
+      <th>Tipo de efecto</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.efecto || 'N/A'}}</td>
+    </tr>
+  </table>
+</div>
+
+ <!-- Tabla: poder , velocidad, cura,  -->
+ <div id="tabla1" *ngIf="infoKinsect" class="container mt-4">
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 80%; background-color: #f9f9f9; text-align: left;">
+    <tr>
+      <th>Poder</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.poder }}</td>
+    </tr>
+    <tr>
+      <th>Velocidad</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.velocidad || 'N/A'}}</td>
+    </tr>
+    <tr>
+      <th>Cura</th>
+      <td style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.cura || 'N/A'}}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Kinsecto Previo -->
+<div *ngIf="infoKinsect" class="container mt-4">
+  <h2 style="text-align: center;">Evoluciona de</h2>
+  <table class="table table-bordered mx-auto shadow-sm"
+    style="width: 60%; background-color: #f1f1f1; text-align: center;">
+    <!-- Imagen + Nombre -->
+    <tr>
+      <td colspan="2" class="text-center" style="border: 1px solid #ddd; padding: 10px;">
+        <img [src]="'assets/images/kinsects/' + infoKinsect?.previo + '.png'" width="120" style="border-radius: 6px;">
+        <p style="margin-top: 5px; font-size: 0.9rem; color: #333;">{{ infoKinsect?.previo }}</p>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- Tabla: crafteo -->
+<div id="Crafteo" *ngIf="infoKinsect?.kinsectCraftDTO?.length > 0 " class="container mt-4">
+  <h2 style="text-align: center;">Crafteo</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Material 1</th>
+        <th>Calidad</th>
+        <th>Material 2</th>
+        <th>Calidad</th>
+        <th>Material 3</th>
+        <th>Calidad</th>
+        <th>Material 4</th>
+        <th>Calidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of infoKinsect.kinsectCraftDTO">
+        <td>{{ v?.nombreItem1 || 'N/A'}}</td>
+        <td>{{ v?.calidadItem1 || 'N/A'}}</td>
+        <td>{{ v?.nombreItem2 || 'N/A'}}</td>
+        <td>{{ v?.calidadItem2 || 'N/A'}}</td>
+        <td>{{ v?.nombreItem3 || 'N/A'}}</td>
+        <td>{{ v?.calidadItem3 || 'N/A'}}</td>
+        <td>{{ v?.nombreItem4 || 'N/A'}}</td>
+        <td>{{ v?.calidadItem4 || 'N/A'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,4 +1,4 @@
-package com.juancarlos.springboot.converters.kinsecto;
+package com.juancarlos.springboot.converters.kinsect;
 
 import com.juancarlos.springboot.entity.kinsect.KinsectBaseEntity;
 import com.juancarlos.springboot.entity.kinsect.KinsectCraftEntity;

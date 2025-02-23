@@ -1,6 +1,6 @@
 package com.juancarlos.springboot.services;
 
-import com.juancarlos.springboot.converters.kinsecto.KinsectConverter;
+import com.juancarlos.springboot.converters.kinsect.KinsectConverter;
 import com.juancarlos.springboot.entity.kinsect.KinsectBaseEntity;
 import com.juancarlos.springboot.models.dto.kinsect.KinsectBaseDTO;
 import com.juancarlos.springboot.repositories.KinsectRepository;
