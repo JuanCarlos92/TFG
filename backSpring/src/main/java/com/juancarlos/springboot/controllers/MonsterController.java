@@ -1,6 +1,5 @@
 package com.juancarlos.springboot.controllers;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +25,7 @@ public class MonsterController {
     // Endpoint para obtener monstruos con paginacion
     @GetMapping()
     public Page<MonsterBaseDTO> getMonstersWithPagination(@RequestParam(defaultValue = "0") int page,
-                                                          @RequestParam(defaultValue = "12") int size, @RequestParam(required = false) String nombre) {
+            @RequestParam(defaultValue = "12") int size, @RequestParam(required = false) String nombre) {
 
         if (nombre != null && !nombre.isEmpty()) {
             // Si el nombre esta presente, filtra por nombre con paginacion
