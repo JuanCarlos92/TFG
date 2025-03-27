@@ -20,9 +20,12 @@
         <tr *ngFor="let v of filteredItems">
           <td>
             <a (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
-              {{ v?.nombre }}
+              <img [src]="'assets/images/items/' + v?.nombre + '.png'" width="30"
+                   style="border-radius: 8px; vertical-align: middle;">
+              <span style="margin-left: 10px;">{{ v?.nombre }}</span>
             </a>
           </td>
+          
           <td>{{ v?.categoria }}</td>
         </tr>
       </tbody>

@@ -5,22 +5,16 @@ import { IonicModule } from '@ionic/angular';
 import { first, Subscription } from 'rxjs';
 import { QuestBaseDTO } from 'src/app/models/quest/QuestBaseDTO.model';
 import { QuestService } from 'src/app/services/quest.service';
-import { WikiQuestComponent } from "../wiki-quest/wiki-quest.component";
+import { WikiQuestComponent } from '../wiki-quest/wiki-quest.component';
 
 @Component({
   selector: 'app-quest',
   templateUrl: './quest.component.html',
   styleUrls: ['./quest.component.scss'],
   standalone: true,
-  imports: [
-    CommonModule,
-    IonicModule,
-    RouterModule,
-    WikiQuestComponent
-  ]
+  imports: [CommonModule, IonicModule, RouterModule, WikiQuestComponent],
 })
 export class QuestComponent implements OnInit {
-
   @Input()
   questBase!: QuestBaseDTO;
 
@@ -31,25 +25,40 @@ export class QuestComponent implements OnInit {
   mostrarWiki = false;
   questWiki!: QuestBaseDTO;
 
-  constructor(private route: ActivatedRoute, private questService: QuestService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private questService: QuestService
+  ) {}
 
   ngOnInit() {
-    this.getQuestList();  // Obtiene la lista de misiones
+    this.getQuestList(); // Obtiene la lista de misiones
   }
 
   // Obtiene lista de misiones
   getQuestList(): void {
-    this.questService.getQuestList().pipe(first()).subscribe({
-      next: (res) => {
-        this.questsListBase = res.questDTO;
-        this.filteredQuests = this.questsListBase; // Inicializa con todas las misiones
-        console.log('misiones recibidas:', res);
-        console.log('Lista de misiones:', this.questsListBase);
-      },
-      error: (error) => {
-        console.error('Error getQuestList al obtener la información de la misión:', error);
-      },
-    });
+    this.questService
+      .getQuestList()
+      .pipe(first())
+      .subscribe({
+        next: (res) => {
+          this.questsListBase = res.questDTO;
+          this.filteredQuests = this.questsListBase; // Inicializa con todas las misiones
+          console.log('misiones recibidas:', res);
+          console.log('Lista de misiones:', this.questsListBase);
+
+          // Ordenar las misiones por estrellas
+          this.filteredQuests = this.filteredQuests.sort(
+            (a: { estrellas: number }, b: { estrellas: number }) =>
+              a.estrellas - b.estrellas
+          );
+        },
+        error: (error) => {
+          console.error(
+            'Error getQuestList al obtener la información de la misión:',
+            error
+          );
+        },
+      });
   }
 
   // Filtrar por rango
@@ -70,10 +79,9 @@ export class QuestComponent implements OnInit {
   resetFilters(): void {
     this.rangoSeleccionado = null;
     this.estrellasSeleccionadas = null;
-    this.applyFilters();  // Vuelve a aplicar los filtros (sin ninguno aplicado)
+    this.applyFilters(); // Vuelve a aplicar los filtros (sin ninguno aplicado)
     console.log('Filtros reseteados');
   }
-
 
   // Aplica los filtros de forma independiente
   applyFilters(): void {
@@ -81,17 +89,25 @@ export class QuestComponent implements OnInit {
 
     // Si hay un filtro de rango seleccionado, se aplica
     if (this.rangoSeleccionado) {
-      filtered = filtered.filter(v => v.rango === this.rangoSeleccionado);
+      filtered = filtered.filter((v) => v.rango === this.rangoSeleccionado);
     }
 
     // Si hay un filtro de estrellas seleccionado, se aplica
     if (this.estrellasSeleccionadas !== null) {
-      filtered = filtered.filter(v => v.estrellas === this.estrellasSeleccionadas);
+      filtered = filtered.filter(
+        (v) => v.estrellas === this.estrellasSeleccionadas
+      );
     }
 
-    // Actualiza la lista de misiones filtradas
+    // Ordenar las misiones por estrellas de menor a mayor
+    filtered = filtered.sort(
+      (a: { estrellas: number }, b: { estrellas: number }) =>
+        a.estrellas - b.estrellas
+    );
+
+    // Actualiza la lista de misiones filtradas y ordenadas
     this.filteredQuests = filtered;
-    console.log('Misiones filtradas:', this.filteredQuests);
+    console.log('Misiones filtradas y ordenadas:', this.filteredQuests);
   }
 
   displayWiki(quest: QuestBaseDTO) {

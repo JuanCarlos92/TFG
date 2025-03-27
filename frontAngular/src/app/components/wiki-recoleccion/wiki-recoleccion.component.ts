@@ -8,32 +8,35 @@ import { RecoleccionService } from 'src/app/services/recoleccion.service';
   selector: 'app-wiki-recoleccion',
   templateUrl: './wiki-recoleccion.component.html',
   styleUrls: ['./wiki-recoleccion.component.scss'],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
 export class WikiRecoleccionComponent implements OnInit {
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+  }
 
   @Input()
   recoleccion!: RecoleccionDTO;
 
   infoRecoleccion: any;
 
-  constructor(private recoleccionService: RecoleccionService) { }
+  constructor(private recoleccionService: RecoleccionService) {}
 
   ngOnInit() {
-
     // El ID de la recolección se obtiene de la propiedad `this.recoleccion['id']`
-    this.recoleccionService.getRecoleccion(this.recoleccion['id']).pipe(first()).subscribe({
-      next: (res) => {
-        console.log('Recolección ' + this.recoleccion['id'], res);
-        this.infoRecoleccion = res.recoleccionDTO;
-      },
-      error: (error) => {
-        console.error('Error al obtener recolección:', error);
-      },
-    });
-
+    this.recoleccionService
+      .getRecoleccion(this.recoleccion['id'])
+      .pipe(first())
+      .subscribe({
+        next: (res) => {
+          console.log('Recolección ' + this.recoleccion['id'], res);
+          this.infoRecoleccion = res.recoleccionDTO;
+        },
+        error: (error) => {
+          console.error('Error al obtener recolección:', error);
+        },
+      });
   }
 
   // Este método permite desplazarse suavemente hacia una sección específica de la página.
@@ -47,5 +50,4 @@ export class WikiRecoleccionComponent implements OnInit {
   reloadPage(): void {
     window.location.reload(); // Recarga la página actual
   }
-
 }

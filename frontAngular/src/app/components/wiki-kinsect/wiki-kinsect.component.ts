@@ -8,32 +8,35 @@ import { KinsectService } from 'src/app/services/kinsect.service';
   selector: 'app-wiki-kinsect',
   templateUrl: './wiki-kinsect.component.html',
   styleUrls: ['./wiki-kinsect.component.scss'],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
 export class WikiKinsectComponent implements OnInit {
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+  }
 
   @Input()
   kinsect!: KinsectBaseDTO;
 
   infoKinsect: any;
 
-  constructor(private kinsectService: KinsectService) { }
+  constructor(private kinsectService: KinsectService) {}
 
   ngOnInit() {
-
     // El ID del kinsecto se obtiene de la propiedad `this.kinsect['id']`
-    this.kinsectService.getKinsect(this.kinsect['id']).pipe(first()).subscribe({
-      next: (res) => {
-        console.log('Kinsecto ' + this.kinsect['id'], res);
-        this.infoKinsect = res.kinsectDTO;
-      },
-      error: (error) => {
-        console.error('Error al obtener kinsecto:', error);
-      },
-    });
-
+    this.kinsectService
+      .getKinsect(this.kinsect['id'])
+      .pipe(first())
+      .subscribe({
+        next: (res) => {
+          console.log('Kinsecto ' + this.kinsect['id'], res);
+          this.infoKinsect = res.kinsectDTO;
+        },
+        error: (error) => {
+          console.error('Error al obtener kinsecto:', error);
+        },
+      });
   }
 
   // Este método permite desplazarse suavemente hacia una sección específica de la página.
@@ -47,5 +50,4 @@ export class WikiKinsectComponent implements OnInit {
   reloadPage(): void {
     window.location.reload(); // Recarga la página actual
   }
-
 }

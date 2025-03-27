@@ -3,8 +3,7 @@
 </div>
 <!-- Información General -->
 <div *ngIf="infoQuest" class="container mt-4">
-  <table class="table table-bordered mx-auto shadow-sm"
-    style="width: 80%; text-align: left;">
+  <table class="table table-bordered mx-auto shadow-sm" style="width: 80%; text-align: left;">
     <!-- Nombre -->
     <tr>
       <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
@@ -14,8 +13,9 @@
       </td>
     </tr>
     <tr>
-    <!-- Rango y estrella-->
-    <td class="text-center" style="border: 1px solid #ddd; padding: 15px;">Rango: {{ infoQuest?.rango }}  -- Estrellas: {{ infoQuest?.estrellas }} </td>
+      <!-- Rango y estrella-->
+      <td class="text-center" style="border: 1px solid #ddd; padding: 15px;">Rango: {{ infoQuest?.rango }} -- Estrellas:
+        {{ infoQuest?.estrellas }} </td>
     </tr>
   </table>
 </div>
@@ -56,7 +56,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let v of infoQuest.questRewardDTO">
-        <td>{{ v?.item }}</td>
+        <td>
+          <img [src]="'assets/images/items/' + v?.item + '.png'" width="30"
+            style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+          <span style="margin-left: 10px;">{{ v?.item }}</span>
+        </td>
         <td>{{ v?.stack }}</td>
         <td>{{ v?.porcentaje + '%'}}</td>
       </tr>

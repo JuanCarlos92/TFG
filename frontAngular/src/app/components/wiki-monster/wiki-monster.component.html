@@ -1,4 +1,5 @@
-<body style="overflow: auto; background-image: url('assets/images/backgrounds/Background-Monsters.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<body
+  style="overflow: auto; background-image: url('assets/images/backgrounds/Background-Monsters.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
 
   <div class="container mt-4" style="background-color: white; padding: 20px; border-radius: 8px;">
     <div class="container mt-4 text-center">
@@ -257,7 +258,13 @@
           <tr *ngFor="let v of infoMonster.monsterRewardsDTO">
             <td>{{ v?.rang || '---' }}</td>
             <td>{{ v?.condiciones || '---' }}</td>
-            <td>{{ v?.item || '---' }}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.item + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.item || '---' }}</span>
+            </td>
+
             <td>{{ v?.stack || '---' }}</td>
             <td>{{ v?.percentage ? v.percentage + '%' : 'N/A' }}</td>
           </tr>

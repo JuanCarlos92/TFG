@@ -15,7 +15,7 @@
   </table>
 </div>
 
- <!-- Tabla: Rareza , tipo de ataque, tipo de efecto,  -->
+<!-- Tabla: Rareza , tipo de ataque, tipo de efecto,  -->
 <div id="tabla1" *ngIf="infoKinsect" class="container mt-4">
   <table class="table table-bordered mx-auto shadow-sm"
     style="width: 80%; background-color: #f9f9f9; text-align: left;">
@@ -34,8 +34,8 @@
   </table>
 </div>
 
- <!-- Tabla: poder , velocidad, cura,  -->
- <div id="tabla1" *ngIf="infoKinsect" class="container mt-4">
+<!-- Tabla: poder , velocidad, cura,  -->
+<div id="tabla1" *ngIf="infoKinsect" class="container mt-4">
   <table class="table table-bordered mx-auto shadow-sm"
     style="width: 80%; background-color: #f9f9f9; text-align: left;">
     <tr>
@@ -56,8 +56,7 @@
 <!-- Kinsecto Previo -->
 <div *ngIf="infoKinsect" class="container mt-4">
   <h2 style="text-align: center;">Evoluciona de</h2>
-  <table class="table table-bordered mx-auto shadow-sm"
-    style="width: 60%; text-align: center;">
+  <table class="table table-bordered mx-auto shadow-sm" style="width: 60%; text-align: center;">
     <!-- Imagen + Nombre -->
     <tr>
       <td colspan="2" class="text-center" style="border: 1px solid #ddd; padding: 10px;">
@@ -86,13 +85,32 @@
     </thead>
     <tbody>
       <tr *ngFor="let v of infoKinsect.kinsectCraftDTO">
-        <td>{{ v?.nombreItem1 || '---'}}</td>
+        <td>
+          <img [src]="'assets/images/items/' + v?.nombreItem1 + '.png'" width="30"
+            style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+          <span style="margin-left: 10px;">{{ v?.nombreItem1 || '---'}}</span>
+        </td>
         <td>{{ v?.calidadItem1 || '---'}}</td>
-        <td>{{ v?.nombreItem2 || '---'}}</td>
+
+        <td>
+          <img [src]="'assets/images/items/' + v?.nombreItem2 + '.png'" width="30"
+            style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+          <span style="margin-left: 10px;">{{ v?.nombreItem2 || '---'}}</span>
+        </td>
         <td>{{ v?.calidadItem2 || '---'}}</td>
-        <td>{{ v?.nombreItem3 || '---'}}</td>
+
+        <td>
+          <img [src]="'assets/images/items/' + v?.nombreItem3 + '.png'" width="30"
+            style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+          <span style="margin-left: 10px;">{{ v?.nombreItem3 || '---'}}</span>
+        </td>
         <td>{{ v?.calidadItem3 || '---'}}</td>
-        <td>{{ v?.nombreItem4 || '---'}}</td>
+
+        <td>
+          <img [src]="'assets/images/items/' + v?.nombreItem4 + '.png'" width="30"
+            style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+          <span style="margin-left: 10px;">{{ v?.nombreItem4 || '---'}}</span>
+        </td>
         <td>{{ v?.calidadItem4 || '---'}}</td>
       </tr>
     </tbody>

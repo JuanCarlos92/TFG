@@ -3,19 +3,20 @@
 </div>
 <!-- Información General -->
 <div *ngIf="inforItem" class="container mt-4">
-  <table class="table table-bordered mx-auto shadow-sm"
-    style="width: 80%; text-align: left;">
+  <table class="table table-bordered mx-auto shadow-sm" style="width: 80%; text-align: left;">
     <!-- Nombre -->
     <tr>
       <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
         <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
           <h2 style="margin: 0; color: #333;">{{ inforItem?.nombre }}</h2>
+          <img [src]="'assets/images/items/' + inforItem?.nombre + '.png'" width="30"
+            style="border-radius: 8px; vertical-align: middle;">
         </div>
       </td>
     </tr>
     <tr>
-    <!-- Categoria -->
-    <td class="text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.categoria }}</td>
+      <!-- Categoria -->
+      <td class="text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.categoria }}</td>
     </tr>
   </table>
 </div>
@@ -56,9 +57,23 @@
     </thead>
     <tbody>
       <tr *ngFor="let v of inforItem.itemCombinationDTO">
-        <td>{{ v?.primero || '---'}}</td>
-        <td>{{ v?.segundo || '---'}}</td>
-        <td>{{ v?.nombreResultado}}</td>
+        <td>
+          <img [src]="'assets/images/items/' + v?.primero + '.png'" width="30"
+            style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+          <span style="margin-left: 10px;">{{ v?.primero ||'---'}}</span>
+        </td>
+
+        <td>
+          <img [src]="'assets/images/items/' + v?.segundo + '.png'" width="30"
+            style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+          <span style="margin-left: 10px;">{{ v?.segundo || '---'}}</span>
+        </td>
+
+        <td>
+          <img [src]="'assets/images/items/' + v?.nombreResultado + '.png'" width="30"
+            style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+          <span style="margin-left: 10px;">{{ v?.nombreResultado}}</span>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -89,3 +104,5 @@
   </table>
 </div>
 
+<!-- Plantilla vacía para evitar problemas de estructura -->
+<ng-template #emptyPlaceholder></ng-template>

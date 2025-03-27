@@ -176,13 +176,32 @@
         <tbody>
           <tr *ngFor="let v of inforWeapon.weaponCraftDTO">
             <td>{{ v?.tipo || '---'}}</td>
-            <td>{{ v?.nombreMaterial1 || '---'}}</td>
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreMaterial1 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;"> {{ v?.nombreMaterial1 || '---'}}</span>
+            </td>
             <td>{{ v?.cantidadMaterial1 || '---'}}</td>
-            <td>{{ v?.nombreMaterial2 || '---'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreMaterial2 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;"> {{ v?.nombreMaterial2 || '---'}}</span>
+            </td>
             <td>{{ v?.cantidadMaterial2 || '---'}}</td>
-            <td>{{ v?.nombreMaterial3 || '---'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreMaterial3 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;"> {{ v?.nombreMaterial3 || '---'}}</span>
+            </td>
             <td>{{ v?.cantidadMaterial3 || '---'}}</td>
-            <td>{{ v?.nombreMaterial4 || '---'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreMaterial4 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;"> {{ v?.nombreMaterial4 || '---'}}</span>
+            </td>
             <td>{{ v?.cantidadMaterial4 || '---'}}</td>
           </tr>
         </tbody>

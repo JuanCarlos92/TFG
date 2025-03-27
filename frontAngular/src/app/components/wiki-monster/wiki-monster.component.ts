@@ -13,7 +13,11 @@ import { MonsterService } from 'src/app/services/monster.service';
   ]
 })
 export class WikiMonsterComponent implements OnInit {
-
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+  }
+  
   @Input()
   monster!: MonsterBaseDTO;
 

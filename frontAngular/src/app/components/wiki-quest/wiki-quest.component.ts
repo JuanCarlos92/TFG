@@ -7,11 +7,13 @@ import { QuestService } from 'src/app/services/quest.service';
   selector: 'app-wiki-quest',
   templateUrl: './wiki-quest.component.html',
   styleUrls: ['./wiki-quest.component.scss'],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
 export class WikiQuestComponent implements OnInit {
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+  }
 
   @Input()
   quest!: QuestBaseDTO;
@@ -21,7 +23,7 @@ export class WikiQuestComponent implements OnInit {
 
   infoQuest: any;
 
-  constructor(private questService: QuestService) { }
+  constructor(private questService: QuestService) {}
 
   ngOnInit() {
     console.log(this.quest);

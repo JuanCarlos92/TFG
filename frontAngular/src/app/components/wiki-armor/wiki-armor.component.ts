@@ -12,7 +12,10 @@ import { ArmorService } from 'src/app/services/armor.service';
     ]
 })
 export class WikiArmorComponent implements OnInit {
-
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+  }
   @Input()
   armor!: ArmorBaseDTO;
 

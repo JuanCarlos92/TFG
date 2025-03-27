@@ -7,12 +7,13 @@ import { WeaponService } from 'src/app/services/weapon.service';
   selector: 'app-wiki-weapon',
   templateUrl: './wiki-weapon.component.html',
   styleUrls: ['./wiki-weapon.component.scss'],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
 export class WikiWeaponComponent implements OnInit {
-
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+  }
   @Input()
   weapon!: WeaponBaseDTO;
 
@@ -21,7 +22,7 @@ export class WikiWeaponComponent implements OnInit {
 
   inforWeapon: any;
 
-  constructor(private weaponService: WeaponService) { }
+  constructor(private weaponService: WeaponService) {}
 
   ngOnInit() {
     console.log(this.weapon);
@@ -45,6 +46,5 @@ export class WikiWeaponComponent implements OnInit {
 
   reloadPage(): void {
     this.closeWiki.emit();
-
   }
 }

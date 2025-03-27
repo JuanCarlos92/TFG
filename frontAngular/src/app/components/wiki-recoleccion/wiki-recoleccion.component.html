@@ -34,7 +34,12 @@
         </thead>
         <tbody>
           <tr *ngFor="let v of infoRecoleccion.itemBaseDTO">
-            <td>{{ v?.nombre}}</td>
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombre + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombre}}</span>
+            </td>
+
             <td>{{ v?.categoria}}</td>
             <td>{{ v?.rareza}}</td>
             <td>{{ v?.precioCompra || "---"}}</td>

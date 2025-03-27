@@ -12,7 +12,11 @@ import { ItemService } from 'src/app/services/item.service';
   ]
 })
 export class WikiItemComponent implements OnInit {
-
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+  }
+  
   @Input()
   item!: ItemBaseDTO;
 

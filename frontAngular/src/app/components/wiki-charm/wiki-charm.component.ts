@@ -12,7 +12,10 @@ import { CharmService } from 'src/app/services/charm.service';
   ]
 })
 export class WikiCharmComponent implements OnInit {
-
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+  }
   @Input()
   charm!: CharmBaseDTO;
 

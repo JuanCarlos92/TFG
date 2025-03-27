@@ -8,37 +8,56 @@ import { LocationService } from 'src/app/services/location.service';
   selector: 'app-wiki-location',
   templateUrl: './wiki-location.component.html',
   styleUrls: ['./wiki-location.component.scss'],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
 export class WikiLocationComponent implements OnInit {
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+  }
 
   @Input()
   location!: LocationBaseDTO;
 
   infoLocation: any;
 
-  constructor(private locationService: LocationService) { }
+  constructor(private locationService: LocationService) {}
 
   ngOnInit() {
     // El ID de la ubicación se obtiene de la propiedad `this.location['id']`
-    this.locationService.getLocation(this.location['id']).pipe(first()).subscribe({
-      next: (res) => {
-        console.log('Ubicación ' + this.location['id'], res);
-        this.infoLocation = res.locationDTO;
-  
-        // Ordenar misiones de menor a mayor por estrella
-        if (this.infoLocation?.questBaseDTO?.length > 0) {
-          this.infoLocation.questBaseDTO.sort((a: { estrellas: number }, b: { estrellas: number }) => a.estrellas - b.estrellas);
-        }
-      },
-      error: (error) => {
-        console.error('Error al obtener ubicación:', error);
-      },
-    });
+    this.locationService
+      .getLocation(this.location['id'])
+      .pipe(first())
+      .subscribe({
+        next: (res) => {
+          console.log('Ubicación ' + this.location['id'], res);
+          this.infoLocation = res.locationDTO;
+
+          // Ordenar misiones de menor a mayor por estrella
+          if (this.infoLocation?.questBaseDTO?.length > 0) {
+            this.infoLocation.questBaseDTO.sort(
+              (a: { estrellas: number }, b: { estrellas: number }) =>
+                a.estrellas - b.estrellas
+            );
+          }
+          // Ordenar objetos de recolección por área de menor a mayor
+          if (this.infoLocation?.locationItemDTO?.length > 0) {
+            this.infoLocation.locationItemDTO.sort(
+              (a: { area: number }, b: { area: number }) => a.area - b.area
+            );
+          }
+          // Ordenar campamentos por área de menor a mayor
+          if (this.infoLocation?.locationCampDTO?.length > 0) {
+            this.infoLocation.locationCampDTO.sort(
+              (a: { area: number }, b: { area: number }) => a.area - b.area
+            );
+          }
+        },
+        error: (error) => {
+          console.error('Error al obtener ubicación:', error);
+        },
+      });
   }
-  
 
   // Este método permite desplazarse suavemente hacia una sección específica de la página.
   scrollTo(sectionId: string): void {
@@ -51,5 +70,4 @@ export class WikiLocationComponent implements OnInit {
   reloadPage(): void {
     window.location.reload(); // Recarga la página actual
   }
-
 }
