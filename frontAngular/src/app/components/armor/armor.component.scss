@@ -1,4 +1,16 @@
 .custom-btn {
-    width: 100px;
-    margin-bottom: 15px;
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.hover-effect {
+  cursor: pointer;
+}
+
+.hover-effect:hover {
+  font-weight: bold;
+}
+
+.selected {
+  background-color: #343a40 !important;
 }

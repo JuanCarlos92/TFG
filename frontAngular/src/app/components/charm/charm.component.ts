@@ -20,12 +20,17 @@ import { WikiCharmComponent } from "../wiki-charm/wiki-charm.component";
   ]
 })
 export class CharmComponent implements OnInit {
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+  }
 
   @Input()
   charm!: CharmBaseDTO;
 
   charmsList: CharmBaseDTO[] = [];
   filteredCharm: CharmBaseDTO[] = [];
+  selectedRarity: number | null = null;
   mostrarWiki = false;
   charmWiki!: CharmBaseDTO;
 
@@ -40,6 +45,10 @@ export class CharmComponent implements OnInit {
     this.charmService.getCharmList().pipe(first()).subscribe({
       next: (res) => {
         this.charmsList = res.charmDTO;
+
+        // Ordenar la lista por rareza: de menor a mayor
+        this.charmsList.sort((a, b) => a.rareza - b.rareza);
+
         this.filteredCharm = this.charmsList; // Inicializa con todos los amuletos
         console.log('amuletos recibidos:', res);
         console.log('Lista de amuletos: ', this.charmsList);
@@ -52,7 +61,7 @@ export class CharmComponent implements OnInit {
 
   // filtrar por rareza
   filterByRarity(n: number): void {
-    console.log('filtrado por rareza:', n);
+    this.selectedRarity = n;
     this.filteredCharm = this.charmsList.filter(v => v.rareza === n);
     console.log('Armaduras filtrada por rango:', this.filteredCharm);
   }

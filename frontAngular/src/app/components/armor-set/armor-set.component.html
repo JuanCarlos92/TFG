@@ -1,14 +1,14 @@
 <ion-content class="ion-padding" [fullscreen]="true">
 
-<!-- Lista de set de Armaduras -->
-<div *ngIf="armorsSetList.length > 0 && !mostrarWiki" class="container mt-4">
-  <div class="d-flex justify-content-center mb-3">
-    <button *ngFor="let r of ['MR','HR','LR']" class="btn btn-secondary mx-1 custom-btn"
-      (click)="filterByRange(r)">
-      Rango {{ r }}
-    </button>
-  </div>
-  <h2 class="text-center">Set de armaduras</h2>
+  <!-- Lista de set de Armaduras -->
+  <div *ngIf="armorsSetList.length > 0 && !mostrarWiki" class="container mt-4">
+    <div class="d-flex justify-content-center mb-3">
+      <button *ngFor="let r of ['LR','HR','MR']" [class.selected]="selectedRange === r"
+        class="btn btn-secondary mx-1 custom-btn" (click)="filterByRange(r)">
+        Rango {{ r }}
+      </button>
+    </div>
+    <h2 class="text-center">Set de armaduras</h2>
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
@@ -20,8 +20,10 @@
       <tbody>
         <tr *ngFor="let v of filteredArmors">
           <td>
-            <a (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
-              {{ v?.nombre }}
+            <a class="hover-effect" (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+              <img [src]="'assets/images/monsters/' + v?.monster + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombre }}</span>
             </a>
           </td>
           <td>{{ v?.rango }}</td>
@@ -32,7 +34,7 @@
   </div>
 
   <div *ngIf="mostrarWiki">
-    <app-wiki-armor-set [armorSet] ="armorSetWiki" (closeWiki)="closeWiki()"></app-wiki-armor-set>
+    <app-wiki-armor-set [armorSet]="armorSetWiki" (closeWiki)="closeWiki()"></app-wiki-armor-set>
   </div>
 
 </ion-content>

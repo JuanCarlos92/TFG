@@ -1,0 +1,11 @@
+.hover-effect {
+  cursor: pointer;
+}
+
+.hover-effect:hover {
+  font-weight: bold;
+}
+
+.selected {
+  background-color: #343a40 !important;
+}

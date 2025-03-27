@@ -3,8 +3,8 @@
   <!-- Lista de objetos  -->
   <div *ngIf="itemsList.length > 0 && !mostrarWiki" class="container mt-4">
     <div class="d-flex justify-content-center mb-3">
-      <button *ngFor="let category of ['item', 'material', 'misc']" class="btn btn-secondary mx-1 custom-btn"
-        (click)="filterByCategory(category)">
+      <button *ngFor="let category of ['item', 'material', 'misc']" [class.selected]="selectedCategory === category"
+        class="btn btn-secondary mx-1 custom-btn" (click)="filterByCategory(category)">
         Categoria {{ category }}
       </button>
     </div>
@@ -19,13 +19,14 @@
       <tbody>
         <tr *ngFor="let v of filteredItems">
           <td>
-            <a (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+            <a class="hover-effect" (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
               <img [src]="'assets/images/items/' + v?.nombre + '.png'" width="30"
-                   style="border-radius: 8px; vertical-align: middle;">
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
               <span style="margin-left: 10px;">{{ v?.nombre }}</span>
             </a>
+
           </td>
-          
+
           <td>{{ v?.categoria }}</td>
         </tr>
       </tbody>

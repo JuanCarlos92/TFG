@@ -17,7 +17,7 @@ import { WikiArmorComponent } from "../wiki-armor/wiki-armor.component";
     IonicModule,
     RouterModule,
     WikiArmorComponent
-]
+  ]
 })
 export class ArmorComponent implements OnInit {
 
@@ -26,6 +26,7 @@ export class ArmorComponent implements OnInit {
 
   armorsListBase: ArmorBaseDTO[] = [];
   filteredArmors: ArmorBaseDTO[] = [];
+  selectedRarity: number | null = null;
   mostrarWiki = false;
   armorWiki!: ArmorBaseDTO;
 
@@ -34,19 +35,6 @@ export class ArmorComponent implements OnInit {
   ngOnInit() {
     this.getArmorList();  // Obtiene la lista de armaduras
   }
-
-  // // Cargar infor de armadura ID
-  // loadArmorInfo(): void {
-  //   this.armorService.getArmor(this.armorId).subscribe({
-  //     next: (res) => {
-  //       console.log('informacion de la armadura:', res);
-  //       this.infoArmor = res.armorDTO;
-  //     },
-  //     error: (error) => {
-  //       console.log('Error loadArmorInfo al obtener la información de la armadura:', error);
-  //     },
-  //   });
-  // }
 
   //Obtiene lista armaduras
   getArmorList(): void {
@@ -65,9 +53,9 @@ export class ArmorComponent implements OnInit {
 
   // filtrar por rareza
   filterByRarity(n: number): void {
-    console.log('Filtrando por rareza:', n);
+    this.selectedRarity = n;
     this.filteredArmors = this.armorsListBase.filter(v => v.rareza === n);
-    console.log('Armaduras filtradas:' , this.filteredArmors); 
+    console.log('Armaduras filtradas:', this.filteredArmors);
   }
 
   displayWiki(armor: ArmorBaseDTO) {
@@ -75,7 +63,7 @@ export class ArmorComponent implements OnInit {
     this.mostrarWiki = !this.mostrarWiki;
   }
 
-  closeWiki(){
+  closeWiki() {
     this.mostrarWiki = false;
   }
 }

@@ -11,21 +11,26 @@ import { WikiArmorSetComponent } from '../wiki-armor-set/wiki-armor-set.componen
   selector: 'app-armor-set',
   templateUrl: './armor-set.component.html',
   styleUrls: ['./armor-set.component.scss'],
-    standalone: true,
-    imports: [
-      CommonModule,
-      IonicModule,
-      RouterModule,
-      WikiArmorSetComponent
+  standalone: true,
+  imports: [
+    CommonModule,
+    IonicModule,
+    RouterModule,
+    WikiArmorSetComponent
   ]
 })
 export class ArmorSetComponent implements OnInit {
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+  }
 
   @Input()
   armorSet!: ArmorSetBaseDTO;
 
   armorsSetList: ArmorSetBaseDTO[] = [];
   filteredArmors: ArmorSetBaseDTO[] = [];
+  selectedRange: string | null = null;
   mostrarWiki = false;
   armorSetWiki!: ArmorSetBaseDTO;
 
@@ -33,13 +38,20 @@ export class ArmorSetComponent implements OnInit {
 
   ngOnInit() {
     this.getArmorSetList(); // Obtiene la lista de armaduras set
-
   }
+
   //Obtiene lista de armaduras set
   getArmorSetList(): void {
     this.armorService.getArmorSetList().pipe(first()).subscribe({
       next: (res) => {
         this.armorsSetList = res.armorSetDTO;
+
+        // Ordenar la lista por rango: LR -> HR -> MR
+        this.armorsSetList.sort((a, b) => {
+          const order = ['LR', 'HR', 'MR'];
+          return order.indexOf(a.rango) - order.indexOf(b.rango);
+        });
+
         this.filteredArmors = this.armorsSetList; // Inicializa con todas las armaduras set
         console.log('armadura set recibidas:', res);
         console.log('Lista de armaduras set: ', this.armorsSetList);
@@ -51,8 +63,8 @@ export class ArmorSetComponent implements OnInit {
   }
 
   // filtrar por rango bajo o alto
-  filterByRange(n: String): void {
-    console.log('filtrado por rango:', n);
+  filterByRange(n: string): void {
+    this.selectedRange = n;
     this.filteredArmors = this.armorsSetList.filter(v => v.rango === n);
     console.log('Armaduras filtrada por rango:', this.filteredArmors);
   }

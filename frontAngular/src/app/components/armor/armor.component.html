@@ -3,8 +3,8 @@
   <!-- Lista de Armaduras -->
   <div *ngIf="armorsListBase.length > 0 && !mostrarWiki" class="container mt-4">
     <div>
-      <button *ngFor="let r of [1,2,3,4,5,6,7,8,9,10,11,12]" class="btn btn-secondary mx-1 custom-btn"
-        (click)="filterByRarity(r)">
+      <button *ngFor="let r of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]" [class.selected]="selectedRarity === r"
+        class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(r)">
         Rareza {{ r }}
       </button>
     </div>
@@ -27,7 +27,7 @@
       <tbody>
         <tr *ngFor="let v of filteredArmors">
           <td>
-            <a (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+            <a class="hover-effect" (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
               {{ v?.nombre }}
             </a>
           </td>
@@ -46,7 +46,7 @@
   </div>
 
   <div *ngIf="mostrarWiki">
-    <app-wiki-armor [armor] ="armorWiki" (closeWiki)="closeWiki()"></app-wiki-armor>
+    <app-wiki-armor [armor]="armorWiki" (closeWiki)="closeWiki()"></app-wiki-armor>
   </div>
 
 </ion-content>

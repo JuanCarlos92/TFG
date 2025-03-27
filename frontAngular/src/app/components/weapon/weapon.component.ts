@@ -25,6 +25,10 @@ import { WikiWeaponComponent } from "../wiki-weapon/wiki-weapon.component";
   ]
 })
 export class WeaponComponent implements OnInit {
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+  }
 
   @Input()
   weapontipo!: WeaponTipoDTO;
@@ -32,6 +36,7 @@ export class WeaponComponent implements OnInit {
   weaponstipos: WeaponTipoDTO[] = [];
   selectedWeaponTipo: WeaponTipoDTO | undefined;
   selectedWeaponTipoId: number | undefined;
+  selectedRarity: number | null = null;
   infoWeapon?: WeaponBaseDTO;
   infoWeaponTipo?: WeaponTipoDTO;
   infoWeaponTipoFiltrado?: WeaponTipoDTO;
@@ -82,6 +87,7 @@ export class WeaponComponent implements OnInit {
   }
 
   filterByRarity(n: number) {
+    this.selectedRarity = n;
     const filtro = this.infoWeaponTipo?.weaponBaseDTO.filter(v => v.rareza === n);
     if (filtro && this.infoWeaponTipoFiltrado) {
       this.infoWeaponTipoFiltrado.weaponBaseDTO = filtro;

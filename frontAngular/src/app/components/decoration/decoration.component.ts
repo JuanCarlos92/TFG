@@ -25,6 +25,7 @@ export class DecorationComponent implements OnInit {
 
   decorationsList: DecorationBaseDTO[] = [];
   filteredDecoration: DecorationBaseDTO[] = [];
+  selectedRarity: number | null = null;
   mostrarWiki = false;
   decorationWiki!: DecorationBaseDTO;
 
@@ -52,7 +53,7 @@ export class DecorationComponent implements OnInit {
 
   // filtrar por rareza
   filterByRarity(n: number): void {
-    console.log('filtrado por rareza:', n);
+    this.selectedRarity = n;
     this.filteredDecoration = this.decorationsList.filter(v => v.rareza === n);
     console.log('Armaduras filtrada por rango:', this.filteredDecoration);
   }
