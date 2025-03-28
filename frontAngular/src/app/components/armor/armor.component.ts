@@ -20,6 +20,10 @@ import { WikiArmorComponent } from "../wiki-armor/wiki-armor.component";
   ]
 })
 export class ArmorComponent implements OnInit {
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none';
+  }
 
   @Input()
   armorBase!: ArmorBaseDTO;

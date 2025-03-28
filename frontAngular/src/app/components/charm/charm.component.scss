@@ -52,3 +52,12 @@
   font-size: 1.3rem;
 }
 
+.table-container {
+  max-height: 78vh;
+  overflow-y: auto; /* Permite el scroll vertical */
+}
+
+ion-content {
+  overflow: hidden;
+}
+
