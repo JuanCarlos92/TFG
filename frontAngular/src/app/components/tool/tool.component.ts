@@ -19,6 +19,10 @@ import { ToolService } from 'src/app/services/tool.service';
   ]
 })
 export class ToolComponent implements OnInit {
+  handleImageError(event: Event) {
+    const imgElement = event.target as HTMLImageElement;
+    imgElement.style.display = 'none';
+  }
 
   @Input()
   tool!: ToolBaseDTO;

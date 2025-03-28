@@ -1,52 +1,64 @@
 <ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Contenedor del fondo -->
+  <div class="background-container">
+    <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+  </div>
 
-  <!-- Lista de Armaduras -->
-  <div *ngIf="armorsListBase.length > 0 && !mostrarWiki" class="container mt-4">
-    <div>
-      <button *ngFor="let r of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]" [class.selected]="selectedRarity === r"
-        class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(r)">
-        Rareza {{ r }}
-      </button>
+  <!-- Contenedor principal para el contenido desplazable -->
+  <div class="content-container">
+    <!-- Lista de Armaduras -->
+    <div *ngIf="armorsListBase.length > 0 && !mostrarWiki" class="container mt-4">
+      <div>
+        <button *ngFor="let r of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]" [class.selected]="selectedRarity === r"
+          class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(r)">
+          Rareza {{ r }}
+        </button>
+      </div>
+
+      <div class="armor-title-container">
+        <div class="armor-title">
+          <h2>Armaduras</h2>
+        </div>
+      </div>
+
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Rareza</th>
+            <th>Genero</th>
+            <th>Tipo</th>
+            <th>Defensa</th>
+            <th>Fuego</th>
+            <th>Agua</th>
+            <th>Rayo</th>
+            <th>Hielo</th>
+            <th>Dragon</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of filteredArmors">
+            <td>
+              <a class="hover-effect" (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+                {{ v?.nombre }}
+              </a>
+            </td>
+            <td>{{ v?.rareza }}</td>
+            <td>{{ v?.genero }}</td>
+            <td>{{ v?.tipo }}</td>
+            <td>{{ v?.defensaBase }}</td>
+            <td>{{ v?.defensaFuego }}</td>
+            <td>{{ v?.defensaAgua }}</td>
+            <td>{{ v?.defensaRayo }}</td>
+            <td>{{ v?.defensaHielo }}</td>
+            <td>{{ v?.defensaDragon }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <h2 class="text-center">Armaduras</h2>
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Rareza</th>
-          <th>Genero</th>
-          <th>Tipo</th>
-          <th>Defensa</th>
-          <th>Fuego</th>
-          <th>Agua</th>
-          <th>Rayo</th>
-          <th>Hielo</th>
-          <th>Dragon</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let v of filteredArmors">
-          <td>
-            <a class="hover-effect" (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
-              {{ v?.nombre }}
-            </a>
-          </td>
-          <td>{{ v?.rareza }}</td>
-          <td>{{ v?.genero }}</td>
-          <td>{{ v?.tipo }}</td>
-          <td>{{ v?.defensaBase }}</td>
-          <td>{{ v?.defensaFuego }}</td>
-          <td>{{ v?.defensaAgua }}</td>
-          <td>{{ v?.defensaRayo }}</td>
-          <td>{{ v?.defensaHielo }}</td>
-          <td>{{ v?.defensaDragon }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 
-  <div *ngIf="mostrarWiki">
-    <app-wiki-armor [armor]="armorWiki" (closeWiki)="closeWiki()"></app-wiki-armor>
+    <div *ngIf="mostrarWiki">
+      <app-wiki-armor [armor]="armorWiki" (closeWiki)="closeWiki()"></app-wiki-armor>
+    </div>
   </div>
-
 </ion-content>

@@ -1,0 +1,16 @@
+
+.background-container {
+    position: fixed; /* Fija el contenedor al viewport */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ancho completo */
+    height: 100vh; /* Alto completo */
+    overflow: hidden;
+    z-index: -1; /* Coloca el fondo detrás de otros elementos */
+  }
+  
+  .background-container img {
+    width: 100%; /* cubre el ancho del contenedor */
+    height: 100%; /*  cubre el alto del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+  }

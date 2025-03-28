@@ -1,8 +1,18 @@
 <ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Contenedor del fondo -->
+  <div class="background-container">
+    <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+  </div>
 
   <!-- Lista de herramientas -->
   <div *ngIf="toolsList.length > 0" class="container mt-4">
-    <h2 class="text-center">Herramientas</h2>
+
+    <div class="tool-title-container">
+      <div class="tool-title">
+        <h2 class="text-center">Herramientas</h2>
+      </div>
+    </div>
+
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
@@ -17,7 +27,11 @@
       </thead>
       <tbody>
         <tr *ngFor="let tool of toolsList">
-          <td>{{ tool?.nombre }}</td>
+          <td>
+              <img [src]="'assets/images/tools/' + tool?.nombre + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ tool?.nombre }}</span>
+          </td>
           <td>{{ tool?.herramientatipo }}</td>
           <td>{{ tool?.duracion }}</td>
           <td>{{ tool?.recarga }}</td>

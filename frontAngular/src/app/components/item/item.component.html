@@ -1,4 +1,8 @@
 <ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Contenedor del fondo -->
+  <div class="background-container">
+    <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+  </div>
 
   <!-- Lista de objetos  -->
   <div *ngIf="itemsList.length > 0 && !mostrarWiki" class="container mt-4">
@@ -8,7 +12,13 @@
         Categoria {{ category }}
       </button>
     </div>
-    <h2 class="text-center">Objetos</h2>
+
+    <div class="item-title-container">
+      <div class="item-title">
+        <h2 class="text-center">Objetos</h2>
+      </div>
+    </div>
+
     <table class="table table-bordered table-striped">
       <thead>
         <tr>

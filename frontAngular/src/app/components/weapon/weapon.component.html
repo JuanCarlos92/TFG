@@ -1,4 +1,8 @@
 <ion-content class="ion-padding" [fullscreen]="true">
+    <!-- Contenedor del fondo -->
+    <div class="background-container">
+      <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+    </div>
 
   <div *ngIf="!mostrarWiki">
     <!-- Grid de tarjetas Tipos de armas -->
@@ -9,9 +13,11 @@
       </div>
     </div>
 
-    <!-- titulo de la tabla (nombre del tipo) -->
-    <div *ngIf="selectedWeaponTipo" class="weapon-details mt-4">
-      <h2 style="text-align: center;">{{ selectedWeaponTipo.tipoArma }}</h2>
+     <!-- Título de la tabla (nombre del tipo) -->
+     <div *ngIf="selectedWeaponTipo" class="weapon-details mt-4 text-center">
+      <div class="weapon-title">
+        <h2>{{ selectedWeaponTipo.tipoArma }}</h2>
+      </div>
     </div>
 
     <div id="listaArmas" *ngIf="infoWeaponTipoFiltrado?.weaponBaseDTO?.length ?? 0 > 0" class="container mt-4">

@@ -1,4 +1,8 @@
-<ion-content class="ion-padding"  [fullscreen]="true">
+<ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Contenedor del fondo -->
+  <div class="background-container">
+    <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+  </div>
 
   <div *ngIf="!selectedMonster">
     <!-- Buscador -->
@@ -24,9 +28,7 @@
         <app-card-monster [monster]="monster" (monsterNameSelected)="monsterNameSelected($event)"></app-card-monster>
       </div>
     </div>
-
   </div>
 
   <app-wiki-monster *ngIf="selectedMonster" [monster]="selectedMonster"></app-wiki-monster>
-
 </ion-content>

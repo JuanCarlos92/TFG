@@ -1,4 +1,8 @@
 <ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Contenedor del fondo -->
+  <div class="background-container">
+    <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+  </div>
 
   <!-- Lista de Adornos -->
   <div *ngIf="decorationsList.length > 0 && !mostrarWiki" class="container mt-4">
@@ -8,7 +12,13 @@
         Rareza {{ r }}
       </button>
     </div>
-    <h2 class="text-center">Adornos</h2>
+
+    <div class="decoration-title-container">
+      <div class="decoration-title">
+        <h2 class="text-center">Adornos</h2>
+      </div>
+    </div>
+
     <table class="table table-bordered table-striped">
       <thead>
         <tr>

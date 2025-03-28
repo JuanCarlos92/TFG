@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f4f4f4;
+    background: rgba(255, 255, 255, 0.7); /* Blanco con 80% de opacidad */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px;
     margin: 10px;
     transition: transform 0.3s;
+    cursor: pointer;
 }
 
 .card:hover {

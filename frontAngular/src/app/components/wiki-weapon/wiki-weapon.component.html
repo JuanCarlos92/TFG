@@ -1,6 +1,3 @@
-<body
-  style="overflow: auto; background-image: url('assets/images/backgrounds/Background-Weapons.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-
   <div class="container mt-4" style="background-color: white; padding: 20px; border-radius: 8px;">
     <div class="container mt-4 text-center">
       <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Armas</button>
@@ -16,14 +13,14 @@
             <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
               <img [src]="'assets/images/weapons/' + inforWeapon?.tipoArma + '.png'" width="50" height="50"
                 style="border-radius: 8px;">
-              <h2 style="margin: 0; color: #333;">{{ inforWeapon?.nombre }}</h2>
+              <h2 class="text-black" style="margin: 0; color: #333;">{{ inforWeapon?.nombre }}</h2>
             </div>
           </td>
         </tr>
 
         <tr>
           <!-- Tipo de arma -->
-          <td class="text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.tipoArma }}</td>
+          <td class="text-black text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.tipoArma }}</td>
         </tr>
       </table>
     </div>
@@ -33,29 +30,29 @@
       <table class="table table-bordered mx-auto shadow-sm"
         style="width: 80%; background-color: #f9f9f9; text-align: left;">
         <tr>
-          <th>Rareza</th>
-          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.rareza }}</td>
+          <th class="text-black">Rareza</th>
+          <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.rareza }}</td>
         </tr>
         <tr>
-          <th>Ataque</th>
-          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ataque }}</td>
+          <th class="text-black">Ataque</th>
+          <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ataque }}</td>
         </tr>
         <tr>
-          <th>Afinidad</th>
-          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.afinidad ? inforWeapon.afinidad + '%'
+          <th class="text-black">Afinidad</th>
+          <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.afinidad ? inforWeapon.afinidad + '%'
             :'---'}}</td>
         </tr>
         <tr>
-          <th>Elemento Oculto</th>
-          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.elementoOculto ? 'Sí' : 'No'}}</td>
+          <th class="text-black">Elemento Oculto</th>
+          <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.elementoOculto ? 'Sí' : 'No'}}</td>
         </tr>
         <tr>
-          <th>Elemento</th>
-          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.elemento1 || '---'}}</td>
+          <th class="text-black">Elemento</th>
+          <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.elemento1 || '---'}}</td>
         </tr>
         <tr>
-          <th>Ataque elemental</th>
-          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ataqueElemento1 || '---'}}</td>
+          <th class="text-black">Ataque elemental</th>
+          <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ataqueElemento1 || '---'}}</td>
         </tr>
       </table>
     </div>
@@ -88,9 +85,9 @@
       <table class="table table-bordered mx-auto shadow-sm"
         style="width: 80%; background-color: #f9f9f9; text-align: left;">
         <tr>
-          <th>Tipo de munición:</th>
-          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.municion}}</td>
-          <td style="border: 1px solid #ddd; padding: 15px;"> Nvl: {{ inforWeapon?.nivelMunicion || '---'}}</td>
+          <th class="text-black" >Tipo de munición:</th>
+          <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.municion}}</td>
+          <td class="text-black" style="border: 1px solid #ddd; padding: 15px;"> Nvl: {{ inforWeapon?.nivelMunicion || '---'}}</td>
         </tr>
       </table>
     </div>
@@ -100,9 +97,9 @@
       <table class="table table-bordered mx-auto shadow-sm"
         style="width: 80%; background-color: #f9f9f9; text-align: left;">
         <tr>
-          <th>Tipo de vial:</th>
-          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.frasco}}</td>
-          <td style="border: 1px solid #ddd; padding: 15px;"> Potencia: {{ inforWeapon?.potenciaFrasco || '---'}}</td>
+          <th class="text-black">Tipo de vial:</th>
+          <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.frasco}}</td>
+          <td class="text-black" style="border: 1px solid #ddd; padding: 15px;"> Potencia: {{ inforWeapon?.potenciaFrasco || '---'}}</td>
         </tr>
       </table>
     </div>
@@ -112,15 +109,15 @@
       <table class="table table-bordered mx-auto shadow-sm"
         style="width: 80%; background-color: #f9f9f9; text-align: left;">
         <tr>
-          <th>Bonus kinsecto:</th>
-          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.bonoKinsecto}}</td>
+          <th class="text-black">Bonus kinsecto:</th>
+          <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.bonoKinsecto}}</td>
         </tr>
       </table>
     </div>
 
     <!-- Tabla: Arco -->
     <div id="Crafteo" *ngIf="inforWeapon?.weaponArcoDTO?.length > 0 " class="container mt-4">
-      <h2 style="text-align: center;">Arco</h2>
+      <h2 class="text-black" style="text-align: center;">Arco</h2>
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
@@ -158,7 +155,7 @@
 
     <!-- Tabla: Crafteo -->
     <div id="Crafteo" *ngIf="inforWeapon?.weaponCraftDTO?.length > 0 " class="container mt-4">
-      <h2 style="text-align: center;">Crafteo</h2>
+      <h2 class="text-black" style="text-align: center;">Crafteo</h2>
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
@@ -210,7 +207,7 @@
 
     <!-- Tabla: Municion Ballesta ligera y pesada-->
     <div id="Municion" *ngIf="inforWeapon?.weaponMunicionDTO?.length > 0 " class="container mt-4">
-      <h2 style="text-align: center;">Municion</h2>
+      <h2 class="text-black" style="text-align: center;">Municion</h2>
       <table class="table table-bordered table-striped mx-auto shadow-sm"
         style="width: 100%; background-color: #f9f9f9; text-align: left;">
         <thead>
@@ -586,4 +583,3 @@
       </table>
     </div>
   </div>
-</body>

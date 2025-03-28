@@ -1,4 +1,8 @@
 <ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Contenedor del fondo -->
+  <div class="background-container">
+    <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+  </div>
 
   <!-- Lista de Amuletos -->
   <div *ngIf="charmsList.length > 0 && !mostrarWiki" class="container mt-4">
@@ -8,7 +12,13 @@
         Rareza {{ r }}
       </button>
     </div>
-    <h2 class="text-center">Amuletos</h2>
+
+    <div class="charm-title-container">
+      <div class="charm-title">
+        <h2 class="text-center">Amuletos</h2>
+      </div>
+    </div>
+
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
@@ -19,7 +29,7 @@
       <tbody>
         <tr *ngFor="let v of filteredCharm">
           <td>
-            <a (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+            <a class="hover-effect" (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
               {{ v?.nombre }}
             </a>
           </td>

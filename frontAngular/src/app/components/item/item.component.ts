@@ -17,7 +17,7 @@ import { WikiItemComponent } from '../wiki-item/wiki-item.component';
 export class ItemComponent implements OnInit {
   handleImageError(event: Event) {
     const imgElement = event.target as HTMLImageElement;
-    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+    imgElement.style.display = 'none';
   }
 
   @Input()

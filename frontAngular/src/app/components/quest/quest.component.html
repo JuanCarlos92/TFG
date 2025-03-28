@@ -1,10 +1,17 @@
 <ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Contenedor del fondo -->
+  <div class="background-container">
+    <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+  </div>
 
   <div *ngIf="questsListBase.length > 0 && !mostrarWiki" class="container mt-4">
     <div class="d-flex justify-content-center mb-3">
       <button *ngFor="let category of ['LR', 'HR', 'MR']" [class.selected]="rangoSeleccionado === category"
         class="btn btn-secondary mx-1 custom-btn" (click)="filterByRango(category)">
         Rango {{ category }}
+      </button>
+      <button class="btn btn-danger custom-btn" (click)="resetFilters()">
+        Eliminar Filtros
       </button>
     </div>
 
@@ -15,13 +22,12 @@
       </button>
     </div>
 
-    <div class="d-flex justify-content-center mb-3">
-      <button class="btn btn-danger custom-btn" (click)="resetFilters()">
-        Eliminar Filtros
-      </button>
+    <div class="quest-title-container">
+      <div class="quest-title">
+        <h2 class="text-center">Misiones</h2>
+      </div>
     </div>
 
-    <h2 class="text-center">Misiones</h2>
     <div *ngIf="filteredQuests.length === 0">
       <p class="alert alert-warning text-center display-6 font-weight-bold">No hay misiones con los filtros aplicados.
       </p>
@@ -41,7 +47,7 @@
       <tbody>
         <tr *ngFor="let v of filteredQuests">
           <td>
-            <a (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+            <a class="hover-effect" (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
               {{ v?.nombre }}
             </a>
           </td>

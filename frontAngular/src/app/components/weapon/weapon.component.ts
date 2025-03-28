@@ -27,7 +27,7 @@ import { WikiWeaponComponent } from "../wiki-weapon/wiki-weapon.component";
 export class WeaponComponent implements OnInit {
   handleImageError(event: Event) {
     const imgElement = event.target as HTMLImageElement;
-    imgElement.style.display = 'none'; // Oculta la imagen si no se encuentra
+    imgElement.style.display = 'none'; 
   }
 
   @Input()
