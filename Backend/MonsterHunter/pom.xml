@@ -11,10 +11,10 @@
 		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.juancarlos</groupId>
-	<artifactId>monsterhunter</artifactId>
+	<artifactId>MonsterHunter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot</name>
-	<description>Micro servicio monsterhunter</description>
+	<description>Micro servicio MonsterHunter</description>
 	<url />
 	<licenses>
 		<license />
