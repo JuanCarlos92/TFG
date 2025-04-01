@@ -1,0 +1,52 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Contenedor del fondo -->
+  <div class="background-container">
+    <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+  </div>
+
+  <div class="content-container">
+    <!-- Lista de objetos  -->
+    <div *ngIf="itemsList.length > 0 && !mostrarWiki" class="container mt-4">
+      <div class="d-flex justify-content-center mb-3">
+        <button *ngFor="let category of ['item', 'material', 'misc']" [class.selected]="selectedCategory === category"
+          class="btn btn-secondary mx-1 custom-btn" (click)="filterByCategory(category)">
+          Categoria {{ category }}
+        </button>
+      </div>
+
+      <div class="item-title-container">
+        <div class="item-title">
+          <h2 class="text-center">Objetos</h2>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Categoría</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let v of filteredItems">
+              <td>
+                <a class="hover-effect" (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+                  <img [src]="'assets/images/items/' + v?.nombre + '.png'" width="30"
+                    style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+                  <span style="margin-left: 10px;">{{ v?.nombre }}</span>
+                </a>
+              </td>
+              <td>{{ v?.categoria }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div *ngIf="mostrarWiki">
+      <app-wiki-item [item]="itemWiki" (closeWiki)="closeWiki()"></app-wiki-item>
+    </div>
+  </div>
+
+</ion-content>

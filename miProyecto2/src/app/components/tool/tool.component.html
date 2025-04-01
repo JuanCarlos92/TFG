@@ -1,0 +1,50 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Contenedor del fondo -->
+  <div class="background-container">
+    <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+  </div>
+
+  <div class="content-container">
+    <!-- Lista de herramientas -->
+    <div *ngIf="toolsList.length > 0" class="container mt-4">
+
+      <div class="tool-title-container">
+        <div class="tool-title">
+          <h2 class="text-center">Herramientas</h2>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Tipo de herramienta</th>
+              <th>Duración</th>
+              <th>recarga</th>
+              <th>ranura 1</th>
+              <th>ranura 2</th>
+              <th>ranura 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tool of toolsList">
+              <td>
+                <img [src]="'assets/images/tools/' + tool?.nombre + '.png'" width="30"
+                  style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+                <span style="margin-left: 10px;">{{ tool?.nombre }}</span>
+              </td>
+              <td>{{ tool?.herramientatipo }}</td>
+              <td>{{ tool?.duracion }}</td>
+              <td>{{ tool?.recarga }}</td>
+              <td>{{ tool?.ranura1 }}</td>
+              <td>{{ tool?.ranura2 }}</td>
+              <td>{{ tool?.ranura3 }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

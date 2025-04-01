@@ -1,0 +1,25 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+  <div class="background-container">
+    <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+  </div>
+
+  <div *ngIf="!selectedLocation">
+    <!-- Buscador -->
+    <div class="d-flex justify-content-center my-3">
+      <ion-searchbar [(ngModel)]="searchName" (ionInput)="searchLocations($event)"
+        placeholder="Buscar ubicación por nombre" class="w-50">
+      </ion-searchbar>
+    </div>
+
+    <!-- Grid de tarjetas -->
+    <div class="row">
+      <div *ngFor="let location of locations" class="col-6 col-md-4 col-lg-3 text-center my-2">
+        <app-card-location [location]="location" (locationNameSelected)="locationNameSelected($event)"></app-card-location>
+      </div>
+    </div>
+
+  </div>
+
+  <app-wiki-location *ngIf="selectedLocation" [location]="selectedLocation"></app-wiki-location>
+
+</ion-content>
