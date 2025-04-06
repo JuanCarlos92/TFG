@@ -52,10 +52,10 @@ table.css-table {
 .side-menu {
   position: fixed;
   top: 0;
-  left: -250px;
+  left: -100%; /* Oculto por defecto */
   width: 10%;
   height: 100%;
-  min-width: 250px;
+  min-width: 250px; /* Ancho mínimo para el menú */
   background-color: #575656;
   color: white;
   overflow: hidden;

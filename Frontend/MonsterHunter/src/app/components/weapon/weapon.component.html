@@ -22,7 +22,7 @@
       </div>
 
       <div id="listaArmas" *ngIf="infoWeaponTipoFiltrado?.weaponBaseDTO?.length ?? 0 > 0" class="container mt-4">
-        <div>
+        <div class="text-center my-3">
           <button *ngFor="let rarity of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
             [class.selected]="selectedRarity === rarity" class="btn btn-secondary mx-1 custom-btn"
             (click)="filterByRarity(rarity)">
