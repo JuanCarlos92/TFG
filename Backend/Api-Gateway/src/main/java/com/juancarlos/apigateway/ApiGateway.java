@@ -12,4 +12,5 @@ public class ApiGateway {
         SpringApplication.run(ApiGateway.class, args);
     }
 
+
 }

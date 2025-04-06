@@ -1,7 +1,0 @@
-{
-  "name": "frontAngular",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}

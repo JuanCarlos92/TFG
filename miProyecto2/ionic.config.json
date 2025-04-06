@@ -1,7 +1,0 @@
-{
-  "name": "miProyecto2",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
