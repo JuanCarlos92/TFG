@@ -269,31 +269,33 @@
   <!-- Recompensas -->
   <div id="recompensas" *ngIf="infoMonster?.monsterRewardsDTO?.length > 0" class="container mt-4">
     <h2 class="text-black" style="text-align: center;">Recompensas</h2>
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Rango</th>
-          <th>Condiciones</th>
-          <th>Objeto</th>
-          <th>Cantidad</th>
-          <th>Porcentaje de drop</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let v of infoMonster.monsterRewardsDTO">
-          <td>{{ v?.rang || '---' }}</td>
-          <td>{{ v?.condiciones || '---' }}</td>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Rango</th>
+            <th>Condiciones</th>
+            <th>Objeto</th>
+            <th>Cantidad</th>
+            <th>Porcentaje de drop</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of infoMonster.monsterRewardsDTO">
+            <td>{{ v?.rang || '---' }}</td>
+            <td>{{ v?.condiciones || '---' }}</td>
 
-          <td>
-            <img [src]="'assets/images/items/' + v?.item + '.png'" width="30"
-              style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
-            <span style="margin-left: 10px;">{{ v?.item || '---' }}</span>
-          </td>
+            <td>
+              <img [src]="'assets/images/items/' + v?.item + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.item || '---' }}</span>
+            </td>
 
-          <td>{{ v?.stack || '---' }}</td>
-          <td>{{ v?.percentage ? v.percentage + '%' : 'N/A' }}</td>
-        </tr>
-      </tbody>
-    </table>
+            <td>{{ v?.stack || '---' }}</td>
+            <td>{{ v?.percentage ? v.percentage + '%' : 'N/A' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

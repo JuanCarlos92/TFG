@@ -49,47 +49,51 @@
   <!-- Tabla: Recompensa -->
   <div id="Recompensa" *ngIf="infoQuest?.questRewardDTO?.length > 0 " class="container mt-4">
     <h2 class="text-black" style="text-align: center;">Recompensa de la misión</h2>
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Objeto</th>
-          <th>Cantidad</th>
-          <th>Porcentaje para obtenerlo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let v of infoQuest.questRewardDTO">
-          <td>
-            <img [src]="'assets/images/items/' + v?.item + '.png'" width="30"
-              style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
-            <span style="margin-left: 10px;">{{ v?.item }}</span>
-          </td>
-          <td>{{ v?.stack }}</td>
-          <td>{{ v?.porcentaje + '%'}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Objeto</th>
+            <th>Cantidad</th>
+            <th>Porcentaje para obtenerlo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of infoQuest.questRewardDTO">
+            <td>
+              <img [src]="'assets/images/items/' + v?.item + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.item }}</span>
+            </td>
+            <td>{{ v?.stack }}</td>
+            <td>{{ v?.porcentaje + '%'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 
   <!-- Tabla: Monstros que aparecen en la mision -->
   <div id="questMonster" *ngIf="infoQuest?.questMonsterDTO?.length > 0 " class="container mt-4">
     <h2 class="text-black" style="text-align: center;">Monstruos que aparecen en la misión</h2>
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Monstruos</th>
-          <th>Calidad</th>
-          <th>El Monstruo es objetivo?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let v of infoQuest.questMonsterDTO">
-          <td>{{ v?.monster }}</td>
-          <td>{{ v?.calidad }}</td>
-          <td>{{ v?.esObjetivo }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Monstruos</th>
+            <th>Calidad</th>
+            <th>El Monstruo es objetivo?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of infoQuest.questMonsterDTO">
+            <td>{{ v?.monster }}</td>
+            <td>{{ v?.calidad }}</td>
+            <td>{{ v?.esObjetivo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

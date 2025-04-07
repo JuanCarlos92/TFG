@@ -18,32 +18,34 @@
   <!-- Tabla: Objeto de la recolección -->
   <div id="Crafteo" *ngIf="infoRecoleccion?.itemBaseDTO?.length > 0 " class="container mt-4">
     <h2 class="text-black" style="text-align: center;">Objeto obtenido de la recolección</h2>
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Objeto</th>
-          <th>Categoria</th>
-          <th>Rareza</th>
-          <th>Precio compra</th>
-          <th>Precio venta</th>
-          <th>Capacidad para llevar</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let v of infoRecoleccion.itemBaseDTO">
-          <td>
-            <img [src]="'assets/images/items/' + v?.nombre + '.png'" width="30"
-              style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
-            <span style="margin-left: 10px;">{{ v?.nombre}}</span>
-          </td>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Objeto</th>
+            <th>Categoria</th>
+            <th>Rareza</th>
+            <th>Precio compra</th>
+            <th>Precio venta</th>
+            <th>Capacidad para llevar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of infoRecoleccion.itemBaseDTO">
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombre + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombre}}</span>
+            </td>
 
-          <td>{{ v?.categoria}}</td>
-          <td>{{ v?.rareza}}</td>
-          <td>{{ v?.precioCompra || "---"}}</td>
-          <td>{{ v?.precioVenta || "---"}}</td>
-          <td>{{ v?.limiteCarga || "---"}}</td>
-        </tr>
-      </tbody>
-    </table>
+            <td>{{ v?.categoria}}</td>
+            <td>{{ v?.rareza}}</td>
+            <td>{{ v?.precioCompra || "---"}}</td>
+            <td>{{ v?.precioVenta || "---"}}</td>
+            <td>{{ v?.limiteCarga || "---"}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

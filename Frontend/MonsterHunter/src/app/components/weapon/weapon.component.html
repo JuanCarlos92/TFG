@@ -15,11 +15,10 @@
       </div>
 
       <!-- Título de la tabla (nombre del tipo) -->
-      <div *ngIf="selectedWeaponTipo" class="weapon-details mt-4 text-center">
-        <div class="weapon-title">
-          <h2>{{ selectedWeaponTipo.tipoArma }}</h2>
-        </div>
+      <div *ngIf="selectedWeaponTipo" class="weapon-title">
+        <h2>{{ selectedWeaponTipo.tipoArma }}</h2>
       </div>
+      
 
       <div id="listaArmas" *ngIf="infoWeaponTipoFiltrado?.weaponBaseDTO?.length ?? 0 > 0" class="container mt-4">
         <div class="text-center my-3">
