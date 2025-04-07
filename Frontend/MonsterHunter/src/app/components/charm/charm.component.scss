@@ -61,3 +61,28 @@ ion-content {
   overflow: hidden;
 }
 
+.d-flex {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los botones se envuelvan en varias filas */
+  justify-content: center; /* Centra los botones horizontalmente */
+}
+
+//Responsive
+@media (max-width: 768px) {
+  .charm-title h2 {
+    font-size: 0.9rem;
+  }
+
+  .custom-btn {
+    width: 90px;
+    height:30px;
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+
+  .table-container table th,
+  .table-container table td {
+    font-size: 0.75rem;
+    padding: 4px 6px;
+  }
+}

@@ -46,62 +46,73 @@
   </div>
 
   <!-- Botones de Navegación -->
-  <div class="container mt-4 text-center">
-    <button class="btn btn-secondary mx-1" (click)="scrollTo('recoleccion')">Objeto de recolección</button>
-    <button class="btn btn-secondary mx-1" (click)="scrollTo('misiones')">Misiones de la zona</button>
+  <div class="text-center my-3">
+    <div class="d-flex justify-content-center flex-wrap gap-2">
+      <button class="btn btn-secondary custom-btn" (click)="scrollTo('recoleccion')">
+        Objeto de recolección
+      </button>
+      <button class="btn btn-secondary custom-btn" (click)="scrollTo('misiones')">
+        Misiones de la zona
+      </button>
+    </div>
   </div>
+
 
   <!-- Tabla: recoleccion item -->
   <div id="recoleccion" *ngIf="infoLocation?.locationItemDTO?.length > 0 " class="container mt-4">
     <h2 class="text-black" style="text-align: center;">Objetos de recolección</h2>
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Objeto</th>
-          <th>Rango del objeto</th>
-          <th>Area</th>
-          <th>Porcentaje de aparición</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let v of infoLocation.locationItemDTO">
-          <td>
-            <img [src]="'assets/images/items/' + v?.item + '.png'" width="30"
-              style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
-            <span style="margin-left: 10px;">{{ v?.item }}</span>
-          </td>
-          <td>{{ v?.rango || '---'}}</td>
-          <td>{{ v?.area }}</td>
-          <td>{{ v?.porcentaje + '%'}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Objeto</th>
+            <th>Rango del objeto</th>
+            <th>Area</th>
+            <th>Porcentaje de aparición</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of infoLocation.locationItemDTO">
+            <td>
+              <img [src]="'assets/images/items/' + v?.item + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.item }}</span>
+            </td>
+            <td>{{ v?.rango || '---'}}</td>
+            <td>{{ v?.area }}</td>
+            <td>{{ v?.porcentaje + '%'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- Tabla: misiones de la zona -->
   <div id="misiones" *ngIf="infoLocation?.questBaseDTO?.length > 0 " class="container mt-4">
     <h2 class="text-black" style="text-align: center;">Misiones de {{ infoLocation?.nombre }}</h2>
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Categoria</th>
-          <th>Rango</th>
-          <th>Estella</th>
-          <th>Tipo de mision</th>
-          <th>Zeny</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let v of infoLocation.questBaseDTO">
-          <td>{{ v?.nombre }}</td>
-          <td>{{ v?.categoria}}</td>
-          <td>{{ v?.rango }}</td>
-          <td>{{ v?.estrellas}}</td>
-          <td>{{ v?.misionTipo}}</td>
-          <td>{{ v?.zeny}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Categoria</th>
+            <th>Rango</th>
+            <th>Estella</th>
+            <th>Tipo de mision</th>
+            <th>Zeny</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of infoLocation.questBaseDTO">
+            <td>{{ v?.nombre }}</td>
+            <td>{{ v?.categoria}}</td>
+            <td>{{ v?.rango }}</td>
+            <td>{{ v?.estrellas}}</td>
+            <td>{{ v?.misionTipo}}</td>
+            <td>{{ v?.zeny}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

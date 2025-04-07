@@ -55,3 +55,21 @@
 ion-content {
   overflow: hidden;
 }
+//Responsive
+@media (max-width: 768px) {
+  .armor-title h2 {
+    font-size: 0.9rem;
+  }
+
+  .custom-btn {
+    width: 90px;
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+
+  .table-container table th,
+  .table-container table td {
+    font-size: 0.75rem;
+    padding: 4px 6px;
+  }
+}

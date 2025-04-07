@@ -71,50 +71,52 @@
   <!-- Tabla: crafteo -->
   <div id="Crafteo" *ngIf="infoKinsect?.kinsectCraftDTO?.length > 0 " class="container mt-4">
     <h2 class="text-black" style="text-align: center;">Crafteo</h2>
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Material 1</th>
-          <th>Calidad</th>
-          <th>Material 2</th>
-          <th>Calidad</th>
-          <th>Material 3</th>
-          <th>Calidad</th>
-          <th>Material 4</th>
-          <th>Calidad</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let v of infoKinsect.kinsectCraftDTO">
-          <td>
-            <img [src]="'assets/images/items/' + v?.nombreItem1 + '.png'" width="30"
-              style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
-            <span style="margin-left: 10px;">{{ v?.nombreItem1 || '---'}}</span>
-          </td>
-          <td>{{ v?.calidadItem1 || '---'}}</td>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Material 1</th>
+            <th>Calidad</th>
+            <th>Material 2</th>
+            <th>Calidad</th>
+            <th>Material 3</th>
+            <th>Calidad</th>
+            <th>Material 4</th>
+            <th>Calidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of infoKinsect.kinsectCraftDTO">
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem1 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombreItem1 || '---'}}</span>
+            </td>
+            <td>{{ v?.calidadItem1 || '---'}}</td>
 
-          <td>
-            <img [src]="'assets/images/items/' + v?.nombreItem2 + '.png'" width="30"
-              style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
-            <span style="margin-left: 10px;">{{ v?.nombreItem2 || '---'}}</span>
-          </td>
-          <td>{{ v?.calidadItem2 || '---'}}</td>
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem2 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombreItem2 || '---'}}</span>
+            </td>
+            <td>{{ v?.calidadItem2 || '---'}}</td>
 
-          <td>
-            <img [src]="'assets/images/items/' + v?.nombreItem3 + '.png'" width="30"
-              style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
-            <span style="margin-left: 10px;">{{ v?.nombreItem3 || '---'}}</span>
-          </td>
-          <td>{{ v?.calidadItem3 || '---'}}</td>
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem3 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombreItem3 || '---'}}</span>
+            </td>
+            <td>{{ v?.calidadItem3 || '---'}}</td>
 
-          <td>
-            <img [src]="'assets/images/items/' + v?.nombreItem4 + '.png'" width="30"
-              style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
-            <span style="margin-left: 10px;">{{ v?.nombreItem4 || '---'}}</span>
-          </td>
-          <td>{{ v?.calidadItem4 || '---'}}</td>
-        </tr>
-      </tbody>
-    </table>
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem4 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombreItem4 || '---'}}</span>
+            </td>
+            <td>{{ v?.calidadItem4 || '---'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
