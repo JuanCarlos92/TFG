@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CustomMhApplication {
+public class CustomMh {
 
     public static void main(String[] args) {
-        SpringApplication.run(CustomMhApplication.class, args);
+        SpringApplication.run(CustomMh.class, args);
     }
 
 }

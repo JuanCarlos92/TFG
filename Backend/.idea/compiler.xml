@@ -10,7 +10,6 @@
         <module name="EurekaServer" />
         <module name="MonsterHunter" />
         <module name="Api-Gateway" />
-        <module name="CustomMH" />
       </profile>
     </annotationProcessing>
   </component>
