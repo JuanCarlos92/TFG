@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)
 --
--- Host: localhost    Database: monsterhunter
+-- Host: localhost    Database: custommh
 -- ------------------------------------------------------
--- Server version	8.0.40
+-- Server version	8.0.41
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,27 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `armadura_rareza`
+-- Table structure for table `monster`
 --
 
-DROP TABLE IF EXISTS `armadura_rareza`;
+CREATE DATABASE IF NOT EXISTS custommh;
+USE custommh;
+
+DROP TABLE IF EXISTS `monster`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `armadura_rareza` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `rareza` int DEFAULT NULL,
+CREATE TABLE `monster` (
+  `id` int NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `size` varchar(100) DEFAULT NULL,
+  `descripcion` text,
+  `img` varchar(255) DEFAULT NULL,
+  `user_id` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `armadura_rareza`
+-- Dumping data for table `monster`
 --
 
-LOCK TABLES `armadura_rareza` WRITE;
-/*!40000 ALTER TABLE `armadura_rareza` DISABLE KEYS */;
-INSERT INTO `armadura_rareza` VALUES (1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10),(11,11),(12,12);
-/*!40000 ALTER TABLE `armadura_rareza` ENABLE KEYS */;
+LOCK TABLES `monster` WRITE;
+/*!40000 ALTER TABLE `monster` DISABLE KEYS */;
+/*!40000 ALTER TABLE `monster` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-27 11:26:30
+-- Dump completed on 2025-04-09 20:46:24
