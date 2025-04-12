@@ -28,6 +28,7 @@ const routes: Routes = [
   {path: 'quest', component: QuestComponent},
   {path: 'recoleccion', component: RecoleccionComponent},
   {path: 'tool', component: ToolComponent},
+  //{path:'custom', component: MonsterCustomComponent},
 ];
 
 @NgModule({

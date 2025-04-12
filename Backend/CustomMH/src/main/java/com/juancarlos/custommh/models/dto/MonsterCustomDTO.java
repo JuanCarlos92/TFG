@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class MonsterDTO {
+public class MonsterCustomDTO {
     private Long id;
     private String nombre;
     private String size;

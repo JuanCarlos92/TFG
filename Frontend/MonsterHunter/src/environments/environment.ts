@@ -19,7 +19,8 @@ export const environment = {
   location: '/api/location',
   quest: '/api/quest',
   recoleccion: '/api/recoleccion',
-  tool: '/api/tool'
+  tool: '/api/tool',
+  custom: '/api/custom'
 };
 
 /*
