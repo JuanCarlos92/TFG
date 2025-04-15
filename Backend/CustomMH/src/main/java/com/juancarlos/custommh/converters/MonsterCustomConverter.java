@@ -19,8 +19,8 @@ public class MonsterCustomConverter {
                 .nombre(monsterCustomEntity.getNombre())
                 .descripcion(monsterCustomEntity.getDescripcion())
                 .size(monsterCustomEntity.getSize())
+                .img(monsterCustomEntity.getImg())
                 .usuarioId(monsterCustomEntity.getUsuarioId())
-                .fechaCreacion(monsterCustomEntity.getFechaCreacion())
                 .build();
     }
 
@@ -34,8 +34,8 @@ public class MonsterCustomConverter {
                 .nombre(monsterCustomRequest.getNombre())
                 .descripcion(monsterCustomRequest.getDescripcion())
                 .size(monsterCustomRequest.getSize())
+                .img(monsterCustomRequest.getImg())
                 .usuarioId(monsterCustomRequest.getUsuarioId())
-                .fechaCreacion(monsterCustomRequest.getFechaCreacion())
                 .build();
     }
 

@@ -1,9 +1,9 @@
 export interface MonsterCustomDTO {
-    id: number;
+    id?: number;
     nombre: string;
     size: string;
     descripcion: string;
     img: string;
     usuarioId: string;
-    fechaCreacion: string;
+    fechaCreacion?: string;
 }

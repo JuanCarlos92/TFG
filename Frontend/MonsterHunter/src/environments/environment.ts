@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  //host: 'https://3ca7-185-185-55-7.ngrok-free.app',
+  //host: 'https://ee38-64-226-166-164.ngrok-free.app ',
   host: 'localhost',
   port: 8080,
   monster: '/api/monster',
@@ -20,7 +20,7 @@ export const environment = {
   quest: '/api/quest',
   recoleccion: '/api/recoleccion',
   tool: '/api/tool',
-  custom: '/api/custom'
+  custom: '/custom'
 };
 
 /*

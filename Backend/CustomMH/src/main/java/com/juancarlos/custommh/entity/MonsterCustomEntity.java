@@ -13,17 +13,24 @@ import java.time.LocalDateTime;
 @Builder
 public class MonsterCustomEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
-    @Column(name = "nombre", unique = true, nullable = false)
+    @Column(name = "nombre", nullable = false)
     private String nombre;
     @Column(name = "size")
     private String size;
     @Column(name = "descripcion")
     private String descripcion;
+    @Column(name = "img")
+    private String img;
     @Column(name = "usuario_id")
     private String usuarioId;
-    @Column(name = "fecha_creacion")
+    @Column(name = "fecha_creacion", updatable = false)
     private LocalDateTime fechaCreacion;
+
+    @PrePersist
+    public void prePersist() {
+        this.fechaCreacion = LocalDateTime.now();
+    }
 }

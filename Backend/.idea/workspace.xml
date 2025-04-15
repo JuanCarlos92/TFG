@@ -7,18 +7,16 @@
     <list default="true" id="affcdccb-abd5-45ed-a40b-1681d0ed219a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/controllers/MonsterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/controllers/MonsterCustomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/converters/MonsterConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/converters/MonsterCustomConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/entity/MonsterEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/entity/MonsterCustomEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/dto/MonsterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/dto/MonsterCustomDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/request/MonsterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/request/MonsterCustomRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/GetMonsterListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/GetMonsterCustomListResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/GetMonsterResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/GetMonsterCustomResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/PostMonsterResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/PostMonsterCustomResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/PutMonsterResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/PutMonsterCustomResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/repositories/MonsterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/repositories/MonsterCustomRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/services/MonsterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/services/MonsterCustomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/services/MonsterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/services/MonsterCustomServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-Gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Api-Gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/converters/MonsterCustomConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/converters/MonsterCustomConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/entity/MonsterCustomEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/entity/MonsterCustomEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/dto/MonsterCustomDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/dto/MonsterCustomDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/repositories/MonsterCustomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/repositories/MonsterCustomRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/android/app/capacitor.build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/android/app/capacitor.build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/android/app/src/main/AndroidManifest.xml.orig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/android/capacitor.settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/android/capacitor.settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/environments/environment.prod.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/environments/environment.ts" afterDir="false" />
     </list>
@@ -53,44 +51,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
-    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiGateway.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.EurekaServer.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.MonsterHunter.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/juanc/Documents/GitHub/SpringBoot-MicroServicios-AgenciaViajes/backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;cn.yiiguxing.plugin.translate&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
+    "Notification.DoNotAsk-Database detector": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiGateway.executor": "Debug",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.CustomMh.executor": "Debug",
+    "Spring Boot.EurekaServer.executor": "Debug",
+    "Spring Boot.MonsterHunter.executor": "Debug",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/JuanCarlos/Documents/github/SpringBoot-MicroServicios-AgenciaViajes/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "cn.yiiguxing.plugin.translate",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\JuanCarlos\Documents\github\TFG\Backend\EurekaServer\src\main\resources" />
@@ -109,7 +111,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiGateway">
+  <component name="RunManager" selected="Spring Boot.CustomMh">
     <configuration name="ApiGateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Api-Gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.juancarlos.apigateway.ApiGateway" />
@@ -142,8 +144,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.117" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.117" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
       </set>
     </attachedChunks>
   </component>
@@ -173,6 +175,7 @@
       <workItem from="1744458424146" duration="133000" />
       <workItem from="1744458567354" duration="6970000" />
       <workItem from="1744471428726" duration="1159000" />
+      <workItem from="1744735314417" duration="5421000" />
     </task>
     <servers />
   </component>
