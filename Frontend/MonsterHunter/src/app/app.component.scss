@@ -42,7 +42,7 @@ table.css-table {
   text-align: left;
 }
 
-.menu-button-column ion-icon, 
+.menu-button-column ion-icon,
 .menu-close-btn ion-icon {
   color: #d4af37;
   text-shadow: 2px 2px 4px #000;
@@ -101,6 +101,31 @@ table.css-table {
 
 .side-menu ul li a:hover {
   text-decoration: underline;
+}
+
+/* Footer del menú */
+.menu-footer {
+  margin-top: auto; /* Empuja el footer hacia abajo */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Espaciado entre los enlaces y el separador */
+}
+
+.menu-footer a {
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.menu-footer a:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  color: #d4af37;
+  font-size: 1.2rem;
 }
 
 
