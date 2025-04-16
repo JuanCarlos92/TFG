@@ -13,6 +13,7 @@ import { QuestComponent } from './components/quest/quest.component';
 import { RecoleccionComponent } from './components/recoleccion/recoleccion.component';
 import { ToolComponent } from './components/tool/tool.component';
 import { CustomComponent } from './components/custom/custom.component';
+import { CreateMonsterComponent } from './components/create-monster/create-monster.component';
 
 const routes: Routes = [
   {path: 'home',loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)},
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path: 'quest', component: QuestComponent},
   {path: 'recoleccion', component: RecoleccionComponent},
   {path: 'tool', component: ToolComponent},
-  {path:'custom', component: CustomComponent},
+  {path: 'custom', component: CustomComponent},
+  {path: 'create-monster', component: CreateMonsterComponent },
 ];
 
 @NgModule({

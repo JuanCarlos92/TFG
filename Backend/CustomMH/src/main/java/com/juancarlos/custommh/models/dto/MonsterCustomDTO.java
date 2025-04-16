@@ -15,4 +15,5 @@ public class MonsterCustomDTO {
     private String descripcion;
     private String img;
     private String usuarioId;
+    private String fechaCreacion;
 }

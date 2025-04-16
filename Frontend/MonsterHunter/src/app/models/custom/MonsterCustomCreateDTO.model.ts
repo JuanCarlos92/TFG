@@ -1,5 +1,4 @@
-export interface MonsterCustomDTO {
-    id: number;
+export interface MonsterCustomCreateDTO {
     nombre: string;
     size: string;
     descripcion: string;

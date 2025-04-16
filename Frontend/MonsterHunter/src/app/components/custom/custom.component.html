@@ -1,4 +1,53 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+    <!-- Contenedor del fondo -->
+    <div class="background-container">
+        <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+    </div>
+    <div class="content-container">
 
-aqui esta el tio
-<button (click)="onClick()">Click me</button>
-<button (click)="onClick2()">JUANKA TE LO RECUERDO AKI, ESTO SOLO VA A ELIMINAR UNA VEZ POR QUE EL ID YA NO ESTA</button>
+        <!-- Cambiamos la condición para incluir undefined -->
+        <div *ngIf="monstersCustomList && !mostrarWiki" class="container mt-4">
+            <!-- Buscador -->
+            <div class="d-flex justify-content-center my-3">
+                <ion-searchbar [(ngModel)]="searchName" (ionInput)="searchUser($event)"
+                    placeholder="Buscar nombre de usuario" class="w-50">
+                </ion-searchbar>
+            </div>
+
+
+            <button (click)="goCreate()">Click me</button>
+
+            <div class="armor-title-container">
+                <div class="armor-title">
+                    <h2>Monstruos de la comunidad</h2>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Usuario</th>
+                            <th>Fecha Creación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let v of filteredCustomMonsters">
+                            <td>{{ v?.nombre }}</td>
+                            <td>{{ v?.usuarioId }}</td>
+                            <td>{{ v?.fechaCreacion | date:'dd/MM/yyyy' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div *ngIf="mostrarWiki">
+            <app-wiki-custom [monsterCustom]="customWiki" (closeWiki)="closeWiki()"></app-wiki-custom>
+        </div>
+    </div>
+
+    <!-- <button (click)="onDelete()">JUANKA TE LO RECUERDO AKI, ESTO SOLO VA A ELIMINAR UNA VEZ POR QUE EL ID YA NO
+        ESTA</button> -->
+    <!--  -->
+</ion-content>

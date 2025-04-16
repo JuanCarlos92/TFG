@@ -1,7 +1,7 @@
-import { MonsterCustomDTO } from "../custom/MonsterCustomDTO.model";
+import { MonsterCustomCreateDTO } from "../custom/MonsterCustomCreateDTO.model";
 
 export interface PostMonsterCustomResponse {
-  monsterCustomDTO: MonsterCustomDTO;
+  monsterCustomCreateDTO: MonsterCustomCreateDTO;
   isOk: boolean;
   message?: string;
 }

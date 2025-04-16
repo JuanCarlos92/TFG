@@ -7,6 +7,7 @@ import { GetMonsterCustomListResponse } from '../models/response/GetMonsterCusto
 import { GetMonsterCustomResponse } from '../models/response/GetMonsterCustomResponse.model';
 import { PostMonsterCustomResponse } from '../models/response/PostMonsterCustomResponse.model';
 import { PutMonsterCustomResponse } from '../models/response/PutMonsterCustomResponse.model';
+import { MonsterCustomCreateDTO } from '../models/custom/MonsterCustomCreateDTO.model';
 
 @Injectable({
   providedIn: 'root'
@@ -50,7 +51,7 @@ export class CustomService {
     return this.requestService.request(requestServiceOptions, false, true);
   }
 
-  public postMonster(monster: MonsterCustomDTO): Observable<PostMonsterCustomResponse> {
+  public postMonster(monster: MonsterCustomCreateDTO): Observable<PostMonsterCustomResponse> {
     const url = `${environment.custom}`;
 
     const requestServiceOptions: RequestServiceOptions = {
