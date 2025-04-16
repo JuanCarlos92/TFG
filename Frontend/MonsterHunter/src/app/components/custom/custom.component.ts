@@ -29,7 +29,6 @@ export class CustomComponent implements OnInit {
   monsterCustom!: MonsterCustomDTO;
   
   monstersCustomList: MonsterCustomDTO[] = [];
-  filteredCustomMonsters: MonsterCustomDTO[] = [];
   mostrarWiki = false;
   customWiki!: MonsterCustomDTO;
 
@@ -56,8 +55,7 @@ export class CustomComponent implements OnInit {
   getCustomList(): void {
     this.customService.getMonsterList().pipe(first()).subscribe({
       next: (res) => {
-        this.monstersCustomList = res.monsterCustomDTO; // Inicializa con todas los monstruos
-        this.filteredCustomMonsters = this.monstersCustomList; // Inicializa con todas los monstruos
+        this.monstersCustomList = res.monstersCustomDTO; // Inicializa con todas los monstruos
         console.log('monstruos recibidos:', res);
         console.log('Lista de monstruos:', this.monstersCustomList);
       },

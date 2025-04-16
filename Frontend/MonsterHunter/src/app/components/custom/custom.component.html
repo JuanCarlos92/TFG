@@ -4,17 +4,9 @@
         <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
     </div>
     <div class="content-container">
-
         <!-- Cambiamos la condición para incluir undefined -->
         <div *ngIf="monstersCustomList && !mostrarWiki" class="container mt-4">
-            <!-- Buscador -->
-            <div class="d-flex justify-content-center my-3">
-                <ion-searchbar [(ngModel)]="searchName" (ionInput)="searchUser($event)"
-                    placeholder="Buscar nombre de usuario" class="w-50">
-                </ion-searchbar>
-            </div>
-
-
+            
             <button (click)="goCreate()">Click me</button>
 
             <div class="armor-title-container">
@@ -29,14 +21,12 @@
                         <tr>
                             <th>Nombre</th>
                             <th>Usuario</th>
-                            <th>Fecha Creación</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let v of filteredCustomMonsters">
+                        <tr *ngFor="let v of monstersCustomList">
                             <td>{{ v?.nombre }}</td>
                             <td>{{ v?.usuarioId }}</td>
-                            <td>{{ v?.fechaCreacion | date:'dd/MM/yyyy' }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -46,7 +36,6 @@
             <app-wiki-custom [monsterCustom]="customWiki" (closeWiki)="closeWiki()"></app-wiki-custom>
         </div>
     </div>
-
     <!-- <button (click)="onDelete()">JUANKA TE LO RECUERDO AKI, ESTO SOLO VA A ELIMINAR UNA VEZ POR QUE EL ID YA NO
         ESTA</button> -->
     <!--  -->

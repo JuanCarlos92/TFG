@@ -5,5 +5,4 @@ export interface MonsterCustomDTO {
     descripcion: string;
     img: string;
     usuarioId: string;
-    fechaCreacion?: string;
 }
