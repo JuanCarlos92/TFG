@@ -7,7 +7,10 @@
         <!-- Cambiamos la condición para incluir undefined -->
         <div *ngIf="monstersCustomList && !mostrarWiki" class="container mt-4">
             
-            <button (click)="goCreate()">Click me</button>
+            <!-- Boton Crear monstruo -->
+            <div class="container mt-4 text-center">
+                <button class="btn btn-success mx-2" (click)="goCreate()">Crear Nuevo Monstruo</button>
+            </div>
 
             <div class="armor-title-container">
                 <div class="armor-title">
@@ -25,7 +28,13 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let v of monstersCustomList">
-                            <td>{{ v?.nombre }}</td>
+                            <td>
+                            <a class="hover-effect" (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+                                <img [src]="'assets/images/customs/custom.png'" width="20"
+                                  style="border-radius: 8px; vertical-align: middle;">
+                                <span style="margin-left: 10px;">{{ v?.nombre }}</span>
+                              </a>
+                            </td>
                             <td>{{ v?.usuarioId }}</td>
                         </tr>
                     </tbody>

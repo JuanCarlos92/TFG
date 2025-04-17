@@ -10,6 +10,7 @@ import { CustomService } from 'src/app/services/custom.service';
 import { WikiCustomComponent } from '../wiki-custom/wiki-custom.component';
 
 
+
 @Component({
   selector: 'app-custom',
   templateUrl: './custom.component.html',
@@ -27,7 +28,7 @@ export class CustomComponent implements OnInit {
 
   @Input()
   monsterCustom!: MonsterCustomDTO;
-  
+
   monstersCustomList: MonsterCustomDTO[] = [];
   mostrarWiki = false;
   customWiki!: MonsterCustomDTO;
@@ -43,19 +44,24 @@ export class CustomComponent implements OnInit {
     this.getCustomList();
   }
 
-    ngAfterViewInit(): void {
-       this.search$ = this.searchSubject.pipe(debounceTime(500)).subscribe(res => {
-        console.log(res);
-        this.nameUser = res;
-        this.getCustomList(); // Actualiza los resultados
-      }); 
-    }
+  ionViewWillEnter(): void {
+    this.getCustomList(); // Se ejecuta cada vez que se vuelve a esta página
+  }
+
+  // Maneja el evento de búsqueda
+  ngAfterViewInit(): void {
+    this.search$ = this.searchSubject.pipe(debounceTime(500)).subscribe(res => {
+      console.log(res);
+      this.nameUser = res;
+      this.getCustomList();
+    });
+  }
 
   //Obtiene lista monstruos de la comunidad
   getCustomList(): void {
     this.customService.getMonsterList().pipe(first()).subscribe({
       next: (res) => {
-        this.monstersCustomList = res.monstersCustomDTO; // Inicializa con todas los monstruos
+        this.monstersCustomList = res.monstersCustomDTO;
         console.log('monstruos recibidos:', res);
         console.log('Lista de monstruos:', this.monstersCustomList);
       },
@@ -71,49 +77,12 @@ export class CustomComponent implements OnInit {
     this.searchSubject.next(valor);
   }
 
+  // Crea un nuevo monstruo
   goCreate(): void {
     this.router.navigate(['/create-monster']);
   }
-  goDelete(): void {
-    this.router.navigate(['/delete-monster']);
-  }
-  goUpdate(): void {
-    this.router.navigate(['/update-monster']);
-  }
 
-  // onCreate() {
-  //   const monster: MonsterCustomDTO = {
-  //     id: 0,
-  //     nombre: 'Monstruo de prueba',
-  //     size: '5m',
-  //     descripcion: 'Este es un monstruo de prueba',
-  //     img: 'img',
-  //     usuarioId: 'user'
-  //   };
-
-  //   this.customService.postMonster(monster).pipe(first()).subscribe({
-  //     next: (res) => {
-  //       console.log('Lista de monstruos:', res);
-  //     },
-  //     error: (error) => {
-  //       console.error('Error al obtener la información de los monstruos:', error);
-  //     }
-  //   });
-  // }
-
-
-
-  // onDelete() {
-  //   this.customService.deleteMonster(4).pipe(first()).subscribe({
-  //     next: (res) => {
-  //       console.log('Lista de monstruos:', res);
-  //     },
-  //     error: (error) => {
-  //       console.error('Error al obtener la información de los monstruos:', error);
-  //     }
-  //   });
-  // }
-
+  // Mostra el wiki del monstruo
   displayWiki(armor: MonsterCustomDTO) {
     this.customWiki = armor;
     this.mostrarWiki = !this.mostrarWiki;

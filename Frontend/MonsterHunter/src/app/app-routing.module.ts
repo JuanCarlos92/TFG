@@ -14,6 +14,8 @@ import { RecoleccionComponent } from './components/recoleccion/recoleccion.compo
 import { ToolComponent } from './components/tool/tool.component';
 import { CustomComponent } from './components/custom/custom.component';
 import { CreateMonsterComponent } from './components/create-monster/create-monster.component';
+import { UpdateMonsterComponent } from './components/update-monster/update-monster.component';
+import { WikiCustomComponent } from './components/wiki-custom/wiki-custom.component';
 
 const routes: Routes = [
   {path: 'home',loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)},
@@ -32,6 +34,7 @@ const routes: Routes = [
   {path: 'tool', component: ToolComponent},
   {path: 'custom', component: CustomComponent},
   {path: 'create-monster', component: CreateMonsterComponent },
+  {path: 'update-monster', component: UpdateMonsterComponent },
 ];
 
 @NgModule({
