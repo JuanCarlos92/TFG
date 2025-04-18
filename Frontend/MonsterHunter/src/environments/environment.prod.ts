@@ -16,5 +16,5 @@ export const environment = {
   quest: '/api/quest',
   recoleccion: '/api/recoleccion',
   tool: '/api/tool',
-  custom: '/custom'
+  custom: '/api/custom'
 };
