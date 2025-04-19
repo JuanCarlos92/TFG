@@ -20,10 +20,8 @@
     </ion-toolbar>
   </ion-header>
 
-
   <!-- Menú desplegable -->
   <div [class.show]="isMenuOpen" class="side-menu">
-
     <!-- Botón dentro del menú (alineado a la izquierda) -->
     <div class="menu-header">
       <ion-button fill="clear" (click)="toggleMenu()" class="btn-lg menu-close-btn">
@@ -109,13 +107,15 @@
         <a [routerLink]="['/custom']" class="menu-link" (click)="closeMenu()">
           Monstruos de la Comunidad
         </a>
-
-        <li class="menu-footer">
-          <a [routerLink]="['/login']" class="menu-link" (click)="closeMenu()">Login</a>
-          <span class="separator">/</span>
-          <a [routerLink]="['/register']" class="menu-link" (click)="closeMenu()">Register</a>
-        </li>
+      </li>
     </ul>
+
+    <!-- Footer del menú -->
+    <div class="menu-footer">
+      <a [routerLink]="['/login']" class="menu-link" (click)="closeMenu()">Login</a>
+      <span class="separator">/</span>
+      <a [routerLink]="['/register']" class="menu-link" (click)="closeMenu()">Register</a>
+    </div>
   </div>
 
   <ion-router-outlet></ion-router-outlet>
