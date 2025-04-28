@@ -26,15 +26,15 @@ DROP TABLE IF EXISTS `monster`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `monster` (
-  `id` int NOT NULL,
+  `id` bigint NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
   `size` varchar(100) DEFAULT NULL,
   `descripcion` text,
-  `img` varchar(255) DEFAULT NULL,
-  `user_id` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `img` text,
+  `usuario_id` varchar(255) DEFAULT NULL,
+  `fecha_creacion` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +43,7 @@ CREATE TABLE `monster` (
 
 LOCK TABLES `monster` WRITE;
 /*!40000 ALTER TABLE `monster` DISABLE KEYS */;
+INSERT INTO `monster` VALUES (2,'Gyarados','6,5m','no tengo imaginacion','url imag','idusuario','2025-04-15 17:57:04'),(3,'pikachu','6,5m','no tengo imaginacion','url imag','idusuario','2025-04-15 17:57:04'),(5,'Monstruo de prueba','5m','Este es un monstruo de prueba','img','user','2025-04-15 18:38:07'),(6,'Monstruo de prueba','5m','Este es un monstruo de prueba','img','user','2025-04-15 18:38:08'),(7,'Monstruo de prueba','5m','Este es un monstruo de prueba','img','user','2025-04-15 18:38:08'),(8,'Monstruo de prueba','5m','Este es un monstruo de prueba','img','user','2025-04-15 18:38:08'),(9,'Monstruo de prueba','5m','Este es un monstruo de prueba','img','user','2025-04-15 18:38:19'),(10,'Monstruo de prueba','5m','Este es un monstruo de prueba','img','user','2025-04-15 18:38:19');
 /*!40000 ALTER TABLE `monster` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-09 20:46:24
+-- Dump completed on 2025-04-23 16:03:42
