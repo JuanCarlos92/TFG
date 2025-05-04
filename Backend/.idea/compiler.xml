@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="EurekaServer" />
         <module name="MonsterHunter" />
+        <module name="Security" />
         <module name="Api-Gateway" />
         <module name="CustomMH" />
       </profile>
@@ -20,6 +21,7 @@
       <module name="CustomMH" options="-parameters" />
       <module name="EurekaServer" options="-parameters" />
       <module name="MonsterHunter" options="-parameters" />
+      <module name="Security" options="-parameters" />
     </option>
   </component>
 </project>

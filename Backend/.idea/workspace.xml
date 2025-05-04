@@ -5,7 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="affcdccb-abd5-45ed-a40b-1681d0ed219a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/authorization/JwtAuthenticationWebFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/authorization/SecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/Security.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/config/ApplicationConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/config/SecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/controller/AuthenticationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/dto/LoginDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/dto/LoginResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/dto/RegisterDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/entity/RoleEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/entity/UserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/repository/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/service/AuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-Gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Api-Gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/android/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/android/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/android/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/android/gradlew.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +47,9 @@
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="true" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Api-Gateway/pom.xml" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -61,7 +86,7 @@
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/JuanCarlos/Documents/github/SpringBoot-MicroServicios-AgenciaViajes/backend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/JuanCarlos/Documents/github/TFG/Backend/Api-Gateway/src/main/java/com/juancarlos/apigateway&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -82,6 +107,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\JuanCarlos\Documents\github\TFG\Backend\Api-Gateway\src\main\java\com\juancarlos\apigateway" />
+      <recent name="C:\Users\JuanCarlos\Documents\github\TFG\Backend\Security\src\main\java\com\juancarlos\security" />
       <recent name="C:\Users\JuanCarlos\Documents\github\TFG\Backend\EurekaServer\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -123,6 +150,13 @@
     <configuration name="MonsterHunter" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="MonsterHunter" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.juancarlos.monsterhunter.MonsterHunter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecurityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Security" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.juancarlos.security.SecurityApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,7 +208,11 @@
       <workItem from="1745490068525" duration="3345000" />
       <workItem from="1745754029119" duration="2135000" />
       <workItem from="1745836662255" duration="1386000" />
-      <workItem from="1745911185640" duration="1586000" />
+      <workItem from="1745911185640" duration="2798000" />
+      <workItem from="1745948872017" duration="3004000" />
+      <workItem from="1746037966352" duration="54000" />
+      <workItem from="1746098603124" duration="1962000" />
+      <workItem from="1746194840990" duration="2007000" />
     </task>
     <servers />
   </component>
