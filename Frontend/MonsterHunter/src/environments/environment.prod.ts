@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   host: 'https://api-gateway-monsterhunter.onrender.com',
   //host: 'localhost',
-  //port: 8080,
+  port: '',
   monster: '/api/monster',
   weapon: '/api/weapon',
   weaponTypeId: '/api/weapon/type',
