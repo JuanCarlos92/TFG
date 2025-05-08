@@ -1,8 +1,8 @@
 export const environment = {
   production: true,
-  //host: 'https://ee38-64-226-166-164.ngrok-free.app ',
-  host: 'localhost',
-  port: 8080,
+  host: 'https://api-gateway-monsterhunter.onrender.com',
+  //host: 'localhost',
+  //port: 8080,
   monster: '/api/monster',
   weapon: '/api/weapon',
   weaponTypeId: '/api/weapon/type',
