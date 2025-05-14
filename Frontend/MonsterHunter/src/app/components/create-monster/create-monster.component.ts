@@ -32,6 +32,7 @@ export class CreateMonsterComponent {
 
   onSubmit(form: NgForm): void {
     if (form.valid) {
+      this.monster.usuarioId = localStorage.getItem('email') ?? '';
       this.customService.postMonster(this.monster).subscribe({
         next: (res) => {
           console.log('Monstruo creado:', res);

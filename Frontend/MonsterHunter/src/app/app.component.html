@@ -1,4 +1,10 @@
+
+
+
 <ion-app>
+
+  
+
   <ion-header [translucent]="true">
     <ion-toolbar>
       <table class="w-100 css-table">
@@ -13,6 +19,10 @@
             <!-- Texto "Monster Hunter" en la segunda columna -->
             <td class="monster-title-column text-center align-middle">
               <a [routerLink]="['/home']" class="title-link">Monster Hunter</a>
+            </td>
+
+            <td class="monster-title-column text-center align-middle">
+              <a [routerLink]="['/home']" class="title-link">{{email}}</a>
             </td>
           </tr>
         </tbody>

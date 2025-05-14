@@ -23,12 +23,6 @@
         <input type="text" id="img" class="form-control" [(ngModel)]="monster.img" name="img" />
       </div>
 
-      <div class="form-group">
-        <label for="usuarioId">Usuario</label>
-        <input type="text" id="usuarioId" class="form-control" [(ngModel)]="monster.usuarioId" name="usuarioId"
-          required />
-      </div>
-
       <div class="d-flex justify-content-between mt-3">
         <button type="submit" class="btn btn-primary" [disabled]="!monsterForm.valid">
           Crear

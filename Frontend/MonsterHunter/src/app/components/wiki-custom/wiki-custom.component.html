@@ -70,7 +70,7 @@
 </div>
 
 <!-- Botones para eliminar y actualizar -->
-<div class="container mt-4 text-center">
+<div class="container mt-4 text-center" *ngIf="currentUser === infoMonster?.usuarioId">
   <button class="btn btn-danger mx-2" (click)="deleteMonster()">Eliminar Monstruo</button>
   <button class="btn btn-primary mx-2" (click)="goUpdate()">Actualizar Monstruo</button>
 </div>
