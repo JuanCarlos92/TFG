@@ -1,13 +1,12 @@
-
-
-
 <ion-app>
-
-  
-
   <ion-header [translucent]="true">
     <ion-toolbar>
       <table class="w-100 css-table">
+        <colgroup>
+          <col style="width: 220px;">
+          <col style="width: auto;">
+          <col style="width: 220px;">
+        </colgroup>
         <tbody>
           <tr>
             <!-- Botón de menú en la primera columna -->
@@ -17,12 +16,20 @@
               </ion-button>
             </td>
             <!-- Texto "Monster Hunter" en la segunda columna -->
-            <td class="monster-title-column text-center align-middle">
+            <td class="monster-title-column align-middle">
               <a [routerLink]="['/home']" class="title-link">Monster Hunter</a>
             </td>
-
-            <td class="monster-title-column text-center align-middle">
-              <a [routerLink]="['/home']" class="title-link">{{email}}</a>
+            <!-- Texto "email" -->
+            <td class="email-text-column text-end align-middle" style="position: relative;">
+              <div class="email-combobox">
+                <span class="email-text" (click)="toggleEmailDropdown()" tabindex="0">
+                  {{email}}
+                  <ion-icon name="chevron-down-outline" class="chevron-icon"></ion-icon>
+                </span>
+                <div class="email-dropdown" *ngIf="showEmailDropdown">
+                  <button class="dropdown-item" (click)="logout()">Cerrar sesión</button>
+                </div>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -119,13 +126,6 @@
         </a>
       </li>
     </ul>
-
-    <!-- Footer del menú -->
-    <!-- <div class="menu-footer">
-      <a [routerLink]="['/login']" class="menu-link" (click)="closeMenu()">Login</a>
-      <span class="separator">/</span>
-      <a [routerLink]="['/register']" class="menu-link" (click)="closeMenu()">Register</a>
-    </div> -->
   </div>
 
   <ion-router-outlet></ion-router-outlet>

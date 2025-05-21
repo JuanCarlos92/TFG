@@ -10,6 +10,7 @@ import { jwtDecode } from 'jwt-decode';
 })
 export class AppComponent {
   isMenuOpen: boolean = false;
+  showEmailDropdown = false;
   email: string = '';
 
   constructor(private http: HttpClient) {
@@ -27,6 +28,15 @@ export class AppComponent {
 
   }
 
+  toggleEmailDropdown() {
+    this.showEmailDropdown = !this.showEmailDropdown;
+  }
+
+  logout() {
+    // Aquí tu lógica de cierre de sesión
+    this.showEmailDropdown = false;
+    // Por ejemplo: this.authService.logout();
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -40,8 +50,13 @@ export class AppComponent {
   @HostListener('document:click', ['$event'])
   handleClickOutside(event: MouseEvent) {
     const clickedElement = event.target as HTMLElement;
+    // Cierra el menú lateral si se hace clic fuera
     if (!clickedElement.closest('.side-menu') && !clickedElement.closest('.menu-button-column')) {
       this.isMenuOpen = false;
+    }
+    // Cierra el combobox del email si se hace clic fuera
+    if (!clickedElement.closest('.email-combobox')) {
+      this.showEmailDropdown = false;
     }
   }
 

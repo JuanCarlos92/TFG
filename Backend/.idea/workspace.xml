@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="affcdccb-abd5-45ed-a40b-1681d0ed219a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/home/home.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/home/home.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/home/home.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/home/home.page.html" afterDir="false" />
-    </list>
+    <list default="true" id="affcdccb-abd5-45ed-a40b-1681d0ed219a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,7 +203,7 @@
       <workItem from="1746704893401" duration="742000" />
       <workItem from="1746723425090" duration="2090000" />
       <workItem from="1747033094887" duration="8000" />
-      <workItem from="1747235314191" duration="1205000" />
+      <workItem from="1747235314191" duration="2336000" />
     </task>
     <servers />
   </component>
