@@ -109,9 +109,9 @@ export class AppComponent {
   iniciarLogin() {
     const idToken = localStorage.getItem('id_token');
     if (!idToken) {
-      window.location.href = 'https://eu-west-3wjkl6aqts.auth.eu-west-3.amazoncognito.com/login/continue?client_id=1gdnvgrhubfo5e7fldivohp65e&redirect_uri=http%3A%2F%2Flocalhost%3A8100&response_type=code&scope=email+openid+phone';
+      window.location.href = 'https://eu-west-3wjkl6aqts.auth.eu-west-3.amazoncognito.com/login/continue?client_id=1gdnvgrhubfo5e7fldivohp65e&redirect_uri=https%3A%2F%2Ftfg-juancarlosfilter.netlify.app&response_type=code&scope=email+openid+phone';
     }
-
+    //window.location.href = 'https://eu-west-3wjkl6aqts.auth.eu-west-3.amazoncognito.com/login/continue?client_id=1gdnvgrhubfo5e7fldivohp65e&redirect_uri=http%3A%2F%2Flocalhost%3A8100&response_type=code&scope=email+openid+phone';
     localStorage.getItem('email');
   }
 }
