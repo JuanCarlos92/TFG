@@ -46,6 +46,7 @@ table.css-table {
   overflow: hidden; 
   text-overflow: ellipsis;  // Añade "..." 
   display: inline-block;
+  cursor: pointer;
 }
 
 .email-dropdown {

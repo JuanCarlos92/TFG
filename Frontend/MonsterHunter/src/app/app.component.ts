@@ -33,9 +33,10 @@ export class AppComponent {
   }
 
   logout() {
-    // Aquí tu lógica de cierre de sesión
+    //Limpiar el token y el email del localStorage
+    localStorage.clear();
     this.showEmailDropdown = false;
-    // Por ejemplo: this.authService.logout();
+    window.location.href = '/home';
   }
 
   toggleMenu() {
@@ -66,9 +67,9 @@ export class AppComponent {
     const params = new URLSearchParams();
     params.set('grant_type', 'authorization_code');
     params.set('code', code);
-    params.set('redirect_uri', 'http://localhost:8100'); // Asegúrate de que coincida con la URL de redirección
-    params.set('client_id', '1gdnvgrhubfo5e7fldivohp65e'); // Tu client_id de Cognito
-    params.set('client_secret', 'o1ap53ek2k14q2l7rp0uie12pij882gpbvt56t64orqg9ehu19i'); // Tu client_secret de Cognito
+    params.set('redirect_uri', 'tfg-juancarlosfilter.netlify.app'); //http://localhost:8100
+    params.set('client_id', '1gdnvgrhubfo5e7fldivohp65e'); //client_id de Cognito
+    params.set('client_secret', 'o1ap53ek2k14q2l7rp0uie12pij882gpbvt56t64orqg9ehu19i');
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
