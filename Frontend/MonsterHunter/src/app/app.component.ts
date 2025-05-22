@@ -67,7 +67,7 @@ export class AppComponent {
     const params = new URLSearchParams();
     params.set('grant_type', 'authorization_code');
     params.set('code', code);
-    params.set('redirect_uri', 'tfg-juancarlosfilter.netlify.app'); //http://localhost:8100
+    params.set('redirect_uri', 'http://tfg-juancarlosfilter.netlify.app'); //http://localhost:8100 tfg-juancarlosfilter.netlify.app
     params.set('client_id', '1gdnvgrhubfo5e7fldivohp65e'); //client_id de Cognito
     params.set('client_secret', 'o1ap53ek2k14q2l7rp0uie12pij882gpbvt56t64orqg9ehu19i');
 
@@ -100,7 +100,7 @@ export class AppComponent {
         }
 
       }, error => {
-        window.location.href = 'http://localhost:8100/home';
+        window.location.href = 'http://tfg-juancarlosfilter.netlify.app'; // http://localhost:8100/home  http://tfg-juancarlosfilter.netlify.app
         console.error('Error exchanging code for token:', error);
       });
   }
