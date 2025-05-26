@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  host: 'http://ec2-13-39-20-91.eu-west-3.compute.amazonaws.com',
-  port: '8080',
+  host: 'https://wikimonsterhunter.org',
+  port: '',
   monster: '/api/monster',
   weapon: '/api/weapon',
   weaponTypeId: '/api/weapon/type',
