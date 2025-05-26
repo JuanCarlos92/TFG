@@ -36,7 +36,7 @@ export class AppComponent {
     //Limpiar el token y el email del localStorage
     localStorage.clear();
     this.showEmailDropdown = false;
-    window.location.href = '/home';
+    window.location.href = '/';
   }
 
   toggleMenu() {
