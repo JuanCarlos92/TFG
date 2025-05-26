@@ -18,7 +18,6 @@
 --
 -- Table structure for table `monster`
 --
-
 CREATE DATABASE IF NOT EXISTS custommh;
 USE custommh;
 
@@ -34,7 +33,7 @@ CREATE TABLE `monster` (
   `usuario_id` varchar(255) DEFAULT NULL,
   `fecha_creacion` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +42,7 @@ CREATE TABLE `monster` (
 
 LOCK TABLES `monster` WRITE;
 /*!40000 ALTER TABLE `monster` DISABLE KEYS */;
-INSERT INTO `monster` VALUES (2,'Gyarados','6,5m','no tengo imaginacion','url imag','idusuario','2025-04-15 17:57:04'),(3,'pikachu','6,5m','no tengo imaginacion','url imag','idusuario','2025-04-15 17:57:04'),(5,'Monstruo de prueba','5m','Este es un monstruo de prueba','img','user','2025-04-15 18:38:07'),(6,'Monstruo de prueba','5m','Este es un monstruo de prueba','img','user','2025-04-15 18:38:08'),(7,'Monstruo de prueba','5m','Este es un monstruo de prueba','img','user','2025-04-15 18:38:08'),(8,'Monstruo de prueba','5m','Este es un monstruo de prueba','img','user','2025-04-15 18:38:08'),(9,'Monstruo de prueba','5m','Este es un monstruo de prueba','img','user','2025-04-15 18:38:19'),(10,'Monstruo de prueba','5m','Este es un monstruo de prueba','img','user','2025-04-15 18:38:19');
+INSERT INTO `monster` VALUES (15,'Arkveld','Grande','Cuanta más energía absorbe este monstruo, más feroces son sus ataques. Con los tanques de energía llenos, sus afilados cadenáculos se despliegan para llegar más lejos. A su vez, dado que sus alas tienen órganos que absorben energía, es posible derramarla concentrando tus ataques sobre ellos. Los ataques elementales continuos sobrecargan los órganos, lo que devuelve al monstruo a su estado normal.','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIoVGDYlvS7_q_6ctER2h5spM211kumKRNGA&s','juancarlosfilter@gmail.com','2025-05-22 18:46:16'),(16,'Rey Dau','Grande','Wyvern volador que ejerce su supremacía en el ecosistema de los Llanos Barlovento. Se ha adaptado a la marea de arena y suele aparecer junto a ella. Además, puede almacenar, amplificar y descargar los poderosos rayos de la tormenta con un efecto devastador. Los Rey Dau son muy territoriales y atacan a cualquier intruso a la vista. El roce de la fulgorita contra su caparazón emite un sonido que pone en guardia a todos los monstruos de la región.\nSi el ala o la cola de un Rey Dau tocan el suelo mientras están cargadas, reaccionan generando una capa de fulgorita. Esto no solo aumenta el radio de alcance del apéndice, sino también la capacidad de carga del monstruo. Destruir ambas partes es primordial. La cabeza también suele ser vulnerable tras una descarga. Se recomienda el uso de armadura resistente al rayo y armamento con elemento hielo.','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShIp4ig49CcFDi1NHaveXSaO6w21_qWhW_6A&s','juancarlosfilter@gmail.com','2025-05-22 18:57:55'),(17,'Zoh Shia','Grande','Un Guardián colosal que ha estado alimentándose de la energía de la Tea Dracónida. Su cuerpo está revestido de leche de wyvern cristalizada, lo que le permite regenerarse. El Zoh Shia, al igual que otros Guardianes, destaca por sus ataques de energía y provoca explosiones continuas para cristalizar toda la zona. Bajo su manto blanco de Guardián, su cuerpo palpita energía oscura, la cual podrás observar si revela todo su poder ancestral.\nEl Zoh Shia comparte los rasgos básicos de otros Guardianes. Si arrancas los cristales de sus alas y cabeza, anularás sus reservas de energía. El cristal blanco de su cuerpo se regenera, pero al hacerlo se vuelve más quebradizo, lo que facilita destruirlo por segunda vez. Los cristales que crea estallan al recibir daño elemental: aprovéchalo con agilidad y munición elemental de la eslinga.','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS147SQRLYIwQDa6W0E9w5oV-pjzPz94mZX1Q&s','juancarlosfilter.infor@gmail.com','2025-05-22 19:03:06'),(18,'Talioth','Pequeño','Carnívoros que merodean por los Llanos Barlovento. Sus inconfundibles mandíbulas están diseñadas para aferrar y retener a sus presas y suelen cazar y defenderse en grupo. No es difícil ver a una manada de Talioth enfrentarse a monstruos más grandes y vencer por superioridad numérica. Los cazadores más astutos se aprovechan de ello y los usan para distraer o debilitar al objetivo principal.','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQPtnC0QDPjQcoJFrVCrtFn1sia8b1f2X4eg&s','juancarlosfilter.infor@gmail.com','2025-05-22 19:05:00');
 /*!40000 ALTER TABLE `monster` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-23 16:03:42
+-- Dump completed on 2025-05-23 12:27:34

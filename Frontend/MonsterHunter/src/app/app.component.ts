@@ -63,14 +63,16 @@ export class AppComponent {
 
   exchangeCodeForToken(code: string) {
     const tokenUrl = 'https://eu-west-3wjkl6aqts.auth.eu-west-3.amazoncognito.com/oauth2/token';
+    //http://localhost:8100 tfg-juancarlosfilter.netlify.app
+    // const redirectUri = 'tfg-juancarlosfilter.netlify.app';
+    const redirectUri = window.location.origin;
+
 
     const params = new URLSearchParams();
     params.set('grant_type', 'authorization_code');
     params.set('code', code);
-    //http://localhost:8100 tfg-juancarlosfilter.netlify.app
-    params.set('redirect_uri', 'http://localhost:8100'); 
-    //params.set('redirect_uri', 'http://tfg-juancarlosfilter.netlify.app');
-    params.set('client_id', '1gdnvgrhubfo5e7fldivohp65e'); //client_id de Cognito
+    params.set('redirect_uri', redirectUri);
+    params.set('client_id', '1gdnvgrhubfo5e7fldivohp65e');
     params.set('client_secret', 'o1ap53ek2k14q2l7rp0uie12pij882gpbvt56t64orqg9ehu19i');
 
     const headers = new HttpHeaders({
@@ -104,7 +106,7 @@ export class AppComponent {
       }, error => {
         //http://localhost:8100/home  http://tfg-juancarlosfilter.netlify.app
         //window.location.href = 'http://tfg-juancarlosfilter.netlify.app';
-        window.location.href = 'http://localhost:8100/home';
+        window.location.href = `${redirectUri}/home`;
         console.error('Error exchanging code for token:', error);
       });
   }
@@ -113,8 +115,10 @@ export class AppComponent {
   iniciarLogin() {
     const idToken = localStorage.getItem('id_token');
     if (!idToken) {
+      const redirectUri = encodeURIComponent(window.location.origin);
       //window.location.href = 'https://eu-west-3wjkl6aqts.auth.eu-west-3.amazoncognito.com/login/continue?client_id=1gdnvgrhubfo5e7fldivohp65e&redirect_uri=https%3A%2F%2Ftfg-juancarlosfilter.netlify.app&response_type=code&scope=email+openid+phone';
-      window.location.href = 'https://eu-west-3wjkl6aqts.auth.eu-west-3.amazoncognito.com/login/continue?client_id=1gdnvgrhubfo5e7fldivohp65e&redirect_uri=http%3A%2F%2Flocalhost%3A8100&response_type=code&scope=email+openid+phone';
+      // window.location.href = 'https://eu-west-3wjkl6aqts.auth.eu-west-3.amazoncognito.com/login/continue?client_id=1gdnvgrhubfo5e7fldivohp65e&redirect_uri=http%3A%2F%2Flocalhost%3A8100&response_type=code&scope=email+openid+phone';
+      window.location.href = `https://eu-west-3wjkl6aqts.auth.eu-west-3.amazoncognito.com/login?client_id=1gdnvgrhubfo5e7fldivohp65e&redirect_uri=${redirectUri}&response_type=code&scope=email+openid+phone`;
     }
     localStorage.getItem('email');
   }

@@ -1,6 +1,5 @@
 export const environment = {
   production: false,
-  //host: 'https://ee38-64-226-166-164.ngrok-free.app ',
   host: 'localhost',
   port: 8080,
   monster: '/api/monster',

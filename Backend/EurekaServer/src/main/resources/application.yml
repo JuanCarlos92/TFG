@@ -7,7 +7,10 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+#    hostname: localhost
+    hostname: ec2-13-39-20-91.eu-west-3.compute.amazonaws.com
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
 
   client:
     register-with-eureka: false
