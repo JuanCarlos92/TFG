@@ -3,12 +3,13 @@ import { HttpClient, HttpRequest, HttpResponse, HttpErrorResponse, HttpHeaders, 
 import { Observable, Observer } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RequestService {
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   request(requestServiceOptions: RequestServiceOptions, adminRequest: boolean, loader?: boolean): Observable<any> {
     let headers = new HttpHeaders();
@@ -21,6 +22,10 @@ export class RequestService {
     headers = headers.append('Cache-Control', 'no-cache');
 
     requestServiceOptions.headers = headers;
+
+    if (!requestServiceOptions.url.startsWith('http')) {
+      requestServiceOptions.url = `${environment.host}:${environment.port}${requestServiceOptions.url}`;
+    }
 
     // Construir el objeto HttpRequest
     const httpRequest: HttpRequest<any> =
