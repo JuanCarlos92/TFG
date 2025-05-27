@@ -9,11 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="EurekaServer" />
         <module name="MonsterHunter" />
-        <module name="Security" />
         <module name="Api-Gateway" />
         <module name="CustomMH" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Security" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

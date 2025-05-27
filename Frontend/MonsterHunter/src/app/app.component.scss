@@ -22,6 +22,9 @@ table.css-table {
   letter-spacing: 10px;
   text-shadow: 2px 2px 4px #000;
   height: 60px;
+  // white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Enlace del título */
@@ -42,23 +45,23 @@ table.css-table {
   white-space: nowrap;
   margin-left: auto;
   text-shadow: 1px 1px 2px #000;
-  max-width: 180px;
-  overflow: hidden; 
-  text-overflow: ellipsis;  // Añade "..." 
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis; // Añade "..."
   display: inline-block;
   cursor: pointer;
 }
 
 .email-dropdown {
   position: absolute;
-  right: 0;
-  top: 0%;
+  right: 9;
+  top: -10%;
   background: #575656;
   border: 1px solid #d4af37;
   border-radius: 4px;
   min-width: 100px;
   z-index: 10;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   padding: 3px 0;
 }
 
@@ -170,8 +173,14 @@ table.css-table {
   font-size: 1.2rem;
 }
 
+.menu-button-column,
+.email-text-column {
+  width: 130px;
+  min-width: 60px;
+}
+
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .monster-title-column {
     font-size: 2rem;
     letter-spacing: 5px;
@@ -179,16 +188,55 @@ table.css-table {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 685px) {
   .monster-title-column {
-    font-size: 2rem;
-    letter-spacing: 2px;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
     height: 60px;
   }
 }
+@media (max-width: 460px) {
+  .menu-button-column,
+  .email-text-column {
+    width: 120px !important;
+  }
+  .monster-title-column {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    padding: 0;
+  }
+  .email-text {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 420px) {
+  .monster-title-column {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    padding: 0;
+  }
 
-/* En móviles menu ocupa toda la pantalla */
-@media (max-width: 768px) {
+  .email-text {
+    font-size: 0.7rem;
+  }
+  .email-dropdown {
+    top: -20%;
+  }
+}
+@media (max-width: 385px) {
+  .monster-title-column {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 0;
+  }
+
+  .email-text {
+    font-size: 0.6rem;
+  }
+}
+
+/* Responsive movil menu */
+@media (max-width: 850px) {
   .side-menu {
     left: -100%;
     width: 100%;
@@ -199,7 +247,6 @@ table.css-table {
     width: 100%;
   }
   .email-text {
-    max-width: 90px; 
-    font-size: 0.8rem;  
+    max-width: 130px;
   }
 }
