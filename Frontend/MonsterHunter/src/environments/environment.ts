@@ -1,7 +1,8 @@
 export const environment = {
   production: false,
-  host: 'localhost',
-  port: 8080,
+  // host: 'https://wikimonsterhunter.org',
+  host: 'http://localhost',
+  port: '8080',
   monster: '/api/monster',
   weapon: '/api/weapon',
   weaponTypeId: '/api/weapon/type',

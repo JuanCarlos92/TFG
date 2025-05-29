@@ -20,6 +20,7 @@ export class RequestService {
     headers = headers.append('Content-Type', 'application/json');
     headers = headers.append('Accept', '*/*');
     headers = headers.append('Cache-Control', 'no-cache');
+    //headers = headers.append('Access-Control-Allow-Origin', '*');
 
     requestServiceOptions.headers = headers;
 

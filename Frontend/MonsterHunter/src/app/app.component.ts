@@ -18,6 +18,8 @@ export class AppComponent {
     const urlParams = new URLSearchParams(window.location.search);
     const authorizationCode = urlParams.get('code');
 
+    console.log(urlParams);
+
     if (authorizationCode) {
       this.exchangeCodeForToken(authorizationCode);
     } else if (!localStorage.getItem('email')) {
