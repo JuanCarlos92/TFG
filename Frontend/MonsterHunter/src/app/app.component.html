@@ -2,11 +2,6 @@
   <ion-header [translucent]="true">
     <ion-toolbar>
       <table class="w-100 css-table">
-        <!-- <colgroup>
-          <col style="width: 130px;">
-          <col style="width: auto;">
-          <col style="width: 130px;">
-        </colgroup> -->
         <tbody>
           <tr>
             <!-- Botón de menú en la primera columna -->
@@ -20,13 +15,13 @@
               <a [routerLink]="['/home']" class="title-link">Monster Hunter</a>
             </td>
             <!-- Texto "email" -->
-            <td class="email-text-column text-end align-middle" style="position: relative;">
+            <td class="email-text-column text-end align-middle" style="position: relative;" >
               <div class="email-combobox">
                 <span class="email-text" (click)="toggleEmailDropdown()" tabindex="0">
                   {{email}}
                   <ion-icon name="chevron-down-outline" class="chevron-icon"></ion-icon>
                 </span>
-                <div class="email-dropdown" *ngIf="showEmailDropdown">
+                <div class="email-dropdown" *ngIf="showEmailDropdown && !isNative">
                   <button class="dropdown-item" (click)="logout()">Cerrar sesión</button>
                 </div>
               </div>
@@ -119,7 +114,7 @@
           Herramientas
         </a>
       </li>
-      <li>
+      <li *ngIf="!isNative">
         <!-- Monster Custom -->
         <a [routerLink]="['/custom']" class="menu-link" (click)="closeMenu()">
           Monstruos de la Comunidad

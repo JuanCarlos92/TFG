@@ -5,36 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="affcdccb-abd5-45ed-a40b-1681d0ed219a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/config/GlobalCorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/config/GlobalCorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/Security.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/config/ApplicationConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/config/SecurityConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/controller/AuthenticationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/dto/LoginDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/dto/LoginResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/dto/RegisterDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/entity/RoleEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/entity/UserEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/repository/RoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/service/AuthenticationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/java/com/juancarlos/security/service/JwtService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/src/test/java/com/juancarlos/security/SecurityApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/config/GatewayCorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/config/GatewayCorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/config/GlobalCorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/config/GlobalCorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EurekaServer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServer/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/config/GlobalCorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/config/GlobalCorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/ArmorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/ArmorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,45 +51,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
-    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiGateway.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.CustomMh.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.EurekaServer.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.MonsterHunter.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/JuanCarlos/Documents/github/TFG/Backend/CustomMH&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;cn.yiiguxing.plugin.translate&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
+    "Notification.DoNotAsk-Database detector": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiGateway.executor": "Run",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.CustomMh.executor": "Run",
+    "Spring Boot.EurekaServer.executor": "Run",
+    "Spring Boot.MonsterHunter.executor": "Run",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/JuanCarlos/Documents/github/TFG/Backend/CustomMH",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -121,6 +102,7 @@
       <recent name="C:\Users\JuanCarlos\Documents\github\TFG\Backend\Security\src\main\java\com\juancarlos\security" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.juancarlos.apigateway.config" />
       <recent name="com.juancarlos.custommh.models.response" />
     </key>
   </component>
@@ -159,13 +141,6 @@
     <configuration name="MonsterHunter" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="MonsterHunter" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.juancarlos.monsterhunter.MonsterHunter" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Security" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="Security" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.juancarlos.security.Security" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -243,6 +218,8 @@
       <workItem from="1748335277671" duration="2704000" />
       <workItem from="1748340166029" duration="1590000" />
       <workItem from="1748345860842" duration="178000" />
+      <workItem from="1748515672152" duration="1209000" />
+      <workItem from="1748533795167" duration="6869000" />
     </task>
     <servers />
   </component>

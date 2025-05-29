@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, HostListener } from '@angular/core';
+import { Capacitor } from '@capacitor/core';
 import { jwtDecode } from 'jwt-decode';
 
 @Component({
@@ -12,21 +13,31 @@ export class AppComponent {
   isMenuOpen: boolean = false;
   showEmailDropdown = false;
   email: string = '';
+  isNative: boolean = false;
 
   constructor(private http: HttpClient) {
+    this.isNative = Capacitor.isNativePlatform();
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const authorizationCode = urlParams.get('code');
+    if (!this.isNative) {
+      // Aquí puedes manejar la lógica específica para web
+      const urlParams = new URLSearchParams(window.location.search);
+      const authorizationCode = urlParams.get('code');
 
-    console.log(urlParams);
+      if (authorizationCode) {
+        this.exchangeCodeForToken(authorizationCode);
+      } else if (!localStorage.getItem('email')) {
+        this.iniciarLogin();
+      }
 
-    if (authorizationCode) {
-      this.exchangeCodeForToken(authorizationCode);
-    } else if (!localStorage.getItem('email')) {
-      this.iniciarLogin();
+      this.email = localStorage.getItem('email') ?? '';
+    } else {
+
+      //EN APK: limpiar datos de login y ocultar email
+      localStorage.removeItem('id_token');
+      localStorage.removeItem('email');
+      this.email = '';
+
     }
-
-    this.email = localStorage.getItem('email') ?? '';
 
   }
 
@@ -65,8 +76,6 @@ export class AppComponent {
 
   exchangeCodeForToken(code: string) {
     const tokenUrl = 'https://eu-west-3wjkl6aqts.auth.eu-west-3.amazoncognito.com/oauth2/token';
-    //http://localhost:8100 tfg-juancarlosfilter.netlify.app
-    // const redirectUri = 'tfg-juancarlosfilter.netlify.app';
     const redirectUri = window.location.origin;
 
 
@@ -106,8 +115,6 @@ export class AppComponent {
         }
 
       }, error => {
-        //http://localhost:8100/home  http://tfg-juancarlosfilter.netlify.app
-        //window.location.href = 'http://tfg-juancarlosfilter.netlify.app';
         window.location.href = `${redirectUri}/home`;
         console.error('Error exchanging code for token:', error);
       });
@@ -118,8 +125,6 @@ export class AppComponent {
     const idToken = localStorage.getItem('id_token');
     if (!idToken) {
       const redirectUri = encodeURIComponent(window.location.origin);
-      //window.location.href = 'https://eu-west-3wjkl6aqts.auth.eu-west-3.amazoncognito.com/login/continue?client_id=1gdnvgrhubfo5e7fldivohp65e&redirect_uri=https%3A%2F%2Ftfg-juancarlosfilter.netlify.app&response_type=code&scope=email+openid+phone';
-      // window.location.href = 'https://eu-west-3wjkl6aqts.auth.eu-west-3.amazoncognito.com/login/continue?client_id=1gdnvgrhubfo5e7fldivohp65e&redirect_uri=http%3A%2F%2Flocalhost%3A8100&response_type=code&scope=email+openid+phone';
       window.location.href = `https://eu-west-3wjkl6aqts.auth.eu-west-3.amazoncognito.com/login?client_id=1gdnvgrhubfo5e7fldivohp65e&redirect_uri=${redirectUri}&response_type=code&scope=email+openid+phone`;
     }
     localStorage.getItem('email');
