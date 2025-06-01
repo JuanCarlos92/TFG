@@ -9,8 +9,11 @@ import { GetRecoleccionesWithPaginacion } from '../models/response/GetRecoleccio
   providedIn: 'root'
 })
 export class RecoleccionService {
+
+  // Inyección del servicio personalizado de peticiones HTTP
   constructor(private requestService: RequestService) { }
 
+  // Método para obtener la lista de recolecciones con paginación
   public getRecoleccionesWithPaginacion(page: number = 0, size: number = 12, nombre?: string): Observable<GetRecoleccionesWithPaginacion> {
     let url = `${environment.recoleccion}?page=${page}&size=${size}`;
 
@@ -27,6 +30,7 @@ export class RecoleccionService {
     return this.requestService.request(requestServiceOptions, false, true);
   }
 
+  // Método para obtener una recolección específica por su ID
   public getRecoleccion(id: number): Observable<GetRecoleccionResponse> {
     let url = `${environment.recoleccion}/${id}`;
 

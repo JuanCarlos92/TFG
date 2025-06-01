@@ -42,6 +42,7 @@ export class ArmorSetComponent implements OnInit {
 
   //Obtiene lista de armaduras set
   getArmorSetList(): void {
+    // Llama al servicio para obtener la lista de armaduras set y se suscribe a la respuesta
     this.armorService.getArmorSetList().pipe(first()).subscribe({
       next: (res) => {
         this.armorsSetList = res.armorSetDTO;
@@ -69,11 +70,13 @@ export class ArmorSetComponent implements OnInit {
     console.log('Armaduras filtrada por rango:', this.filteredArmors);
   }
 
+  // Muestra la wiki del set de armadura seleccionado
   displayWiki(armorSet: ArmorSetBaseDTO) {
     this.armorSetWiki = armorSet;
     this.mostrarWiki = !this.mostrarWiki;
   }
 
+  // Cierra la wiki del set de armadura
   closeWiki() {
     this.mostrarWiki = false;
   }

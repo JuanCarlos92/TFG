@@ -40,8 +40,9 @@ export class CharmComponent implements OnInit {
     this.getCharmList(); // Carga inicial de amuletos
   }
 
-  //  Obtiene la lista de amuletos
+  // Obtiene la lista de amuletos
   getCharmList(): void {
+    // Llama al servicio para obtener la lista de amuletos y se suscribe a la respuesta
     this.charmService.getCharmList().pipe(first()).subscribe({
       next: (res) => {
         this.charmsList = res.charmDTO;
@@ -66,11 +67,13 @@ export class CharmComponent implements OnInit {
     console.log('Armaduras filtrada por rango:', this.filteredCharm);
   }
 
+  // Muestra la wiki del amuleto seleccionado
   displayWiki(charm: CharmBaseDTO) {
     this.charmWiki = charm;
     this.mostrarWiki = !this.mostrarWiki;
   }
 
+  // Cierra la wiki
   closeWiki() {
     this.mostrarWiki = false;
   }

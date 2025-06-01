@@ -13,13 +13,5 @@ export class HomePage {
   monsters: MonsterBaseDTO[] = [];
 
   constructor(private monsterService: MonsterService) {
-
-    // this.monsterService.getMonstersWithPaginacion().subscribe(res => {
-    //   console.log(res);
-    //   this.monsters = res.content;
-      
-    // });
-
   }
-
 }

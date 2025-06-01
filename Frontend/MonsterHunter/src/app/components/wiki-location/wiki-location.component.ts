@@ -24,11 +24,8 @@ export class WikiLocationComponent implements OnInit {
   constructor(private locationService: LocationService) {}
 
   ngOnInit() {
-    // El ID de la ubicación se obtiene de la propiedad `this.location['id']`
-    this.locationService
-      .getLocation(this.location['id'])
-      .pipe(first())
-      .subscribe({
+    // metodo para obtener la información de la ubicación por id del servicio locationService
+    this.locationService.getLocation(this.location['id']).pipe(first()).subscribe({
         next: (res) => {
           console.log('Ubicación ' + this.location['id'], res);
           this.infoLocation = res.locationDTO;
@@ -67,7 +64,8 @@ export class WikiLocationComponent implements OnInit {
     }
   }
 
+  // Este método recarga la página actual
   reloadPage(): void {
-    window.location.reload(); // Recarga la página actual
+    window.location.reload();
   }
 }

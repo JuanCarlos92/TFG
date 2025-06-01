@@ -59,6 +59,7 @@ export class CustomComponent implements OnInit {
 
   //Obtiene lista monstruos de la comunidad
   getCustomList(): void {
+    // Llama al servicio para obtener la lista de monstruos personalizados y se suscribe a la respuesta
     this.customService.getMonsterList().pipe(first()).subscribe({
       next: (res) => {
         this.monstersCustomList = res.monstersCustomDTO;
@@ -88,10 +89,12 @@ export class CustomComponent implements OnInit {
     this.mostrarWiki = !this.mostrarWiki;
   }
 
+  // Cierra el wiki del monstruo
   closeWiki() {
     this.mostrarWiki = false;
   }
 
+  // Maneja el error de la imagen
   ngOnDestroy(): void {
     this.search$.unsubscribe();
   }

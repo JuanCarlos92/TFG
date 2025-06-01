@@ -11,8 +11,11 @@ import { GetWeaponTypeResponse } from '../models/response/GetWeaponTypeResponse.
   providedIn: 'root'
 })
 export class WeaponService {
+
+  // Inyección del servicio personalizado de peticiones HTTP
   constructor(private requestService: RequestService) { }
 
+  // Método para obtener la lista de tipos de armas
   public getWeaponTypeList(): Observable<GetWeaponTypeListResponse> {
     let url = `${environment.weapon}`;
 
@@ -25,6 +28,7 @@ export class WeaponService {
     return this.requestService.request(requestServiceOptions, false, true);
   }
 
+  // Método para obtener un tipo de arma específico por su ID
   public getWeaponType(id: number): Observable<GetWeaponTypeResponse> {
     let url = `${environment.weaponTypeId}/${id}`;
 
@@ -37,6 +41,7 @@ export class WeaponService {
     return this.requestService.request(requestServiceOptions, false, true);
   }
 
+  // Método para obtener un arma específica por su ID
   public getWeapon(id: number): Observable<GetWeaponResponse> {
     let url = `${environment.weapon}/${id}`;
 

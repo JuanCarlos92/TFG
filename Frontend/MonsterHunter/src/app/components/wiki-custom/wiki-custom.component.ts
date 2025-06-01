@@ -40,6 +40,7 @@ export class WikiCustomComponent implements OnInit {
 
   // Método para obtener el monstruo por ID
   getMonster(): void {
+    // Llama al servicio para obtener el monstruo y se suscribe a la respuesta
     this.customService.getMonster(this.monsterCustom.id).subscribe({
       next: (res) => {
         console.log('Monstruos: ' + this.monsterCustom['id'], res);
@@ -64,6 +65,7 @@ export class WikiCustomComponent implements OnInit {
 
   // Método para eliminar el monstruo
   deleteMonster(): void {
+    // Llama al servicio para eliminar el monstruo y se suscribe a la respuesta
     this.customService.deleteMonster(this.monsterCustom.id).subscribe({
       next: () => {
         console.log(`Monstruo con ID ${this.monsterCustom.id} eliminado.`);
@@ -77,6 +79,7 @@ export class WikiCustomComponent implements OnInit {
     });
   }
 
+  // Método para recargar la página y cerrar el wiki
   reloadPage(): void {
     this.closeWiki.emit();
 

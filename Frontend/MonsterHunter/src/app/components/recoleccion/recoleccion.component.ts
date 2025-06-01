@@ -52,6 +52,7 @@ export class RecoleccionComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // Obtiene recolecciones con paginación y/o búsqueda
   getRecoleccionesWithPaginacion(): void {
+    // Llama al servicio para obtener las recolecciones con paginación y se suscribe a la respuesta
     this.recoleccionService.getRecoleccionesWithPaginacion(this.page, this.size, this.nameRecoleccion).pipe(first()).subscribe({
       next: (res) => {
         console.log('Recolecciones recibidas:', res);
@@ -87,10 +88,12 @@ export class RecoleccionComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
+  // Maneja el evento de selección de una recolección
   recoleccionNameSelected(event: string) {
     this.selectedRecoleccion = this.recolecciones.filter(v => v.nombre === event)[0];
   }
 
+  // Maneja el error de imagen
   ngOnDestroy(): void {
     this.search$.unsubscribe();
   }

@@ -29,6 +29,7 @@ export class WikiArmorComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.armor);
+    // Llama al método para obtener la información de la armadura
     this.armorService.getArmor(this.armor.id).subscribe({
       next: (res) => {
         console.log('Armaduras: ' + this.armor['id'], res);
@@ -41,6 +42,7 @@ export class WikiArmorComponent implements OnInit {
     });
   }
 
+  // Método para scroll a una sección específica
   scrollTo(sectionId: string): void {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -48,6 +50,7 @@ export class WikiArmorComponent implements OnInit {
     }
   }
 
+  // Método para cerrar la wiki y recargar la página
   reloadPage(): void {
     this.closeWiki.emit();
     

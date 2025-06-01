@@ -27,7 +27,7 @@ export class WikiMonsterComponent implements OnInit {
 
   ngOnInit() {
 
-    // El ID del monstruo se obtiene de la propiedad `this.monster['id']`
+    // Metodo para obtener el mosntruo por id del servicio monsterService
     this.monsterService.getMonster(this.monster['id']).pipe(first()).subscribe({
       next: (res) => {
         console.log('Monstruos ' + this.monster['id'], res);
@@ -48,8 +48,9 @@ export class WikiMonsterComponent implements OnInit {
     }
   }
 
+  // Este método recarga la página actual
   reloadPage(): void {
-    window.location.reload(); // Recarga la página actual
+    window.location.reload();
   }
 
 }

@@ -24,11 +24,9 @@ export class WikiKinsectComponent implements OnInit {
   constructor(private kinsectService: KinsectService) {}
 
   ngOnInit() {
-    // El ID del kinsecto se obtiene de la propiedad `this.kinsect['id']`
-    this.kinsectService
-      .getKinsect(this.kinsect['id'])
-      .pipe(first())
-      .subscribe({
+    
+    // obtiene el kinsecto por id del servicio kinsectService
+    this.kinsectService.getKinsect(this.kinsect['id']).pipe(first()).subscribe({
         next: (res) => {
           console.log('Kinsecto ' + this.kinsect['id'], res);
           this.infoKinsect = res.kinsectDTO;
@@ -47,7 +45,8 @@ export class WikiKinsectComponent implements OnInit {
     }
   }
 
+  // Este método recarga la página actual
   reloadPage(): void {
-    window.location.reload(); // Recarga la página actual
+    window.location.reload();
   }
 }

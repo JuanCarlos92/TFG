@@ -28,6 +28,7 @@ export class WikiCharmComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.charm);
+    // Llama al método para obtener la información del amuleto
     this.charmService.getCharm(this.charm.id).subscribe({
       next: (res) => {
         console.log('Amuleto ' + this.charm['id'], res);
@@ -40,6 +41,7 @@ export class WikiCharmComponent implements OnInit {
     });
   }
 
+  // Método para scroll a una sección específica
   scrollTo(sectionId: string): void {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -47,6 +49,7 @@ export class WikiCharmComponent implements OnInit {
     }
   }
 
+  // Método para cerrar la wiki y recargar la página
   reloadPage(): void {
     this.closeWiki.emit();
 

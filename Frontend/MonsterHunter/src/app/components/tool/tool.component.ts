@@ -37,6 +37,7 @@ export class ToolComponent implements OnInit {
 
   // Obtiene la lista de herramientas
   getToolList(): void {
+    // Llama al servicio para obtener la lista de herramientas y se suscribe a la respuesta
     this.toolService.getToolList().pipe(first()).subscribe({
       next: (res) => {
         this.toolsList = res.toolDTO;

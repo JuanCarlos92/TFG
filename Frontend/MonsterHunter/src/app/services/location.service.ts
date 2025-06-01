@@ -9,8 +9,11 @@ import { GetLocationResponse } from '../models/response/GetLocationResponse.mode
   providedIn: 'root'
 })
 export class LocationService {
+
+  // Inyección del servicio personalizado de peticiones HTTP
   constructor(private requestService: RequestService) { }
 
+  // Método para obtener la lista de ubicaciones con paginación
   public getLocationsWithPaginacion(page: number = 0, size: number = 17, nombre?: string): Observable<GetLocationsWithPaginacionResponse> {
     let url = `${environment.location}?page=${page}&size=${size}`;
 
@@ -27,6 +30,7 @@ export class LocationService {
     return this.requestService.request(requestServiceOptions, false, true);
   }
 
+  // Método para obtener una ubicación específica por su ID
   public getLocation(id: number): Observable<GetLocationResponse> {
     let url = `${environment.location}/${id}`;
 

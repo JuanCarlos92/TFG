@@ -36,10 +36,8 @@ export class QuestComponent implements OnInit {
 
   // Obtiene lista de misiones
   getQuestList(): void {
-    this.questService
-      .getQuestList()
-      .pipe(first())
-      .subscribe({
+    // Llama al servicio para obtener la lista de misiones y se suscribe a la respuesta
+    this.questService.getQuestList().pipe(first()).subscribe({
         next: (res) => {
           this.questsListBase = res.questDTO;
           this.filteredQuests = this.questsListBase; // Inicializa con todas las misiones
@@ -110,11 +108,13 @@ export class QuestComponent implements OnInit {
     console.log('Misiones filtradas y ordenadas:', this.filteredQuests);
   }
 
+  // Muestra la wiki de la misión seleccionada
   displayWiki(quest: QuestBaseDTO) {
     this.questWiki = quest;
     this.mostrarWiki = !this.mostrarWiki;
   }
 
+  // Cierra la wiki de la misión
   closeWiki() {
     this.mostrarWiki = false;
   }

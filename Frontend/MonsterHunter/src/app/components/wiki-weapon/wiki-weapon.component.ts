@@ -26,6 +26,7 @@ export class WikiWeaponComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.weapon);
+    // Llama al método para obtener del servicio la información del arma
     this.weaponService.getWeapon(this.weapon['id']).subscribe({
       next: (res) => {
         console.log('Armas ' + this.weapon['id'], res);
@@ -37,6 +38,7 @@ export class WikiWeaponComponent implements OnInit {
     });
   }
 
+  // Este método permite desplazarse suavemente hacia una sección específica de la página
   scrollTo(sectionId: string): void {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -44,6 +46,7 @@ export class WikiWeaponComponent implements OnInit {
     }
   }
 
+  // Este método recarga la página actual
   reloadPage(): void {
     this.closeWiki.emit();
   }

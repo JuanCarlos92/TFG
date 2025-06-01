@@ -52,6 +52,7 @@ export class KinsectComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // Obtiene kinsects con paginación y/o búsqueda
   getKinsectsWithPaginacion(): void {
+    // Llama al servicio para obtener los kinsects con paginación y se suscribe a la respuesta
     this.kinsectService.getKinsectsWithPaginacion(this.page, this.size, this.nameKinsect).pipe(first()).subscribe({
       next: (res) => {
         console.log('Kinsects recibidos:', res);
@@ -87,10 +88,12 @@ export class KinsectComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
+  // Muestra la wiki del kinsect seleccionado
   kinsectNameSelected(event: string) {
     this.selectedKinsect = this.kinsects.filter(v => v.nombre === event)[0];
   }
 
+  // Maneja el error de imagen
   ngOnDestroy(): void {
     this.search$.unsubscribe();
   }

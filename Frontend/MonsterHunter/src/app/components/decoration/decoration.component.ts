@@ -36,8 +36,9 @@ export class DecorationComponent implements OnInit {
     this.getDecorationList(); // Carga inicial de Adornos
   }
 
-  //  Obtiene la lista de adornos
+  // Obtiene la lista de adornos
   getDecorationList(): void {
+    // Llama al servicio para obtener la lista de adornos y se suscribe a la respuesta
     this.decorationService.getDecorationList().pipe(first()).subscribe({
       next: (res) => {
         this.decorationsList = res.decorationDTO;

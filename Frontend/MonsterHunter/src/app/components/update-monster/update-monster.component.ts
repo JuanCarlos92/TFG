@@ -50,6 +50,7 @@ export class UpdateMonsterComponent implements OnInit {
 
   onSubmit(form: NgForm): void {
     if (form.valid) {
+      // llamar al servicio para actualizar el monstruo personalizado
       this.customService.putMonster(this.monster).subscribe({
         next: (res) => {
           console.log('Monstruo actualizado:', res);
@@ -62,6 +63,7 @@ export class UpdateMonsterComponent implements OnInit {
     }
   }
 
+  // Método para cancelar la actualización y redirigir a la lista de monstruos personalizados
   onCancel(): void {
     this.router.navigate(['/custom']);
   }

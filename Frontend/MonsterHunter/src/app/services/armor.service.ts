@@ -12,8 +12,11 @@ import { GetArmorSetResponse } from '../models/response/GetArmorSetResponse.mode
     providedIn: 'root'
 })
 export class ArmorService {
+
+    // Inyección del servicio personalizado de peticiones HTTP
     constructor(private requestService: RequestService) { }
 
+    // Obtiene la lista completa de armaduras
     public getArmorList(): Observable<GetArmorListResponse> {
         let url = `${environment.armor}`;
 
@@ -25,6 +28,7 @@ export class ArmorService {
         return this.requestService.request(requestServiceOptions, false, true);
     }
 
+    // Obtiene los detalles de una armadura específica por ID
     public getArmor(id: number): Observable<GetArmorResponse> {
         let url = `${environment.armor}/${id}`;
         const requestServiceOptions: RequestServiceOptions = {
@@ -35,6 +39,7 @@ export class ArmorService {
         return this.requestService.request(requestServiceOptions, false, true);
     }
 
+    // Obtiene la lista completa de sets de armadura
     public getArmorSetList(): Observable<GetArmorSetListResponse> {
         let url = `${environment.armorSet}`;
 
@@ -46,6 +51,7 @@ export class ArmorService {
         return this.requestService.request(requestServiceOptions, false, true);
     }
 
+    // Obtiene los detalles de un set de armadura específico por ID
     public getArmorSet(id: number): Observable<GetArmorSetResponse> {
         let url = `${environment.armorSet}/${id}`;
         const requestServiceOptions: RequestServiceOptions = {

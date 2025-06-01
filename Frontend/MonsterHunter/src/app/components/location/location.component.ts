@@ -52,6 +52,7 @@ export class LocationComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // Obtiene locations con paginación y/o búsqueda
   getLocationsWithPaginacion(): void {
+    // Llama al servicio para obtener los locations con paginación y se suscribe a la respuesta
     this.locationService.getLocationsWithPaginacion(this.page, this.size, this.nameLocation).pipe(first()).subscribe({
       next: (res) => {
         console.log('Locations recibidos:', res);
@@ -71,10 +72,12 @@ export class LocationComponent implements OnInit, AfterViewInit, OnDestroy {
     this.searchSubject.next(valor);
   }
 
+  // Maneja el evento de selección de una location
   locationNameSelected(event: string) {
     this.selectedLocation = this.locations.filter(v => v.nombre === event)[0];
   }
 
+  // Cambia a la página anterior
   ngOnDestroy(): void {
     this.search$.unsubscribe();
   }

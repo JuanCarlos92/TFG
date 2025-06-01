@@ -24,11 +24,8 @@ export class WikiRecoleccionComponent implements OnInit {
   constructor(private recoleccionService: RecoleccionService) {}
 
   ngOnInit() {
-    // El ID de la recolección se obtiene de la propiedad `this.recoleccion['id']`
-    this.recoleccionService
-      .getRecoleccion(this.recoleccion['id'])
-      .pipe(first())
-      .subscribe({
+    // Metodo para obtener la información de la recolección por su ID del servicio recoleccionService
+    this.recoleccionService.getRecoleccion(this.recoleccion['id']).pipe(first()).subscribe({
         next: (res) => {
           console.log('Recolección ' + this.recoleccion['id'], res);
           this.infoRecoleccion = res.recoleccionDTO;
@@ -47,7 +44,8 @@ export class WikiRecoleccionComponent implements OnInit {
     }
   }
 
+  // Este método recarga la página actual
   reloadPage(): void {
-    window.location.reload(); // Recarga la página actual
+    window.location.reload();
   }
 }

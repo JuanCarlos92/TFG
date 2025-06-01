@@ -29,6 +29,7 @@ export class WikiItemComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.item);
+    // Llama al método para obtender del servicio la información del item
     this.itemService.getItem(this.item.id).subscribe({
       next: (res) => {
         console.log('Item ' + this.item['id'], res);
@@ -41,6 +42,7 @@ export class WikiItemComponent implements OnInit {
     });
   }
 
+  // Método para scroll a una sección específica
   scrollTo(sectionId: string): void {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -48,6 +50,7 @@ export class WikiItemComponent implements OnInit {
     }
   }
 
+  // Método para cerrar la wiki y recargar la página
   reloadPage(): void {
     this.closeWiki.emit();
   }

@@ -52,6 +52,7 @@ export class WeaponComponent implements OnInit {
 
   // Obtiene tipos de armas
   getWeaponTypeList(): void {
+    // Llama al servicio para obtener la lista de tipos de armas y se suscribe a la respuesta
     this.weaponService.getWeaponTypeList().pipe(first()).subscribe({
       next: (res) => {
         this.weaponstipos = res.weaponTipoDTO;
@@ -86,6 +87,7 @@ export class WeaponComponent implements OnInit {
     this.getWeaponType(this.selectedWeaponTipoId);
   }
 
+  // Maneja la búsqueda por nombre de arma
   filterByRarity(n: number) {
     this.selectedRarity = n;
     const filtro = this.infoWeaponTipo?.weaponBaseDTO.filter(v => v.rareza === n);
@@ -94,11 +96,13 @@ export class WeaponComponent implements OnInit {
     }
   }
 
+  // Muestra la wiki del arma seleccionada
   displayWiki(weapon: WeaponBaseDTO) {
     this.weaponWiki = weapon;
     this.mostrarWiki = !this.mostrarWiki;
   }
 
+  // Cierra la wiki
   closeWiki() {
     this.mostrarWiki = false;
   }

@@ -9,8 +9,11 @@ import { GetMonsterResponse } from '../models/response/GetMonsterResponse.model'
   providedIn: 'root'
 })
 export class MonsterService {
+
+  // Inyección del servicio personalizado de peticiones HTTP
   constructor(private requestService: RequestService) { }
 
+  // Método para obtener la lista de monstruos con paginación
   public getMonstersWithPaginacion(page: number = 0, size: number = 12, nombre?: string): Observable<GetMonstersWithPaginacionResponse> {
     let url = `${environment.monster}?page=${page}&size=${size}`;
 
@@ -27,6 +30,7 @@ export class MonsterService {
     return this.requestService.request(requestServiceOptions, false, true);
   }
 
+  // Método para obtener un monstruo específico por su ID
   public getMonster(id: number): Observable<GetMonsterResponse> {
     let url = `${environment.monster}/${id}`;
 

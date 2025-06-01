@@ -42,6 +42,7 @@ export class ArmorComponent implements OnInit {
 
   //Obtiene lista armaduras
   getArmorList(): void {
+    // Llama al servicio para obtener la lista de armaduras y se suscribe a la respuesta
     this.armorService.getArmorList().pipe(first()).subscribe({
       next: (res) => {
         this.armorsListBase = res.armorDTO;
@@ -62,11 +63,13 @@ export class ArmorComponent implements OnInit {
     console.log('Armaduras filtradas:', this.filteredArmors);
   }
 
+  // Muestra la wiki de la armadura seleccionada
   displayWiki(armor: ArmorBaseDTO) {
     this.armorWiki = armor;
     this.mostrarWiki = !this.mostrarWiki;
   }
 
+  // Cierra la wiki
   closeWiki() {
     this.mostrarWiki = false;
   }

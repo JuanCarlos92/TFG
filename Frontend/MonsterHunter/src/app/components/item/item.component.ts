@@ -32,7 +32,7 @@ export class ItemComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private itemService: ItemService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getItemList(); // Carga inicial de Items
@@ -40,23 +40,21 @@ export class ItemComponent implements OnInit {
 
   //  Obtiene la lista de items
   getItemList(): void {
-    this.itemService
-      .getItemList()
-      .pipe(first())
-      .subscribe({
-        next: (res) => {
-          this.itemsList = res.itemDTO;
-          this.filteredItems = this.itemsList; // Inicializa con todos los items
-          console.log('items recibidos:', res);
-          console.log('Lista de items: ', this.itemsList);
-        },
-        error: (error) => {
-          console.error(
-            'Error getItemList al obtener la lista de items:',
-            error
-          );
-        },
-      });
+    // Llama al servicio para obtener la lista de items y se suscribe a la respuesta
+    this.itemService.getItemList().pipe(first()).subscribe({
+      next: (res) => {
+        this.itemsList = res.itemDTO;
+        this.filteredItems = this.itemsList; // Inicializa con todos los items
+        console.log('items recibidos:', res);
+        console.log('Lista de items: ', this.itemsList);
+      },
+      error: (error) => {
+        console.error(
+          'Error getItemList al obtener la lista de items:',
+          error
+        );
+      },
+    });
   }
 
   // filtrar por categoría
@@ -66,11 +64,13 @@ export class ItemComponent implements OnInit {
     console.log('Items filtrados por categoría:', this.filteredItems);
   }
 
+  // Muestra la wiki del item seleccionado
   displayWiki(item: ItemBaseDTO) {
     this.itemWiki = item;
     this.mostrarWiki = !this.mostrarWiki;
   }
 
+  // Cierra la wiki
   closeWiki() {
     this.mostrarWiki = false;
   }

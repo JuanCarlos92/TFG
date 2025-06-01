@@ -9,8 +9,11 @@ import { GetItemListResponse } from '../models/response/GetItemListResponse.mode
     providedIn: 'root'
 })
 export class ItemService {
+
+    // Inyección del servicio personalizado de peticiones HTTP
     constructor(private requestService: RequestService) { }
 
+    // Método para obtener la lista de items
     public getItemList(): Observable<GetItemListResponse> {
         let url = `${environment.item}`;
 
@@ -22,6 +25,7 @@ export class ItemService {
         return this.requestService.request(requestServiceOptions, false, true);
     }
 
+    // Método para obtener un item específico por su ID
     public getItem(id: number): Observable<GetItemResponse> {
         let url = `${environment.item}/${id}`;
         const requestServiceOptions: RequestServiceOptions = {

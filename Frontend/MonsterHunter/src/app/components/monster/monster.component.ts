@@ -54,6 +54,7 @@ export class MonsterComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // Obtiene monstruos con paginación y/o búsqueda
   getMonstersWithPaginacion(): void {
+    // Llama al servicio para obtener los monstruos con paginación y se suscribe a la respuesta
     this.monsterService.getMonstersWithPaginacion(this.page, this.size, this.nameMonster).pipe(first()).subscribe({
       next: (res) => {
         console.log('Monstruos recibidos:', res);
@@ -90,10 +91,12 @@ export class MonsterComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
+  // Maneja el evento de selección de un monstruo
   monsterNameSelected(event: string) {
     this.selectedMonster = this.monsters.filter(v => v.nombre === event)[0];
   }
 
+  // Muestra la wiki del monstruo seleccionado
   ngOnDestroy(): void {
     this.search$.unsubscribe();
   }

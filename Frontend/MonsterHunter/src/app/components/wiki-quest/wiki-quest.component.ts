@@ -27,6 +27,7 @@ export class WikiQuestComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.quest);
+    // Llama al método para obtener del servicio la información de la misión
     this.questService.getQuest(this.quest.id).subscribe({
       next: (res) => {
         console.log('Misión: ' + this.quest['id'], res);
@@ -39,6 +40,7 @@ export class WikiQuestComponent implements OnInit {
     });
   }
 
+  // Este método permite desplazarse suavemente hacia una sección específica de la página
   scrollTo(sectionId: string): void {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -46,6 +48,7 @@ export class WikiQuestComponent implements OnInit {
     }
   }
 
+  // Este método recarga la página actual
   reloadPage(): void {
     this.closeWiki.emit();
   }

@@ -7,19 +7,6 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { CardMonsterComponent } from '../components/card-monster/card-monster.component';
 import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
-// import { Amplify } from 'aws-amplify';
-
-
-// Amplify.configure({
-//   Auth: {
-    
-//     Cognito: {
-
-//       userPoolId: 'eu-west-3_WjKL6Aqts',
-//       userPoolClientId: '1gdnvgrhubfo5e7fldivohp65e'
-//     }
-//   }
-// });
 
 @NgModule({
   imports: [

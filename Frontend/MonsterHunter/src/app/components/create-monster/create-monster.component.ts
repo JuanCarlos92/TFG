@@ -32,7 +32,9 @@ export class CreateMonsterComponent {
 
   onSubmit(form: NgForm): void {
     if (form.valid) {
+      // Asigna el email del usuario al campo usuarioId del monstruo
       this.monster.usuarioId = localStorage.getItem('email') ?? '';
+      // Llama al servicio para crear el monstruo personalizado
       this.customService.postMonster(this.monster).subscribe({
         next: (res) => {
           console.log('Monstruo creado:', res);
@@ -45,7 +47,8 @@ export class CreateMonsterComponent {
     }
   }
 
+  // Método para cancelar la creacion y redirigir a la lista de monstruos personalizados
   onCancel(): void {
-    this.router.navigate(['/custom']); // Redirige a la lista de monstruos
+    this.router.navigate(['/custom']);
   }
 }

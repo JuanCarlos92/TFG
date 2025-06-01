@@ -8,8 +8,11 @@ import { GetToolListResponse } from '../models/response/GetToolListResponse.mode
   providedIn: 'root'
 })
 export class ToolService {
+
+  // Inyección del servicio personalizado de peticiones HTTP
   constructor(private requestService: RequestService) { }
 
+  // Método para obtener la lista de herramientas
   public getToolList(): Observable<GetToolListResponse> {
     let url = `${environment.tool}`;
 

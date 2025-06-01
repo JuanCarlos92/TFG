@@ -9,8 +9,11 @@ import { GetQuestListResponse } from '../models/response/GetQuestListResponse.mo
     providedIn: 'root'
 })
 export class QuestService {
+
+    // Inyección del servicio personalizado de peticiones HTTP
     constructor(private requestService: RequestService) { }
 
+    // Método para obtener la lista de misiones
     public getQuestList(): Observable<GetQuestListResponse> {
         let url = `${environment.quest}`;
 
@@ -22,6 +25,7 @@ export class QuestService {
         return this.requestService.request(requestServiceOptions, false, true);
     }
 
+    // Método para obtener una misión específica por su ID
     public getQuest(id: number): Observable<GetQuestResponse> {
         let url = `${environment.quest}/${id}`;
         const requestServiceOptions: RequestServiceOptions = {

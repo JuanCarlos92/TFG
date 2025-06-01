@@ -13,8 +13,11 @@ import { MonsterCustomCreateDTO } from '../models/custom/MonsterCustomCreateDTO.
   providedIn: 'root'
 })
 export class CustomService {
+
+  // Inyección del servicio personalizado de peticiones HTTP
   constructor(private requestService: RequestService) { }
 
+  // Obtiene una lista de monstruos personalizados
   public getMonsterList(): Observable<GetMonsterCustomListResponse> {
     const url = `${environment.custom}`;
 
@@ -27,6 +30,7 @@ export class CustomService {
     return this.requestService.request(requestServiceOptions, false, true);
   }
 
+  // Obtiene un monstruo personalizado por su ID
   public getMonster(id: number): Observable<GetMonsterCustomResponse> {
     const url = `${environment.custom}/${id}`;
 
@@ -39,6 +43,7 @@ export class CustomService {
     return this.requestService.request(requestServiceOptions, false, true);
   }
 
+  // Obtiene un monstruo personalizado por su nombre
   public getMonsterByNombre(nombre: string): Observable<GetMonsterCustomResponse> {
     const url = `${environment.custom}/nombre/${nombre}`;
 
@@ -51,6 +56,7 @@ export class CustomService {
     return this.requestService.request(requestServiceOptions, false, true);
   }
 
+  // Envía un nuevo monstruo personalizado al backend (creación)
   public postMonster(monster: MonsterCustomCreateDTO): Observable<PostMonsterCustomResponse> {
     const url = `${environment.custom}`;
 
@@ -64,6 +70,7 @@ export class CustomService {
     return this.requestService.request(requestServiceOptions, true, true);
   }
 
+  // Actualiza un monstruo personalizado existente
   public putMonster(monster: MonsterCustomDTO): Observable<PutMonsterCustomResponse> {
     const url = `${environment.custom}`;
 
@@ -77,6 +84,7 @@ export class CustomService {
     return this.requestService.request(requestServiceOptions, true, true);
   }
 
+  // Elimina un monstruo personalizado por ID
   public deleteMonster(id: number): Observable<string> {
     const url = `${environment.custom}/${id}`;
 
