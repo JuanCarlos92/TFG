@@ -10,6 +10,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa una categoría o tipo de recolección en Monster Hunter.
+ * <p>
+ * Contiene información sobre el nombre de la recolección y un valor asociado denominado "normal".
+ * <p>
+ * Además, mantiene una relación uno a muchos con la entidad {@link ItemBaseEntity},
+ * representando los ítems que pertenecen a esta categoría de recolección.
+ */
 @Entity
 @Table(name = "recoleccion_stacks")
 @Data
@@ -26,6 +34,10 @@ public class RecoleccionEntity {
     @Column(name = "normal")
     private Integer normal;
 
-     @OneToMany(mappedBy = "recoleccion", fetch = FetchType.LAZY)
+    /**
+     * Relación uno a muchos con {@link ItemBaseEntity}.
+     * Lista de ítems que están asociados a esta categoría de recolección.
+     */
+    @OneToMany(mappedBy = "recoleccion", fetch = FetchType.LAZY)
     private List<ItemBaseEntity> itemBase; // Relacion uno a muchos con la tabla item base
 }

@@ -16,6 +16,10 @@ import com.juancarlos.monsterhunter.models.response.GetWeaponTypeResponse;
 
 import lombok.AllArgsConstructor;
 
+/**
+ * Controlador REST para gestionar armas y tipos de armas en el juego Monster Hunter World.
+ * Proporciona endpoints para obtener información de armas y sus respectivos tipos.
+ */
 @RestController
 @RequestMapping("/api/weapon")
 @AllArgsConstructor
@@ -25,7 +29,12 @@ public class WeaponController {
 	private WeaponService weaponService;
 
 	// ----------------------------- WeaponTipo -----------------------------
-	// Endpoint para obtener tipos de armas con lista
+
+	/**
+	 * Obtiene una lista de todos los tipos de armas disponibles.
+	 *
+	 * @return {@link GetWeaponTypeListResponse} con la lista de tipos de armas.
+	 */
 	@GetMapping()
 	public GetWeaponTypeListResponse getWeaponTypeList() {
 		GetWeaponTypeListResponse response = new GetWeaponTypeListResponse();
@@ -33,7 +42,12 @@ public class WeaponController {
 		return response;
 	}
 
-	// Endpoint para obtener un tipo de arma por ID
+	/**
+	 * Obtiene un tipo de arma específico por su ID.
+	 *
+	 * @param id ID del tipo de arma.
+	 * @return {@link GetWeaponTypeResponse} con los datos del tipo de arma solicitado.
+	 */
 	@GetMapping("/type/{id}")
 	public GetWeaponTypeResponse getWeaponTypeId(@PathVariable Long id) {
 		WeaponTipoDTO weapon = weaponService.getWeaponTypeId(id);
@@ -43,8 +57,15 @@ public class WeaponController {
 		return response;
 
 	}
-	// ---------------------------- WeaponBase ----------------------------
-	// Endpoint para obtener un arma por ID
+
+	// ----------------------------- WeaponBase -----------------------------
+
+	/**
+	 * Obtiene una arma específica por su ID.
+	 *
+	 * @param id ID del arma.
+	 * @return {@link GetWeaponResponse} con los datos del arma solicitada.
+	 */
 	@GetMapping("/{id}")
 	public GetWeaponResponse getWeaponId(@PathVariable Long id) {
 		WeaponBaseDTO weapon = weaponService.getWeaponId(id);

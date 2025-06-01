@@ -13,6 +13,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa un ítem base en Monster Hunter.
+ * Contiene toda la información básica de los ítems disponibles en el juego,
+ * incluyendo su categoría, rareza, precio, icono y relaciones con otros elementos como recolección, combinaciones, localizaciones y recompensas de misión.
+ */
 @Entity
 @Table(name = "item_base")
 @Data
@@ -45,18 +50,33 @@ public class ItemBaseEntity {
     @Column(name = "nombre_color")
     private String nombreColor;
 
-    // Relacion muchos a uno con la tabla recoleccion stack
+    /**
+     * Relación muchos-a-uno con la entidad {@link RecoleccionEntity}, que indica
+     * la fuente de recolección a la que pertenece este ítem (si aplica).
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_recoleccion", referencedColumnName = "id")
     @JsonIgnore
     private RecoleccionEntity recoleccion;
 
+    /**
+     * Relación uno-a-muchos con {@link ItemCombinationEntity}, que representa
+     * todas las combinaciones posibles en las que este ítem participa.
+     */
     @OneToMany(mappedBy = "itemBase", fetch = FetchType.LAZY)
-    private List<ItemCombinationEntity> itemCombination; // Relacion uno a muchos con la tabla item combinacion
+    private List<ItemCombinationEntity> itemCombination;
 
+    /**
+     * Relación uno-a-muchos con {@link LocationItemEntity}, indicando
+     * las ubicaciones en las que se puede encontrar este ítem.
+     */
     @OneToMany(mappedBy = "itemBase", fetch = FetchType.LAZY)
-    private List<LocationItemEntity> locationItem; // Relacion uno a muchos con la tabla localizacion items
+    private List<LocationItemEntity> locationItem;
 
+    /**
+     * Relación uno-a-muchos con {@link QuestRewardEntity}, representando
+     * las misiones en las que este ítem es una recompensa posible.
+     */
     @OneToMany(mappedBy = "itemBase", fetch = FetchType.LAZY)
-    private List<QuestRewardEntity> questReward; // Relacion uno a muchos con la tabla mision recompensas
+    private List<QuestRewardEntity> questReward;
 }

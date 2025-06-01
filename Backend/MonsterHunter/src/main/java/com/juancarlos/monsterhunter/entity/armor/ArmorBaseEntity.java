@@ -10,6 +10,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa una pieza individual de armadura base en Monster Hunter.
+ * Cada pieza puede estar asociada a un set de armadura y tener múltiples materiales de creación y habilidades.
+ */
 @Entity
 @Table(name = "armadura_base")
 @Data
@@ -53,15 +57,24 @@ public class ArmorBaseEntity {
     private Integer defensaDragon;
 
 
-    // Relacion muchos a uno con la tabla armaduraset base
+    /**
+     * Relación muchos a uno con la entidad ArmorSetBaseEntity.
+     * Representa el set al que pertenece esta pieza de armadura.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_armaduraset_base", referencedColumnName = "id")
     @JsonIgnore
     private ArmorSetBaseEntity armorSetBase;
 
+    /**
+     * Relación uno a muchos con los materiales de creación de esta armadura.
+     */
     @OneToMany(mappedBy = "armorBase", fetch = FetchType.LAZY)
-    private List<ArmorCraftEntity> armorCraft; // Relacion uno a muchos con la tabla armorCraft
+    private List<ArmorCraftEntity> armorCraft;
 
+    /**
+     * Relación uno a muchos con las habilidades otorgadas por esta armadura.
+     */
     @OneToMany(mappedBy = "armorBase", fetch = FetchType.LAZY)
-    private List<ArmorSkillEntity> armorSkill; // Relacion uno a muchos con la tabla armorSkill
+    private List<ArmorSkillEntity> armorSkill;
 }

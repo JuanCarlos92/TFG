@@ -1,4 +1,5 @@
 package com.juancarlos.monsterhunter.entity.charm;
+
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -7,6 +8,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa un amuleto (charm) en su estado base dentro del juego.
+ * Contiene información sobre sus habilidades, rareza, y su relación con los materiales necesarios para su creación.
+ */
 @Entity
 @Table(name = "amuleto_base")
 @Data
@@ -33,6 +38,10 @@ public class CharmBaseEntity {
     @Column(name = "nivel_skill2")
     private Integer nivelSkill2;
 
+    /**
+     * Relación uno a muchos con la entidad CharmCraftEntity.
+     * Define los materiales necesarios para la creación o mejora de este amuleto.
+     */
     @OneToMany(mappedBy = "charmBase", fetch = FetchType.LAZY)
     private List<CharmCraftEntity> charmCraft; // Relacion uno a muchos con la tabla amuleto craft
     

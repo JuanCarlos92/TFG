@@ -5,6 +5,12 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
+/**
+ * Entidad que representa un monstruo personalizado en la base de datos.
+ * <p>
+ * Mapea la tabla {@code monster} y almacena información como nombre,
+ * tamaño, descripción, imagen, ID de usuario y fecha de creación.
+ */
 @Entity
 @Table(name = "monster")
 @Data
@@ -29,6 +35,10 @@ public class MonsterCustomEntity {
     @Column(name = "fecha_creacion", updatable = false)
     private LocalDateTime fechaCreacion;
 
+    /**
+     * Metodo que se ejecuta automáticamente antes de insertar el registro.
+     * Establece la fecha de creación a la fecha y hora actual.
+     */
     @PrePersist
     public void prePersist() {
         this.fechaCreacion = LocalDateTime.now();

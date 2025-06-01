@@ -7,9 +7,18 @@ import java.util.stream.Collectors;
 import com.juancarlos.monsterhunter.entity.weapon.*;
 import com.juancarlos.monsterhunter.models.dto.weapon.*;
 
+/**
+ * Clase utilitaria para convertir entidades de tipo de armas (WeaponTipoEntity)
+ * en objetos DTO (WeaponTipoDTO) y sus elementos asociados.
+ */
 public class WeaponTypeConverter {
 
-    // Convierte una WeaponTipoEntity a WeaponTipoDTO
+    /**
+     * Convierte una entidad WeaponTipoEntity a un objeto DTO WeaponTipoDTO.
+     *
+     * @param weaponTipoEntity Entidad WeaponTipoEntity a convertir.
+     * @return Objeto WeaponTipoDTO equivalente, o null si la entidad es null.
+     */
     public static WeaponTipoDTO weaponEntityToDTO(WeaponTipoEntity weaponTipoEntity) {
         if (weaponTipoEntity == null) {
             return null;
@@ -27,7 +36,13 @@ public class WeaponTypeConverter {
                 .build();
     }
 
-    // Convierte WeaponBaseEntity a WeaponBaseDTO
+    /**
+     * Convierte una entidad WeaponBaseEntity a un objeto DTO WeaponBaseDTO.
+     * Solo incluye atributos básicos (no listas hijas).
+     *
+     * @param v Entidad WeaponBaseEntity a convertir.
+     * @return Objeto WeaponBaseDTO resultante.
+     */
     private static WeaponBaseDTO convertBaseEntityToDto(WeaponBaseEntity v) {
         return WeaponBaseDTO.builder()
                 .id(v.getId())
@@ -56,14 +71,18 @@ public class WeaponTypeConverter {
     }
 
 
+    /**
+     * Convierte una lista de entidades WeaponTipoEntity en una lista de DTO WeaponTipoDTO.
+     *
+     * @param weaponTipoEntity Lista de entidades WeaponTipoEntity.
+     * @return Lista de objetos WeaponTipoDTO.
+     */
     public static List<WeaponTipoDTO> weaponEntityToDTO(List<WeaponTipoEntity> weaponTipoEntity) {
         List<WeaponTipoDTO> weaponsTipoDTO = new ArrayList<>();
-        for (WeaponTipoEntity v: weaponTipoEntity) {
+        for (WeaponTipoEntity v : weaponTipoEntity) {
 
             weaponsTipoDTO.add(weaponEntityToDTO(v));
         }
-
         return weaponsTipoDTO;
-
     }
 }

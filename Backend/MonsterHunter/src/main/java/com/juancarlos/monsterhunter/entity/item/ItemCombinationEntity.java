@@ -1,4 +1,5 @@
 package com.juancarlos.monsterhunter.entity.item;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
@@ -7,6 +8,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa una combinación de ítems en Monster Hunter.
+ * Cada combinación describe cómo dos ítems pueden fusionarse para crear un nuevo ítem.
+ * Se utiliza para gestionar recetas de combinación en el juego.
+ */
 @Entity
 @Table(name = "item_lista_combinacion")
 @Data
@@ -27,7 +33,10 @@ public class ItemCombinationEntity {
     @Column(name = "calidad")
     private Integer calidad;
 
-    // Relacion muchos a uno con la tabla item combinacion
+    /**
+     * Relación muchos-a-uno con la entidad {@link ItemBaseEntity}, indicando
+     * el ítem base al que pertenece esta combinación.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_item", referencedColumnName = "id")
     @JsonIgnore

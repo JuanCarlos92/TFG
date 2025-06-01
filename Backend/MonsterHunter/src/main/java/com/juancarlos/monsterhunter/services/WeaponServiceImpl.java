@@ -17,6 +17,10 @@ import lombok.AllArgsConstructor;
 
 import java.util.List;
 
+/**
+ * Implementación del servicio {@link WeaponService} que gestiona la lógica de negocio
+ * relacionada con las armas y tipos de armas en Monster Hunter World.
+ */
 @AllArgsConstructor
 @Service
 public class WeaponServiceImpl implements WeaponService {
@@ -27,7 +31,14 @@ public class WeaponServiceImpl implements WeaponService {
     private WeaponRepository weaponRepository;
 
     // --------------- weaponTipo --------------------
-    // Metodo weapon tipo por id
+
+    /**
+     * Obtiene un tipo de arma por su identificador único.
+     *
+     * @param id Identificador del tipo de arma.
+     * @return Objeto {@link WeaponTipoDTO} correspondiente al tipo de arma.
+     * @throws RuntimeException si no se encuentra el tipo de arma.
+     */
     @Override
     public WeaponTipoDTO getWeaponTypeId(Long id) {
         WeaponTipoEntity weaponEntity = weaponTipoRepository.findById(id)
@@ -36,7 +47,11 @@ public class WeaponServiceImpl implements WeaponService {
         return WeaponTypeConverter.weaponEntityToDTO(weaponEntity);
     }
 
-    // Metodo weapontype con lista
+    /**
+     * Obtiene una lista de todos los tipos de armas disponibles.
+     *
+     * @return Lista de objetos {@link WeaponTipoDTO}.
+     */
     @Override
     public List<WeaponTipoDTO> getWeaponTypeList() {
         List<WeaponTipoEntity> weaponTipoEntity = weaponTipoRepository.findAll();
@@ -45,7 +60,14 @@ public class WeaponServiceImpl implements WeaponService {
     }
 
     // ----------------- weapon ---------------------
-    // Metodo weapon por id
+
+    /**
+     * Obtiene una arma específica por su identificador único.
+     *
+     * @param id Identificador del arma.
+     * @return Objeto {@link WeaponBaseDTO} correspondiente al arma.
+     * @throws RuntimeException si no se encuentra el arma.
+     */
     @Override
     public WeaponBaseDTO getWeaponId(Long id) {
         WeaponBaseEntity weaponEntity = weaponRepository.findById(id)

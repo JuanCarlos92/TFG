@@ -8,6 +8,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa las habilidades que posee una pieza de armadura individual.
+ * Cada instancia de esta entidad contiene hasta dos habilidades con sus respectivos niveles.
+ */
 @Entity
 @Table(name = "armadura_skills")
 @Data
@@ -30,7 +34,10 @@ public class ArmorSkillEntity {
     @Column(name = "nivel_skill2")
     private Integer nivelSkill2;
 
-    // Relacion con la tabla armadura_base
+    /**
+     * Relación muchos a uno con la entidad ArmorBaseEntity.
+     * Indica a qué pieza de armadura pertenecen estas habilidades.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_armadura", referencedColumnName = "id")
     @JsonIgnore

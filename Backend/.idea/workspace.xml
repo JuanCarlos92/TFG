@@ -6,15 +6,137 @@
   <component name="ChangeListManager">
     <list default="true" id="affcdccb-abd5-45ed-a40b-1681d0ed219a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-Gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Api-Gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/ApiGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/ApiGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/authorization/JwtAuthenticationWebFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/authorization/SecurityConfiguration.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/config/GatewayCorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/config/GatewayCorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/config/GlobalCorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/config/GlobalCorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-Gateway/src/main/java/com/juancarlos/apigateway/config/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/CustomMh.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/CustomMh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/config/GlobalCorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/config/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/controllers/MonsterCustomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/controllers/MonsterCustomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/converters/MonsterCustomConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/converters/MonsterCustomConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/entity/MonsterCustomEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/entity/MonsterCustomEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/dto/MonsterCustomDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/dto/MonsterCustomDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/request/MonsterCustomRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/request/MonsterCustomRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/GetMonsterCustomListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/GetMonsterCustomListResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/GetMonsterCustomResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/GetMonsterCustomResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/PostMonsterCustomResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/PostMonsterCustomResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/PutMonsterCustomResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/PutMonsterCustomResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/models/response/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/repositories/MonsterCustomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/repositories/MonsterCustomRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/services/MonsterCustomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/services/MonsterCustomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/services/MonsterCustomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/services/MonsterCustomServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomMH/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EurekaServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EurekaServer/src/main/java/com/juancarlos/eurekaserver/EurekaServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServer/src/main/java/com/juancarlos/eurekaserver/EurekaServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EurekaServer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServer/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/config/GlobalCorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/config/GlobalCorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/config/GlobalCorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/config/WebConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/ArmorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/ArmorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/CharmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/CharmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/DecorationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/DecorationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/KinsectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/KinsectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/LocationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/MonsterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/MonsterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/QuestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/QuestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/RecoleccionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/RecoleccionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/SkillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/SkillController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/ToolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/ToolController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/WeaponController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/WeaponController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/armor/ArmorConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/armor/ArmorConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/armor/ArmorSetConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/armor/ArmorSetConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/charm/CharmConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/charm/CharmConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/decoration/DecorationConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/decoration/DecorationConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/item/ItemConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/item/ItemConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/kinsect/KinsectConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/kinsect/KinsectConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/location/LocationConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/location/LocationConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/monster/MonsterConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/monster/MonsterConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/quest/QuestConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/quest/QuestConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/recoleccion/RecoleccionConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/recoleccion/RecoleccionConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/skill/SkillConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/skill/SkillConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/tool/ToolConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/tool/ToolConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/weapon/WeaponConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/weapon/WeaponConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/weapon/WeaponTypeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/weapon/WeaponTypeConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/armor/ArmorBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/armor/ArmorBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/armor/ArmorCraftEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/armor/ArmorCraftEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/armor/ArmorSetBaseBonusEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/armor/ArmorSetBaseBonusEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/armor/ArmorSetBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/armor/ArmorSetBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/armor/ArmorSkillEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/armor/ArmorSkillEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/charm/CharmBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/charm/CharmBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/charm/CharmCraftEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/charm/CharmCraftEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/decoration/DecorationBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/decoration/DecorationBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/decoration/DecorationDropRateEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/decoration/DecorationDropRateEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/item/ItemBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/item/ItemBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/item/ItemCombinationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/item/ItemCombinationEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/kinsect/KinsectBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/kinsect/KinsectBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/kinsect/KinsectCraftEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/kinsect/KinsectCraftEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/location/LocationBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/location/LocationBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/location/LocationCampEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/location/LocationCampEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/location/LocationItemEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/location/LocationItemEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterBreakEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterBreakEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterDolenciasEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterDolenciasEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterHabitatsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterHabitatsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterRewardsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterRewardsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterWeaknessesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterWeaknessesEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterZonasHitEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/monster/MonsterZonasHitEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/quest/QuestBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/quest/QuestBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/quest/QuestMonsterEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/quest/QuestMonsterEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/quest/QuestRewardEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/quest/QuestRewardEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/recoleccion/RecoleccionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/recoleccion/RecoleccionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/skill/SkillBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/skill/SkillBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/skill/SkillNvlEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/skill/SkillNvlEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/tool/ToolBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/tool/ToolBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponArcoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponArcoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponCraftEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponCraftEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponMelodiaBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponMelodiaBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponMelodiaNotaEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponMelodiaNotaEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponMunicionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponMunicionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponTipoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/weapon/WeaponTipoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/ArmorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/ArmorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/ArmorSetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/ArmorSetRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/CharmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/CharmRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/DecorationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/DecorationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/ItemRespository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/ItemRespository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/KinsectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/KinsectRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/LocationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/MonsterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/MonsterRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/QuestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/QuestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/RecoleccionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/RecoleccionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/SkillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/SkillRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/ToolRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/ToolRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/WeaponRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/WeaponRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/WeaponTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/WeaponTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/ArmorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/ArmorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/ArmorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/ArmorServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/CharmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/CharmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/CharmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/CharmServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/DecorationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/DecorationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/DecorationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/DecorationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/ItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/KinsectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/KinsectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/KinsectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/KinsectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/LocationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/LocationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/LocationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/MonsterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/MonsterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/MonsterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/MonsterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/QuestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/QuestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/QuestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/QuestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/RecoleccionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/RecoleccionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/RecoleccionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/RecoleccionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/SkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/SkillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/SkillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/SkillServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/ToolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/ToolService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/ToolServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/ToolServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/WeaponService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/WeaponService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/WeaponServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/WeaponServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,45 +173,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
-    "Notification.DoNotAsk-Database detector": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ApiGateway.executor": "Run",
-    "Spring Boot.ApiGatewayApplication.executor": "Run",
-    "Spring Boot.CustomMh.executor": "Run",
-    "Spring Boot.EurekaServer.executor": "Run",
-    "Spring Boot.MonsterHunter.executor": "Run",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/JuanCarlos/Documents/github/TFG/Backend/CustomMH",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
+    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiGateway.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.CustomMh.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServer.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MonsterHunter.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/JuanCarlos/Documents/github/TFG/Backend/CustomMH&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -220,6 +342,9 @@
       <workItem from="1748345860842" duration="178000" />
       <workItem from="1748515672152" duration="1209000" />
       <workItem from="1748533795167" duration="6869000" />
+      <workItem from="1748773714790" duration="3661000" />
+      <workItem from="1748778623767" duration="4264000" />
+      <workItem from="1748793776995" duration="4459000" />
     </task>
     <servers />
   </component>

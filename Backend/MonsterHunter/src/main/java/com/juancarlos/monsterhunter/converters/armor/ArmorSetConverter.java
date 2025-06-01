@@ -11,25 +11,36 @@ import com.juancarlos.monsterhunter.models.dto.armor.ArmorBaseDTO;
 import com.juancarlos.monsterhunter.models.dto.armor.ArmorSetBaseBonusDTO;
 import com.juancarlos.monsterhunter.models.dto.armor.ArmorSetBaseDTO;
 
+/**
+ * Clase utilitaria encargada de convertir entidades relacionadas con los conjuntos de armaduras
+ * ({@link ArmorSetBaseEntity}) a sus respectivos DTOs utilizados en la capa de presentación.
+ */
 public class ArmorSetConverter {
-    // Convierte una ArmorEntity a ArmorDTO
+
+    /**
+     * Convierte una entidad {@link ArmorSetBaseEntity} a un {@link ArmorSetBaseDTO}.
+     *
+     * @param armorSetBaseEntity la entidad de conjunto de armadura a convertir.
+     * @return el DTO con los datos del conjunto o {@code null} si la entidad es nula.
+     */
     public static ArmorSetBaseDTO armorSetEntityToDTO(ArmorSetBaseEntity armorSetBaseEntity) {
         if (armorSetBaseEntity == null) {
             return null;
         }
 
-        //Convertimos las listas
+        // Conversión de listas de armaduras
         List<ArmorBaseDTO> listaArmorBase = armorSetBaseEntity.getArmorBase()
                 .stream()
                 .map(ArmorSetConverter::convertArmorBaseEntityToDTO)
                 .collect(Collectors.toList());
 
         List<ArmorSetBaseBonusDTO> listaArmorSetBaseBonus = armorSetBaseEntity.getArmorSetBaseBonus()
-                        .stream()
-                        .map(ArmorSetConverter::convertArmorSetBaseBonusEntityToDTO)
-                        .collect(Collectors.toList());
+                .stream()
+                .map(ArmorSetConverter::convertArmorSetBaseBonusEntityToDTO)
+                .collect(Collectors.toList());
 
-        return ArmorSetBaseDTO.builder() // Creamos un nuevo objeto de tipo ArmorSetBaseDTO
+        // Creamos un nuevo objeto de tipo ArmorSetBaseDTO
+        return ArmorSetBaseDTO.builder()
                 .id(armorSetBaseEntity.getId())
                 .nombre(armorSetBaseEntity.getNombre())
                 .rango(armorSetBaseEntity.getRango())
@@ -45,7 +56,13 @@ public class ArmorSetConverter {
                 .build();
     }
 
-    // Convierte ArmorBaseEntity a ArmorBaseDTO
+    /**
+     * Convierte una entidad {@link ArmorBaseEntity} a un {@link ArmorBaseDTO}.
+     * Este metodo es utilizado dentro del contexto de conjuntos de armaduras.
+     *
+     * @param v la entidad de armadura individual a convertir.
+     * @return el DTO correspondiente con la información básica de la armadura.
+     */
     public static ArmorBaseDTO convertArmorBaseEntityToDTO(ArmorBaseEntity v) {
         return ArmorBaseDTO.builder()
                 .nombre(v.getNombre())
@@ -66,7 +83,12 @@ public class ArmorSetConverter {
                 .build();
     }
 
-    // Convierte ArmorSetBaseBonusEntity a ArmorSetBaseBonusDTO
+    /**
+     * Convierte una entidad {@link ArmorSetBaseBonusEntity} a un {@link ArmorSetBaseBonusDTO}.
+     *
+     * @param v la entidad de bonificación de conjunto de armadura a convertir.
+     * @return el DTO con la información de las habilidades de bonificación del conjunto.
+     */
     public static ArmorSetBaseBonusDTO convertArmorSetBaseBonusEntityToDTO(ArmorSetBaseBonusEntity v) {
         return ArmorSetBaseBonusDTO.builder()
                 .nombre(v.getNombre())
@@ -77,14 +99,18 @@ public class ArmorSetConverter {
                 .build();
     }
 
+    /**
+     * Convierte una lista de entidades {@link ArmorSetBaseEntity} a una lista de {@link ArmorSetBaseDTO}.
+     *
+     * @param armorSetBaseEntity lista de entidades de conjuntos de armaduras.
+     * @return lista de DTOs correspondientes a cada conjunto.
+     */
     public static List<ArmorSetBaseDTO> armorSetEntityToDTO(List<ArmorSetBaseEntity> armorSetBaseEntity) {
         List<ArmorSetBaseDTO> armorSetBaseDTO = new ArrayList<>();
         for (ArmorSetBaseEntity v : armorSetBaseEntity) {
 
             armorSetBaseDTO.add(armorSetEntityToDTO(v));
         }
-
         return armorSetBaseDTO;
     }
-
 }

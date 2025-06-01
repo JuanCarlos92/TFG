@@ -1,4 +1,5 @@
 package com.juancarlos.monsterhunter.entity.weapon;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
@@ -7,6 +8,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa la información de fabricación o "craft" de un arma en Monster Hunter.
+ *<p>
+ * Contiene detalles sobre el arma base, el tipo de arma y los materiales necesarios para su creación o mejora,
+ * incluyendo hasta cuatro materiales con sus respectivas cantidades.
+ *<p>
+ * Mantiene una relación muchos a uno con la entidad {@link WeaponBaseEntity} que representa el arma base asociada.
+ */
 @Entity
 @Table(name = "arma_craft")
 @Data
@@ -43,7 +52,10 @@ public class WeaponCraftEntity {
     private Integer cantidadMaterial4;
 
 
-    // Relacion con la tabla arma_base
+    /**
+     * Relación muchos a uno con la entidad {@link WeaponBaseEntity}, que representa el arma base
+     * a la que pertenece este registro de craft.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_arma", referencedColumnName = "id")
     @JsonIgnore

@@ -8,6 +8,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa las diferentes zonas de impacto de un monstruo y sus resistencias o vulnerabilidades
+ * a distintos tipos de daño en Monster Hunter.
+ *<p>
+ * Cada zona de impacto tiene valores asociados para distintos tipos de daño (corte, impacto, disparo, elementos, etc.)
+ * que determinan la efectividad de los ataques sobre esa zona específica.
+ */
 @Entity
 @Table(name = "monster_zonashit")
 @Data
@@ -43,6 +50,10 @@ public class MonsterZonasHitEntity {
     @Column(name = "ko")
     private Integer ko;
 
+    /**
+     * Relación muchos a uno con {@link MonsterBaseEntity}.
+     * Indica a qué monstruo pertenece esta zona de impacto.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_monster", referencedColumnName = "id")
     @JsonIgnore

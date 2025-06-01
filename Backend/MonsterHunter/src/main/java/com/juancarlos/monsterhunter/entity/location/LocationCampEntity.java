@@ -1,4 +1,5 @@
 package com.juancarlos.monsterhunter.entity.location;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
@@ -7,6 +8,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa un campamento dentro de una localización en Monster Hunter.
+ *<p>
+ * Cada campamento pertenece a una localización y contiene información relevante
+ * como su nombre y el área donde se encuentra.
+ */
 @Entity
 @Table(name = "localizacion_campamentos")
 @Data
@@ -25,7 +32,10 @@ public class LocationCampEntity {
     @Column(name = "area")
     private Integer area;
 
-    // Relacion muchos a uno con la tabla localizacion base
+    /**
+     * Relación muchos-a-uno con {@link LocationBaseEntity}.
+     * Indica a qué localización pertenece este campamento.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_localizacion", referencedColumnName = "id")
     @JsonIgnore

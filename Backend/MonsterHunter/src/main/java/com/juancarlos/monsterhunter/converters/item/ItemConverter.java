@@ -13,8 +13,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Clase utilitaria encargada de convertir entidades relacionadas con los objetos (items)
+ * del juego Monster Hunter World a sus respectivos DTOs.
+ */
 public class ItemConverter {
 
+    /**
+     * Convierte una entidad {@link ItemBaseEntity} a un DTO {@link ItemBaseDTO},
+     * incluyendo sus relaciones con combinaciones, localizaciones y recompensas de misiones.
+     *
+     * @param itemBaseEntity la entidad del item a convertir.
+     * @return el DTO resultante o {@code null} si la entidad es nula.
+     */
     public static ItemBaseDTO itemEntityToDTO(ItemBaseEntity itemBaseEntity) {
         if (itemBaseEntity == null) {
             return null;
@@ -53,7 +64,13 @@ public class ItemConverter {
                 .questRewardDTO(listaQuestReward)
                 .build();
     }
-    // Convierte ItemCombinationEntity a ItemCombinationDTO
+
+    /**
+     * Convierte una entidad {@link ItemCombinationEntity} a un DTO {@link ItemCombinationDTO}.
+     *
+     * @param v la entidad de combinación de objetos.
+     * @return el DTO correspondiente.
+     */
     public static ItemCombinationDTO convertItemCombinationEntityToDTO(ItemCombinationEntity v) {
         return ItemCombinationDTO.builder()
                 .nombreResultado( v.getNombreResultado())
@@ -63,7 +80,12 @@ public class ItemConverter {
                 .build();
     }
 
-    // Convierte LocationItemEntity a LocationItemDTO
+    /**
+     * Convierte una entidad {@link LocationItemEntity} a un DTO {@link LocationItemDTO}.
+     *
+     * @param v la entidad que representa un objeto en una localización.
+     * @return el DTO correspondiente.
+     */
     public static LocationItemDTO convertLocationItemEntityToDTO(LocationItemEntity v) {
         return LocationItemDTO.builder()
                 .nombreBase( v.getNombreBase())
@@ -76,7 +98,12 @@ public class ItemConverter {
                 .build();
     }
 
-    // Convierte QuestRewardEntity a QuestRewardDTO
+    /**
+     * Convierte una entidad {@link QuestRewardEntity} a un DTO {@link QuestRewardDTO}.
+     *
+     * @param v la entidad que representa una recompensa de misión.
+     * @return el DTO correspondiente.
+     */
     public static QuestRewardDTO convertQuestRewardEntityToDTO(QuestRewardEntity v) {
         return QuestRewardDTO.builder()
                 .grupo(v.getGrupo())
@@ -86,12 +113,17 @@ public class ItemConverter {
                 .build();
     }
 
+    /**
+     * Convierte una lista de entidades {@link ItemBaseEntity} a una lista de {@link ItemBaseDTO}.
+     *
+     * @param itemBaseEntity lista de entidades de objetos.
+     * @return lista de DTOs correspondientes.
+     */
     public static List<ItemBaseDTO> itemEntityToDTO(List<ItemBaseEntity> itemBaseEntity) {
         List<ItemBaseDTO> itemBaseDTO = new ArrayList<>();
         for (ItemBaseEntity v : itemBaseEntity) {
             itemBaseDTO.add(itemEntityToDTO(v));
         }
-
         return itemBaseDTO;
     }
 }

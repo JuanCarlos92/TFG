@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.AllArgsConstructor;
 
+/**
+ * Controlador REST para gestionar las habilidades del juego Monster Hunter World.
+ * Proporciona endpoints para listar todas las habilidades disponibles y obtener detalles de una habilidad específica.
+ */
 @RestController
 @RequestMapping("/api/skill")
 @AllArgsConstructor
@@ -18,7 +22,11 @@ public class SkillController {
     @Autowired
     private SkillService skillService;
 
-    // Endpoint para obtener las habilidades mediante lista
+    /**
+     * Obtiene una lista de todas las habilidades disponibles en el sistema.
+     *
+     * @return un objeto {@link GetSkillListResponse} que contiene la lista de habilidades.
+     */
     @GetMapping()
     public GetSkillListResponse getSkillList() {
         GetSkillListResponse response = new GetSkillListResponse();
@@ -26,7 +34,12 @@ public class SkillController {
         return response;
     }
 
-    // Endpoint para obtener una habilidad por ID
+    /**
+     * Obtiene los detalles de una habilidad específica a partir de su ID.
+     *
+     * @param id el identificador único de la habilidad.
+     * @return un objeto {@link GetSkillResponse} con los datos de la habilidad correspondiente.
+     */
     @GetMapping("/{id}")
     public GetSkillResponse getSkillId(@PathVariable Long id) {
         SkillBaseDTO skill = skillService.getSkillId(id);
@@ -34,6 +47,5 @@ public class SkillController {
 
         response.setIsOk(true);
         return response;
-
     }
 }

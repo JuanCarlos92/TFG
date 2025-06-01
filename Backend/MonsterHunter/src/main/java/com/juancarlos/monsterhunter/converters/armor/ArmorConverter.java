@@ -7,14 +7,24 @@ import java.util.stream.Collectors;
 import com.juancarlos.monsterhunter.entity.armor.*;
 import com.juancarlos.monsterhunter.models.dto.armor.*;
 
+/**
+ * Clase utilitaria para convertir entidades relacionadas con armaduras
+ * a sus respectivos DTO utilizados en la capa de presentación.
+ */
 public class ArmorConverter {
-    // Convierte un ArmorEntity a ArmorDTO
+
+    /**
+     * Convierte un {@link ArmorBaseEntity} a un {@link ArmorBaseDTO}.
+     *
+     * @param armorBaseEntity la entidad de armadura a convertir.
+     * @return un DTO con los datos de la armadura o {@code null} si la entidad es nula.
+     */
     public static ArmorBaseDTO armorEntityToDTO(ArmorBaseEntity armorBaseEntity) {
         if (armorBaseEntity == null) {
             return null;
         }
 
-        // Convertimos las listas
+        // Conversión de listas de entidades anidadas a DTO
         List<ArmorCraftDTO> listaArmorCraft = armorBaseEntity.getArmorCraft()
                 .stream()
                 .map(ArmorConverter::convertArmorCrafEntityToDTO)
@@ -47,7 +57,12 @@ public class ArmorConverter {
                 .build();
     }
 
-    // Convierte ArmorCrafEntity a ArmorCrafDTO
+    /**
+     * Convierte un {@link ArmorCraftEntity} a un {@link ArmorCraftDTO}.
+     *
+     * @param v la entidad de materiales de creación de armadura.
+     * @return el DTO correspondiente.
+     */
     public static ArmorCraftDTO convertArmorCrafEntityToDTO(ArmorCraftEntity v) {
         return ArmorCraftDTO.builder()
                 .nombreBase(v.getNombreBase())
@@ -61,7 +76,12 @@ public class ArmorConverter {
                 .build();
     }
 
-    // Convierte ArmorSkillEntity a ArmorSkillDTO
+    /**
+     * Convierte un {@link ArmorSkillEntity} a un {@link ArmorSkillDTO}.
+     *
+     * @param v la entidad de habilidades asociadas a una armadura.
+     * @return el DTO correspondiente.
+     */
     public static ArmorSkillDTO convertArmorSkillEntityToDTO(ArmorSkillEntity v) {
         return ArmorSkillDTO.builder()
                 .nombreBase(v.getNombreBase())
@@ -72,6 +92,12 @@ public class ArmorConverter {
                 .build();
     }
 
+    /**
+     * Convierte una lista de {@link ArmorBaseEntity} a una lista de {@link ArmorBaseDTO}.
+     *
+     * @param armorBaseEntity lista de entidades de armaduras.
+     * @return lista de DTOs correspondientes.
+     */
     public static List<ArmorBaseDTO> armorEntityToDTO(List<ArmorBaseEntity> armorBaseEntity) {
         List<ArmorBaseDTO> armorBaseDTO = new ArrayList<>();
         for (ArmorBaseEntity v : armorBaseEntity) {

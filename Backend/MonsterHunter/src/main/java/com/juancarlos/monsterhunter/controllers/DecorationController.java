@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controlador REST para gestionar las peticiones relacionadas con las decoraciones (Decoration).
+ * Proporciona endpoints para obtener listas y detalles individuales de decoraciones.
+ */
 @RestController
 @RequestMapping("/api/decoration")
 @AllArgsConstructor
@@ -18,6 +22,11 @@ public class DecorationController {
     @Autowired
     private DecorationService decorationService;
 
+    /**
+     * Obtiene la lista completa de decoraciones.
+     *
+     * @return una respuesta que contiene la lista de decoraciones.
+     */
     @GetMapping()
     public GetDecorationListResponse getDecorationList() {
         GetDecorationListResponse response = new GetDecorationListResponse();
@@ -25,7 +34,12 @@ public class DecorationController {
         return response;
     }
 
-    //Endpoint para obtener adornor por ID
+    /**
+     * Obtiene una decoración específica por su ID.
+     *
+     * @param id el identificador de la decoración.
+     * @return una respuesta que contiene los datos de la decoración solicitada.
+     */
     @GetMapping("/{id}")
     public GetDecorationResponse getDecorationId(@PathVariable Long id) {
         DecorationBaseDTO decoration = decorationService.getDecorationId(id);

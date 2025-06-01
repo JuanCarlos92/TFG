@@ -8,6 +8,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa los hábitats de un monstruo en Monster Hunter.
+ *<p>
+ * Esta clase almacena información sobre los mapas donde aparece un monstruo,
+ * así como las áreas específicas del mapa donde inicia, se mueve o descansa.
+ */
 @Entity
 @Table(name = "monster_habitats")
 @Data
@@ -30,6 +36,10 @@ public class MonsterHabitatsEntity {
     @Column(name = "area_descanso")
     private String areaDescanso;
 
+    /**
+     * Relación muchos-a-uno con {@link MonsterBaseEntity}.
+     * Indica a qué monstruo pertenece este hábitat.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_monster", referencedColumnName = "id")
     @JsonIgnore

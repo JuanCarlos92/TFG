@@ -1,4 +1,5 @@
 package com.juancarlos.monsterhunter.entity.kinsect;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
@@ -7,6 +8,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa los materiales de fabricación o mejora de un kinsecto
+ * en Monster Hunter.
+ *<p>
+ * Cada registro indica los materiales necesarios (nombre y calidad) para
+ * obtener un kinsecto específico, reflejando así los requisitos de crafteo.
+ */
 @Entity
 @Table(name = "kinsecto_craft")
 @Data
@@ -36,8 +44,11 @@ public class KinsectCraftEntity {
     private String nombreItem4;
     @Column(name = "calidad_item4")
     private Integer calidadItem4;
-    
-    // Relacion muchos a uno con la tabla kinsecto base
+
+    /**
+     * Relación muchos-a-uno con la entidad {@link KinsectBaseEntity},
+     * que indica a qué kinsecto corresponde esta receta de crafteo.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_kinsecto", referencedColumnName = "id")
     @JsonIgnore

@@ -6,12 +6,27 @@ import java.util.stream.Collectors;
 import com.juancarlos.monsterhunter.entity.weapon.*;
 import com.juancarlos.monsterhunter.models.dto.weapon.*;
 
+/**
+ * Clase utilitaria encargada de convertir entidades relacionadas con armas
+ * (WeaponBaseEntity y sus entidades hijas) a sus correspondientes DTOs.
+ * <p>
+ * Se utiliza para separar la lógica del modelo de datos persistente y el modelo de datos
+ * utilizado para la comunicación entre capas, especialmente entre backend y frontend.
+ */
 public class WeaponConverter {
-    // Convierte una WeaponEntity a WeaponDTO
+
+    /**
+     * Convierte una entidad WeaponBaseEntity en un DTO WeaponBaseDTO.
+     * También convierte todas las listas de entidades hijas asociadas.
+     *
+     * @param weaponBaseEntity la entidad de arma base a convertir.
+     * @return un DTO con los datos de la entidad y sus relaciones, o null si la entidad es null.
+     */
     public static WeaponBaseDTO weaponEntityToDTO(WeaponBaseEntity weaponBaseEntity) {
         if (weaponBaseEntity == null) {
             return null;
         }
+
         // Convertimos las lista
         List<WeaponCraftDTO> listaWeaponCraft = weaponBaseEntity.getWeaponCraft()
                 .stream()
@@ -32,7 +47,8 @@ public class WeaponConverter {
                 .map(WeaponConverter::convertWeaponMelodiaNotaEntityToDTO)
                 .collect(Collectors.toList());
 
-        return WeaponBaseDTO.builder() // Creamos un nuevo objeto WeaponBaseDTO
+        // Creamos un nuevo objeto WeaponBaseDTO
+        return WeaponBaseDTO.builder()
                 .id(weaponBaseEntity.getId())
                 .nombre(weaponBaseEntity.getNombre())
                 .tipoArma(weaponBaseEntity.getTipoArma())
@@ -62,7 +78,12 @@ public class WeaponConverter {
                 .build();
     }
 
-    // Convierte WeaponCraftEntity a WeaponCraftDTO
+    /**
+     * Convierte una entidad WeaponCraftEntity en su correspondiente DTO.
+     *
+     * @param v la entidad de crafteo del arma.
+     * @return un objeto WeaponCraftDTO con los datos de la entidad.
+     */
     private static WeaponCraftDTO convertCraftEntityToDto(WeaponCraftEntity v) {
         return WeaponCraftDTO.builder()
                 .nombreBase(v.getNombreBase())
@@ -80,7 +101,12 @@ public class WeaponConverter {
 
     }
 
-    // Convierte WeaponArcoEntity a WeaponArcoDTO
+    /**
+     * Convierte una entidad WeaponArcoEntity en su correspondiente DTO.
+     *
+     * @param v la entidad de propiedades del arco.
+     * @return un objeto WeaponArcoDTO con los datos de la entidad.
+     */
     private static WeaponArcoDTO convertArcoEntityToDto(WeaponArcoEntity v) {
         return WeaponArcoDTO.builder()
                 .nombreBase(v.getNombreBase())
@@ -94,7 +120,13 @@ public class WeaponConverter {
                 .build();
     }
 
-    // Convierte WeaponMunicionEntity a WeaponMunicionDTO
+    /**
+     * Convierte una entidad WeaponMunicionEntity en su correspondiente DTO.
+     * Este metodo incluye una conversión extensa de múltiples campos de tipos de munición.
+     *
+     * @param v la entidad de configuración de munición.
+     * @return un objeto WeaponMunicionDTO con toda la información detallada.
+     */
     private static WeaponMunicionDTO convertMunicionEntityToDto(WeaponMunicionEntity v) {
         return WeaponMunicionDTO.builder()
                 .nombreArma(v.getNombreArma())
@@ -220,12 +252,16 @@ public class WeaponConverter {
                 .build();
     }
 
-    // Convierte WeaponMelodiaNotaEntity a WeaponMelodiaNotaDTO
+    /**
+     * Convierte una entidad WeaponMelodiaNotaEntity en su correspondiente DTO.
+     *
+     * @param v la entidad de melodía y notas de un cuerno de caza.
+     * @return un objeto WeaponMelodiaNotaDTO con los datos de la entidad.
+     */
     public static WeaponMelodiaNotaDTO convertWeaponMelodiaNotaEntityToDTO(WeaponMelodiaNotaEntity v) {
         return WeaponMelodiaNotaDTO.builder()
                 .nombreBase(v.getNombreBase())
                 .notas(v.getNotas())
                 .build();
     }
-
 }

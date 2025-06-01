@@ -10,6 +10,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Implementación del servicio para la gestión de adornos (Decorations).
+ * <p>
+ * Proporciona los métodos para obtener un adorno por su ID y para listar todos los adornos,
+ * utilizando el repositorio {@link DecorationRepository} y el convertidor {@link DecorationConverter}.
+ * </p>
+ */
 @AllArgsConstructor
 @Service
 public class DecorationServiceImpl implements DecorationService{
@@ -17,7 +24,13 @@ public class DecorationServiceImpl implements DecorationService{
     @Autowired
     private DecorationRepository decorationRepository;
 
-    //Metodo adornos por ID
+    /**
+     * Obtiene un adorno por su identificador único.
+     *
+     * @param id Identificador del adorno.
+     * @return DTO que representa el adorno encontrado.
+     * @throws RuntimeException si no se encuentra un adorno con el ID proporcionado.
+     */
     @Override
     public DecorationBaseDTO getDecorationId(Long id) {
         DecorationBaseEntity decorationEntity = decorationRepository.findById(id)
@@ -25,10 +38,14 @@ public class DecorationServiceImpl implements DecorationService{
         return DecorationConverter.decorationEntityToDTO(decorationEntity);
     }
 
+    /**
+     * Obtiene la lista completa de adornos disponibles.
+     *
+     * @return Lista de DTOs que representan los adornos.
+     */
     @Override
     public List<DecorationBaseDTO> getDecorationList() {
         List<DecorationBaseEntity> decorationEntity = decorationRepository.findAll();
         return DecorationConverter.decorationEntityToDTO(decorationEntity);
     }
-
 }

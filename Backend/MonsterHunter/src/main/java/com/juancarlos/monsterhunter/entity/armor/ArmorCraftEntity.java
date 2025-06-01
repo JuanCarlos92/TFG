@@ -8,6 +8,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa los materiales necesarios para fabricar una pieza de armadura en Monster Hunter.
+ * Cada entrada define los componentes y cantidades requeridas para una armadura específica.
+ */
 @Entity
 @Table(name = "armadura_craft")
 @Data
@@ -38,7 +42,10 @@ public class ArmorCraftEntity {
     @Column(name = "cantidad_item4")
     private Integer cantidadItem4;
 
-    // Relacion con la tabla armadura_base
+    /**
+     * Relación muchos a uno con la entidad ArmorBaseEntity.
+     * Indica a qué pieza de armadura pertenecen estos materiales de fabricación.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_armadura", referencedColumnName = "id")
     @JsonIgnore

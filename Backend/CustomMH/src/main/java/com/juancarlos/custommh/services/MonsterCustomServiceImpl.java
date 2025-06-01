@@ -10,13 +10,21 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Implementación del servicio {@link MonsterCustomService} que gestiona la lógica de negocio
+ * relacionada con los monstruos personalizados.
+ */
 @Service
 public class MonsterCustomServiceImpl implements MonsterCustomService {
 
     @Autowired
     private MonsterCustomRepository monsterCustomRepository;
 
-    //Metodo Obtener Lista de monsters
+    /**
+     * Obtiene una lista de todos los monstruos personalizados almacenados en la base de datos.
+     *
+     * @return Lista de {@link MonsterCustomDTO}.
+     */
     @Override
     public List<MonsterCustomDTO> getMonstersCustomList() {
         List<MonsterCustomEntity> monsterEntities = monsterCustomRepository.findAll();
@@ -24,7 +32,13 @@ public class MonsterCustomServiceImpl implements MonsterCustomService {
         return MonsterCustomConverter.monsterCustomEntityToDTO(monsterEntities);
     }
 
-    //Metodo Obtener monster por ID
+    /**
+     * Busca un monstruo personalizado por su identificador único.
+     *
+     * @param id Identificador del monstruo.
+     * @return Objeto {@link MonsterCustomDTO} si se encuentra.
+     * @throws RuntimeException si el monstruo no existe.
+     */
     @Override
     public MonsterCustomDTO getMonsterCustomId(Long id) {
         MonsterCustomEntity monsterCustomEntity = monsterCustomRepository.findById(id).orElseThrow(() -> new RuntimeException("No hay monster con ese id: " + id));
@@ -32,7 +46,12 @@ public class MonsterCustomServiceImpl implements MonsterCustomService {
         return MonsterCustomConverter.monsterCustomEntityToDTO(monsterCustomEntity);
     }
 
-    //Metodo Obtener monster por nombre
+    /**
+     * Busca un monstruo personalizado por su nombre.
+     *
+     * @param nombre Nombre del monstruo.
+     * @return Objeto {@link MonsterCustomDTO} correspondiente.
+     */
     @Override
     public MonsterCustomDTO getMonsterCustomNombre(String nombre) {
         MonsterCustomEntity monsterCustomEntity = monsterCustomRepository.findByNombre(nombre);
@@ -40,7 +59,12 @@ public class MonsterCustomServiceImpl implements MonsterCustomService {
         return MonsterCustomConverter.monsterCustomEntityToDTO(monsterCustomEntity);
     }
 
-    //Metodo guardar nuevo monster
+    /**
+     * Guarda un nuevo monstruo personalizado en la base de datos.
+     *
+     * @param monsterCustomRequest Datos del nuevo monstruo.
+     * @return Objeto {@link MonsterCustomDTO} del monstruo guardado.
+     */
     @Override
     public MonsterCustomDTO postMonsterCustom(MonsterCustomRequest monsterCustomRequest) {
         MonsterCustomEntity monsterCustomEntity = MonsterCustomConverter.monsterCustomDTOtoEntity(monsterCustomRequest);
@@ -49,7 +73,12 @@ public class MonsterCustomServiceImpl implements MonsterCustomService {
         return MonsterCustomConverter.monsterCustomEntityToDTO(savedMonsterCustomEntity);
     }
 
-    //Metodo actualizar monster
+    /**
+     * Actualiza un monstruo personalizado existente.
+     *
+     * @param monsterCustomRequest Datos del monstruo actualizado.
+     * @return Objeto {@link MonsterCustomDTO} del monstruo actualizado.
+     */
     @Override
     public MonsterCustomDTO putMonsterCustom(MonsterCustomRequest monsterCustomRequest) {
         MonsterCustomEntity monsterCustomEntity = MonsterCustomConverter.monsterCustomDTOtoEntity(monsterCustomRequest);
@@ -58,7 +87,12 @@ public class MonsterCustomServiceImpl implements MonsterCustomService {
         return MonsterCustomConverter.monsterCustomEntityToDTO(savedMonsterCustomEntity);
     }
 
-    //Metodo eliminar monster por ID
+    /**
+     * Elimina un monstruo personalizado por su identificador.
+     *
+     * @param id Identificador del monstruo a eliminar.
+     * @throws RuntimeException si no se encuentra el monstruo.
+     */
     @Override
     public void deleteMonsterCustom(Long id) {
         MonsterCustomEntity monsterCustomEntity = monsterCustomRepository.findById(id).orElseThrow(() -> new RuntimeException("No hay monster con ese id: " + id));

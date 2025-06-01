@@ -13,7 +13,11 @@ import org.springframework.data.domain.Page;
 
 import lombok.AllArgsConstructor;
 
-
+/**
+ * Controlador REST para gestionar las peticiones relacionadas con las zonas (locations).
+ * Proporciona endpoints para obtener zonas con paginación y filtrado opcional por nombre,
+ * así como para obtener detalles de una zona específica por ID.
+ */
 @RestController
 @RequestMapping("/api/location")
 @AllArgsConstructor
@@ -22,7 +26,15 @@ public class LocationController {
     @Autowired
     private LocationService locationService;
 
-    //Endpoint para obtener zonas con paginacion
+    /**
+     * Obtiene una página de zonas, con soporte de paginación y filtrado opcional por nombre.
+     *
+     * @param page   número de página (por defecto 0).
+     * @param size   tamaño de página (por defecto 13).
+     * @param nombre nombre opcional para filtrar zonas por coincidencia en su nombre.
+     * @return una página de objetos LocationBaseDTO que cumplen el criterio de búsqueda y paginación.
+     */
+
     @GetMapping()
     public Page<LocationBaseDTO> getLocationsWithPagination(@RequestParam(defaultValue = "0") int page,
                                                            @RequestParam(defaultValue = "13") int size, @RequestParam(required = false) String nombre) {
@@ -36,7 +48,12 @@ public class LocationController {
         }
     }
 
-    // Endpoint para obtener una zona por ID
+    /**
+     * Obtiene una zona específica por su ID.
+     *
+     * @param id el identificador de la zona.
+     * @return una respuesta que contiene los datos de la zona solicitada.
+     */
     @GetMapping("/{id}")
     public GetLocationResponse getLocationId(@PathVariable Long id) {
         LocationBaseDTO location = locationService.getLocationId(id);

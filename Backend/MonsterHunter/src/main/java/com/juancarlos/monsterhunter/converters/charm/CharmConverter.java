@@ -9,14 +9,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Clase utilitaria encargada de convertir entidades relacionadas con los amuletos (Charms)
+ * a sus respectivos DTO que se utilizan en las respuestas de la API.
+ */
 public class CharmConverter {
-    // Convierte una CharmEntity a charmDTO
+
+    /**
+     * Convierte una entidad {@link CharmBaseEntity} a un {@link CharmBaseDTO}.
+     *
+     * @param charmBaseEntity la entidad de charm a convertir.
+     * @return el DTO correspondiente o {@code null} si la entidad es nula.
+     */
     public static CharmBaseDTO charmEntityToDTO(CharmBaseEntity charmBaseEntity) {
         if (charmBaseEntity == null) {
             return null;
         }
 
-        // Convertimos la listas
+        // Conversión de listas
         List<CharmCraftDTO> listaCharmCraft = charmBaseEntity.getCharmCraft()
                 .stream()
                 .map(CharmConverter::convertCharmCrafEntityToDTO)
@@ -34,7 +44,13 @@ public class CharmConverter {
                 .charmCraftDTO(listaCharmCraft)
                 .build();
     }
-    // Convierte CharmCrafEntity a CharmCrafDTO
+
+    /**
+     * Convierte una entidad {@link CharmCraftEntity} a un {@link CharmCraftDTO}.
+     *
+     * @param v la entidad de crafteo del charm a convertir.
+     * @return el DTO con la información de los materiales necesarios para crear el charm.
+     */
     public static CharmCraftDTO convertCharmCrafEntityToDTO(CharmCraftEntity v) {
         return CharmCraftDTO.builder()
                 .nombreBase(v.getNombreBase())
@@ -50,13 +66,18 @@ public class CharmConverter {
                 .build();
     }
 
+    /**
+     * Convierte una lista de entidades {@link CharmBaseEntity} a una lista de {@link CharmBaseDTO}.
+     *
+     * @param charmBaseEntity lista de entidades de charms a convertir.
+     * @return lista de DTOs correspondientes.
+     */
     public static List<CharmBaseDTO> charmEntityToDTO(List<CharmBaseEntity> charmBaseEntity) {
         List<CharmBaseDTO> charmBaseDTO = new ArrayList<>();
         for (CharmBaseEntity v : charmBaseEntity) {
 
             charmBaseDTO.add(charmEntityToDTO(v));
         }
-
         return charmBaseDTO;
     }
 }

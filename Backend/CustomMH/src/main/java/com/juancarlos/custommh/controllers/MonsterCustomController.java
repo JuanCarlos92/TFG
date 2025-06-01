@@ -12,6 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Controlador REST que gestiona las operaciones CRUD para los monstruos personalizados
+ * del sistema. Proporciona endpoints para obtener, crear, actualizar y eliminar monstruos.
+ */
 @RestController
 @RequestMapping("/api/custom")
 @AllArgsConstructor
@@ -19,7 +23,11 @@ public class MonsterCustomController {
     @Autowired
     private MonsterCustomService monsterCustomService;
 
-    //Endpoint Obtener Lista de monsters
+    /**
+     * Obtiene una lista de todos los monstruos personalizados registrados.
+     *
+     * @return una respuesta con la lista de monstruos personalizados.
+     */
     @GetMapping
     public GetMonsterCustomListResponse getMonsterCustomList() {
         GetMonsterCustomListResponse response = new GetMonsterCustomListResponse();
@@ -28,7 +36,12 @@ public class MonsterCustomController {
         return response;
     }
 
-    //Endpoint Obtener monster por ID
+    /**
+     * Obtiene un monstruo personalizado por su identificador único.
+     *
+     * @param id ID del monstruo.
+     * @return una respuesta con los datos del monstruo encontrado.
+     */
     @GetMapping("/{id}")
     public GetMonsterCustomResponse getMonsterCustomId(@PathVariable Long id) {
         MonsterCustomDTO monster = monsterCustomService.getMonsterCustomId(id);
@@ -38,7 +51,12 @@ public class MonsterCustomController {
         return response;
     }
 
-    //Endpoint Obtener monster por nombre
+    /**
+     * Obtiene un monstruo personalizado por su nombre.
+     *
+     * @param nombre Nombre del monstruo.
+     * @return una respuesta con los datos del monstruo encontrado.
+     */
     @GetMapping("nombre/{nombre}")
     public GetMonsterCustomResponse getMonsterByCustomNombre(@PathVariable String nombre) {
         MonsterCustomDTO monster = monsterCustomService.getMonsterCustomNombre(nombre);
@@ -48,7 +66,12 @@ public class MonsterCustomController {
         return response;
     }
 
-    //Endpoint Crear nuevo monster
+    /**
+     * Crea un nuevo monstruo personalizado a partir de los datos enviados en el cuerpo de la petición.
+     *
+     * @param monsterCustomRequest objeto con los datos del monstruo a crear.
+     * @return una respuesta con el monstruo creado.
+     */
     @PostMapping
     public PostMonsterCustomResponse postMonsterCustom(@RequestBody MonsterCustomRequest monsterCustomRequest) {
         MonsterCustomDTO monster = monsterCustomService.postMonsterCustom(monsterCustomRequest);
@@ -58,7 +81,12 @@ public class MonsterCustomController {
         return response;
     }
 
-    //Endpoint Actualizar monster
+    /**
+     * Actualiza los datos de un monstruo personalizado existente.
+     *
+     * @param monsterCustomRequest objeto con los datos actualizados del monstruo.
+     * @return una respuesta con el monstruo actualizado.
+     */
     @PutMapping
     public PutMonsterCustomResponse putMonsterCustom(@RequestBody MonsterCustomRequest monsterCustomRequest) {
         MonsterCustomDTO monster = monsterCustomService.putMonsterCustom(monsterCustomRequest);
@@ -68,7 +96,12 @@ public class MonsterCustomController {
         return response;
     }
 
-    //Endpoint Eliminar Monster por ID
+    /**
+     * Elimina un monstruo personalizado por su identificador.
+     *
+     * @param id ID del monstruo a eliminar.
+     * @return una respuesta indicando que el monstruo fue eliminado correctamente.
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteMonsterCustom(@PathVariable Long id) {
         monsterCustomService.deleteMonsterCustom(id);

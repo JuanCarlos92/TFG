@@ -14,6 +14,11 @@ import com.juancarlos.monsterhunter.services.MonsterService;
 
 import lombok.AllArgsConstructor;
 
+/**
+ * Controlador REST para gestionar las peticiones relacionadas con los monstruos.
+ * Proporciona endpoints para obtener monstruos con paginación y filtrado opcional por nombre,
+ * así como para obtener detalles de un monstruo específico por ID.
+ */
 @RestController
 @RequestMapping("/api/monster")
 @AllArgsConstructor
@@ -22,7 +27,14 @@ public class MonsterController {
     @Autowired
     private MonsterService monsterService;
 
-    // Endpoint para obtener monstruos con paginacion
+    /**
+     * Obtiene una página de monstruos, con soporte de paginación y filtrado opcional por nombre.
+     *
+     * @param page   número de página (por defecto 0).
+     * @param size   tamaño de página (por defecto 12).
+     * @param nombre nombre opcional para filtrar monstruos por coincidencia en su nombre.
+     * @return una página de objetos MonsterBaseDTO que cumplen el criterio de búsqueda y paginación.
+     */
     @GetMapping()
     public Page<MonsterBaseDTO> getMonstersWithPagination(@RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "12") int size, @RequestParam(required = false) String nombre) {
@@ -36,7 +48,12 @@ public class MonsterController {
         }
     }
 
-    // Endpoint para obtener un monstruo por ID
+    /**
+     * Obtiene un monstruo específico por su ID.
+     *
+     * @param id el identificador del monstruo.
+     * @return una respuesta que contiene los datos del monstruo solicitado.
+     */
     @GetMapping("/{id}")
     public GetMonsterResponse getMonsterId(@PathVariable Long id) {
         MonsterBaseDTO monster = monsterService.getMonsterId(id);

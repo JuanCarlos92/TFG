@@ -10,6 +10,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Implementación del servicio {@link ToolService} para gestionar herramientas en el juego Monster Hunter World.
+ * Proporciona la lógica para obtener y convertir entidades de herramientas en DTOs.
+ */
 @AllArgsConstructor
 @Service
 public class ToolServiceImpl implements ToolService {
@@ -17,7 +21,11 @@ public class ToolServiceImpl implements ToolService {
     @Autowired
     private ToolRepository toolRepository;
 
-    // Metodo lista de herramientas
+    /**
+     * Obtiene una lista de todas las herramientas disponibles.
+     *
+     * @return Lista de objetos {@link ToolBaseDTO} que representan herramientas del juego.
+     */
     @Override
     public List<ToolBaseDTO> getToolList() {
         List<ToolBaseEntity> toolEntity = toolRepository.findAll();

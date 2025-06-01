@@ -10,13 +10,23 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+/**
+ * Implementación del servicio {@link RecoleccionService} que gestiona las operaciones
+ * relacionadas con las actividades de recolección en el juego Monster Hunter World.
+ */
 @Service
 public class RecoleccionServiceImpl implements RecoleccionService {
 
     @Autowired
     private RecoleccionRepository recoleccionRepository;
 
-    // Metodo objeto de recoleccion por ID
+    /**
+     * Obtiene una actividad de recolección por su identificador único.
+     *
+     * @param id Identificador de la recolección.
+     * @return DTO con los datos de la recolección, incluyendo sus relaciones.
+     * @throws RuntimeException si no se encuentra una recolección con ese ID.
+     */
     @Override
     public RecoleccionDTO getRecoleccionId(Long id) {
         RecoleccionEntity recoleccionEntity = recoleccionRepository.findById(id)
@@ -25,7 +35,13 @@ public class RecoleccionServiceImpl implements RecoleccionService {
         return RecoleccionConverter.recolecionEntityToDTO(recoleccionEntity, true);
     }
 
-    // Metodo objetos de recoleccion por paginacion
+    /**
+     * Obtiene una lista paginada de actividades de recolección.
+     *
+     * @param page Número de página (empezando desde 0).
+     * @param size Tamaño de la página.
+     * @return Página de objetos {@link RecoleccionDTO} sin relaciones.
+     */
     @Override
     public Page<RecoleccionDTO> getRecoleccionWithPagination(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
@@ -35,7 +51,14 @@ public class RecoleccionServiceImpl implements RecoleccionService {
         return recoleccionEntities.map(m -> RecoleccionConverter.recolecionEntityToDTO(m, false));
     }
 
-    // Metodo objeto de recoleccion por pagina + nombre
+    /**
+     * Obtiene una lista paginada de actividades de recolección que coincidan con un nombre.
+     *
+     * @param nombre Nombre parcial o completo a buscar.
+     * @param page   Número de página (empezando desde 0).
+     * @param size   Tamaño de la página.
+     * @return Página de objetos {@link RecoleccionDTO} sin relaciones, filtrados por nombre.
+     */
     @Override
     public Page<RecoleccionDTO> getRecolecionByNameWithPagination(String nombre, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);

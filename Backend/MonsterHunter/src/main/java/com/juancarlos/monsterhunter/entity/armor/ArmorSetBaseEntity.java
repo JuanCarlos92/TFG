@@ -1,4 +1,5 @@
 package com.juancarlos.monsterhunter.entity.armor;
+
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,6 +11,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa un conjunto de armadura (Armor Set) en Monster Hunter.
+ * Un set de armadura agrupa piezas individuales y puede estar asociado a un monstruo específico.
+ */
 @Entity
 @Table(name = "armaduraset_base")
 @Data
@@ -40,15 +45,24 @@ public class ArmorSetBaseEntity {
     @Column(name = "bonus")
     private String bonus;
 
-    // Relacion muchos a uno con la tabla monster base
+    /**
+     * Relación muchos a uno con la entidad MonsterBaseEntity.
+     * Indica qué monstruo está relacionado con este set de armadura.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_monster", referencedColumnName = "id")
     @JsonIgnore
     private MonsterBaseEntity monsterBase;
 
+    /**
+     * Relación uno a muchos con las piezas individuales de armadura que forman este set.
+     */
     @OneToMany(mappedBy = "armorSetBase", fetch = FetchType.LAZY)
-    private List<ArmorBaseEntity> armorBase; // Relacion uno a muchos con la tabla armor base
+    private List<ArmorBaseEntity> armorBase;
 
+    /**
+     * Relación uno a muchos con los bonos de conjunto asociados a este set.
+     */
     @OneToMany(mappedBy = "armorSetBase", fetch = FetchType.LAZY)
-    private List<ArmorSetBaseBonusEntity> armorSetBaseBonus; // Relacion uno a muchos con la tabla armorset base bonus
+    private List<ArmorSetBaseBonusEntity> armorSetBaseBonus;
 }

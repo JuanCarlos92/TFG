@@ -8,6 +8,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa un arma de tipo arco en Monster Hunter.
+ *<p>
+ * Contiene los atributos específicos del arco, como tipo de arma,
+ * proximidad, potencia y efectos especiales como parálisis, veneno, sueño y explosivo.
+ * Está asociada a la entidad base de armas {@link WeaponBaseEntity}.
+ */
 @Entity
 @Table(name = "arma_arco")
 @Data
@@ -37,7 +44,10 @@ public class WeaponArcoEntity {
     @Column(name = "explosivo")
     private String explosivo;
 
-    // Relacion con la tabla arma_base
+    /**
+     * Relación muchos a uno con la tabla de armas base.
+     * Representa la asociación del arco con su entidad base común {@link WeaponBaseEntity}.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_arma", referencedColumnName = "id")
     @JsonIgnore

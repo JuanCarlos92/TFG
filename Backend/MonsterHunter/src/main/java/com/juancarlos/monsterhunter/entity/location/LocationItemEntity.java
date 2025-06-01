@@ -9,6 +9,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa los ítems recolectables en una localización del juego Monster Hunter.
+ *<p>
+ * Cada registro indica un ítem disponible en una zona específica de una localización, junto con
+ * detalles sobre su frecuencia de aparición, cantidad disponible y nodos de recolección.
+ */
 @Entity
 @Table(name = "localizacion_items")
 @Data
@@ -35,13 +41,19 @@ public class LocationItemEntity {
     @Column(name = "nodos")
     private Integer nodos;
 
-    // Relacion muchos a uno con la tabla localizacion base
+    /**
+     * Relación muchos-a-uno con {@link LocationBaseEntity}.
+     * Indica la localización a la que pertenece esta recolección.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_localizacion", referencedColumnName = "id")
     @JsonIgnore
     private LocationBaseEntity locationBase;
 
-    // Relacion muchos a uno con la tabla item base
+    /**
+     * Relación muchos-a-uno con {@link ItemBaseEntity}.
+     * Indica el ítem base asociado a esta entrada de recolección.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_item", referencedColumnName = "id")
     @JsonIgnore

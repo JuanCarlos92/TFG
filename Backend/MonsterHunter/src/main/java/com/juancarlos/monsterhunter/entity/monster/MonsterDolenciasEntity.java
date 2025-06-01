@@ -8,6 +8,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa las dolencias y efectos de estado que puede infligir un monstruo en Monster Hunter.
+ *<p>
+ * Esta clase almacena información sobre los distintos efectos a los que un cazador puede estar expuesto
+ * durante un enfrentamiento con el monstruo correspondiente, como rugidos, plagas elementales, estados alterados, etc.
+ */
 @Entity
 @Table(name = "monster_dolencias")
 @Data
@@ -59,6 +65,10 @@ public class MonsterDolenciasEntity {
     @Column(name = "efluente")
     private Boolean efluente;
 
+    /**
+     * Relación muchos-a-uno con {@link MonsterBaseEntity}.
+     * Representa el monstruo que inflige estas dolencias.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_monster", referencedColumnName = "id")
     @JsonIgnore

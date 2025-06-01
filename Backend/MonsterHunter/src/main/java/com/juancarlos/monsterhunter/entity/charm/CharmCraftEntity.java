@@ -8,6 +8,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa los materiales necesarios para fabricar o mejorar un amuleto (charm).
+ * Está relacionada con un amuleto base y detalla los ítems y cantidades requeridas para su creación.
+ */
 @Entity
 @Table(name = "amuleto_craft")
 @Data
@@ -40,7 +44,10 @@ public class CharmCraftEntity {
     @Column(name = "cantidad_item4")
     private Integer cantidadItem4;
 
-    // Relacion muchos a uno con la tabla armuleto craft
+    /**
+     * Relación muchos a uno con la entidad {@link CharmBaseEntity}.
+     * Indica a qué amuleto base pertenece esta configuración de crafteo.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_amuleto", referencedColumnName = "id")
     @JsonIgnore

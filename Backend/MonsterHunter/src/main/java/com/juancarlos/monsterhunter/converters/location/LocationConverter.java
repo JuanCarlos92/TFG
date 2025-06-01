@@ -13,8 +13,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Clase utilitaria encargada de convertir entidades relacionadas con localizaciones
+ * del juego Monster Hunter World a sus respectivos DTOs.
+ */
 public class LocationConverter {
-    //Convierte un LocationEntity a LocationDTO
+
+    /**
+     * Convierte una entidad {@link LocationBaseEntity} a un DTO {@link LocationBaseDTO},
+     * incluyendo o no sus relaciones dependiendo del valor del parámetro {@code flagWithRelations}.
+     *
+     * @param locationBaseEntity la entidad base de la localización.
+     * @param flagWithRelations si es {@code true}, se incluyen las relaciones (campamentos, ítems, misiones).
+     * @return el DTO correspondiente, o {@code null} si la entidad es nula.
+     */
     public static LocationBaseDTO locationEntityToDTO(LocationBaseEntity locationBaseEntity, boolean flagWithRelations) {
         if (locationBaseEntity == null) {
             return null;
@@ -48,12 +60,24 @@ public class LocationConverter {
                 .build();
     }
 
+    /**
+     * Convierte una entidad {@link LocationBaseEntity} a un DTO {@link LocationBaseDTO}
+     * incluyendo por defecto todas sus relaciones.
+     *
+     * @param locationEntity la entidad de la localización a convertir.
+     * @return el DTO correspondiente.
+     */
     public static LocationBaseDTO locationEntityToDTO(LocationBaseEntity locationEntity) {
-        // Por defecto, llamamos a la fersión flag = true
+        // Por defecto, llamamos a la versión flag = true
         return locationEntityToDTO(locationEntity, true);
     }
 
-    //Convierte LocationCampEntity a LocationCampDTO
+    /**
+     * Convierte una entidad {@link LocationCampEntity} a un DTO {@link LocationCampDTO}.
+     *
+     * @param v la entidad de campamento en una localización.
+     * @return el DTO correspondiente.
+     */
     public static LocationCampDTO convertLocationCampEntityToLocationCampDTO(LocationCampEntity v) {
         return LocationCampDTO.builder()
                 .nombreBase(v.getNombreBase())
@@ -62,7 +86,12 @@ public class LocationConverter {
                 .build();
     }
 
-    //Convierte LocationItemEntity a LocationItemDTO
+    /**
+     * Convierte una entidad {@link LocationItemEntity} a un DTO {@link LocationItemDTO}.
+     *
+     * @param v la entidad que representa un ítem dentro de una localización.
+     * @return el DTO correspondiente.
+     */
     public static LocationItemDTO convertLocationItemEntityToLocationItemDTO(LocationItemEntity v) {
         return LocationItemDTO.builder()
                 .nombreBase(v.getNombreBase())
@@ -76,7 +105,12 @@ public class LocationConverter {
                 .build();
     }
 
-    //Convierte QuestBaseEntity a QuestBaseDTO
+    /**
+     * Convierte una entidad {@link QuestBaseEntity} a un DTO {@link QuestBaseDTO}.
+     *
+     * @param v la misión asociada a una localización.
+     * @return el DTO correspondiente.
+     */
     public static QuestBaseDTO convertQuestBaseEntityToQuestBaseDTO(QuestBaseEntity v) {
         return QuestBaseDTO.builder()
                 .nombre(v.getNombre())
@@ -89,13 +123,18 @@ public class LocationConverter {
                 .build();
     }
 
+    /**
+     * Convierte una lista de entidades {@link LocationBaseEntity} a una lista de DTOs {@link LocationBaseDTO}.
+     *
+     * @param locationBaseEntity lista de entidades base de localización.
+     * @return lista de DTOs convertidos.
+     */
     public static List<LocationBaseDTO> LocationEntityToDTO(List<LocationBaseEntity> locationBaseEntity) {
         List<LocationBaseDTO> locationBaseDTO = new ArrayList<>();
         for (LocationBaseEntity v : locationBaseEntity) {
 
             locationBaseDTO.add(locationEntityToDTO(v));
         }
-
         return locationBaseDTO;
     }
 }

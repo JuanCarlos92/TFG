@@ -1,4 +1,5 @@
 package com.juancarlos.monsterhunter.entity.decoration;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.juancarlos.monsterhunter.entity.charm.CharmBaseEntity;
 
@@ -7,7 +8,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+/**
+ * Entidad que representa las tasas de aparición (drop rate) de adornos
+ * según el tipo de piedra Fey consumida en Monster Hunter.
+ */
 @Entity
 @Table(name = "adorno_tasadrop")
 @Data
@@ -40,7 +44,10 @@ public class DecorationDropRateEntity {
     @Column(name = "trece")
     private Integer trece;
 
-     // Relacion muchos a uno con la tabla armuleto craft
+    /**
+     * Relación muchos-a-uno con la entidad {@link CharmBaseEntity}, indicando
+     * el amuleto asociado con esta tasa de drop de adornos (si aplica).
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_amuleto", referencedColumnName = "id")
     @JsonIgnore

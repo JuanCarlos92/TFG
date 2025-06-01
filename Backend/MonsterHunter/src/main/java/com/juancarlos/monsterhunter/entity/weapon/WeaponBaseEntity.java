@@ -10,6 +10,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa la tabla base de armas en Monster Hunter.
+ *<p>
+ * Contiene atributos generales y comunes a todos los tipos de armas,
+ * tales como nombre, tipo, rareza, estadísticas de ataque, afinidad, defensa, elementos, ranuras, munición, entre otros.
+ * Además, establece las relaciones con otras entidades específicas de armas, como arcos, municiones, y detalles de fabricación.
+ */
 @Entity
 @Table(name = "arma_base")
 @Data
@@ -65,21 +72,35 @@ public class WeaponBaseEntity {
     @Column(name = "configuracion_municion")
     private String confMunicion;
 
-    // Relacion muchos a uno con la tabla weaponTipo
+    /**
+     * Relación muchos a uno con la entidad WeaponTipoEntity que define el tipo de arma.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_tipo", referencedColumnName = "id")
     @JsonIgnore
     private WeaponTipoEntity weaponTipo;
 
+    /**
+     * Relación uno a muchos con las entidades WeaponCraftEntity, que representan los detalles de fabricación del arma.
+     */
     @OneToMany(mappedBy = "weaponBase", fetch = FetchType.LAZY)
     private List<WeaponCraftEntity> weaponCraft; // Relacion uno a muchos con la tabla weaponCraft
 
+    /**
+     * Relación uno a muchos con las entidades WeaponArcoEntity, que representan las variantes de arcos asociados.
+     */
     @OneToMany(mappedBy = "weaponBase", fetch = FetchType.LAZY)
     private List<WeaponArcoEntity> weaponArco; // Relacion uno a muchos con la tabla weaponArco
 
+    /**
+     * Relación uno a muchos con las entidades WeaponMunicionEntity, que representan las municiones asociadas al arma.
+     */
     @OneToMany(mappedBy = "weaponBase", fetch = FetchType.LAZY)
     private List<WeaponMunicionEntity> weaponMunicion; // Relacion uno a muchos con la tabla monsterMunicion
 
+    /**
+     * Relación uno a muchos con las entidades WeaponMelodiaNotaEntity, que representan las melodías o notas musicales relacionadas con el arma.
+     */
     @OneToMany(mappedBy = "weaponBase", fetch = FetchType.LAZY)
     private List<WeaponMelodiaNotaEntity> weaponMelodiaNota; // Relacion uno a muchos con la tabla weaponMelodiaNota
 

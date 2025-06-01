@@ -3,6 +3,11 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
+/**
+ * Clase que representa una solicitud para crear o actualizar un monstruo personalizado.
+ * <p>
+ * Se utiliza para recibir datos desde el cliente hacia el backend.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

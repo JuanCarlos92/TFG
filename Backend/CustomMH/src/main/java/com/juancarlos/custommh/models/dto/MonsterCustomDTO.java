@@ -3,6 +3,11 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
+/**
+ * DTO (Data Transfer Object) que representa un monstruo personalizado.
+ * <p>
+ * Se utiliza para transferir datos entre capas del sistema sin exponer directamente la entidad.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

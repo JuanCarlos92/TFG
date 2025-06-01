@@ -1,10 +1,17 @@
 package com.juancarlos.monsterhunter.entity.tool;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa la base de una herramienta en Monster Hunter.
+ * <p>
+ * Contiene información detallada sobre cada herramienta disponible en el juego,
+ * incluyendo su nombre, tipo, duración, recarga y ranuras de mejora.
+ */
 @Entity
 @Table(name = "herramienta_base")
 @Data
@@ -32,5 +39,4 @@ public class ToolBaseEntity {
     private Integer ranura2;
     @Column(name = "ranura_3")
     private Integer ranura3;
-
 }

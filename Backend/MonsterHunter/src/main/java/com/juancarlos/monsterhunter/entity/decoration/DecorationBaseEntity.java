@@ -6,6 +6,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa un adorno (decoración) en Monster Hunter.
+ * Los adornos se pueden insertar en ranuras de equipamiento para otorgar habilidades adicionales.
+ */
 @Entity
 @Table(name = "adorno_base")
 @Data

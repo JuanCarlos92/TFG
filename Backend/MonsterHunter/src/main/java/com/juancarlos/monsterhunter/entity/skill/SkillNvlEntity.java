@@ -8,6 +8,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entidad que representa un nivel específico de una habilidad (Skill) en Monster Hunter.
+ *<p>
+ * Cada instancia contiene detalles sobre un nivel particular de la habilidad, incluyendo
+ * su nombre base, número de nivel y descripción asociada.
+ *<p>
+ * Esta entidad mantiene una relación de muchos a uno con {@link SkillBaseEntity},
+ * que representa la habilidad base a la que pertenece este nivel.
+ */
 @Entity
 @Table(name = "skill_niveles")
 @Data
@@ -26,7 +35,10 @@ public class SkillNvlEntity {
     @Column(name = "descripcion")
     private String descripcion;
 
-    // Relacion muchos a uno con la tabla skill base
+    /**
+     * Relación muchos a uno con {@link SkillBaseEntity}.
+     * Habilidad base a la que pertenece este nivel.
+     */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_skill", referencedColumnName = "id")
     @JsonIgnore
