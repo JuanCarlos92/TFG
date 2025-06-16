@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
  * tamaño, descripción, imagen, ID de usuario y fecha de creación.
  */
 @Entity
-@Table(name = "monster")
+@Table(name = "custom")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
