@@ -44,6 +44,5 @@ public class CharmBaseEntity {
      */
     @OneToMany(mappedBy = "charmBase", fetch = FetchType.LAZY)
     private List<CharmCraftEntity> charmCraft; // Relacion uno a muchos con la tabla amuleto craft
-    
 
 }
