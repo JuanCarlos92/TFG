@@ -11,11 +11,11 @@ import java.time.LocalDateTime;
 /**
  * Entidad que representa un monstruo personalizado en la base de datos.
  * <p>
- * Mapea la tabla {@code monster} y almacena información como nombre,
+ * Mapea la tabla {@code custom} y almacena información como nombre,
  * tamaño, descripción, imagen, ID de usuario y fecha de creación.
  */
 @Entity
-@Table(name = "monster")
+@Table(name = "custom")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

@@ -5,22 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="affcdccb-abd5-45ed-a40b-1681d0ed219a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/controllers/MonsterCustomController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/converters/custom/MonsterCustomConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/custom/MonsterCustomEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/models/dto/custom/MonsterCustomDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/models/request/MonsterCustomRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/models/response/GetMonsterCustomListResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/models/response/GetMonsterCustomResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/models/response/PostMonsterCustomResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/models/response/PutMonsterCustomResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/repositories/MonsterCustomRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/MonsterCustomService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services/MonsterCustomServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a6db06f-c5f6-4d5e-bd66-4f342c63b599.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a6db06f-c5f6-4d5e-bd66-4f342c63b599/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a6db06f-c5f6-4d5e-bd66-4f342c63b599/storage_v2/_src_/schema/monsterhunter.2vuODA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a6db06f-c5f6-4d5e-bd66-4f342c63b599/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a6db06f-c5f6-4d5e-bd66-4f342c63b599/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a6db06f-c5f6-4d5e-bd66-4f342c63b599/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cdb5b95b-9ddd-46a3-a472-4e11f77fed34.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cdb5b95b-9ddd-46a3-a472-4e11f77fed34/storage_v2/_src_/schema/custommh.zIAhJA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cdb5b95b-9ddd-46a3-a472-4e11f77fed34/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cdb5b95b-9ddd-46a3-a472-4e11f77fed34/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cdb5b95b-9ddd-46a3-a472-4e11f77fed34/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cdb5b95b-9ddd-46a3-a472-4e11f77fed34/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api-Gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Api-Gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/entity/MonsterCustomEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/java/com/juancarlos/custommh/entity/MonsterCustomEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomMH/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CustomMH/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EurekaServer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServer/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/charm/CharmBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/charm/CharmBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/custom/MonsterCustomEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/entity/custom/MonsterCustomEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/MonsterHunter.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/MonsterHunter.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/.vscode/extensions.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/.vscode/extensions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/components/wiki-custom/wiki-custom.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/components/wiki-custom/wiki-custom.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/components/wiki-custom/wiki-custom.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/components/wiki-custom/wiki-custom.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/components/wiki-custom/wiki-custom.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/components/wiki-custom/wiki-custom.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/components/wiki-custom/wiki-custom.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/MonsterHunter/src/app/components/wiki-custom/wiki-custom.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,12 +72,15 @@
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
+    "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "New/updated database configurations found",
     "Notification.DoNotAsk-Database detector": "true",
+    "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
@@ -79,14 +94,17 @@
     "go.import.settings.migrated": "true",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/juanc/Documents/GitHub/TFG/Backend/MonsterHunter/src/main/java/com/juancarlos/monsterhunter/services",
+    "last_opened_file_path": "C:/Users/juanc/Documents/TFG/Backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "settings.editor.selected.configurable": "advanced.settings",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -100,18 +118,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\juanc\Documents\GitHub\TFG\Backend\MonsterHunter\src\main\java\com\juancarlos\monsterhunter\services" />
-      <recent name="C:\Users\juanc\Documents\GitHub\TFG\Backend\MonsterHunter\src\main\java\com\juancarlos\monsterhunter\models\response" />
-      <recent name="C:\Users\JuanCarlos\Documents\github\TFG\Backend\CustomMH" />
-      <recent name="C:\Users\JuanCarlos\Documents\github\TFG\Backend\MonsterHunter" />
-      <recent name="C:\Users\JuanCarlos\Documents\github\TFG\Backend\Api-Gateway" />
+      <recent name="C:\Users\juanc\Documents\TFG\Backend\MonsterHunter\src\main\java\com\juancarlos\monsterhunter\services" />
+      <recent name="C:\Users\juanc\Documents\TFG\Backend\MonsterHunter\src\main\java\com\juancarlos\monsterhunter\models\response" />
+      <recent name="C:\Users\juanc\Documents\TFG\Backend\MonsterHunter\src\main\java\com\juancarlos\monsterhunter\models\dto" />
+      <recent name="C:\Users\juanc\Documents\TFG\Backend\MonsterHunter\src\main\java\com\juancarlos\monsterhunter\entity" />
+      <recent name="C:\Users\juanc\Documents\TFG\Backend\MonsterHunter\src\main\java\com\juancarlos\monsterhunter\converters" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.juancarlos.monsterhunter.models.request" />
-      <recent name="com.juancarlos.monsterhunter.models.dto.custom" />
       <recent name="com.juancarlos.monsterhunter.repositories" />
-      <recent name="com.juancarlos.monsterhunter.entity.custom" />
-      <recent name="com.juancarlos.monsterhunter.converters" />
+      <recent name="com.juancarlos.monsterhunter.models.request" />
+      <recent name="com.juancarlos.monsterhunter.controllers" />
+      <recent name="com.juancarlos.apigateway.config" />
+      <recent name="com.juancarlos.custommh.models.response" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -122,6 +140,19 @@
         <option value="QuarkusRunConfigurationType" />
         <option value="SpringBootApplicationConfigurationType" />
       </set>
+    </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="ApiGateway" value="STOPPED" />
+              <entry key="EurekaServer" value="STOPPED" />
+              <entry key="MonsterHunter" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.MonsterHunter">
@@ -157,8 +188,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.117" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.117" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-IU-252.25557.131" />
       </set>
     </attachedChunks>
   </component>
@@ -231,11 +262,23 @@
       <workItem from="1748773714790" duration="3661000" />
       <workItem from="1748778623767" duration="4264000" />
       <workItem from="1748793776995" duration="4459000" />
-      <workItem from="1749314263335" duration="4268000" />
-      <workItem from="1749504092893" duration="2035000" />
-      <workItem from="1749674105215" duration="1689000" />
-      <workItem from="1749895130139" duration="20000" />
-      <workItem from="1751144132362" duration="732000" />
+      <workItem from="1749023296451" duration="1036000" />
+      <workItem from="1749119406510" duration="1679000" />
+      <workItem from="1749487565025" duration="645000" />
+      <workItem from="1749539496581" duration="1146000" />
+      <workItem from="1749625690905" duration="5846000" />
+      <workItem from="1749709976314" duration="796000" />
+      <workItem from="1749718094729" duration="820000" />
+      <workItem from="1750060454682" duration="1257000" />
+      <workItem from="1751145412750" duration="3341000" />
+      <workItem from="1752909010593" duration="1000" />
+      <workItem from="1753178566256" duration="63000" />
+      <workItem from="1753178636049" duration="42000" />
+      <workItem from="1754210720969" duration="608000" />
+      <workItem from="1754213747641" duration="2000" />
+      <workItem from="1757849643547" duration="206000" />
+      <workItem from="1757870500167" duration="1805000" />
+      <workItem from="1757875231128" duration="30000" />
     </task>
     <servers />
   </component>

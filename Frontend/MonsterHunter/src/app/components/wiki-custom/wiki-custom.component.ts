@@ -22,7 +22,7 @@ export class WikiCustomComponent implements OnInit {
   monsterCustom!: MonsterCustomDTO;
 
   infoMonster: any;
-  
+
   currentUser: string | null = localStorage.getItem('email');
 
   @Output()

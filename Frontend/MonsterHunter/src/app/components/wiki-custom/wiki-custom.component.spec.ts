@@ -9,7 +9,7 @@ describe('WikiCustomComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ WikiCustomComponent ],
+      declarations: [WikiCustomComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
