@@ -1,6 +1,6 @@
 # Monster Hunter Wiki
 
-> ⚠️ **AVISO IMPORTANTE**
+> **AVISO IMPORTANTE**
 >
 > Los servicios de AWS (Cognito, RDS y EC2) han sido eliminados,  
 > por lo tanto el backend no se encuentra disponible.
