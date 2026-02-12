@@ -1,0 +1,107 @@
+<div class="container mt-4" style="background-color: white; padding: 20px; border-radius: 8px;">
+  <div class="container mt-4 text-center">
+    <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Objetos</button>
+  </div>
+  <!-- Información General -->
+  <div *ngIf="inforItem" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm" style="width: 80%; text-align: left;">
+      <!-- Nombre -->
+      <tr>
+        <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <h2 style="margin: 0; color: #333;">{{ inforItem?.nombre }}</h2>
+            <img [src]="'assets/images/items/' + inforItem?.nombre + '.png'" width="30"
+              style="border-radius: 8px; vertical-align: middle;">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <!-- Categoria -->
+        <td class="text-black text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.categoria }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Rareza , precio y capacidad -->
+  <div id="tabla1" *ngIf="inforItem" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <tr>
+        <th class="text-black">Rareza</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.rareza }}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Precio de compra</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.precioCompra || '---'}}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Precio de venta</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.precioVenta || '---'}}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Capacidad max para llevar</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforItem?.limiteCarga || '---'}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: crafteo de items -->
+  <div id="Crafteo" *ngIf="inforItem?.itemCombinationDTO?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Materiales para crear el objeto</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Material 1</th>
+          <th>Material 2</th>
+          <th>Resultado de la combinación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of inforItem.itemCombinationDTO">
+          <td>
+            <img [src]="'assets/images/items/' + v?.primero + '.png'" width="30"
+              style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+            <span style="margin-left: 10px;">{{ v?.primero ||'---'}}</span>
+          </td>
+
+          <td>
+            <img [src]="'assets/images/items/' + v?.segundo + '.png'" width="30"
+              style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+            <span style="margin-left: 10px;">{{ v?.segundo || '---'}}</span>
+          </td>
+
+          <td>
+            <img [src]="'assets/images/items/' + v?.nombreResultado + '.png'" width="30"
+              style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+            <span style="margin-left: 10px;">{{ v?.nombreResultado}}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tabla: Localizacion de items -->
+  <div id="Crafteo" *ngIf="inforItem?.locationItemDTO?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Localizacion del objeto</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nombre de la zona</th>
+          <th>Nº Area</th>
+          <th>Rango</th>
+          <th>Porcentaje</th>
+          <th>Cantidad de nodos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of inforItem.locationItemDTO">
+          <td>{{ v?.nombreBase }}</td>
+          <td>{{ v?.area }}</td>
+          <td>{{ v?.rango || '---' }}</td>
+          <td>{{ v?.porcentaje + '%' }}</td>
+          <td>{{ v?.nodos || '---' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

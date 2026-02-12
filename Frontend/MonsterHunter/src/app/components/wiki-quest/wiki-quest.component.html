@@ -1,0 +1,99 @@
+<div class="container mt-4" style="background-color: white; padding: 20px; border-radius: 8px;">
+  <div class="container mt-4 text-center">
+    <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Misiones</button>
+  </div>
+  <!-- Información General -->
+  <div *ngIf="infoQuest" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm" style="width: 80%; text-align: left;">
+      <!-- Nombre -->
+      <tr>
+        <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <h2 style="margin: 0; color: #333;">{{ infoQuest?.nombre }}</h2>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <!-- Rango y estrella-->
+        <td class="text-black text-center" style="border: 1px solid #ddd; padding: 15px;">Rango: {{ infoQuest?.rango }}
+          --
+          Estrellas:
+          {{ infoQuest?.estrellas }} </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Categoria , Tipo de mision y Localizacion y zeny -->
+  <div id="tabla1" *ngIf="infoQuest" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <tr>
+        <th class="text-black">Categoria</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ infoQuest?.categoria }}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Tipo de misión</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ infoQuest?.misionTipo || '---'}}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Localizacion</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ infoQuest?.localizacion || '---'}}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Zeny</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ infoQuest?.zeny || '---'}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Recompensa -->
+  <div id="Recompensa" *ngIf="infoQuest?.questRewardDTO?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Recompensa de la misión</h2>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Objeto</th>
+            <th>Cantidad</th>
+            <th>Porcentaje para obtenerlo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of infoQuest.questRewardDTO">
+            <td>
+              <img [src]="'assets/images/items/' + v?.item + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.item }}</span>
+            </td>
+            <td>{{ v?.stack }}</td>
+            <td>{{ v?.porcentaje + '%'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <!-- Tabla: Monstros que aparecen en la mision -->
+  <div id="questMonster" *ngIf="infoQuest?.questMonsterDTO?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Monstruos que aparecen en la misión</h2>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Monstruos</th>
+            <th>Calidad</th>
+            <th>El Monstruo es objetivo?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of infoQuest.questMonsterDTO">
+            <td>{{ v?.monster }}</td>
+            <td>{{ v?.calidad }}</td>
+            <td>{{ v?.esObjetivo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Contenedor del fondo -->
+  <div class="background-container">
+    <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+  </div>
+
+  <div class="content-container">
+    <div *ngIf="questsListBase.length > 0 && !mostrarWiki" class="container mt-4">
+      <div class="text-center my-3">
+        <div class="col-auto">
+          <button *ngFor="let category of ['LR', 'HR', 'MR']" [class.selected]="rangoSeleccionado === category"
+          class="btn btn-secondary mx-1 custom-btn mb-2" (click)="filterByRango(category)">
+            Rango {{ category }}
+          </button>
+          <button class="mx-1 btn btn-danger mb-2" (click)="resetFilters()">
+            Eliminar Filtros
+          </button>
+        </div>
+      </div>
+
+      <div class="text-center my-3">
+        <div class="col-auto">
+          <button *ngFor="let s of [1,2,3,4,5,6,7,8,9]" [class.selected]="estrellasSeleccionadas === s"
+            class="btn btn-secondary mx-1 custom-btn-rarity mb-2" (click)="filterByStars(s)">
+            Rareza {{ s }}
+          </button>
+        </div>
+      </div>
+
+      <div class="quest-title-container">
+        <div class="quest-title">
+          <h2 class="text-center">Misiones</h2>
+        </div>
+      </div>
+
+      <div *ngIf="filteredQuests.length === 0">
+        <p class="alert alert-warning text-center display-6 font-weight-bold">No hay misiones con los filtros aplicados.
+        </p>
+      </div>
+
+      <div class="table-container">
+        <table *ngIf="filteredQuests.length > 0" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Categoria</th>
+              <th>Rango</th>
+              <th>Estrellas</th>
+              <th>Tipo de la mision</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let v of filteredQuests">
+              <td>
+                <a class="hover-effect" (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+                  {{ v?.nombre }}
+                </a>
+              </td>
+              <td>{{ v?.categoria }}</td>
+              <td>{{ v?.rango }}</td>
+              <td>{{ v?.estrellas }}</td>
+              <td>{{ v?.misionTipo }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div *ngIf="mostrarWiki">
+      <app-wiki-quest [quest]="questWiki" (closeWiki)="closeWiki()"></app-wiki-quest>
+    </div>
+  </div>
+
+</ion-content>

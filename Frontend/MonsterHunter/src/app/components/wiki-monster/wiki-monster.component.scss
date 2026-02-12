@@ -1,0 +1,48 @@
+.text-black {
+  color: #000;
+}
+
+.custom-btn {
+  width: 40%;
+  margin-bottom: 15px;
+}
+
+.table-responsive-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.table-responsive-container table {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+
+  .custom-btn {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+
+  h2 {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  th {
+    font-size: 0.8rem;
+  }
+  td {
+    font-size: 0.8rem;
+  }
+  .table-responsive-container {
+    overflow-x: auto;
+  }
+}

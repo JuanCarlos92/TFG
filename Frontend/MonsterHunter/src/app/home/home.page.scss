@@ -1,0 +1,47 @@
+.no-scroll {
+  --overflow: hidden; /* Desactiva el scroll en ion-content */
+}
+
+.background-container {
+  position: fixed; /* Fija el contenedor al viewport */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ancho completo de la ventana */
+  height: 100vh; /* Alto completo de la ventana */
+  overflow: hidden; /* Evita contenido que provoque scroll */
+  z-index: -1; /* Coloca el fondo detrás de otros elementos */
+}
+
+.background-container img {
+  width: 100%; /* La imagen cubre el ancho del contenedor */
+  height: 100%; /* La imagen cubre el alto del contenedor */
+  object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+}
+
+/* Caja del mensaje */
+.status-message {
+  position: relative;              /* Permite posicionar el elemento según el flujo normal */
+  margin-top: 20vh;                /* Desplaza el mensaje hacia abajo un 20% de la altura de la pantalla */
+  background: rgba(0, 0, 0, 0.65); /* Fondo negro semitransparente para mejorar la legibilidad sobre la imagen */
+  padding: 20px;                   /* Espaciado interno para que el texto no toque los bordes */
+  border-radius: 10px;             /* Bordes redondeados del recuadro */
+  color: white;                    /* Color del texto */
+  text-align: center;              /* Centra el texto dentro del recuadro */
+  max-width: 90%;                  /* Evita que la caja ocupe más del 90% del ancho total */
+  margin-left: auto;               /* Centra horizontalmente */
+  margin-right: auto;              /* Centra horizontalmente */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6); /* Sombra suave para resaltar el recuadro */
+}
+
+/* Estilos del título del mensaje */
+.status-message h2 {
+  margin: 0 0 10px 0;              /* Elimina margen superior y añade espacio debajo del título */
+  font-size: 1.5rem;               /* Tamaño de fuente grande para destacar el título */
+  font-weight: bold;               /* Negrita */
+}
+
+/* Estilos del texto descriptivo */
+.status-message p {
+  margin: 0;                       /* Elimina márgenes adicionales */
+  font-size: 1rem;                 /* Tamaño de texto estándar */
+}

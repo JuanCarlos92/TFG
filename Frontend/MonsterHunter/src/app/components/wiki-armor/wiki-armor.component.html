@@ -1,0 +1,164 @@
+<div class="container mt-4" style="background-color: white; padding: 20px; border-radius: 8px;">
+  <div class="container mt-4 text-center">
+    <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Armaduras</button>
+  </div>
+  <!-- Información General -->
+  <div *ngIf="inforArmor" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm" style="width: 80%; text-align: left;">
+      <!-- Nombre -->
+      <tr>
+        <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <h2 style="margin: 0; color: #333;">{{ inforArmor?.nombre }}</h2>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <!-- Tipo de armadura -->
+        <td class="text-black text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.tipo }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Rareza ataque afinidad Elemento-->
+  <div id="tabla1" *ngIf="inforArmor" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <tr>
+        <th class="text-black">Defensa Base</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaBase }}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Defensa Máxima</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaMax }}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Defensa con Aumento Máximo</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaAumentoMax }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Ranuras -->
+  <div id="Ranura" *ngIf="inforArmor" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <thead>
+        <tr>
+          <th>Ranura 1</th>
+          <th>Ranura 2</th>
+          <th>Ranura 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.ranura1 || '---'}}</td>
+          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.ranura2 || '---'}}</td>
+          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.ranura3 || '---'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tabla: Defensa elementales -->
+  <div id="DefElemental" *ngIf="inforArmor" class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Defensas Elementales</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Defensa Fuego</th>
+          <th>defensa Agua</th>
+          <th>defensa Rayo</th>
+          <th>defensa Hielo</th>
+          <th>defensa Dragon</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaFuego || '0'}}</td>
+          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaAgua || '0'}}</td>
+          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaRayo || '0'}}</td>
+          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaHielo || '0'}}</td>
+          <td style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.defensaDragon || '0'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tabla: Skill -->
+  <div id="Crafteo" *ngIf="inforArmor?.armorSkillDTO?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Habilidades de la armadura</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Habilidad 1</th>
+          <th>Nivel de habilidad</th>
+          <th>Habilidad 2</th>
+          <th>Nivel de habilidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of inforArmor.armorSkillDTO">
+          <td>{{ v?.nombreSkill1 || '---'}}</td>
+          <td>{{ v?.nivelSkill1 || '---'}}</td>
+          <td>{{ v?.nombreSkill2 || '---'}}</td>
+          <td>{{ v?.nivelSkill2 || '---'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tabla: Crafteo -->
+  <div id="Crafteo" *ngIf="inforArmor?.armorCraftDTO?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Crafteo</h2>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>Cantidad</th>
+            <th>Material</th>
+            <th>Cantidad</th>
+            <th>Material</th>
+            <th>Cantidad</th>
+            <th>Material</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforArmor.armorCraftDTO">
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem1 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;"> {{ v?.nombreItem1 || '---'}}</span>
+            </td>
+            <td>{{ v?.cantidadItem1 || '---'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem2 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;"> {{ v?.nombreItem2 || '---'}}</span>
+            </td>
+            <td>{{ v?.cantidadItem2 || '---'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem3 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;"> {{ v?.nombreItem3 || '---'}}</span>
+            </td>
+
+            <td>{{ v?.cantidadItem3 || '---'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem3 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombreItem4 || '---'}}</span>
+            </td>
+            <td>{{ v?.cantidadItem4 || '---'}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

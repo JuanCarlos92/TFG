@@ -1,0 +1,115 @@
+<ion-app>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <table class="w-100 css-table">
+        <tbody>
+          <tr>
+            <!-- Botón de menú en la primera columna -->
+            <td class="menu-button-column text-start align-middle">
+              <ion-button fill="clear" (click)="toggleMenu()" class="btn-lg">
+                <ion-icon slot="icon-only" name="menu-outline" class="fs-1"></ion-icon>
+              </ion-button>
+            </td>
+            <!-- Texto "Monster Hunter" en la segunda columna -->
+            <td class="monster-title-column align-middle">
+              <a [routerLink]="['/home']" class="title-link">Monster Hunter</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Menú desplegable -->
+  <div [class.show]="isMenuOpen" class="side-menu">
+    <!-- Botón dentro del menú (alineado a la izquierda) -->
+    <div class="menu-header">
+      <ion-button fill="clear" (click)="toggleMenu()" class="btn-lg menu-close-btn">
+        <ion-icon name="menu-outline" class="fs-1"></ion-icon>
+      </ion-button>
+    </div>
+
+    <ul>
+      <li>
+        <!-- Monsters Link -->
+        <a [routerLink]="['/monster']" class="menu-link" (click)="closeMenu()">
+          Monstruos
+        </a>
+      </li>
+      <li>
+        <!-- Weapons Link -->
+        <a [routerLink]="['/weapon']" class="menu-link" (click)="closeMenu()">
+          Armas
+        </a>
+      </li>
+      <li>
+        <!-- Armor Link -->
+        <a [routerLink]="['/armor']" class="menu-link" (click)="closeMenu()">
+          Armaduras
+        </a>
+      </li>
+      <li>
+        <!-- Armor Set Link -->
+        <a [routerLink]="['/armorSet']" class="menu-link" (click)="closeMenu()">
+          Set de armaduras
+        </a>
+      </li>
+      <li>
+        <!-- Charm Link -->
+        <a [routerLink]="['/charm']" class="menu-link" (click)="closeMenu()">
+          Amuletos
+        </a>
+      </li>
+      <li>
+        <!-- Decoration Link -->
+        <a [routerLink]="['/decoration']" class="menu-link" (click)="closeMenu()">
+          Adornos
+        </a>
+      </li>
+      <li>
+        <!-- Item Link -->
+        <a [routerLink]="['/item']" class="menu-link" (click)="closeMenu()">
+          Objetos
+        </a>
+      </li>
+      <li>
+        <!-- Kinsect Link -->
+        <a [routerLink]="['/kinsect']" class="menu-link" (click)="closeMenu()">
+          kinsectos
+        </a>
+      </li>
+      <li>
+        <!-- Location Link -->
+        <a [routerLink]="['/location']" class="menu-link" (click)="closeMenu()">
+          Localizaciones
+        </a>
+      </li>
+      <li>
+        <!-- Quest Link -->
+        <a [routerLink]="['/quest']" class="menu-link" (click)="closeMenu()">
+          Misiones
+        </a>
+      </li>
+      <li>
+        <!-- Recoleccion Link -->
+        <a [routerLink]="['/recoleccion']" class="menu-link" (click)="closeMenu()">
+          Recolección
+        </a>
+      </li>
+      <li>
+        <!-- Tool Link -->
+        <a [routerLink]="['/tool']" class="menu-link" (click)="closeMenu()">
+          Herramientas
+        </a>
+      </li>
+      <li>
+        <!-- Monster Custom -->
+        <a [routerLink]="['/custom']" class="menu-link" (click)="closeMenu()">
+          Monstruos de la Comunidad
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,80 @@
+.selected {
+  background-color: #343a40 !important; /* Un color más oscuro para el botón seleccionado */
+}
+
+.custom-btn {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.background-container {
+  position: fixed; /* Fija el contenedor al viewport */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ancho completo */
+  height: 100vh; /* Alto completo */
+  overflow: hidden;
+  z-index: -1; /* Coloca el fondo detrás de otros elementos */
+}
+
+.background-container img {
+  width: 100%; /* cubre el ancho del contenedor */
+  height: 100%; /*  cubre el alto del contenedor */
+  object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+}
+
+.decoration-title-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.decoration-title {
+  background-color: #6c757d;
+  color: white;
+  text-shadow: 2px 2px 4px #000;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+.decoration-title h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.table-container {
+  max-height: 78vh;
+  overflow-y: auto; /* Permite el scroll vertical */
+}
+
+ion-content {
+  overflow: hidden;
+}
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los botones se envuelvan en varias filas */
+  justify-content: center; /* Centra los botones horizontalmente */
+}
+
+//Responsive
+@media (max-width: 768px) {
+  .decoration-title h2 {
+    font-size: 0.9rem;
+  }
+
+  .custom-btn {
+    width: 90px;
+    height: 30px;
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+
+  .table-container table th,
+  .table-container table td {
+    font-size: 0.75rem;
+    padding: 4px 6px;
+  }
+}

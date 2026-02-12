@@ -1,0 +1,82 @@
+<div class="container mt-4" style="background-color: white; padding: 20px; border-radius: 8px;">
+  <div class="container mt-4 text-center">
+    <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Armors</button>
+  </div>
+  <!-- Información General -->
+  <div *ngIf="inforArmor" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm" style="width: 80%; text-align: left;">
+      <!-- Nombre -->
+      <tr>
+        <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <h2 style="margin: 0; color: #333;">{{ inforArmor?.nombre }}</h2>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <!-- Rango del set armadura -->
+        <td class="text-black text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforArmor?.rango }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Rareza del set armadura -->
+  <div id="Rareza" *ngIf="inforArmor?.armorBaseDTO?.length > 0" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <tr>
+        <th class="text-black">Rareza</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;"> {{ inforArmor?.armorBaseDTO[0]?.rareza }}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Genero</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;"> {{ inforArmor?.armorBaseDTO[0]?.genero }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Partes de armadura -->
+  <div id="Crafteo" *ngIf="inforArmor?.armorBaseDTO?.length > 0 " class="container mt-4">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Defensa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of inforArmor.armorBaseDTO">
+          <td>{{ v?.nombre || '---'}}</td>
+          <td>{{ v?.tipo || '---'}}</td>
+          <td>{{ v?.defensaBase || '---'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tabla: Habilidades de la armadura -->
+  <div id="Crafteo" *ngIf="inforArmor?.armorSetBaseBonus?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Habilidades del Set de armadura</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Habilidad 1</th>
+          <th>Nivel</th>
+          <th>Habilidad 2</th>
+          <th>Nivel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of inforArmor.armorSetBaseBonus">
+          <td>{{ v?.nombre || '---'}}</td>
+          <td>{{ v?.nombreSkill1 || '---'}}</td>
+          <td>{{ v?.nivelSkill1 || '---'}}</td>
+          <td>{{ v?.nombreSkill2 || '---'}}</td>
+          <td>{{ v?.nivelSkill2 || '---'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

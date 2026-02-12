@@ -1,0 +1,36 @@
+<ion-content class="ion-padding">
+  <div class="container mt-4">
+    <h2>Crear Nuevo Monstruo</h2>
+    <form #monsterForm="ngForm" (ngSubmit)="onSubmit(monsterForm)">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" class="form-control" [(ngModel)]="monster.nombre" name="nombre" required />
+      </div>
+
+      <div class="form-group">
+        <label for="size">Tamaño</label>
+        <input type="text" id="size" class="form-control" [(ngModel)]="monster.size" name="size" required />
+      </div>
+
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" class="form-control" [(ngModel)]="monster.descripcion" name="descripcion"
+          required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="img">URL de Imagen</label>
+        <input type="text" id="img" class="form-control" [(ngModel)]="monster.img" name="img" />
+      </div>
+
+      <div class="d-flex justify-content-between mt-3">
+        <button type="submit" class="btn btn-primary" [disabled]="!monsterForm.valid">
+          Crear
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onCancel()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</ion-content>

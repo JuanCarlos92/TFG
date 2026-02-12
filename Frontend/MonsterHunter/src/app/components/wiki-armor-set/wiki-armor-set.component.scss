@@ -1,0 +1,19 @@
+.text-black {
+  color: #000;
+}
+@media (max-width: 768px) {
+  .btn {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+  h2 {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  th {
+    font-size: 0.8rem;
+  }
+  td {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,50 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Contenedor del fondo -->
+  <div class="background-container">
+    <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+  </div>
+
+  <div class="content-container">
+    <!-- Lista de Amuletos -->
+    <div *ngIf="charmsList.length > 0 && !mostrarWiki" class="container mt-4">
+      <div class="d-flex justify-content-center mb-3">
+        <button *ngFor="let r of [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]" [class.selected]="selectedRarity === r"
+          class="btn btn-secondary mx-1 custom-btn" (click)="filterByRarity(r)">
+          Rareza {{ r }}
+        </button>
+      </div>
+
+      <div class="charm-title-container">
+        <div class="charm-title">
+          <h2 class="text-center">Amuletos</h2>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Rareza</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let v of filteredCharm">
+              <td>
+                <a class="hover-effect" (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+                  {{ v?.nombre }}
+                </a>
+              </td>
+              <td>{{ v?.rareza }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div *ngIf="mostrarWiki">
+      <app-wiki-charm [charm]="charmWiki" (closeWiki)="closeWiki()"></app-wiki-charm>
+    </div>
+  </div>
+
+</ion-content>

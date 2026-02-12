@@ -1,0 +1,260 @@
+/* ================== TABLA ================== */
+table.css-table {
+  width: 100%;
+  table-layout: fixed; /* Fuerza que todas las columnas tengan el mismo ancho, independientemente del contenido */
+  background-color: #868484;
+  border-collapse: collapse;
+  border-bottom: 1px solid #d4af37;
+  height: 65px; /* No es común establecer una altura fija en tablas, ya que puede causar problemas de desbordamiento */
+}
+
+/* Columna del título */
+.monster-title-column {
+  width: 100%;
+  display: flex; /* Usar flex en una celda de tabla no es lo más habitual */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: "Pirata One", serif; /* Fuente personalizada */
+  color: #d4af37;
+  letter-spacing: 10px; /* Espaciado de letras exagerado, usado para un efecto visual impactante */
+  text-shadow: 2px 2px 4px #000;
+  height: 60px;
+  // white-space: nowrap; /* impide saltos de línea, útil si quieres evitar que se corte el texto */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Elipsis solo funciona si también hay white-space: nowrap */
+}
+
+/* Enlace del título */
+.title-link {
+  text-decoration: none;
+  color: #d4af37;
+  display: inline-block;
+}
+
+/* Estilo del enlace al pasar el ratón */
+.email-combobox {
+  display: inline-block;
+  position: relative; /* Necesario para posicionar el dropdown respecto a este contenedor */
+}
+
+/* Estilo del texto del email */
+.email-text {
+  font-size: 1rem;
+  color: #f0e68c;
+  white-space: nowrap;
+  margin-left: auto; /* Empuja el elemento hacia la derecha en un contexto flex o grid */
+  text-shadow: 1px 1px 2px #000;
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Añade "..." al desbordar texto*/
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Dropdown del email */
+.email-dropdown {
+  position: absolute;
+  right: 9; /* Este valor es incorrecto, debería ser `right: 9px` */
+  top: -10%; /* Coloca el dropdown ligeramente por encima del elemento padre */
+  background: #575656;
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  min-width: 100px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Añade profundidad */
+  padding: 3px 0;
+}
+
+/* Estilo de los elementos del dropdown */
+.dropdown-item {
+  background: none;
+  border: none;
+  color: #d4af37;
+  text-align: left;
+  padding: 8px 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Estilo de la column del email */
+.email-text-column {
+  text-align: right;
+  padding-right: 20px;
+}
+
+/* Botón de menú */
+.menu-button-column {
+  width: 60px;
+  text-align: left;
+}
+
+/* Estilo de boton del menu*/
+.menu-button-column ion-icon,
+.menu-close-btn ion-icon {
+  color: #d4af37;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* Menú lateral */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Oculta el menú desplazándolo completamente fuera de la pantalla */
+  width: 10%; /* Uso de % poco habitual en menús laterales; normalmente se usa px */
+  height: 100%;
+  min-width: 250px; /* Asegura un tamaño mínimo legible */
+  background-color: #575656;
+  color: white;
+  overflow: hidden; /* Evita que el contenido sobresalga */
+  transition: left 0.3s ease-in-out; /* Permite una animación suave al mostrar u ocultar */
+  z-index: 1000; /* Asegura que esté por encima de la mayoría del contenido */
+  border-right: 1px solid #d4af37;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); /* Sombra lateral para efecto de profundidad */
+  display: flex;
+  flex-direction: column; /* Permite colocar encabezado, contenido y footer en vertical */
+}
+
+/* Mostrar menú */
+.side-menu.show {
+  left: 0; /* Lo hace visible al moverlo desde fuera de la pantalla */
+  width: 10%;
+  min-width: 250px;
+}
+
+/* Botón dentro del menú */
+.menu-header {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.menu-close-btn {
+  margin-left: 10px;
+}
+
+/* Enlaces del menú */
+.side-menu ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  flex: 1; /* Ocupa todo el espacio vertical disponible en el menú */
+}
+
+.side-menu ul li {
+  margin: 15px 0;
+}
+
+.side-menu ul li a {
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.side-menu ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer del menú */
+.menu-footer {
+  padding: 20px;
+  margin-top: auto; /* Empuja el footer hacia abajo usando flex */
+  display: flex;
+  gap: 5px; /* Separación entre elementos del footer */
+  border-top: 1px solid #d4af37;
+}
+
+.menu-footer a {
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.menu-footer a:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  color: #d4af37;
+  font-size: 1.2rem;
+}
+
+.menu-button-column,
+.email-text-column {
+  width: 130px;
+  min-width: 60px;
+}
+
+/* ================== RESPONSIVE ================== */
+
+@media (max-width: 850px) {
+  .monster-title-column {
+    font-size: 2rem;
+    letter-spacing: 5px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 685px) {
+  .monster-title-column {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    height: 60px;
+  }
+}
+@media (max-width: 460px) {
+  .menu-button-column,
+  .email-text-column {
+    width: 120px !important; /* Uso de !important generalmente se evita, salvo cuando se necesita sobrescribir reglas con alta especificidad */
+  }
+  .monster-title-column {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    padding: 0;
+  }
+  .email-text {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 420px) {
+  .monster-title-column {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    padding: 0;
+  }
+
+  .email-text {
+    font-size: 0.7rem;
+  }
+  .email-dropdown {
+    top: -20%; /* Movimiento vertical relativo; puede causar que el dropdown se solape con otros elementos */
+  }
+}
+@media (max-width: 385px) {
+  .monster-title-column {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 0;
+  }
+
+  .email-text {
+    font-size: 0.6rem;
+  }
+}
+
+/* Menú lateral responsive (modo móvil) */
+@media (max-width: 850px) {
+  .side-menu {
+    left: -100%; /* Asegura que se mantenga oculto en móviles por defecto */
+    width: 100%; /* Menú ocupa toda la pantalla en móviles */
+  }
+
+  .side-menu.show {
+    left: 0;
+    width: 100%;
+  }
+  .email-text {
+    max-width: 130px;
+  }
+}

@@ -1,0 +1,598 @@
+<div class="container mt-4" style="background-color: white; padding: 20px; border-radius: 8px;">
+  <div class="container mt-4 text-center">
+    <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Armas</button>
+  </div>
+  <!-- Información General -->
+  <div *ngIf="inforWeapon" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+
+      <!-- Nombre + Imagen pequeña -->
+      <tr>
+        <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
+          <div class="img-title" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <img [src]="'assets/images/weapons/' + inforWeapon?.tipoArma + '.png'" width="50" height="50"
+              style="border-radius: 8px;">
+            <h2 class="text-black" style="margin: 0; color: #333;">{{ inforWeapon?.nombre }}</h2>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <!-- Tipo de arma -->
+        <td class="text-black text-center" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.tipoArma }}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Rareza ataque afinidad Elemento-->
+  <div id="tabla1" *ngIf="inforWeapon" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <tr>
+        <th class="text-black">Rareza</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.rareza }}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Ataque</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ataque }}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Afinidad</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.afinidad ?
+          inforWeapon.afinidad + '%'
+          :'---'}}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Elemento Oculto</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.elementoOculto ? 'Sí' :
+          'No'}}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Elemento</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.elemento1 || '---'}}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Ataque elemental</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ataqueElemento1 || '---'}}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Ranuras -->
+  <div id="Ranura" *ngIf="inforWeapon" class="container mt-4">
+    <div class="table-responsive-container">
+      <table class="table table-bordered mx-auto shadow-sm"
+        style="width: 80%; background-color: #f9f9f9; text-align: left;">
+        <thead>
+          <tr>
+            <th>Ranura 1</th>
+            <th>Ranura 2</th>
+            <th>Ranura 3</th>
+            <th>Sello de los Ancianos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ranura1 || '---'}}</td>
+            <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ranura2 || '---'}}</td>
+            <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.ranura3 || '---'}}</td>
+            <td style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.selloAncianos || '---'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tabla: Municion para lanza Pistola -->
+  <div id="MunicionLanzaPistola" *ngIf="inforWeapon?.municion?.length > 0 " class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <tr>
+        <th class="text-black">Tipo de munición:</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.municion}}</td>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;"> Nvl: {{ inforWeapon?.nivelMunicion ||
+          '---'}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Viales hacha cargada -->
+  <div id="Viales" *ngIf="inforWeapon?.frasco?.length > 0 " class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <tr>
+        <th class="text-black">Tipo de vial:</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.frasco}}</td>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;"> Potencia: {{ inforWeapon?.potenciaFrasco
+          || '---'}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Bonus Kinsecto -->
+  <div id="Kinsecto" *ngIf="inforWeapon?.bonoKinsecto?.length > 0 " class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <tr>
+        <th class="text-black">Bonus kinsecto:</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforWeapon?.bonoKinsecto}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Arco -->
+  <div id="Crafteo" *ngIf="inforWeapon?.weaponArcoDTO?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Arco</h2>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Proximidad</th>
+            <th>Potencia</th>
+            <th>Paralisis</th>
+            <th>Veneno</th>
+            <th>Sueño</th>
+            <th>Exposivo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponArcoDTO">
+            <td>{{ v?.proximidad || 'N/A'}}</td>
+            <td>{{ v?.potencia || 'N/A'}}</td>
+            <td>{{ v?.paralisis || 'N/A'}}</td>
+            <td>{{ v?.veneno || 'N/A'}}</td>
+            <td>{{ v?.sueno || 'N/A'}}</td>
+            <td>{{ v?.explosivo || 'N/A'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Imagen grande -->
+  <div *ngIf="inforWeapon?.tipoArma" class="container mt-4 text-center">
+    <div class="weapon-image-container">
+      <img [src]="'assets/images/weapons/wiki/' + inforWeapon?.tipoArma + '.png'"
+        alt="Imagen grande de {{ inforWeapon?.tipoArma }}" class="img-fluid weapon-image">
+    </div>
+  </div>
+
+
+
+  <!-- Tabla: Crafteo -->
+  <div id="Crafteo" *ngIf="inforWeapon?.weaponCraftDTO?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Crafteo</h2>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Material</th>
+            <th>Cantidad</th>
+            <th>Material</th>
+            <th>Cantidad</th>
+            <th>Material</th>
+            <th>Cantidad</th>
+            <th>Material</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponCraftDTO">
+            <td>{{ v?.tipo || '---'}}</td>
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreMaterial1 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;"> {{ v?.nombreMaterial1 || '---'}}</span>
+            </td>
+            <td>{{ v?.cantidadMaterial1 || '---'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreMaterial2 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;"> {{ v?.nombreMaterial2 || '---'}}</span>
+            </td>
+            <td>{{ v?.cantidadMaterial2 || '---'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreMaterial3 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;"> {{ v?.nombreMaterial3 || '---'}}</span>
+            </td>
+            <td>{{ v?.cantidadMaterial3 || '---'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreMaterial4 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;"> {{ v?.nombreMaterial4 || '---'}}</span>
+            </td>
+            <td>{{ v?.cantidadMaterial4 || '---'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tabla: Municion Ballesta ligera y pesada-->
+  <div id="Municion" *ngIf="inforWeapon?.weaponMunicionDTO?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Municion</h2>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped mx-auto shadow-sm"
+        style="width: 100%; background-color: #f9f9f9; text-align: left;">
+        <thead>
+          <tr>
+            <th>Desviacion</th>
+            <th>Especial</th>
+            <th>Nvl 1 Cargador</th>
+            <th>Nvl 1 Rapid</th>
+            <th>Nvl 1 Retroc</th>
+            <th>Nvl 1 Recarg</th>
+            <th>Nvl 2 Cargador</th>
+            <th>Nvl 2 Rapid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.desviacion || '---'}}</td>
+            <td>{{ v?.especial || '---'}}</td>
+            <td>{{ v?.normal1Cargador || '---'}}</td>
+            <td>{{ v?.normal1Rapido || '---'}}</td>
+            <td>{{ v?.normal1Retroceso || '---'}}</td>
+            <td>{{ v?.normal1Recarga || '---'}}</td>
+            <td>{{ v?.normal2Cargador || '---'}}</td>
+            <td>{{ v?.normal2Rapido || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Nvl 2 Retroc.</th>
+            <th>Nvl 2 Recarg</th>
+            <th>Nvl 3 Cargador</th>
+            <th>Nvl 3 Rapid</th>
+            <th>Nvl 3 Retroc</th>
+            <th>Nvl 3 Recarga</th>
+            <th>Perfo. 1 Cargador</th>
+            <th>Perfo. 1 Rapid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.normal2Retroceso || '---'}}</td>
+            <td>{{ v?.normal2Recarga || '---'}}</td>
+            <td>{{ v?.normal3Cargador || '---'}}</td>
+            <td>{{ v?.normal3Rapido || '---'}}</td>
+            <td>{{ v?.normal3Retroceso || '---'}}</td>
+            <td>{{ v?.normal3Recarga || '---'}}</td>
+            <td>{{ v?.perforante1Cargador || '---'}}</td>
+            <td>{{ v?.perforante1Rapido || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Perfo. 1 Retroc.</th>
+            <th>Perfo. 1 Recarg</th>
+            <th>Perfo. 2 Cargador</th>
+            <th>Perfo. 2 Rapid</th>
+            <th>Perfo. 2 Retroc</th>
+            <th>Perfo. 2 Recarga</th>
+            <th>Perfo. 3 Cargador</th>
+            <th>Perfo. 3 Rapid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.perforante1Retroceso || '---'}}</td>
+            <td>{{ v?.perforante1Recarga || '---'}}</td>
+            <td>{{ v?.perforante2Cargador || '---'}}</td>
+            <td>{{ v?.perforante2Rapido || '---'}}</td>
+            <td>{{ v?.perforante2Retroceso || '---'}}</td>
+            <td>{{ v?.perforante2Recarga || '---'}}</td>
+            <td>{{ v?.perforante3Cargador || '---'}}</td>
+            <td>{{ v?.perforante3Rapido || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Perfo. 3 Retroc.</th>
+            <th>Perfo. 3 Recarg</th>
+            <th>Disper. 1 Cargador</th>
+            <th>Disper. 1 Rapid</th>
+            <th>Disper. 1 Retroc</th>
+            <th>Disper. 1 Recarg</th>
+            <th>Disper. 2 Cargador</th>
+            <th>Disper. 2 Rapid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.perforante3Retroceso || '---'}}</td>
+            <td>{{ v?.perforante3Recarga || '---'}}</td>
+            <td>{{ v?.dispersa1Cargador || '---'}}</td>
+            <td>{{ v?.dispersa1Rapido || '---'}}</td>
+            <td>{{ v?.dispersa1Retroceso || '---'}}</td>
+            <td>{{ v?.dispersa1Recarga || '---'}}</td>
+            <td>{{ v?.dispersa2Cargador || '---'}}</td>
+            <td>{{ v?.dispersa2Rapido || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Disper. 2 Retroc</th>
+            <th>Disper. 2 Recarg</th>
+            <th>Disper. 3 Cargador</th>
+            <th>Disper. 3 Rapid</th>
+            <th>Disper. 3 Retroc</th>
+            <th>Disper. 3 Recarg</th>
+            <th>Pegaj. 1 Cargador</th>
+            <th>Pegaj. 1 Retroc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.dispersa2Retroceso || '---'}}</td>
+            <td>{{ v?.dispersa2Recarga || '---'}}</td>
+            <td>{{ v?.dispersa3Cargador || '---'}}</td>
+            <td>{{ v?.dispersa3Rapido || '---'}}</td>
+            <td>{{ v?.dispersa3Retroceso || '---'}}</td>
+            <td>{{ v?.dispersa3Recarga || '---'}}</td>
+            <td>{{ v?.pegajosa1Cargador || '---'}}</td>
+            <td>{{ v?.pegajosa1Retroceso || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Pegaj. 1 Recarg</th>
+            <th>Pegaj. 2 Cargador</th>
+            <th>Pegaj. 2 Retroc</th>
+            <th>Pegaj. 2 Recarg</th>
+            <th>Pegaj. 3 Cargador</th>
+            <th>Pegaj. 3 Retroc</th>
+            <th>Pegaj. 3 Recarg</th>
+            <th>Racimo 1 Cargador</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.pegajosa1Recarga || '---'}}</td>
+            <td>{{ v?.pegajosa2Cargador || '---'}}</td>
+            <td>{{ v?.pegajosa2Retroceso || '---'}}</td>
+            <td>{{ v?.pegajosa2Recarga || '---'}}</td>
+            <td>{{ v?.pegajosa3Cargador || '---'}}</td>
+            <td>{{ v?.pegajosa3Retroceso || '---'}}</td>
+            <td>{{ v?.pegajosa3Recarga || '---'}}</td>
+            <td>{{ v?.racimo1Cargador || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Racimo 1 Retroc</th>
+            <th>Racimo 1 Recarg</th>
+            <th>Racimo 2 Cargador</th>
+            <th>Racimo 2 Retroc</th>
+            <th>Racimo 2 Recarg</th>
+            <th>Racimo 3 Cargador</th>
+            <th>Racimo 3 Retroc</th>
+            <th>Racimo 3 Recarg</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.racimo1Retroceso || '---'}}</td>
+            <td>{{ v?.racimo1Recarga || '---'}}</td>
+            <td>{{ v?.racimo2Cargador || '---'}}</td>
+            <td>{{ v?.racimo2Retroceso || '---'}}</td>
+            <td>{{ v?.racimo2Recarga || '---'}}</td>
+            <td>{{ v?.racimo3Cargador || '---'}}</td>
+            <td>{{ v?.racimo3Retroceso || '---'}}</td>
+            <td>{{ v?.racimo3Recarga || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Curat. 1 Cargador</th>
+            <th>Curat. 1 Retroc</th>
+            <th>Curat. 1 Recarg</th>
+            <th>Curat. 2 Cargador</th>
+            <th>Curat. 2 Retroc</th>
+            <th>Curat. 2 Recarg</th>
+            <th>Venen. 1 Cargador</th>
+            <th>Venen. 1 Retroc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.curativa1Cargador || '---'}}</td>
+            <td>{{ v?.curativa1Retroceso || '---'}}</td>
+            <td>{{ v?.curativa1Recarga || '---'}}</td>
+            <td>{{ v?.curativa2Cargador || '---'}}</td>
+            <td>{{ v?.curativa2Retroceso || '---'}}</td>
+            <td>{{ v?.curativa2Recarga || '---'}}</td>
+            <td>{{ v?.venenosa1Cargador || '---'}}</td>
+            <td>{{ v?.venenosa1Retroceso || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Venen. 1 Recarg</th>
+            <th>Venen. 2 Cargador</th>
+            <th>Venen. 2 Retroc</th>
+            <th>Venen. 2 Recarg</th>
+            <th>Paral. 1 Cargador</th>
+            <th>Paral. 1 Retroc</th>
+            <th>Paral. 1 Recarg</th>
+            <th>Paral. 2 Cargador</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.venenosa1Recarga || '---'}}</td>
+            <td>{{ v?.venenos2Cargador || '---'}}</td>
+            <td>{{ v?.venenosa2Retroceso || '---'}}</td>
+            <td>{{ v?.venenosa2Recarga || '---'}}</td>
+            <td>{{ v?.paralisis1Cargador || '---'}}</td>
+            <td>{{ v?.paralisis1Retroceso || '---'}}</td>
+            <td>{{ v?.paralisis1Recarga || '---'}}</td>
+            <td>{{ v?.paralisis2Cargador || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Paral. 2 Retroc</th>
+            <th>Paral. 2 Recarg</th>
+            <th>Somnif. 1 Cargador</th>
+            <th>Somnif. 1 Retroc</th>
+            <th>Somnif. 1 Recarg</th>
+            <th>Somnif. 2 Cargador</th>
+            <th>Somnif. 2 Retroc</th>
+            <th>Somnif. 2 Recarg</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.paralisis2Retroceso || '---'}}</td>
+            <td>{{ v?.paralisis2Recarga || '---'}}</td>
+            <td>{{ v?.sonmifera1Cargador || '---'}}</td>
+            <td>{{ v?.sonmifera1Retroceso || '---'}}</td>
+            <td>{{ v?.somnifera1Recarga || '---'}}</td>
+            <td>{{ v?.sonmifera2Cargador || '---'}}</td>
+            <td>{{ v?.sonmifera2Retroceso || '---'}}</td>
+            <td>{{ v?.somnifera2Recarga || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Agotad. 1 Cargador</th>
+            <th>Agotad. 1 Rapid</th>
+            <th>Agotad. 1 Retroc</th>
+            <th>Agotad. 1 Recarg</th>
+            <th>Agotad. 2 Cargador</th>
+            <th>Agotad. 2 Rapid</th>
+            <th>Agotad. 2 Retroc</th>
+            <th>Agotad. 2 Recarg</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.agotador1Cargador || '---'}}</td>
+            <td>{{ v?.agotador1Rapido || '---'}}</td>
+            <td>{{ v?.agotador1Retroceso || '---'}}</td>
+            <td>{{ v?.agotador1Recarga || '---'}}</td>
+            <td>{{ v?.agotador2Cargador || '---'}}</td>
+            <td>{{ v?.agotador2Rapido || '---'}}</td>
+            <td>{{ v?.agotador2Retroceso || '---'}}</td>
+            <td>{{ v?.agotador2Recarga || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Ignea Cargador</th>
+            <th>Ignea Rapid</th>
+            <th>Ignea Retroc</th>
+            <th>Ignea Recarg</th>
+            <th>Acuat. Cargador</th>
+            <th>Acuat. Rapid</th>
+            <th>Acuat. Retroc</th>
+            <th>Acuat. Recarg</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.igneaCargador || '---'}}</td>
+            <td>{{ v?.igneaRapido || '---'}}</td>
+            <td>{{ v?.igneaRetroceso || '---'}}</td>
+            <td>{{ v?.igneaRecarga || '---'}}</td>
+            <td>{{ v?.acuaticaCargador || '---'}}</td>
+            <td>{{ v?.acuaticaRapido || '---'}}</td>
+            <td>{{ v?.acuaticaRetroceso || '---'}}</td>
+            <td>{{ v?.acuaticaRecarga || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Helada Cargador</th>
+            <th>Helada Rapid</th>
+            <th>Helada Retroc</th>
+            <th>Helada Recarg</th>
+            <th>Electr. Cargador</th>
+            <th>Electr. Rapid</th>
+            <th>Electr. Retroc</th>
+            <th>Electr. Recarg</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.heladaCargador || '---'}}</td>
+            <td>{{ v?.heladaRapido || '---'}}</td>
+            <td>{{ v?.heladaRetroceso || '---'}}</td>
+            <td>{{ v?.heladaRecarga || '---'}}</td>
+            <td>{{ v?.electricaCargador || '---'}}</td>
+            <td>{{ v?.electricaRapido || '---'}}</td>
+            <td>{{ v?.electricaRetroceso || '---'}}</td>
+            <td>{{ v?.electricaRecarga || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Dragon Cargador</th>
+            <th>Dragon Retroc</th>
+            <th>Dragon Recarg</th>
+            <th>Cort. Cargador</th>
+            <th>Cort. Retroc</th>
+            <th>Cort. Recarg</th>
+            <th>Wyvern Cargador</th>
+            <th>Wyvern Recarg</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.dragonCargador || '---'}}</td>
+            <td>{{ v?.dragonRetroceso || '---'}}</td>
+            <td>{{ v?.dragonRecarga || '---'}}</td>
+            <td>{{ v?.cortanteCargador || '---'}}</td>
+            <td>{{ v?.cortanteRetroceso || '---'}}</td>
+            <td>{{ v?.cortanteRecarga || '---'}}</td>
+            <td>{{ v?.wyvernCargador || '---'}}</td>
+            <td>{{ v?.wyvernRecarga || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Demon. Cargador</th>
+            <th>Demon. Retroc</th>
+            <th>Demon. Recarg</th>
+            <th>Armad. Cargador</th>
+            <th>Armad. Retroc</th>
+            <th>Armad. Recarg</th>
+            <th>Tranquil. Cargador</th>
+            <th>Tranquil. Retroc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.demonioCargador || '---'}}</td>
+            <td>{{ v?.demonioRetroceso || '---'}}</td>
+            <td>{{ v?.demonioRecarga || '---'}}</td>
+            <td>{{ v?.armaduraCargador || '---'}}</td>
+            <td>{{ v?.armaduraRetroceso || '---'}}</td>
+            <td>{{ v?.armaduraRecarga || '---'}}</td>
+            <td>{{ v?.tranquilizanteCargador || '---'}}</td>
+            <td>{{ v?.tranquilizanteRetroceso || '---'}}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Tranquil. Recarg</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforWeapon.weaponMunicionDTO">
+            <td>{{ v?.tranquilizanteRecarga || '---'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

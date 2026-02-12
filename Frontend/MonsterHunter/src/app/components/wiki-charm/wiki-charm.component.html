@@ -1,0 +1,107 @@
+<div class="container mt-4" style="background-color: white; padding: 20px; border-radius: 8px;">
+  <div class="container mt-4 text-center">
+    <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Amuletos</button>
+  </div>
+  <!-- Información General -->
+  <div *ngIf="inforCharm" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm" style="width: 80%; text-align: left;">
+      <!-- Nombre -->
+      <tr>
+        <td colspan="2" style="border: 1px solid #ddd; padding: 15px;">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <h2 text-black style="margin: 0; color: #333;">{{ inforCharm?.nombre }}</h2>
+          </div>
+        </td>
+      </tr>
+      <tr>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Rareza -->
+  <div id="Rareza" *ngIf="inforCharm" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <tr>
+        <th class="text-black">Rareza</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ inforCharm?.rareza }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: habilidades del amuleto -->
+  <div id="Habilidad" *ngIf="inforCharm" class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Habilidades del amuleto</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Habilidad 1</th>
+          <th>Nivel de habilidad</th>
+          <th>Habilidad 2</th>
+          <th>Nivel de habilidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ inforCharm?.nombreSkill1 || '---'}}</td>
+          <td>{{ inforCharm?.nivelSkill1 || '---'}}</td>
+          <td>{{ inforCharm?.nombreSkill2 || '---'}}</td>
+          <td>{{ inforCharm?.nivelSkill2 || '---'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tabla: Crafteo -->
+  <div id="Crafteo" *ngIf="inforCharm?.charmCraftDTO?.length > 0 " class="container mt-4">
+    <h2 style="text-align: center;">Crafteo</h2>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Material</th>
+            <th>Cantidad</th>
+            <th>Material</th>
+            <th>Cantidad</th>
+            <th>Material</th>
+            <th>Cantidad</th>
+            <th>Material</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of inforCharm.charmCraftDTO">
+            <td>{{ v?.tipo || '---'}}</td>
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem1 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombreItem1 || '--'}}</span>
+            </td>
+            <td>{{ v?.cantidadItem1 || '--'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem2 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombreItem2 || '--'}}</span>
+            </td>
+            <td>{{ v?.cantidadItem2 || '--'}}</td>
+
+            <td><img [src]="'assets/images/items/' + v?.nombreItem3 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombreItem3 || '--'}}</span>
+            </td>
+            <td>{{ v?.cantidadItem3 || '--'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem4 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombreItem4 || '--'}}</span>
+            </td>
+            <td>{{ v?.cantidadItem4 || '--'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

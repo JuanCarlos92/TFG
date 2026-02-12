@@ -1,0 +1,86 @@
+.custom-btn {
+    width: 100px;
+    margin-bottom: 15px;
+  }
+  
+  .hover-effect {
+    cursor: pointer;
+  }
+  
+  .hover-effect:hover {
+    font-weight: bold;
+  }
+  
+  .selected {
+    background-color: #343a40 !important;
+  }
+
+.background-container {
+    position: fixed; /* Fija el contenedor al viewport */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ancho completo */
+    height: 100vh; /* Alto completo */
+    overflow: hidden;
+    z-index: -1; /* Coloca el fondo detrás de otros elementos */
+  }
+  
+  .background-container img {
+    width: 100%; /* cubre el ancho del contenedor */
+    height: 100%; /*  cubre el alto del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+  }
+  
+  .armor-title-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .armor-title {
+    width: 100%;
+    margin: 0 auto 1rem auto;
+    background-color: white;
+    border: 2px solid #6c757d;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .armor-title h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #343a40;
+    text-transform: uppercase;
+  }
+  
+  
+  .table-container {
+    max-height: 80vh;
+    overflow-y: auto; /* Permite el scroll vertical */
+  }
+  
+  ion-content {
+    overflow: hidden;
+  }
+  
+  //Responsive
+  @media (max-width: 768px) {
+    .armor-title h2 {
+      font-size: 0.9rem;
+    }
+  
+    .custom-btn {
+      width: 90px;
+      font-size: 0.8rem;
+      padding: 5px 8px;
+    }
+  
+    .table-container table th,
+    .table-container table td {
+      font-size: 0.75rem;
+      padding: 4px 6px;
+    }
+  }

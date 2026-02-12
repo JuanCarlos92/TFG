@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="affcdccb-abd5-45ed-a40b-1681d0ed219a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MonsterHunter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/MonsterHunter/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="true" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Api-Gateway/pom.xml" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2uzusMfho8NgY4TrdUmHooLFhgE" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found&quot;: &quot;New/updated database configurations found&quot;,
+    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
+    &quot;Notification.DoNotAsk-DatabaseConfigFileWatcher.found&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiGateway.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.CustomMh.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServer.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MonsterHunter.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/juanc/Documents/GitHub/TFG/Backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\juanc\Documents\TFG\Backend\MonsterHunter\src\main\java\com\juancarlos\monsterhunter\services" />
+      <recent name="C:\Users\juanc\Documents\TFG\Backend\MonsterHunter\src\main\java\com\juancarlos\monsterhunter\models\response" />
+      <recent name="C:\Users\juanc\Documents\TFG\Backend\MonsterHunter\src\main\java\com\juancarlos\monsterhunter\models\dto" />
+      <recent name="C:\Users\juanc\Documents\TFG\Backend\MonsterHunter\src\main\java\com\juancarlos\monsterhunter\entity" />
+      <recent name="C:\Users\juanc\Documents\TFG\Backend\MonsterHunter\src\main\java\com\juancarlos\monsterhunter\converters" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.juancarlos.monsterhunter.repositories" />
+      <recent name="com.juancarlos.monsterhunter.models.request" />
+      <recent name="com.juancarlos.monsterhunter.controllers" />
+      <recent name="com.juancarlos.apigateway.config" />
+      <recent name="com.juancarlos.custommh.models.response" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="ApiGateway" value="STOPPED" />
+              <entry key="EurekaServer" value="STOPPED" />
+              <entry key="MonsterHunter" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MonsterHunter">
+    <configuration name="ApiGateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Api-Gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.juancarlos.apigateway.ApiGateway" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomMh" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="CustomMH" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.juancarlos.custommh.CustomMh" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="EurekaServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.juancarlos.eurekaserver.EurekaServer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonsterHunter" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="MonsterHunter" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.juancarlos.monsterhunter.MonsterHunter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="affcdccb-abd5-45ed-a40b-1681d0ed219a" name="Changes" comment="" />
+      <created>1743263930613</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743263930613</updated>
+      <workItem from="1743263932763" duration="453000" />
+      <workItem from="1743264436089" duration="333000" />
+      <workItem from="1743264779567" duration="1206000" />
+      <workItem from="1743583985930" duration="1386000" />
+      <workItem from="1743764386173" duration="661000" />
+      <workItem from="1743851340479" duration="535000" />
+      <workItem from="1743851885616" duration="2847000" />
+      <workItem from="1743973572762" duration="663000" />
+      <workItem from="1744035436298" duration="2000" />
+      <workItem from="1744035444160" duration="833000" />
+      <workItem from="1744045126843" duration="734000" />
+      <workItem from="1744046161040" duration="932000" />
+      <workItem from="1744051324449" duration="70000" />
+      <workItem from="1744062056559" duration="625000" />
+      <workItem from="1744137422382" duration="1418000" />
+      <workItem from="1744458424146" duration="133000" />
+      <workItem from="1744458567354" duration="6970000" />
+      <workItem from="1744471428726" duration="1159000" />
+      <workItem from="1744735314417" duration="6458000" />
+      <workItem from="1744794886872" duration="4598000" />
+      <workItem from="1744825871797" duration="2754000" />
+      <workItem from="1744883742799" duration="927000" />
+      <workItem from="1744907004214" duration="741000" />
+      <workItem from="1744985243435" duration="581000" />
+      <workItem from="1745006598949" duration="191000" />
+      <workItem from="1745058931305" duration="2440000" />
+      <workItem from="1745337561043" duration="2792000" />
+      <workItem from="1745490068525" duration="3345000" />
+      <workItem from="1745754029119" duration="2135000" />
+      <workItem from="1745836662255" duration="1386000" />
+      <workItem from="1745911185640" duration="2798000" />
+      <workItem from="1745948872017" duration="3004000" />
+      <workItem from="1746037966352" duration="54000" />
+      <workItem from="1746098603124" duration="1962000" />
+      <workItem from="1746194840990" duration="2007000" />
+      <workItem from="1746353753321" duration="1258000" />
+      <workItem from="1746386334521" duration="1128000" />
+      <workItem from="1746428579553" duration="16000" />
+      <workItem from="1746443692653" duration="171000" />
+      <workItem from="1746448089174" duration="163000" />
+      <workItem from="1746634119752" duration="1421000" />
+      <workItem from="1746698884017" duration="1555000" />
+      <workItem from="1746700547885" duration="1509000" />
+      <workItem from="1746702289486" duration="708000" />
+      <workItem from="1746704893401" duration="742000" />
+      <workItem from="1746723425090" duration="2090000" />
+      <workItem from="1747033094887" duration="8000" />
+      <workItem from="1747235314191" duration="2336000" />
+      <workItem from="1747911943030" duration="2633000" />
+      <workItem from="1747994565743" duration="3631000" />
+      <workItem from="1748193385374" duration="192000" />
+      <workItem from="1748247430940" duration="5022000" />
+      <workItem from="1748329685098" duration="958000" />
+      <workItem from="1748335277671" duration="2704000" />
+      <workItem from="1748340166029" duration="1590000" />
+      <workItem from="1748345860842" duration="178000" />
+      <workItem from="1748515672152" duration="1209000" />
+      <workItem from="1748533795167" duration="6869000" />
+      <workItem from="1748773714790" duration="3661000" />
+      <workItem from="1748778623767" duration="4264000" />
+      <workItem from="1748793776995" duration="4459000" />
+      <workItem from="1749023296451" duration="1036000" />
+      <workItem from="1749119406510" duration="1679000" />
+      <workItem from="1749487565025" duration="645000" />
+      <workItem from="1749539496581" duration="1146000" />
+      <workItem from="1749625690905" duration="5846000" />
+      <workItem from="1749709976314" duration="796000" />
+      <workItem from="1749718094729" duration="820000" />
+      <workItem from="1750060454682" duration="1257000" />
+      <workItem from="1751145412750" duration="3341000" />
+      <workItem from="1752909010593" duration="1000" />
+      <workItem from="1753178566256" duration="63000" />
+      <workItem from="1753178636049" duration="42000" />
+      <workItem from="1754210720969" duration="608000" />
+      <workItem from="1754213747641" duration="2000" />
+      <workItem from="1757849643547" duration="206000" />
+      <workItem from="1757870500167" duration="1805000" />
+      <workItem from="1757875231128" duration="30000" />
+      <workItem from="1758884061328" duration="94000" />
+      <workItem from="1759159065972" duration="1514000" />
+      <workItem from="1761043165528" duration="1209000" />
+      <workItem from="1761056691876" duration="607000" />
+      <workItem from="1761908885052" duration="249000" />
+      <workItem from="1761909239059" duration="3307000" />
+      <workItem from="1763711081406" duration="2230000" />
+      <workItem from="1770043183311" duration="1460000" />
+      <workItem from="1770045162946" duration="323000" />
+      <workItem from="1770283820740" duration="1118000" />
+      <workItem from="1770293802173" duration="3852000" />
+      <workItem from="1770365519397" duration="2171000" />
+      <workItem from="1770388390435" duration="3000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>false</integration-enabled>
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

@@ -1,0 +1,118 @@
+<div class="container mt-4" style="background-color: white; padding: 20px; border-radius: 8px;">
+  <div class="container mt-4 text-center">
+    <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Localizaciones</button>
+  </div>
+  <!-- Información General -->
+  <div *ngIf="infoLocation" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm" style="width: 80%; text-align: left;">
+      <!-- Fila 1: Imagen + Nombre -->
+      <tr>
+        <td colspan="2" class="text-center" style="border: 1px solid #ddd; padding: 15px;">
+          <img [src]="'assets/images/locations/' + infoLocation?.nombre + '.png'"
+            style="border-radius: 8px; width: 100%; max-width: 600px; height: auto;">
+          <h1 style="margin-top: 10px; color: #333;">{{ infoLocation?.nombre }}</h1>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Imagen de los campamentos -->
+  <div *ngIf="infoLocation?.locationCampDTO?.length > 0 " class="container mt-4 text-center">
+    <div
+      style="display: inline-block; width: 80%; max-width: 600px; border: 5px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+      <img [src]="'assets/images/locations/camps/' + infoLocation?.locationCampDTO[0]?.nombreBase + '.png'"
+        alt="Imagen de {{ infoLocation?.locationCampDTO[0]?.nombreBase }}" class="img-fluid"
+        style="width: 100%; height: auto; object-fit: contain; object-position: center;">
+    </div>
+  </div>
+
+  <!-- Tabla: campamento -->
+  <div id="campamentos" *ngIf="infoLocation?.locationCampDTO?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Campamento y area</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nombre Campamento</th>
+          <th>Area</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of infoLocation.locationCampDTO">
+          <td>{{ v?.nombreCampamento }}</td>
+          <td>{{ v?.area }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Botones de Navegación -->
+  <div class="text-center my-3">
+    <div class="d-flex justify-content-center flex-wrap gap-2">
+      <button class="btn btn-secondary custom-btn" (click)="scrollTo('recoleccion')">
+        Objeto de recolección
+      </button>
+      <button class="btn btn-secondary custom-btn" (click)="scrollTo('misiones')">
+        Misiones de la zona
+      </button>
+    </div>
+  </div>
+
+
+  <!-- Tabla: recoleccion item -->
+  <div id="recoleccion" *ngIf="infoLocation?.locationItemDTO?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Objetos de recolección</h2>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Objeto</th>
+            <th>Rango del objeto</th>
+            <th>Area</th>
+            <th>Porcentaje de aparición</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of infoLocation.locationItemDTO">
+            <td>
+              <img [src]="'assets/images/items/' + v?.item + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.item }}</span>
+            </td>
+            <td>{{ v?.rango || '---'}}</td>
+            <td>{{ v?.area }}</td>
+            <td>{{ v?.porcentaje + '%'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tabla: misiones de la zona -->
+  <div id="misiones" *ngIf="infoLocation?.questBaseDTO?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Misiones de {{ infoLocation?.nombre }}</h2>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Categoria</th>
+            <th>Rango</th>
+            <th>Estella</th>
+            <th>Tipo de mision</th>
+            <th>Zeny</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of infoLocation.questBaseDTO">
+            <td>{{ v?.nombre }}</td>
+            <td>{{ v?.categoria}}</td>
+            <td>{{ v?.rango }}</td>
+            <td>{{ v?.estrellas}}</td>
+            <td>{{ v?.misionTipo}}</td>
+            <td>{{ v?.zeny}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

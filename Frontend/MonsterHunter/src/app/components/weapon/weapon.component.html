@@ -1,0 +1,64 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Contenedor del fondo -->
+  <div class="background-container">
+    <img src="assets/images/backgrounds/background.jpg" alt="Monster Hunter Background">
+  </div>
+
+  <div class="content-container">
+    <div *ngIf="!mostrarWiki">
+      <!-- Grid de tarjetas Tipos de armas -->
+      <div class="row justify-content-center">
+        <div *ngFor="let weaponTipo of weaponstipos" class="col-3 col-md-2 col-lg-1 text-center my-0 px-0">
+          <app-card-weapontype [weaponTipo]="weaponTipo" (weaponNameSelected)="weaponTypeNameSelected($event)">
+          </app-card-weapontype>
+        </div>
+      </div>
+
+      <!-- Título de la tabla (nombre del tipo) -->
+      <div *ngIf="selectedWeaponTipo" class="weapon-title">
+        <h2>{{ selectedWeaponTipo.tipoArma }}</h2>
+      </div>
+      
+
+      <div id="listaArmas" *ngIf="infoWeaponTipoFiltrado?.weaponBaseDTO?.length ?? 0 > 0" class="container mt-4">
+        <div class="text-center my-3">
+          <button *ngFor="let rarity of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+            [class.selected]="selectedRarity === rarity" class="btn btn-secondary mx-1 custom-btn"
+            (click)="filterByRarity(rarity)">
+            {{ rarity }}
+          </button>
+        </div>
+        
+        <div class="table-container">
+          <!-- Lista de armas -->
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Rareza</th>
+                <th>Ataque</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let v of infoWeaponTipoFiltrado?.weaponBaseDTO">
+                <td>
+                  <a class="hover-effect" (click)="displayWiki(v)" style="text-decoration: none; color: inherit;">
+                    <img [src]="'assets/images/weapons/' + v?.tipoArma + '.png'" width="30"
+                      style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+                    <span style="margin-left: 10px;"> {{ v?.nombre }}</span>
+                  </a>
+                </td>
+                <td>{{ v?.rareza }}</td>
+                <td>{{ v?.ataque }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="mostrarWiki">
+      <app-wiki-weapon [weapon]="weaponWiki" (closeWiki)="closeWiki()"></app-wiki-weapon>
+    </div>
+  </div>
+</ion-content>

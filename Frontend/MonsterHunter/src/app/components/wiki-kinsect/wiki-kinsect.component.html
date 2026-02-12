@@ -1,0 +1,122 @@
+<div class="container mt-4" style="background-color: white; padding: 20px; border-radius: 8px;">
+  <div class="container mt-4 text-center">
+    <button class="btn btn-secondary mx-1" (click)="reloadPage()">Volver a Kinsectos</button>
+  </div>
+  <!-- Información General -->
+  <div *ngIf="infoKinsect" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <!-- Fila 1: Imagen + Nombre -->
+      <tr>
+        <td colspan="2" class="text-center" style="border: 1px solid #ddd; padding: 15px;">
+          <img [src]="'assets/images/kinsects/' + infoKinsect?.nombre + '.png'" width="180" style="border-radius: 8px;">
+          <h1 style="margin-top: 10px; color: #333;">{{ infoKinsect?.nombre }}</h1>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: Rareza , tipo de ataque, tipo de efecto,  -->
+  <div id="tabla1" *ngIf="infoKinsect" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <tr>
+        <th class="text-black">Rareza</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.rareza }}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Tipo de ataque</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.tipoAtaque || '---'}}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Tipo de efecto</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.efecto || '---'}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: poder , velocidad, cura,  -->
+  <div id="tabla1" *ngIf="infoKinsect" class="container mt-4">
+    <table class="table table-bordered mx-auto shadow-sm"
+      style="width: 80%; background-color: #f9f9f9; text-align: left;">
+      <tr>
+        <th class="text-black">Poder</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.poder }}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Velocidad</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.velocidad || '---'}}</td>
+      </tr>
+      <tr>
+        <th class="text-black">Cura</th>
+        <td class="text-black" style="border: 1px solid #ddd; padding: 15px;">{{ infoKinsect?.cura || '---'}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Kinsecto Previo -->
+  <div *ngIf="infoKinsect" class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Evoluciona de</h2>
+    <table class="table table-bordered mx-auto shadow-sm" style="width: 60%; text-align: center;">
+      <!-- Imagen + Nombre -->
+      <tr>
+        <td colspan="2" class="text-center" style="border: 1px solid #ddd; padding: 10px;">
+          <img [src]="'assets/images/kinsects/' + infoKinsect?.previo + '.png'" width="120" style="border-radius: 6px;">
+          <p class="text-black" style="margin-top: 5px">{{ infoKinsect?.previo }}</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tabla: crafteo -->
+  <div id="Crafteo" *ngIf="infoKinsect?.kinsectCraftDTO?.length > 0 " class="container mt-4">
+    <h2 class="text-black" style="text-align: center;">Crafteo</h2>
+    <div class="table-responsive-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>Calidad</th>
+            <th>Material</th>
+            <th>Calidad</th>
+            <th>Material</th>
+            <th>Calidad</th>
+            <th>Material</th>
+            <th>Calidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of infoKinsect.kinsectCraftDTO">
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem1 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombreItem1 || '---'}}</span>
+            </td>
+            <td>{{ v?.calidadItem1 || '---'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem2 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombreItem2 || '---'}}</span>
+            </td>
+            <td>{{ v?.calidadItem2 || '---'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem3 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombreItem3 || '---'}}</span>
+            </td>
+            <td>{{ v?.calidadItem3 || '---'}}</td>
+
+            <td>
+              <img [src]="'assets/images/items/' + v?.nombreItem4 + '.png'" width="30"
+                style="border-radius: 8px; vertical-align: middle;" (error)="handleImageError($event)">
+              <span style="margin-left: 10px;">{{ v?.nombreItem4 || '---'}}</span>
+            </td>
+            <td>{{ v?.calidadItem4 || '---'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

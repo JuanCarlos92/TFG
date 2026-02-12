@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: eureka-server
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+#    hostname: localhost
+    hostname: ec2-13-37-209-83.eu-west-3.compute.amazonaws.com
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+  server:
+    enable-self-preservation: true  # Habilita el modo de autopreservación
+    renewal-percent-threshold: 0.75  # Cambia el umbral de renovación al 75%
+    eviction-interval-timer-in-ms: 60000  # Verifica instancias no renovadas cada 60s

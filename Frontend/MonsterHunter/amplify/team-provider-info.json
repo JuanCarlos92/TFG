@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-monsterhunter-dev-e022a-authRole",
+      "UnauthRoleArn": "arn:aws:iam::943321204481:role/amplify-monsterhunter-dev-e022a-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::943321204481:role/amplify-monsterhunter-dev-e022a-authRole",
+      "Region": "eu-west-3",
+      "DeploymentBucketName": "amplify-monsterhunter-dev-e022a-deployment",
+      "UnauthRoleName": "amplify-monsterhunter-dev-e022a-unauthRole",
+      "StackName": "amplify-monsterhunter-dev-e022a",
+      "StackId": "arn:aws:cloudformation:eu-west-3:943321204481:stack/amplify-monsterhunter-dev-e022a/318c2260-2c3d-11f0-a29e-0615fe4db7fd",
+      "AmplifyAppId": "d3nqyn6xk9zuw5"
+    },
+    "categories": {
+      "auth": {
+        "monsterhunter6b56b85f": {}
+      }
+    }
+  }
+}
