@@ -1,5 +1,10 @@
 # Monster Hunter Wiki
 
+<p style="color:red; font-weight:bold;">
+AVISO IMPORTANTE: Actualmente los servicios de AWS (Cognito, RDS y EC2) han sido eliminados,
+por lo tanto el backend, la base de datos y el login no está disponible.
+</p>
+
 ¡Bienvenido a la Wiki de Monster Hunter! Este proyecto es una plataforma dedicada a proporcionar información detallada sobre los diferentes aspectos del juego Monster Hunter. Los usuarios podrán consultar datos, registrarse, iniciar sesión y contribuir a la comunidad creando, actualizando o eliminando monstruos.
 
 ## Características
