@@ -7,7 +7,7 @@
 >
 > Actualmente la página web no funciona.
 
-¡Bienvenido a la Wiki de Monster Hunter! Este proyecto es una plataforma dedicada a proporcionar información detallada sobre los diferentes aspectos del juego Monster Hunter. Los usuarios podrán consultar datos, registrarse, iniciar sesión y contribuir a la comunidad creando, actualizando o eliminando monstruos.
+Este proyecto es una plataforma dedicada a proporcionar información detallada sobre los diferentes aspectos del juego Monster Hunter. Los usuarios podrán consultar datos, registrarse, iniciar sesión y contribuir a la comunidad creando, actualizando o eliminando monstruos.
 
 ## Características
 
